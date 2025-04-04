@@ -1,0 +1,53 @@
+@use '../components/mixins' as *;
+
+// @import '../components/mixins';
+
+.btn{
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.btn-secondary {
+    background-color: var(--Primitives-Colours-Morado-500);
+    border-color: var(--Primitives-Colours-Morado-500);
+    color: #fff;
+
+    &:hover {
+      background-color: var(--Primitives-Colours-Morado-500);
+      box-shadow: inset 0 0 0.65em 10px var(--Primitives-Colours-Morado-700);
+      border-color: var(--Primitives-Colours-Morado-700);
+      color: #fff;
+    }
+  }
+
+
+
+.btn-outline-secondary{
+    background-color: var(--Surface__Secondary__Subtle);
+    border-color: var(--color-Border-Secondary-Default);
+
+}
+
+.btn-tertiary{
+    color:  var(--Primitives-Colours-Azul-900);
+    background-color: var(--Primitives-Colours-Azul-200);
+    border: none;
+
+    &:hover{
+        color:  var(--color-Type-Secondary-Label) ;
+        background-color: var(--color-Surface-Secondary-Subtle);
+        border: none;
+
+    }
+
+}
+
+
+.btn-footer{
+
+    &:hover{
+        background-color: var(--color-Surface-Subtle);
+        color: var(--color-Type-Secondary-Label);
+    }
+
+}

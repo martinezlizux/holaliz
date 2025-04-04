@@ -1,0 +1,83 @@
+
+@use 'components/colors' as *;
+
+
+// my Theme Colors
+
+$purple: hsl(255, 55%, 62%);
+$pink-dark:    #F4728C ;
+$pink-light:    #FEA7BA ;
+
+$blue-dark: #1FACB3;
+$blue-light: #D5EDF7;
+
+$orange-dark: #F67A34;
+$orange-light: #FFAD19;
+
+
+$teal:    #1FACB3 ;
+$teal-dark:    #028887 !default;
+$teal-light:    #BBF1E4 !default ;
+
+$green:  #1FBE6C ;
+$yellow:  #FFD858;
+
+// White and gray colors
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef ;
+$gray-300: #dee2e6 ;
+$gray-400: #ced4da ;
+$gray-500: #adb5bd ;
+$gray-600: #6c757d ;
+$gray-700: #495057 ;
+$gray-800: #343a40 ;
+$gray-900: #212529 ;
+$black:    #000 ;
+$white:    #fff ;
+
+// Primary and secundary
+$primary:  hsl(187, 80%, 66%);
+$secondary: #5c39c6;
+
+
+
+// Accordion Overrides
+$accordion-body-padding-y:                1.5rem;
+$accordion-body-padding-x:                1.5rem;
+
+$accordion-icon-color:                    $blue-dark ;
+$accordion-icon-active-color:             $blue-dark;
+$accordion-icon-width:                    1.875rem ;
+
+$accordion-button-icon:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' fill='#{$accordion-icon-active-color}'><path d='M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z'/></svg>") ;
+$accordion-button-active-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' fill='#{$accordion-icon-color}'><path d='M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z'/></svg>");
+
+// Links Overrides
+
+a {
+    color: $secondary;
+    text-decoration: underline;
+}
+
+
+
+
+body{
+    font-family: "Open Sans", sans-serif;
+    font-size: var(--body--regular);
+    color: $gray-900;
+
+}
+
+
+
+
+// IMPORT BOOTSTRAP 5
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+a {
+    color: $secondary;
+    text-decoration: underline;
+}
+

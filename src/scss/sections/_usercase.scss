@@ -1,0 +1,23 @@
+@use '../custom' as *;
+
+
+// section{
+
+// }
+
+.bg{
+    &-pink{
+        background-color: $pink-light;
+    }
+    &-blue{
+        background-color: $blue-light;
+    }
+
+    &-orange{
+        background-color: $orange-light;
+    }
+
+    &-teal{
+        background-color: $teal-light;
+    }
+}

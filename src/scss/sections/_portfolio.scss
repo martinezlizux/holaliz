@@ -1,0 +1,313 @@
+@use '../custom' as *;
+
+
+
+// Recent Proyect
+
+.s-recent-proyect{
+    background-color: var(--color-Surface-Primary-Darker);
+
+
+    .recent-proyect-card{
+
+        .description{
+            font-size: var(--body);
+            font-weight: 400;
+              
+        }
+      
+        // .recent-proyect-image{
+        //      background-image: url(https://placehold.co/413x237)
+              
+        // }
+
+        .badge{
+            background-color: var(--color-Surface-Secondary-Darker);
+        }
+      
+    }
+   
+}
+
+.s-proyects{
+
+
+    .proyect-card{
+
+        min-height: 230px;
+ 
+         .description{
+             font-size: var(--body);
+             font-weight: 400;
+              
+               
+       
+         }
+       
+        //  .proyect-image{
+        //     background-image: url(https://placehold.co/246x225)
+            
+        //  }
+
+         .badge{
+            background-color: var(--color-Surface-Secondary-Darker);
+            color: #fff!important;
+            font-size: calc( 0.812rem + .10vw);
+        }
+    
+     }
+
+}
+
+.divider-section{
+    // border-top: #dddddd 1px solid;
+    text-align: center;
+    font-size: 27px;
+    font-weight: 700;
+    color: var(--color-Surface-Primary-Darker);
+    font-variant-caps: all-small-caps;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.s-project-grid{
+
+    .wrapper-show{
+    }
+
+   
+
+    .show-card{
+
+        width: 100%;
+        height: auto;
+        // background-color: var(--color-Surface-Secondary-Subtle);
+
+
+        &.card-photo{
+            padding: 100px 80px 100px 100px;
+            
+            .box{
+                overflow: hidden;
+            }
+
+            img{ width: 100%;}
+        }
+
+        &.card-info{
+            padding: 60px 20px 100px 20px;
+
+
+        }
+        
+    }
+
+    // En resoluciones grandes
+
+    @include media-breakpoint-up(lg) { 
+
+    .show-card{
+            width: 50%;
+            height: 100vh;
+           
+
+
+            &.card-photo{
+                padding: 100px 80px 100px 100px;
+            }
+    
+            &.card-info{
+                padding: 100px 100px 100px 0px;
+            }
+           
+        
+        }
+    }
+
+    .p-rewards{
+        border-top:#f3f3f3 1px solid;
+        // background-color: var(--Primitives-Colours-Morado-200);
+
+        .highlight { 
+            background-color:#FFFF00; 
+            padding: 0 5px;
+        }
+
+        .box{
+            border-radius: 20px;
+            background-color: none;
+            // border: none;
+            width: 100%;
+            height: 600px;
+        }
+    }
+
+    .p-drivers{
+
+        // background-color: var(--Primitives-Colours-Gray);
+        .highlight { 
+            background-color: var(--Primitives-Colours-Naranja-500);
+            padding: 0 5px;
+        }
+        .box{
+            border-radius: 20px;
+            // background-color: var(--Primitives-Colours-Gris-50);
+            // border: 1px solid var(--Primitives-Colours-Gris-500);
+            width: 100%;
+            height: 600px;
+        }
+    }
+
+    .p-research{
+        border-top:#f3f3f3 1px solid;
+
+        // background-color: var(--Primitives-Colours-Gris-50);
+        .highlight { 
+            background-color: var(--Primitives-Colours-Azul-600);
+            padding: 0 5px;
+        }
+
+        .box{
+            border-radius: 20px;
+            // background-color: var(--Primitives-Colours-Azul-50);
+            // border: 1px solid var(--Primitives-Colours-Azul-500);
+            width: 100%;
+            height: 600px;
+        }
+
+    }
+    .p-system{
+        // background-color: var(--Primitives-Colours-Azul-50);
+        border-top: #f3f3f3 1px solid;
+        .highlight { 
+            background-color: var(--Primitives-Colours-Morado-300);
+            padding: 0 5px; 
+        }
+
+        .box{
+            border-radius: 20px;
+            // background-color: var(--Primitives-Colours-Gris-50);
+            // border: 1px solid var(--Primitives-Colours-Gris-200);
+            width: 100%;
+            height: 600px;
+        }
+
+    }
+
+
+}
+
+.s-gallery-grid{
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    .grid-container{
+
+        display: grid;
+        grid-template-columns: 1fr ;
+        grid-template-rows: 50vh;
+        column-gap: 10px;
+        row-gap: 10px;
+    }
+    
+
+    .grid-item{
+        
+        background-color: var(--color-Surface-Secondary-Subtle);
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+  
+
+    
+    }
+}
+
+.thumb-small{
+    display: block;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border: 1px solid rgb(232, 232, 232);
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.thumb-large{
+    display: none;
+}
+
+.show-card.card-info {
+    padding: 60px 100px 100px 100px;
+}
+
+
+
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+    .divider-section {
+      
+        font-weight: 700;
+
+        padding-top: 100px;
+
+    }
+
+    .show-card.card-photo{
+        display: block!important;
+
+    }
+
+    .thumb-small{
+        display: none;
+    }
+
+    .thumb-large{
+        display: block;
+    }
+
+    .card-info {
+        padding-top: 40px;
+    }
+
+    .s-gallery-grid{
+        padding-top: 40px;
+        padding-bottom: 40px;
+    
+        .grid-container{
+    
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 40vh 40vh;
+            column-gap: 20px;
+            row-gap: 20px;
+        }
+        
+    
+        .grid-item{
+            
+            background-color: var(--color-Surface-Secondary-Subtle);
+    
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+      
+    
+        
+        }
+    }
+
+
+
+
+
+}

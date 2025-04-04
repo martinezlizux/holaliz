@@ -1,0 +1,215 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+
+body{
+    font-family: "Open Sans", sans-serif;
+    font-size: calc(1rem + .10vw);
+    font-weight: 400;
+}
+
+
+.display-2{
+    margin-bottom: 1rem;
+    font-family: "Open Sans", sans-serif;
+    // text-transform: capitalize;
+    font-size: var(--h2);
+
+    @include media-breakpoint-up(md) { 
+        // font-size: var(--headline--bold);
+        // font-size: 3vw;
+        font-weight: 400;
+        display: inline-block;
+
+    }
+
+    &--intro{
+        // font-size: 6vw;
+        font-size: var(--h1);
+        display: inline-block;
+        font-weight: 700;
+        font-family: "Open Sans", sans-serif;
+
+        @include media-breakpoint-up(md) { 
+            // font-size: var(--h3--bold);
+            // font-size: 3vw;
+            
+    
+        }
+        
+    }
+
+    &--description{
+        // font-size: 1rem;
+        font-family: "PT Serif", serif;
+        font-size: var(--h2);
+        display: block;
+        margin-top: 1.2rem;
+        text-transform: none;
+
+        @include media-breakpoint-up(lg) { 
+            // font-size: 1.3rem;
+            font-size: var(--h2);
+            font-weight: 400;
+            display: inline-block;
+
+        }
+
+        
+    }
+}
+
+
+// HEADING LINE
+
+.heading-line::before{
+    content: "";
+    width: 10rem;
+    height: 0.1rem;
+    display: block;
+    margin: 0 auto;
+    background-color: $primary;
+}
+.heading-line::after{
+    content: "";
+    width: 2rem;
+    padding-top: 0.5rem;
+    height: 0.2rem;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    background-color: $primary;
+}
+
+// Display 3
+
+.display-3{
+   font-family: 'Open Sans', sans-serif;
+
+   &--title{
+    // font-size: 1.2rem;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-family: 'Alegreya Sans', sans-serif;
+    display: inline-block;
+    background-clip: text;
+    background-image: linear-gradient(to right, $primary, $secondary);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+
+    @include media-breakpoint-up (lg){
+        // font-size: 1.8rem;
+
+    }
+
+   }
+
+}
+
+// Border Right 
+.border-right{
+    border-right: 0.1rem solid $gray-300;
+    height: 100%;
+}
+
+:root{
+    /* Text-size styles */
+/* base size: body---regular (16px) */
+--h1: calc(1rem + .70vw);
+--h2: calc(1rem + .50vw);
+--h3: calc(1rem + .40vw);
+--h4: calc(1rem + .30vw);
+--headline: calc(1rem + .30vw);
+--body:     calc(1rem + .10vw);
+--subtitle: calc(1rem + .20vw);
+--caption: 0.812rem;
+--footnote: 0.625rem;
+--leader: calc(1rem + 3vw);
+}
+
+.bolder{font-weight: 800;}
+.bold{font-weight: 700;}
+.semibold{font-weight: 600;}
+.medium{font-weight: 500;}
+.regular{font-weight: 400;}
+.light{font-weight: 300; }
+.body{ font-size: 16px;}
+
+.body{ font-size: var(--body);}
+
+h1{font-size: var(--h1);}
+h2{font-size: var(--h2);}
+h3{font-size: var(--h3);}
+h4{font-size: var(--h4);}
+.leader{ font-size: var(--leader)}
+.text-caps{font-variant: all-small-caps;}
+
+.my-list{
+
+
+}
+    
+
+
+@include media-breakpoint-up(sm) {
+
+}
+@include media-breakpoint-up(md) {
+
+    
+
+ }
+@include media-breakpoint-up(lg) { 
+
+
+}
+
+.headline{ font-size: var(--h4);}
+.caps{font-variant: all-petite-caps; font-size: 24px;}
+
+
+
+.subtitle{ font-size: var(--subtitle);}
+
+
+.caption{ font-size: var(--caption);}
+
+
+.footnote{ font-size: var(--footnote);}
+
+
+.txt-white{ color: white;}
+
+
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 300 to 800
+
+.open-sans {
+    font-family: "Open Sans", sans-serif;
+
+}
+
+.pt-serif-regular {
+    font-family: "PT Serif", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+.pt-serif-bold {
+    font-family: "PT Serif", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+  
+.pt-serif-regular-italic {
+    font-family: "PT Serif", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+  
+.pt-serif-bold-italic {
+    font-family: "PT Serif", serif;
+    font-weight: 700;
+    font-style: italic;
+}
+  

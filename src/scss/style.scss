@@ -1,0 +1,25 @@
+
+// Import components
+@use 'components/mixins';
+@use 'components/animations';
+@use 'components/buttons';
+@use 'components/typography';
+@use 'components/colors';
+@use 'components/utilities';
+
+
+// Import sections
+@use 'sections/navbar';
+@use 'sections/intro';
+@use 'sections/gallery';
+@use 'sections/contact';
+@use 'sections/footer';
+@use 'sections/portfolio';
+@use 'sections/usercase';
+@use 'sections/project';
+@use 'sections/aboutme';
+@use 'sections/media';
+@use 'sections/tools';
+@use 'sections/resume';
+
+

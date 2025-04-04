@@ -1,0 +1,40 @@
+@use '../custom' as *;
+
+
+
+.badge{
+
+    $badge-font-size:                   .75em;
+    $badge-font-weight:                 700;
+    $badge-color:                       #fff;
+    $badge-padding-y:                   .35em;
+    $badge-padding-x:                   .65em;
+    $badge-border-radius:               $border-radius;
+
+    background-color: var(--color-Surface-Secondary-Darker);
+    color: $badge-color;
+    
+}
+
+
+
+.bg-circle {
+    background-color: var(--color-Surface-Primary-Lighter);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+
+    i{
+        position: relative;
+        top: 30%;
+        font-size: 2rem;
+        color: var(--color-Type-Primary-Label);
+    }
+}
+
+
+.divider{
+    border-bottom: 1px solid ;
+    color: var(--color-Border-Secondary-Subtle) ;
+
+}

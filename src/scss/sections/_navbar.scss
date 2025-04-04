@@ -1,0 +1,111 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+@use '../components/colors' as *;
+
+
+.menu {
+    // @include gradient;
+    // // background: linear-gradient(to right, rgba($teal-light, 0.95), rgba($teal-dark, 0.95));
+    
+    box-shadow: 0px 0px 9px 3px rgba(214,214,214,.25);
+    -webkit-box-shadow: 0px 0px 9px 3px rgba(214,214,214,.25);
+    -moz-box-shadow: 0px 0px 9px 3px rgba(214,214,214,.25);
+
+    height: auto;
+    background-color: #fff;
+
+    
+
+    li{
+        padding: 0 1rem;
+        text-align: center;
+    }
+
+    a{
+        text-transform: capitalize;
+        font-family: 'Alegreya Sans', sans-serif;
+        font-weight: 400;
+        font-size: 1.2rem;
+        color: var(--color-Type-Secondary-Label);
+        border-radius: 27px;
+        padding: 8px 18px;
+
+       
+    }
+
+  
+
+    .nav-link.active{
+        color: var(--color-Type-Secondary-Label);
+        background-color: var(--color-Surface-Secondary-Subtle);
+        border-radius: 27px;
+        padding: 8px 18px;
+        border: 1px solid var(--Primitives-Colours-Morado-100);
+
+    }
+
+    .nav-link{
+
+        border-radius: 27px;
+        padding: 8px 18px!important;
+        border: 1px solid rgba(128, 128, 128, 0);
+
+        &:hover{
+            color: var(--color-Type-Secondary-Label);
+            background-color: var(--Primitives-Colours-Morado-50);
+            border-radius: 27px;
+            padding: 8px 18px;
+            border: 1px solid var(--Primitives-Colours-Morado-100);
+            outline-width: 1px;
+            outline-offset: 0;
+            outline-color: rgba(204, 158, 237, 0.75);
+            outline-style: solid;
+            animation: animateOutline 4s ease infinite;
+        }
+
+        // animation border
+
+        @keyframes animateOutline {
+            0% {
+              outline-width: 1px;
+              outline-offset: 0;
+              outline-color: rgba(0, 130, 206, 0);
+            }
+          
+            10% {
+              outline-color: var(--Primitives-Colours-Gris-200);
+            }
+          
+            /* The animation finishes at 50% */
+            50% {
+              outline-width: 5px;
+              outline-offset: 3px;
+              outline-color: rgba(0, 130, 206, 0);
+            }
+          
+            100% {
+              outline-width: 5px;
+              outline-offset: 3px;
+              outline-color: rgba(102, 102, 102, 0);
+            }
+          }
+
+
+        
+
+    }
+
+
+}
+
+a {
+    color: var(--color-Type-Secondary-Label);
+    text-decoration: underline;
+}
+
+.logo-nav{
+    font-family: "Libre Franklin", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
