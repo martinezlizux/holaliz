@@ -6,14 +6,31 @@
 
     $badge-font-size:                   .75em;
     $badge-font-weight:                 700;
-    $badge-color:                       #fff;
+    $badge-color:                       rgb(37, 24, 76);
     $badge-padding-y:                   .35em;
     $badge-padding-x:                   .65em;
     $badge-border-radius:               $border-radius;
 
-    background-color: var(--color-Surface-Secondary-Darker);
+    background-color: var(--Primitives-Colours-Azul-100);
     color: $badge-color;
+    font-weight: 500;
     
+}
+
+.badge-important{
+    
+    $badge-color:                       rgb(37, 24, 76);
+    $badge-padding-y:                   .50em;
+    $badge-padding-x:                   .65em;
+
+    // background-color: var(--Primitives-Colours-Azul-100);
+    color: $badge-color;
+    font-weight: 500;
+    border: 1px solid var(--Primitives-Colours-Gris-200);
+    padding: $badge-padding-y $badge-padding-x ;
+    border-radius: 10px;
+    font-size: 1rem;
+
 }
 
 

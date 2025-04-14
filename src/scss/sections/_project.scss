@@ -4,14 +4,46 @@
 .s-proyect{
 
     .bg-banner{
-        background-color: var(--color-Surface-Default);
-        height: 50px;
+        background: linear-gradient(-45deg, #fefff3, #f6edfe, #eef8fb, #fafffe);
+        background-size: 400% 400%;
+        animation: gradient-takeAway 15s ease infinite;
+        height: auto;
+        padding-top: 40px;
     }
 
     .img-tool{  width: 12%}
-
-   
           
+}
+
+.h-rol{
+    position: relative;
+
+    &::before{
+        content: " ";
+        position: absolute;
+        top: -14%;
+        left: -30px;
+        margin-left: -13px;
+        border-width: 8px;
+        border-style: solid;
+        border-color: var(--Primitives-Colours-Morado-500) transparent transparent transparent;
+    }
+    
+    &::after{
+        background: var(--Primitives-Colours-Morado-500);
+        color: #000;
+        content: "My Rol";
+        display: ruby;
+        position: absolute;
+        top: -28px;
+        left: -61px;
+        padding: 0px 5px;
+        font-size: 12px;
+        font-weight: 500;
+        border-radius: 6px;
+        color: #f6edfe;
+
+    }
 }
 
 
@@ -30,8 +62,25 @@
 }
 
 
+
+
+
 .s-take-away{
-    background: var(--color-Surface-Default);
+    background: linear-gradient(-45deg, #fefff3, #f6edfe, #eef8fb, #fafffe);
+	background-size: 400% 400%;
+	animation: gradient-takeAway 15s ease infinite;
+}
+
+@keyframes gradient-takeAway {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 .blur-text{
@@ -44,13 +93,22 @@
 .highlight{
     background-color: var(--color-Surface-Secondary-Subtle);
     margin-bottom: 20px;
-    min-height: 250px;
 
     .highlight-title{
         color: var(--color-Type-Secondary-Label);
 
     }
     
+}
+
+.text-highlight-orange {
+    background-color: var(--Primitives-Colours-Naranja-300);
+    padding: 0 5px;
+}
+
+.text-highlight-purple {
+    background-color: var(--Primitives-Colours-Purple-300);
+    padding: 0 5px;
 }
 
 @keyframes show {
@@ -65,7 +123,52 @@
     }
 }
 
+.box-finding{
+    color: #333;
+    background-color: #fff;
+    border-radius: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 24px 30px 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .1);
 
+
+    .caption{
+        color: rgba(51, 51, 51, .4);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+}
+
+.box-photo{
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 10px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .1);
+}
+
+.box-Impact{
+    color: #333;
+    background-color: #fefee4;
+    border-radius: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 24px 30px 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .1);
+}
+
+.box-Challenge{
+    color: #333;
+    background-color: var(--Primitives-Colours-Morado-100);
+    border-radius: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .1);
+}
 
 .highlight-card{
     padding: 1.5rem;
@@ -83,7 +186,6 @@
 }
 
 .my-animate{
-
     view-timeline-name: --high;
     view-timeline-axis: block ;
 
@@ -91,7 +193,6 @@
     animation-name: show ;
 
     animation-range: entry 20% cover 50% ;
-
 }
 
 
@@ -110,9 +211,9 @@
 .persona-card{
     border-radius: .5rem;
     border: 1px solid ;
-    border-color: --color-Border-Secondary-Darker;
-    padding: 15px;
-    text-align: center;
+    border-color: var(--color-Border-Secondary-lighter);
+    text-align: left;
+
 
     img {
         width: -webkit-fill-available;
@@ -141,7 +242,7 @@
     }
 
     .s-proyect .img-tool {
-        width: 50px;
+        width: 40px;
     }
 
  }

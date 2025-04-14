@@ -12100,8 +12100,9 @@ a {
 
 body {
   font-family: "Open Sans", sans-serif;
-  font-size: calc(1rem + 0.1vw);
+  font-size: calc(1rem + 0.2vw);
   font-weight: 400;
+  line-height: 1.6em;
 }
 
 .display-2 {
@@ -12177,8 +12178,8 @@ body {
 :root {
   /* Text-size styles */
   /* base size: body---regular (16px) */
-  --h1: calc(1rem + .70vw);
-  --h2: calc(1rem + .50vw);
+  --h1: calc(1rem + 1.8vw);
+  --h2: calc(1rem + 1vw);
   --h3: calc(1rem + .40vw);
   --h4: calc(1rem + .30vw);
   --headline: calc(1rem + .30vw);
@@ -12245,6 +12246,24 @@ h4 {
   font-variant: all-small-caps;
 }
 
+.title {
+  text-align: center;
+  padding: 25px 0px;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.subtitle {
+  text-align: center;
+  padding: 30px 0px;
+  font-weight: 500;
+}
+
+.txt-underline {
+  text-decoration: var(--Primitives-Colours-Morado-600) wavy underline;
+  text-underline-offset: 5px;
+}
+
 .headline {
   font-size: var(--h4);
 }
@@ -12299,8 +12318,18 @@ h4 {
 }
 
 .badge {
-  background-color: var(--color-Surface-Secondary-Darker);
-  color: #fff;
+  background-color: var(--Primitives-Colours-Azul-100);
+  color: rgb(37, 24, 76);
+  font-weight: 500;
+}
+
+.badge-important {
+  color: rgb(37, 24, 76);
+  font-weight: 500;
+  border: 1px solid var(--Primitives-Colours-Gris-200);
+  padding: 0.5em 0.65em;
+  border-radius: 10px;
+  font-size: 1rem;
 }
 
 .bg-circle {
@@ -12816,11 +12845,42 @@ ul.filters > li.active > a {
 }
 
 .s-proyect .bg-banner {
-  background-color: var(--color-Surface-Default);
-  height: 50px;
+  background: linear-gradient(-45deg, #fefff3, #f6edfe, #eef8fb, #fafffe);
+  background-size: 400% 400%;
+  animation: gradient-takeAway 15s ease infinite;
+  height: auto;
+  padding-top: 40px;
 }
 .s-proyect .img-tool {
   width: 12%;
+}
+
+.h-rol {
+  position: relative;
+}
+.h-rol::before {
+  content: " ";
+  position: absolute;
+  top: -14%;
+  left: -30px;
+  margin-left: -13px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: var(--Primitives-Colours-Morado-500) transparent transparent transparent;
+}
+.h-rol::after {
+  background: var(--Primitives-Colours-Morado-500);
+  color: #000;
+  content: "My Rol";
+  display: ruby;
+  position: absolute;
+  top: -28px;
+  left: -61px;
+  padding: 0px 5px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 6px;
+  color: #f6edfe;
 }
 
 .bg-circle {
@@ -12837,9 +12897,22 @@ ul.filters > li.active > a {
 }
 
 .s-take-away {
-  background: var(--color-Surface-Default);
+  background: linear-gradient(-45deg, #fefff3, #f6edfe, #eef8fb, #fafffe);
+  background-size: 400% 400%;
+  animation: gradient-takeAway 15s ease infinite;
 }
 
+@keyframes gradient-takeAway {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 .blur-text {
   color: transparent;
   text-shadow: 0 0 8px #000;
@@ -12848,10 +12921,19 @@ ul.filters > li.active > a {
 .highlight {
   background-color: var(--color-Surface-Secondary-Subtle);
   margin-bottom: 20px;
-  min-height: 250px;
 }
 .highlight .highlight-title {
   color: var(--color-Type-Secondary-Label);
+}
+
+.text-highlight-orange {
+  background-color: var(--Primitives-Colours-Naranja-300);
+  padding: 0 5px;
+}
+
+.text-highlight-purple {
+  background-color: var(--Primitives-Colours-Purple-300);
+  padding: 0 5px;
 }
 
 @keyframes show {
@@ -12864,6 +12946,50 @@ ul.filters > li.active > a {
     scale: 100%;
   }
 }
+.box-finding {
+  color: #333;
+  background-color: #fff;
+  border-radius: 16px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 24px 30px 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+.box-finding .caption {
+  color: rgba(51, 51, 51, 0.4);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.box-photo {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 10px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.box-Impact {
+  color: #333;
+  background-color: #fefee4;
+  border-radius: 16px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 24px 30px 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.box-Challenge {
+  color: #333;
+  background-color: var(--Primitives-Colours-Morado-100);
+  border-radius: 16px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
 .highlight-card {
   padding: 1.5rem;
   margin-bottom: 1rem;
@@ -12896,9 +13022,8 @@ ul.filters > li.active > a {
 .persona-card {
   border-radius: 0.5rem;
   border: 1px solid;
-  border-color: --color-Border-Secondary-Darker;
-  padding: 15px;
-  text-align: center;
+  border-color: var(--color-Border-Secondary-lighter);
+  text-align: left;
 }
 .persona-card img {
   width: -webkit-fill-available;
@@ -12920,7 +13045,7 @@ ul.filters > li.active > a {
     font-size: var(--h3);
   }
   .s-proyect .img-tool {
-    width: 50px;
+    width: 40px;
   }
 }
 .s-aboutme-intro {
