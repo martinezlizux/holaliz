@@ -13048,8 +13048,9 @@ ul.filters > li.active > a {
   }
 }
 .s-aboutme-intro {
-  padding: 8rem 0 0 0;
-  background-color: var(--color-Surface-Secondary-Subtle);
+  background: linear-gradient(-45deg, #dce9f8, #e6f8ff, #f4f9f8);
+  background-size: 400% 400%;
+  animation: gradient-intro 20s ease infinite;
 }
 
 .s-aboutme-story {
@@ -13057,6 +13058,17 @@ ul.filters > li.active > a {
   background-color: var(--color-Surface-Subtle);
 }
 
+@keyframes gradient-intro {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 .s-media {
   background-color: var(--Primitives-Colours-Morado-200);
   padding: 5rem 0;

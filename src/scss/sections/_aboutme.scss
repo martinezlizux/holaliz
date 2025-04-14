@@ -1,11 +1,25 @@
 @use '../custom' as *;
 
 .s-aboutme-intro{
-    padding: 8rem 0 0 0;
-    background-color: var(--color-Surface-Secondary-Subtle);
+    background: linear-gradient(-45deg, #dce9f8, #e6f8ff, #f4f9f8);
+	background-size: 400% 400%;
+	animation: gradient-intro 20s ease infinite;
 }
 
 .s-aboutme-story{
     padding: 2rem 0 0 0rem;
     background-color: var(--color-Surface-Subtle);
+}
+
+
+@keyframes gradient-intro {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
