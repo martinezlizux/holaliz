@@ -12555,7 +12555,7 @@ a {
 
 @media (min-width: 768px) {
   .s-intro {
-    padding: 10rem 0 10rem 0;
+    padding: 10rem 0 7rem 0;
   }
   .call {
     font-size: 25px;
@@ -12574,7 +12574,7 @@ a {
     margin-bottom: 20px;
   }
   .gradient-background {
-    height: 95vh;
+    height: 88vh;
   }
 }
 ul.filters {
@@ -12795,7 +12795,7 @@ ul.filters > li.active > a {
 @media (min-width: 768px) {
   .divider-section {
     font-weight: 700;
-    padding-top: 100px;
+    padding-top: 0px;
   }
   .show-card.card-photo {
     display: block !important;
