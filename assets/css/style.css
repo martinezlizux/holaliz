@@ -12100,9 +12100,9 @@ a {
 
 body {
   font-family: "Open Sans", sans-serif;
-  font-size: calc(1rem + 0.2vw);
+  font-size: calc(1rem + 0.1vw);
   font-weight: 400;
-  line-height: 1.6em;
+  line-height: 1.4em;
 }
 
 .display-2 {
@@ -12178,8 +12178,8 @@ body {
 :root {
   /* Text-size styles */
   /* base size: body---regular (16px) */
-  --h1: calc(1rem + 1.8vw);
-  --h2: calc(1rem + 1vw);
+  --h1: calc(1rem + 1.6vw);
+  --h2: calc(1rem + 1vw)!important;
   --h3: calc(1rem + .40vw);
   --h4: calc(1rem + .30vw);
   --headline: calc(1rem + .30vw);
@@ -12187,7 +12187,7 @@ body {
   --subtitle: calc(1rem + .20vw);
   --caption: 0.812rem;
   --footnote: 0.625rem;
-  --leader: calc(1rem + 3vw);
+  --leader: calc(1rem + 1.5vw);
 }
 
 .bolder {
@@ -12219,23 +12219,23 @@ body {
 }
 
 .body {
-  font-size: var(--body);
+  font-size: var(--body) !important;
 }
 
 h1 {
-  font-size: var(--h1);
+  font-size: var(--h1) !important;
 }
 
 h2 {
-  font-size: var(--h2);
+  font-size: var(--h2) !important;
 }
 
 h3 {
-  font-size: var(--h3);
+  font-size: var(--h3) !important;
 }
 
 h4 {
-  font-size: var(--h4);
+  font-size: var(--h4) !important;
 }
 
 .leader {
@@ -12349,13 +12349,10 @@ h4 {
   color: var(--color-Border-Secondary-Subtle);
 }
 
-.menu {
-  box-shadow: 0px 0px 9px 3px rgba(214, 214, 214, 0.25);
-  -webkit-box-shadow: 0px 0px 9px 3px rgba(214, 214, 214, 0.25);
-  -moz-box-shadow: 0px 0px 9px 3px rgba(214, 214, 214, 0.25);
-  height: auto;
+.bg-white {
   background-color: #fff;
 }
+
 .menu li {
   padding: 0 1rem;
   text-align: center;
@@ -12428,20 +12425,20 @@ a {
 }
 
 .s-intro {
-  padding: 5rem 0 0 0;
+  padding: 1rem 0 0 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
 
 .logo-name {
-  width: 180px;
+  width: 100px;
   margin-bottom: 20px;
   margin-top: 20px;
 }
 
 .face-img {
-  width: 150px;
+  width: 80px;
   height: auto;
   border-radius: 20px;
 }
@@ -12524,12 +12521,12 @@ a {
   background: linear-gradient(-45deg, #fcffe1, #e6cafe, #e6f8ff, #effffb);
   background-size: 400% 400%;
   animation: gradient-intro 15s ease infinite;
-  height: 90vh;
+  height: 60vh;
 }
 
 .fade-mask {
   --fade-amount: 15%;
-  mask-image: linear-gradient(to bottom, transparent, black var(--fade-amount), black calc(100% - var(--fade-amount)), transparent);
+  mask-image: linear-gradient(to bottom, black var(--fade-amount), black calc(100% - var(--fade-amount)), transparent);
 }
 
 @keyframes gradient-intro {
@@ -12555,26 +12552,26 @@ a {
 
 @media (min-width: 768px) {
   .s-intro {
-    padding: 10rem 0 7rem 0;
+    padding: 1rem 0 4rem 0;
   }
   .call {
     font-size: 25px;
   }
   .welcome-text p {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 2rem;
+    line-height: 1.5rem;
     letter-spacing: 0;
     text-align: left;
     color: #000;
   }
   .logo-name {
-    width: 230px;
+    width: 150px;
     margin-bottom: 20px;
   }
   .gradient-background {
-    height: 88vh;
+    height: 68vh;
   }
 }
 ul.filters {
