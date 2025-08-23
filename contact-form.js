@@ -1,0 +1,80 @@
+// Contact Form Handler
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const message = formData.get('message');
+            
+            // Basic validation
+            if (!name || !email || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            // Show loading state
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Send email using Formspree
+            fetch('https://formspree.io/f/xgvzgrzj', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    message: message
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Success
+                    alert('Thank you! Your message has been sent successfully.');
+                    contactForm.reset();
+                    
+                    // Close modal
+                    const modal = bootstrap.Modal.getInstance(document.getElementById('contactModal'));
+                    if (modal) {
+                        modal.hide();
+                    }
+                } else {
+                    throw new Error('Failed to send message');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Sorry, there was an error sending your message. Please try again or email me directly at martinez.liz.ux@gmail.com');
+            })
+            .finally(() => {
+                // Reset button state
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+    }
+    
+    // Alternative: Use mailto as fallback if Formspree fails
+    function sendEmailFallback(name, email, message) {
+        const subject = encodeURIComponent('Contact from Portfolio Website');
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+        const mailtoLink = `mailto:martinez.liz.ux@gmail.com?subject=${subject}&body=${body}`;
+        window.location.href = mailtoLink;
+    }
+});

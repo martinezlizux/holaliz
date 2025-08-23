@@ -12608,6 +12608,61 @@ ul.filters > li.active > a {
   margin-bottom: 10px;
 }
 
+/* Contact Modal Styles */
+#contactModal .modal-content {
+  border-radius: 16px;
+  border: none;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+#contactModal .modal-header {
+  border-bottom: 1px solid var(--Primitives-Colours-Gris-200);
+  padding: 1.5rem 1.5rem 1rem;
+}
+#contactModal .modal-title {
+  color: var(--Primitives-Colours-Morado-800);
+  font-weight: 700;
+}
+#contactModal .modal-body {
+  padding: 1.5rem;
+}
+#contactModal .form-label {
+  font-weight: 600;
+  color: var(--Primitives-Colours-Gris-800);
+  margin-bottom: 0.5rem;
+}
+#contactModal .form-control {
+  border: 2px solid var(--Primitives-Colours-Gris-200);
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+#contactModal .form-control:focus {
+  border-color: var(--Primitives-Colours-Morado-500);
+  box-shadow: 0 0 0 0.2rem rgba(131, 105, 211, 0.25);
+  outline: none;
+}
+#contactModal .form-control::placeholder {
+  color: var(--Primitives-Colours-Gris-400);
+}
+#contactModal .modal-footer {
+  border-top: 1px solid var(--Primitives-Colours-Gris-200);
+  padding: 1rem 1.5rem 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  #contactModal .modal-dialog {
+    margin: 1rem;
+  }
+  #contactModal .modal-body {
+    padding: 1rem;
+  }
+  #contactModal .modal-header,
+  #contactModal .modal-footer {
+    padding: 1rem;
+  }
+}
 .s-footer {
   background-color: var(--color-Surface-Secondary-Subtle);
   padding: 10% 0%;
