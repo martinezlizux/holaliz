@@ -85,10 +85,10 @@
             // Optimize image dimensions
             if (img.naturalWidth && img.naturalHeight) {
                 // Aplicar width 100% y height auto para mantener proporciones
-                // Excluir face-img e imágenes de herramientas para que mantengan su tamaño natural
+                // Excluir face-img e imágenes con clase img-tool para que mantengan sus dimensiones CSS
                 if (!img.style.width && !img.style.height && 
                     !img.src.includes('face-img') && 
-                    !img.src.includes('img-tool')) {
+                    !img.classList.contains('img-tool')) {
                     img.style.width = '100%';
                     img.style.height = 'auto';
                 }
