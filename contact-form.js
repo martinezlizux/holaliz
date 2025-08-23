@@ -45,15 +45,9 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(response => {
                 if (response.ok) {
-                    // Success
-                    alert('Thank you! Your message has been sent successfully.');
+                    // Success - Show confirmation message
+                    showSuccessMessage();
                     contactForm.reset();
-                    
-                    // Close modal
-                    const modal = bootstrap.Modal.getInstance(document.getElementById('contactModal'));
-                    if (modal) {
-                        modal.hide();
-                    }
                 } else {
                     throw new Error('Failed to send message');
                 }
@@ -70,6 +64,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Function to show success message with animation
+    function showSuccessMessage() {
+        const formContainer = document.getElementById('contactFormContainer');
+        const successMessage = document.getElementById('successMessage');
+        
+        if (formContainer && successMessage) {
+            // Fade out form
+            formContainer.classList.add('fade-out');
+            
+            // After form fades out, show success message
+            setTimeout(() => {
+                formContainer.style.display = 'none';
+                successMessage.classList.remove('d-none');
+                
+                // Trigger animation
+                setTimeout(() => {
+                    successMessage.classList.add('show');
+                }, 100);
+            }, 500);
+        }
+    }
+    
     // Alternative: Use mailto as fallback if Formspree fails
     function sendEmailFallback(name, email, message) {
         const subject = encodeURIComponent('Contact from Portfolio Website');
@@ -78,3 +94,24 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = mailtoLink;
     }
 });
+
+// Function to close modal (called from HTML)
+function closeModal() {
+    const modal = bootstrap.Modal.getInstance(document.getElementById('contactModal'));
+    if (modal) {
+        modal.hide();
+    }
+    
+    // Reset form view after modal closes
+    setTimeout(() => {
+        const formContainer = document.getElementById('contactFormContainer');
+        const successMessage = document.getElementById('successMessage');
+        
+        if (formContainer && successMessage) {
+            formContainer.style.display = 'block';
+            formContainer.classList.remove('fade-out');
+            successMessage.classList.remove('show');
+            successMessage.classList.add('d-none');
+        }
+    }, 300);
+}
