@@ -84,13 +84,13 @@
             
             // Optimize image dimensions
             if (img.naturalWidth && img.naturalHeight) {
-                // Aplicar dimensiones 100% para ocupar todo el contenedor
+                // Aplicar width 100% y height auto para mantener proporciones
                 // Excluir face-img e imágenes de herramientas para que mantengan su tamaño natural
                 if (!img.style.width && !img.style.height && 
                     !img.src.includes('face-img') && 
                     !img.src.includes('img-tool')) {
                     img.style.width = '100%';
-                    img.style.height = '100%';
+                    img.style.height = 'auto';
                 }
             }
         });
