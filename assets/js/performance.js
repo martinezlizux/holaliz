@@ -84,8 +84,14 @@
             
             // Optimize image dimensions
             if (img.naturalWidth && img.naturalHeight) {
-                img.style.width = 'auto';
-                img.style.height = 'auto';
+                // Aplicar dimensiones 100% para ocupar todo el contenedor
+                // Excluir face-img e imágenes de herramientas para que mantengan su tamaño natural
+                if (!img.style.width && !img.style.height && 
+                    !img.src.includes('face-img') && 
+                    !img.src.includes('img-tool')) {
+                    img.style.width = '100%';
+                    img.style.height = '100%';
+                }
             }
         });
     }
@@ -122,7 +128,7 @@
     // Optimize CSS delivery
     function optimizeCSSDelivery() {
         const criticalCSS = `
-            .s-intro { min-height: 100vh; }
+            .s-intro { min-height: 60vh; }
             .navbar { position: fixed; top: 0; width: 100%; }
             .container { max-width: 1200px; margin: 0 auto; }
         `;
