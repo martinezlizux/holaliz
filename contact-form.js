@@ -48,6 +48,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Success - Show confirmation message
                     showSuccessMessage();
                     contactForm.reset();
+                    
+                    // Track successful form submission
+                    if (window.GATracking && window.GATracking.trackContactSuccess) {
+                        window.GATracking.trackContactSuccess();
+                    }
                 } else {
                     throw new Error('Failed to send message');
                 }
