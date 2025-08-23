@@ -1,4 +1,4 @@
-/* Version: 1.0.0 | Hash: 7f96c793 | Build: 2025-08-23T04:38:22.835Z */
+/* Version: 1.0.0 | Hash: 7f96c793 | Build: 2025-08-23T05:43:45.071Z */
 // Performance Optimization and Core Web Vitals
 (function() {
     'use strict';

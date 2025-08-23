@@ -1,15 +1,15 @@
 {
   "version": "1.0.0",
   "build": {
-    "timestamp": 1755923902835,
-    "date": "2025-08-23T04:38:22.835Z",
+    "timestamp": 1755927825071,
+    "date": "2025-08-23T05:43:45.071Z",
     "environment": "production"
   },
   "files": {
     "assets/css/style.css": "86785444",
     "assets/css/fontawesome.css": "c0eb85b6",
-    "assets/js/script.js": "menrr6o2",
-    "assets/js/contact-form.js": "menrr6o2",
+    "assets/js/script.js": "menu3935",
+    "assets/js/contact-form.js": "menu3936",
     "assets/js/analytics.js": "b22ae02b",
     "assets/js/performance.js": "7f96c793",
     "assets/js/version-manager.js": "5891b8f8"
@@ -17,6 +17,6 @@
   "stats": {
     "processed": 15,
     "errors": 0,
-    "startTime": 1755923902835
+    "startTime": 1755927825071
   }
 }
