@@ -17,13 +17,13 @@
 }
 
 .face-img{
-    width: 151px;
+    width: 150px;
     height: auto;
     border-radius: 20px;
 }
 
 .call{
-    font-size: 20 ;
+    font-size: 20px ;
     color: #fff;
     background-color: #9e83fa ;
     border: 1px solid var(--Primitives-Colours-Morado-100);
@@ -31,7 +31,7 @@
     padding: 8px 18px;
 
     &:hover{
-            
+
             background-color: #7153d3 ;
             color: #fff;
             border-radius: 27px;
@@ -51,18 +51,18 @@
               outline-offset: 0;
               outline-color: rgba(0, 130, 206, 0);
             }
-          
+
             10% {
               outline-color: var(--Primitives-Colours-Morado-500);
             }
-          
+
             /* The animation finishes at 50% */
             50% {
               outline-width: 5px;
               outline-offset: 3px;
               outline-color: rgba(0, 130, 206, 0);
             }
-          
+
             100% {
               outline-width: 5px;
               outline-offset: 3px;
@@ -70,7 +70,7 @@
             }
           }
     }
-       
+
 }
 
 .shape1{
@@ -137,7 +137,7 @@
 
     .s-intro{
         padding: 1rem 0 4rem 0;
-    
+
     }
 
     .call {

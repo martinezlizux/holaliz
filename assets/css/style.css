@@ -12438,13 +12438,13 @@ a {
 }
 
 .face-img {
-  width: 151px;
+  width: 150px;
   height: auto;
   border-radius: 20px;
 }
 
 .call {
-  font-size: 20;
+  font-size: 20px;
   color: #fff;
   background-color: #9e83fa;
   border: 1px solid var(--Primitives-Colours-Morado-100);
