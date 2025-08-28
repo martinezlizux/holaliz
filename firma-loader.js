@@ -12,10 +12,18 @@ function cargarFirma(contenedorId) {
         return;
     }
     
+    // Determinar la ruta correcta para la imagen
+    // Esto maneja diferentes niveles de carpetas
+    let rutaImagen = 'images/face-img.png';
+    const pathDepth = window.location.pathname.split('/').length - 2;
+    if (pathDepth > 0) {
+        rutaImagen = '../'.repeat(pathDepth) + 'images/face-img.png';
+    }
+    
     // Contenido HTML de la firma (incrustado para evitar problemas de CORS)
     const firmaHTML = `
         <div class="signature-container">
-            <img src="../images/face-img.png" alt="Foto de Lizbeth Martinez" class="signature-image">
+            <img src="${rutaImagen}" alt="Foto de Lizbeth Martinez" class="signature-image">
             <div class="signature-content">
                 <h3 class="signature-name">Lizbeth Martinez</h3>
                 <p class="signature-title">UX Designer</p>
