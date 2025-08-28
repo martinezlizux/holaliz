@@ -7,7 +7,6 @@
 @use 'components/colors';
 @use 'components/utilities';
 
-
 // Import sections
 @use 'sections/navbar';
 @use 'sections/intro';
@@ -21,5 +20,6 @@
 @use 'sections/media';
 @use 'sections/tools';
 @use 'sections/resume';
+@use 'sections/firma';
 
 

@@ -537,17 +537,21 @@
                     </div>
                     
                 </div>
-    
+
+
             </div>
 
         </section> -->
 
+        
+
     </div>
 
     <!-- TAKE AWAY -->
-    <section class="s-take-away">        
+    <section class="s-take-away">
           <div class=" container-fluid">
             <div class="container col-11 col-md-9 col-xl-7 py-4" >
+                <div class="p-content">
                 <div class="p-content">
                     <h2 class="bold pt-4 pb-2">Take Away </h2>
                     <p>This project reinforced the importance of making information and data accessible to everyone involved. While experience is valuable, it’s not always enough—data-backed decisions lead to more effective, aligned solutions. I also saw firsthand how UX often plays an “evangelizing” role, especially when collaborating with non-technical teams. By involving users early and sharing research transparently, we fostered a stronger sense of ownership and engagement across departments.</p>
@@ -567,7 +571,9 @@
                        
                 </div>
 
-            </div> 
+            </div>  
+            <!-- FIRMA -->
+            <div id="Liz-Firma"></div>
         </div>
 
     </section>
@@ -623,7 +629,18 @@
     <script src="../assets/js/bootstrap.bundle.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="../isotope.min.js"></script>
-    <script src="../script.js"></script> 
+    <script src="../script.js"></script>
+
+    <!-- Contenedor para la firma -->
+    <div id="Liz-Firma"></div>
+
+    <!-- Cargar la firma -->
+    <script src="../firma-loader.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            cargarFirma('Liz-Firma');
+        });
+    </script>
 
 </body>
 </html>

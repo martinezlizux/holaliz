@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Caso de Estudio con Firma</title>
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <article class="caso-de-estudio">
+        <h1>Caso de Estudio: Rediseño de la Interfaz de Usuario</h1>
+        
+        <section class="introduccion">
+            <h2>Introducción</h2>
+            <p>Este caso de estudio presenta el proceso de rediseño de la interfaz de usuario para una aplicación web...</p>
+        </section>
+        
+        <section class="desafios">
+            <h2>Desafíos</h2>
+            <p>Los principales desafíos incluían mejorar la usabilidad y modernizar el diseño...</p>
+        </section>
+        
+        <section class="solucion">
+            <h2>Solución</h2>
+            <p>Implementamos una nueva arquitectura de interfaz basada en componentes reutilizables...</p>
+        </section>
+        
+        <section class="resultados">
+            <h2>Resultados</h2>
+            <p>Después del rediseño, observamos un aumento del 40% en la retención de usuarios...</p>
+        </section>
+    </article>
+    
+    <!-- Contenedor para la firma -->
+    <div id="firma-contenedor"></div>
+    
+    <!-- Cargar la firma al final de la página -->
+    <script src="firma-loader.js"></script>
+    <script>
+        // Cargar la firma cuando la página esté lista
+        document.addEventListener('DOMContentLoaded', function() {
+            cargarFirma('firma-contenedor');
+        });
+    </script>
+</body>
+</html>

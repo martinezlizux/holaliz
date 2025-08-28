@@ -289,8 +289,11 @@
                     </li>
                 </ul>
               </div>
-
-          </div> 
+              <!-- FIRMA -->
+              <div id="Liz-Firma"></div>
+          </div>
+          
+             
         </div>
 
 </section>
@@ -313,6 +316,8 @@
             </div>
         </div>
 </section>
+
+    
 
     <!--//////////////////// FOOTER ///////////////////// -->
     <section class="s-footer ">
@@ -344,7 +349,15 @@
   <script src="../assets/js/bootstrap.bundle.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="../isotope.min.js"></script>
-  <script src="../script.js"></script> 
+  <script src="../script.js"></script>
+
+  <!-- Cargar la firma -->
+  <script src="../firma-loader.js"></script>
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          cargarFirma('Liz-Firma');
+      });
+  </script>
 
 </body>
 </html>

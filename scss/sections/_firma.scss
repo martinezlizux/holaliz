@@ -1,0 +1,58 @@
+/* Signature Component */
+.signature-container {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+  .signature-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1.5rem;
+    // Eliminado el borde azul
+  }
+
+  .signature-content {
+    flex: 1;
+
+    .signature-name {
+      font-size: 1rem!important;
+      font-weight: 700;
+      margin: 0 0 0.5rem 0;
+      color: #333;
+    }
+
+    .signature-title {
+      font-size: 1rem!important;
+      font-weight: 500;
+      margin: 0;
+      color: #666;
+    }
+  }
+}
+
+.signature-divider {
+  height: 2px;
+  background-color: #007bff;
+  margin-top: 1.5rem;
+  border-radius: 1px;
+}
+
+/* Responsive design for signature */
+@media (max-width: 768px) {
+  .signature-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+
+    .signature-image {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+  }
+}
