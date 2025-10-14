@@ -168,9 +168,49 @@
         initTracking();
     }
     
+    // SPA Page Tracking
+    function trackSPAPageView(page, title) {
+        if (typeof gtag !== 'undefined') {
+            // Construct virtual page path
+            const virtualPath = `/#${page}`;
+            const pageTitle = title || `${page.charAt(0).toUpperCase() + page.slice(1)} - Lizbeth Martinez`;
+            
+            console.log('Tracking SPA page view:', virtualPath, pageTitle);
+            
+            // Track virtual page view
+            gtag('config', GA_ID, {
+                page_title: pageTitle,
+                page_location: window.location.origin + virtualPath,
+                page_path: virtualPath
+            });
+            
+            // Also track as a custom event
+            gtag('event', 'page_view', {
+                page_title: pageTitle,
+                page_location: window.location.origin + virtualPath,
+                page_path: virtualPath,
+                content_group1: 'SPA_Navigation'
+            });
+        }
+    }
+    
+    // Track SPA navigation events
+    function trackSPANavigation(fromPage, toPage) {
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'spa_navigation', {
+                event_category: 'SPA',
+                event_label: `${fromPage} -> ${toPage}`,
+                custom_parameter_1: 'spa_user',
+                custom_parameter_2: 'navigation'
+            });
+        }
+    }
+
     // Export functions for external use
     window.GATracking = {
         trackEvent: trackEvent,
+        trackSPAPageView: trackSPAPageView,
+        trackSPANavigation: trackSPANavigation,
         trackContactSuccess: function() {
             trackEvent('contact_form', 'conversion', 'form_submit_success', 'contact_form', 1);
         }

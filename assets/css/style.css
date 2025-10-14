@@ -12251,6 +12251,26 @@ h4 {
   font-size: var(--leader);
 }
 
+/* Animación de máquina de escribir para el título */
+#rotatingTitle {
+  position: relative;
+  min-height: 1.2em; /* Evita que el layout salte mientras se escribe */
+}
+
+#rotatingTitle::after {
+  content: '|';
+  display: inline-block;
+  color: var(--Primitives-Colours-Morado-500);
+  animation: blink 1s infinite;
+  font-weight: normal;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
 .text-caps {
   font-variant: all-small-caps;
 }
@@ -13313,6 +13333,18 @@ ul.filters > li.active > a {
     margin-right: 0;
     margin-bottom: 1rem;
   }
+}
+
+
+
+/* Fade in animation for content */
+.content-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /*# sourceMappingURL=style.css.map */
