@@ -120,34 +120,41 @@ $(document).ready(function() {
         menuItems.removeClass('active');
         $(`a[data-page="${page}"]`).addClass('active');
         
-        // Fade out del contenido actual
-        contentArea.fadeOut(300, function() {
-            // Cargar nuevo contenido con AJAX
-            // Detectar si estamos en GitHub Pages o local
-            const basePath = window.location.hostname === 'martinezlizux.github.io' ? '/holaliz/' : './';
-            const fullUrl = `${basePath}content/${page}.html`;
-            console.log('Attempting to load URL:', fullUrl);
-            $.ajax({
-                url: fullUrl,
-                type: 'GET',
-                success: function(data) {
-                    // Reemplazar contenido y hacer fade in
-                    contentArea.html(data).addClass('content-fade-in').fadeIn(400, function() {
-                        // Una vez que el contenido se ha cargado completamente, rastrear en GA
-                        if (window.GATracking) {
-                            // Rastrear navegación si hay página previa
-                            if (previousPage && previousPage !== page) {
-                                window.GATracking.trackSPANavigation(previousPage, page);
-                            }
-                            
-                            // Rastrear vista de página virtual
-                            window.GATracking.trackSPAPageView(page);
+        // Añadir estado de carga para transición más suave
+        contentArea.addClass('loading');
+        
+        // Cargar nuevo contenido con AJAX
+        // Detectar si estamos en GitHub Pages o local
+        const basePath = window.location.hostname === 'martinezlizux.github.io' ? '/holaliz/' : './';
+        const fullUrl = `${basePath}content/${page}.html`;
+        console.log('Attempting to load URL:', fullUrl);
+        
+        $.ajax({
+            url: fullUrl,
+            type: 'GET',
+            success: function(data) {
+                // Pequeño delay para transición más suave
+                setTimeout(function() {
+                    // Reemplazar contenido 
+                    contentArea.html(data)
+                        .removeClass('loading')
+                        .addClass('loaded content-fade-in');
+                    
+                    // Una vez que el contenido se ha cargado completamente, rastrear en GA
+                    if (window.GATracking) {
+                        // Rastrear navegación si hay página previa
+                        if (previousPage && previousPage !== page) {
+                            window.GATracking.trackSPANavigation(previousPage, page);
                         }
                         
-                        // Actualizar página actual
-                        currentPage = page;
-                    });
-                },
+                        // Rastrear vista de página virtual
+                        window.GATracking.trackSPAPageView(page);
+                    }
+                    
+                    // Actualizar página actual
+                    currentPage = page;
+                }, 150); // 150ms delay para transición más suave
+            },
                 error: function(xhr, status, error) {
                     // Log del error para debugging
                     console.error('Error loading content:', {
@@ -158,20 +165,23 @@ $(document).ready(function() {
                         xhr: xhr
                     });
                     
-                    // Mostrar mensaje de error con fade in
-                    const errorContent = `<div class="alert alert-danger text-center">
-                        <h4>Error loading content</h4>
-                        <p>Could not load ${page}.html</p>
-                        <small>Status: ${status} | Error: ${error}</small>
-                    </div>`;
-                    contentArea.html(errorContent).addClass('content-fade-in').fadeIn(400);
-                    
-                    // Rastrear error en GA
-                    if (window.GATracking) {
-                        window.GATracking.trackEvent('error', 'ajax_load_failed', page, `${status}: ${error}`, 1);
-                    }
+                // Mostrar mensaje de error con fade in
+                const errorContent = `<div class="alert alert-danger text-center">
+                    <h4>Error loading content</h4>
+                    <p>Could not load ${page}.html</p>
+                    <small>Status: ${status} | Error: ${error}</small>
+                </div>`;
+                
+                contentArea.removeClass('loading')
+                    .addClass('loaded')
+                    .html(errorContent)
+                    .addClass('content-fade-in');
+                
+                // Rastrear error en GA
+                if (window.GATracking) {
+                    window.GATracking.trackEvent('error', 'ajax_load_failed', page, `${status}: ${error}`, 1);
                 }
-            });
+            }
         });
     }
     

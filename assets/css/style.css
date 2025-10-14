@@ -13347,4 +13347,34 @@ ul.filters > li.active > a {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Contenedor dinámico - Evitar salto del footer */
+#dynamic-content {
+  min-height: 80vh; /* Altura mínima para evitar salto del footer */
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Estados de carga para transiciones suaves */
+#dynamic-content.loading {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+#dynamic-content.loaded {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #dynamic-content {
+    min-height: 70vh; /* Menor altura en móviles */
+  }
+}
+
+@media (max-width: 576px) {
+  #dynamic-content {
+    min-height: 60vh; /* Aún menor en pantallas muy pequeñas */
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
