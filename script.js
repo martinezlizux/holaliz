@@ -112,6 +112,7 @@ $(document).ready(function() {
     
     // Función para cargar contenido dinámicamente
     function loadContent(page) {
+        console.log('Loading content for page:', page);
         const contentArea = $('#dynamic-content');
         const previousPage = currentPage;
         
@@ -122,8 +123,12 @@ $(document).ready(function() {
         // Fade out del contenido actual
         contentArea.fadeOut(300, function() {
             // Cargar nuevo contenido con AJAX
+            // Detectar si estamos en GitHub Pages o local
+            const basePath = window.location.hostname === 'martinezlizux.github.io' ? '/holaliz/' : './';
+            const fullUrl = `${basePath}content/${page}.html`;
+            console.log('Attempting to load URL:', fullUrl);
             $.ajax({
-                url: `content/${page}.html`,
+                url: fullUrl,
                 type: 'GET',
                 success: function(data) {
                     // Reemplazar contenido y hacer fade in
@@ -143,14 +148,27 @@ $(document).ready(function() {
                         currentPage = page;
                     });
                 },
-                error: function() {
+                error: function(xhr, status, error) {
+                    // Log del error para debugging
+                    console.error('Error loading content:', {
+                        page: page,
+                        url: `${basePath}content/${page}.html`,
+                        status: status,
+                        error: error,
+                        xhr: xhr
+                    });
+                    
                     // Mostrar mensaje de error con fade in
-                    const errorContent = '<div class="alert alert-danger text-center">Error loading content. Please try again.</div>';
+                    const errorContent = `<div class="alert alert-danger text-center">
+                        <h4>Error loading content</h4>
+                        <p>Could not load ${page}.html</p>
+                        <small>Status: ${status} | Error: ${error}</small>
+                    </div>`;
                     contentArea.html(errorContent).addClass('content-fade-in').fadeIn(400);
                     
                     // Rastrear error en GA
                     if (window.GATracking) {
-                        window.GATracking.trackEvent('error', 'ajax_load_failed', page, page, 1);
+                        window.GATracking.trackEvent('error', 'ajax_load_failed', page, `${status}: ${error}`, 1);
                     }
                 }
             });
