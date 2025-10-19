@@ -4,10 +4,14 @@
 .s-intro{
     padding: 1rem 0 0 0;
     width: 100%;
-    height: 100%; 
-    overflow: hidden;
+    height: auto; 
+    min-height: 100vh;
+    overflow: visible;
+}
 
-
+.s-intro-content {
+    min-height: 60vh;
+    height: auto;
 }
 
 .logo-name{
@@ -98,7 +102,7 @@
     background: linear-gradient(-45deg, #fcffe1, #e6cafe, #e6f8ff, #effffb);
 	background-size: 400% 400%;
 	animation: gradient-intro 15s ease infinite;
-	height: 60vh;
+	min-height: 100vh;
 }
 
 .fade-mask{
@@ -131,13 +135,48 @@
     color: #000;
 }
 
+// Small devices (mobile, up to 576px)
+@media (max-width: 575px) {
+    .s-intro-content {
+        min-height: 70vh;
+    }
+
+    .s-intro {
+        padding: 1rem 0 2rem 0;
+    }
+
+    .logo-name {
+        width: 80px;
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+
+    .face-img {
+        width: 120px;
+    }
+
+    .welcome-text p {
+        font-size: 0.9rem;
+        line-height: 1.4rem;
+    }
+}
+
+// Small to medium devices (576px to 767px)
+@media (min-width: 576px) and (max-width: 767px) {
+    .s-intro-content {
+        min-height: 65vh;
+    }
+}
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
 
     .s-intro{
         padding: 1rem 0 4rem 0;
+    }
 
+    .s-intro-content {
+        min-height: 60vh;
     }
 
     .call {
@@ -158,11 +197,5 @@
         width: 150px;
         margin-bottom: 20px;
     }
-
-    .gradient-background {
-
-        height: 68vh;
-    }
-
 
  }
