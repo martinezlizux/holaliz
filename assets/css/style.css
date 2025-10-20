@@ -12437,12 +12437,13 @@ a {
   padding: 1rem 0 0 0;
   width: 100%;
   height: auto;
-  min-height: 100vh;
+  max-height: 80vh;
   overflow: visible;
 }
 
 .s-intro-content {
-  min-height: calc(100vh - 120px);
+  min-height: 80vh;
+  max-height: 70vh;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -12539,7 +12540,6 @@ a {
   background: linear-gradient(-45deg, #fcffe1, #e6cafe, #e6f8ff, #effffb);
   background-size: 400% 400%;
   animation: gradient-intro 15s ease infinite;
-  min-height: 100vh;
 }
 
 .fade-mask {
@@ -12570,7 +12570,7 @@ a {
 
 @media (max-width: 479px) {
   .s-intro-content {
-    min-height: calc(100vh - 60px);
+    min-height: 75vh;
     padding: 0.5rem 0;
   }
   .face-img {
@@ -12597,7 +12597,7 @@ a {
 }
 @media (max-width: 575px) {
   .s-intro-content {
-    min-height: calc(100vh - 80px);
+    min-height: 78vh;
     padding: 1rem 0;
   }
   .s-intro {
@@ -12627,7 +12627,7 @@ a {
 }
 @media (min-width: 576px) and (max-width: 767px) {
   .s-intro-content {
-    min-height: calc(100vh - 100px);
+    min-height: 82vh;
     padding: 1.5rem 0;
   }
 }
@@ -12636,7 +12636,7 @@ a {
     padding: 1rem 0 4rem 0;
   }
   .s-intro-content {
-    min-height: calc(100vh - 120px);
+    min-height: 85vh;
     padding: 2rem 0;
   }
   .call {
