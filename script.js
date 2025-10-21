@@ -1,42 +1,3 @@
-(function(){
-
-    'use strict';
-
-
-    var $projects = $('.projects');
-
-    $projects.isotope({
-        itemSelector: '.item',
-        layoutMode: 'fitRows'
-    });
-
-    $('ul.filters > li').on('click', function(e){
-
-        e.preventDefault();
-
-        var filter = $(this).attr('data-filter');
-
-        $('ul.filters > li').removeClass('active');
-        $(this).addClass('active');
-
-        $projects.isotope({filter: filter});
-
-    });
-
-    $('.card').mouseenter(function(){
-
-        $(this).find('.card-overlay').css({'top': '-100%'});
-        $(this).find('.card-hover').css({'top':'0'});
-
-    }).mouseleave(function(){
-
-        $(this).find('.card-overlay').css({'top': '0'});
-        $(this).find('.card-hover').css({'top':'100%'});
-
-    });
-
-})(jQuery);
-
 // Animación de máquina de escribir para el título
 $(document).ready(function() {
     const titles = ['UX Designer', 'Product Designer', 'Creative Problem Solver', 'Research-Driven', 'Full-Stack Designer', 'Innovative Thinker', 'Adaptable & Agile', 'Passionate Creator', 'Detail-Oriented'];
@@ -46,51 +7,23 @@ $(document).ready(function() {
     console.log('Iniciando animación de máquina de escribir...', $titleElement.length);
     
     if ($titleElement.length > 0) {
-        function typeWriter(text, element, callback) {
-            let i = 0;
-            element.text('');
-            
-            function type() {
-                if (i < text.length) {
-                    element.text(element.text() + text.charAt(i));
-                    i++;
-                    setTimeout(type, 100); // Velocidad de tipeo: 100ms por letra
-                } else if (callback) {
-                    setTimeout(callback, 2000); // Pausa 2 segundos después de completar
-                }
-            }
-            type();
-        }
-        
-        function eraseText(element, callback) {
-            const currentText = element.text();
-            let i = currentText.length;
-            
-            function erase() {
-                if (i > 0) {
-                    element.text(currentText.substring(0, i - 1));
-                    i--;
-                    setTimeout(erase, 50); // Velocidad de borrado: 50ms por letra
-                } else if (callback) {
-                    setTimeout(callback, 500); // Pausa 500ms después de borrar
-                }
-            }
-            erase();
-        }
-        
         function startTypewriterCycle() {
             currentIndex = (currentIndex + 1) % titles.length;
             const nextTitle = titles[currentIndex];
             
             console.log('Escribiendo:', nextTitle);
             
-            // Borrar el texto actual y luego escribir el nuevo
-            eraseText($titleElement, function() {
-                typeWriter(nextTitle, $titleElement, function() {
-                    // Después de escribir, esperar antes del próximo ciclo
-                    setTimeout(startTypewriterCycle, 3000); // Esperar 3 segundos antes del próximo cambio
-                });
-            });
+            // Usar transición directa sin borrado para evitar saltos
+            // Fade out, cambiar texto, fade in
+            $titleElement.css('opacity', '0');
+            
+            setTimeout(function() {
+                $titleElement.text(nextTitle);
+                $titleElement.css('opacity', '1');
+                
+                // Después de mostrar, esperar antes del próximo ciclo
+                setTimeout(startTypewriterCycle, 3000);
+            }, 300); // 300ms para el fade
         }
         
         // Iniciar el primer ciclo después de 3 segundos
@@ -102,136 +35,212 @@ $(document).ready(function() {
     }
 });
 
-// Single Page Application (SPA) System
-$(document).ready(function() {
-    const contentContainer = $('#dynamic-content');
-    const menuItems = $('.navbar-nav a[data-page]');
+// Función para manejar el menú hamburguesa
+function initFullscreenMenu() {
+    const toggler = document.querySelector('.navbar-toggler');
+    const fullscreenMenu = document.getElementById('fullscreenMenu');
+    const navbar = document.querySelector('.navbar');
+    const menuLinks = document.querySelectorAll('.fullscreen-nav-link');
     
-    // Variable para rastrear la página actual
-    let currentPage = null;
-    
-    // Función para cargar contenido dinámicamente
-    function loadContent(page) {
-        console.log('Loading content for page:', page);
-        const contentArea = $('#dynamic-content');
-        const previousPage = currentPage;
+    if (toggler && fullscreenMenu) {
+        console.log('Inicializando menú fullscreen');
         
-        // Actualizar menú activo
-        menuItems.removeClass('active');
-        $(`a[data-page="${page}"]`).addClass('active');
+        // Asegurar estado inicial correcto
+        toggler.classList.add('collapsed');
+        toggler.setAttribute('aria-expanded', 'false');
         
-        // Añadir estado de carga para transición más suave
-        contentArea.addClass('loading');
+        // Escuchar eventos de Bootstrap collapse
+        fullscreenMenu.addEventListener('show.bs.collapse', function() {
+            // Preparar el menú para la animación
+            fullscreenMenu.style.display = 'flex';
+            
+            // Agregar clase inmediatamente para evitar el salto
+            if (navbar) {
+                navbar.classList.add('menu-open');
+            }
+            
+            // Usar requestAnimationFrame para asegurar que el DOM se actualice
+            requestAnimationFrame(() => {
+                toggler.classList.remove('collapsed');
+                document.body.style.overflow = 'hidden';
+            });
+        });
         
-        // Cargar nuevo contenido con AJAX
-        // Detectar si estamos en GitHub Pages o local
-        const basePath = window.location.hostname === 'martinezlizux.github.io' ? '/holaliz/' : './';
-        const fullUrl = `${basePath}content/${page}.html`;
-        console.log('Attempting to load URL:', fullUrl);
+        fullscreenMenu.addEventListener('shown.bs.collapse', function() {
+            // El menú está completamente abierto
+            console.log('Menú fullscreen completamente abierto');
+        });
         
-        $.ajax({
-            url: fullUrl,
-            type: 'GET',
-            success: function(data) {
-                // Pequeño delay para transición más suave
-                setTimeout(function() {
-                    // Reemplazar contenido 
-                    contentArea.html(data)
-                        .removeClass('loading')
-                        .addClass('loaded content-fade-in');
-                    
-                    // Una vez que el contenido se ha cargado completamente, rastrear en GA
-                    if (window.GATracking) {
-                        // Rastrear navegación si hay página previa
-                        if (previousPage && previousPage !== page) {
-                            window.GATracking.trackSPANavigation(previousPage, page);
-                        }
-                        
-                        // Rastrear vista de página virtual
-                        window.GATracking.trackSPAPageView(page);
-                    }
-                    
-                    // Actualizar página actual
-                    currentPage = page;
-                }, 150); // 150ms delay para transición más suave
-            },
-                error: function(xhr, status, error) {
-                    // Log del error para debugging
-                    console.error('Error loading content:', {
-                        page: page,
-                        url: `${basePath}content/${page}.html`,
-                        status: status,
-                        error: error,
-                        xhr: xhr
+        fullscreenMenu.addEventListener('hide.bs.collapse', function() {
+            // Iniciar animación de cierre
+            toggler.classList.add('collapsed');
+        });
+        
+        fullscreenMenu.addEventListener('hidden.bs.collapse', function() {
+            // El menú está completamente cerrado
+            document.body.style.overflow = '';
+            
+            // Usar requestAnimationFrame para suavizar la transición
+            requestAnimationFrame(() => {
+                // Remover clase del navbar después de la animación
+                if (navbar) {
+                    navbar.classList.remove('menu-open');
+                }
+            });
+            
+            console.log('Menú fullscreen completamente cerrado');
+        });
+        
+        // Cerrar menú al hacer click en un enlace
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (fullscreenMenu.classList.contains('show')) {
+                    const bsCollapse = new bootstrap.Collapse(fullscreenMenu, {
+                        toggle: false
                     });
-                    
-                // Mostrar mensaje de error con fade in
-                const errorContent = `<div class="alert alert-danger text-center">
-                    <h4>Error loading content</h4>
-                    <p>Could not load ${page}.html</p>
-                    <small>Status: ${status} | Error: ${error}</small>
-                </div>`;
+                    bsCollapse.hide();
+                }
+            });
+        });
+        
+        console.log('Menú fullscreen configurado correctamente');
+    }
+}
+
+// Smooth scroll navigation system
+function scrollToSection(event, sectionId) {
+    event.preventDefault();
+    
+    // Cerrar el menú fullscreen si está abierto
+    const fullscreenMenu = document.getElementById('fullscreenMenu');
+    if (fullscreenMenu && fullscreenMenu.classList.contains('show')) {
+        const bsCollapse = new bootstrap.Collapse(fullscreenMenu, {
+            toggle: false
+        });
+        bsCollapse.hide();
+        
+        // Resetear el estado del hamburger
+        const toggler = document.querySelector('.navbar-toggler');
+        if (toggler) {
+            toggler.classList.add('collapsed');
+            toggler.setAttribute('aria-expanded', 'false');
+        }
+    }
+    
+    // Scroll suave a la sección correspondiente
+    const targetSection = document.getElementById(sectionId);
+    if (targetSection) {
+        targetSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+        
+        // Rastrear evento en GA
+        if (window.GATracking) {
+            window.GATracking.trackEvent('navigation', `scroll_to_${sectionId}`, `${sectionId}_section`, 'internal_link', 1);
+        }
+    }
+}
+
+// Proyecto grid filters (Isotope)
+$(document).ready(function() {
+    var $projects = $('.projects');
+
+    if ($projects.length > 0) {
+        $projects.isotope({
+            itemSelector: '.item',
+            layoutMode: 'fitRows'
+        });
+
+        $('ul.filters > li').on('click', function(e){
+            e.preventDefault();
+
+            var filter = $(this).attr('data-filter');
+
+            $('ul.filters > li').removeClass('active');
+            $(this).addClass('active');
+
+            $projects.isotope({filter: filter});
+        });
+    }
+
+    $('.card').mouseenter(function(){
+        $(this).find('.card-overlay').css({'top': '-100%'});
+        $(this).find('.card-hover').css({'top':'0'});
+    }).mouseleave(function(){
+        $(this).find('.card-overlay').css({'top': '0'});
+        $(this).find('.card-hover').css({'top':'100%'});
+    });
+});
+
+// Función para animaciones interesantes con efectos escalonados
+function initInterestingAnimations() {
+    const projectContainers = document.querySelectorAll('.project-container');
+    
+    // Preparar animaciones para contenedores y tarjetas
+    projectContainers.forEach(container => {
+        // Agregar clase de animación al contenedor
+        container.classList.add('fade-animation');
+        
+        // Agregar clases de animación a las tarjetas dentro del contenedor
+        const showCards = container.querySelectorAll('.show-card');
+        showCards.forEach(card => {
+            card.classList.add('card-animation');
+        });
+    });
+    
+    // Observer para contenedores principales
+    const containerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Animar el contenedor
+                entry.target.classList.add('visible');
                 
-                contentArea.removeClass('loading')
-                    .addClass('loaded')
-                    .html(errorContent)
-                    .addClass('content-fade-in');
+                // Animar las tarjetas con delay más rápido
+                const showCards = entry.target.querySelectorAll('.show-card');
+                showCards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('visible');
+                    }, 100 + (index * 80)); // Delay más rápido: 100ms, 180ms, 260ms...
+                });
                 
-                // Rastrear error en GA
+                // Dejar de observar para que la animación sea permanente
+                containerObserver.unobserve(entry.target);
+                
+                // Tracking para analytics
                 if (window.GATracking) {
-                    window.GATracking.trackEvent('error', 'ajax_load_failed', page, `${status}: ${error}`, 1);
+                    const projectClass = entry.target.className.match(/p-(\w+)/);
+                    if (projectClass) {
+                        window.GATracking.trackEvent('engagement', 'project_container_viewed', projectClass[1], 'scroll_animation', 1);
+                    }
                 }
             }
         });
-    }
-    
-    // Manejar clicks en el menú
-    menuItems.on('click', function(e) {
-        e.preventDefault();
-        const page = $(this).data('page');
-        
-        // Actualizar URL sin recargar la página
-        history.pushState({page: page}, '', `#${page}`);
-        
-        // Cargar contenido
-        loadContent(page);
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -20px 0px' // Se activa más temprano
     });
     
-    // Manejar navegación del navegador (botón atrás/adelante)
-    window.addEventListener('popstate', function(e) {
-        if (e.state && e.state.page) {
-            const page = e.state.page;
-            loadContent(page);
-            
-            // Rastrear navegación desde historial
-            if (window.GATracking) {
-                window.GATracking.trackEvent('engagement', 'browser_back_navigation', page, page, 1);
-            }
-        } else {
-            // Si no hay estado, cargar la página de trabajo por defecto
-            loadContent('work');
-        }
+    // Observar todos los contenedores
+    projectContainers.forEach(container => {
+        containerObserver.observe(container);
     });
     
-    // Cargar contenido inicial basado en la URL
-    function loadInitialContent() {
-        const hash = window.location.hash.substring(1); // Remover el #
-        const page = hash || 'work'; // Por defecto cargar 'work'
-        
-        // Establecer estado inicial
-        history.replaceState({page: page}, '', `#${page}`);
-        
-        // Cargar contenido inicial
-        loadContent(page);
-        
-        // Rastrear carga inicial de la aplicación
-        if (window.GATracking) {
-            window.GATracking.trackEvent('engagement', 'spa_app_loaded', page, document.title, 1);
-        }
+    console.log(`Animaciones interesantes inicializadas para ${projectContainers.length} proyectos`);
+}
+
+// Initialize tracking and interesting animations when page loads
+$(document).ready(function() {
+    // Rastrear carga inicial del sitio estático
+    if (window.GATracking) {
+        window.GATracking.trackEvent('engagement', 'static_portfolio_loaded', 'home_page', document.title, 1);
     }
     
-    // Inicializar la aplicación
-    loadInitialContent();
+    // Inicializar animaciones interesantes
+    initInterestingAnimations();
     
-    console.log('Sistema SPA inicializado correctamente');
+    // Inicializar menú fullscreen
+    initFullscreenMenu();
+    
+    console.log('Sistema con animaciones y menú fullscreen inicializado correctamente');
 });

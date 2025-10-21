@@ -1,32 +1,24 @@
-// Google Analytics Configuration and Custom Event Tracking
+// Google Analytics Configuration for Static Site
 (function() {
     'use strict';
     
     // Google Analytics ID
     const GA_ID = 'G-X271RK6RRK';
     
-    // Initialize Google Analytics
+    // Initialize Google Analytics for static site
     function initGA() {
         if (typeof gtag !== 'undefined') {
-            // Page view tracking
+            // Standard page view tracking for static site
             gtag('config', GA_ID, {
                 'page_title': document.title,
                 'page_location': window.location.href,
                 'custom_map': {
                     'custom_parameter_1': 'user_type',
-                    'custom_parameter_2': 'page_category'
+                    'custom_parameter_2': 'content_type'
                 }
             });
             
-            // Track page views for SPA-like behavior
-            if (window.history && window.history.pushState) {
-                window.addEventListener('popstate', function() {
-                    gtag('config', GA_ID, {
-                        'page_title': document.title,
-                        'page_location': window.location.href
-                    });
-                });
-            }
+            console.log('Google Analytics initialized for static site');
         }
     }
     
@@ -39,6 +31,8 @@
                 'event_label': eventLabel,
                 'value': value
             });
+            
+            console.log('GA Event tracked:', eventName, eventCategory, eventAction, eventLabel);
         }
     }
     
@@ -69,21 +63,31 @@
         }
     }
     
-    // Track navigation clicks
+    // Track navigation clicks for static site
     function trackNavigation() {
-        const navLinks = document.querySelectorAll('a[href]');
+        // Track scroll-to-section navigation (internal anchors)
+        const navLinks = document.querySelectorAll('a[href^="#"], .fullscreen-nav-link');
         navLinks.forEach(link => {
             link.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
                 const text = this.textContent.trim();
                 
-                // Track internal navigation
-                if (href.startsWith('./') || href.startsWith('/') || href.includes('.html')) {
-                    trackEvent('navigation', 'engagement', 'internal_link', text, 1);
+                if (href && href.startsWith('#')) {
+                    const sectionName = href.replace('#', '');
+                    trackEvent('navigation', 'engagement', 'scroll_to_section', sectionName, 1);
                 }
+            });
+        });
+        
+        // Track external links
+        const externalLinks = document.querySelectorAll('a[href^="http"]');
+        externalLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
                 
-                // Track external links
-                if (href.startsWith('http') && !href.includes(window.location.hostname)) {
+                // Track external links (not same domain)
+                if (!href.includes(window.location.hostname)) {
+                    const linkText = this.textContent.trim() || 'External Link';
                     trackEvent('navigation', 'engagement', 'external_link', href, 1);
                 }
                 
@@ -93,43 +97,58 @@
                 }
             });
         });
-    }
-    
-    // Track portfolio project views
-    function trackPortfolioViews() {
-        const portfolioLinks = document.querySelectorAll('a[href*="portfolio/"]');
+        
+        // Track portfolio project clicks
+        const portfolioLinks = document.querySelectorAll('a[href*="portfolio/"], a[href*=".html"]');
         portfolioLinks.forEach(link => {
             link.addEventListener('click', function() {
-                const projectName = this.textContent.trim();
+                const href = this.getAttribute('href');
+                const projectName = this.textContent.trim() || 'Portfolio Project';
                 trackEvent('portfolio', 'engagement', 'project_view', projectName, 1);
             });
         });
     }
     
-    // Track scroll depth
-    function trackScrollDepth() {
-        let maxScroll = 0;
-        let scrollTracked = false;
+    // Track section views using Intersection Observer
+    function trackSectionViews() {
+        const sections = document.querySelectorAll('#intro, #about, #work, #resume, #contact');
         
-        window.addEventListener('scroll', function() {
-            const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+        if (sections.length > 0) {
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const sectionId = entry.target.id;
+                        const sectionName = sectionId.charAt(0).toUpperCase() + sectionId.slice(1);
+                        trackEvent('section_view', 'engagement', 'section_visited', sectionName, 1);
+                    }
+                });
+            }, {
+                threshold: 0.5, // Track when 50% of section is visible
+                rootMargin: '0px 0px -100px 0px'
+            });
             
-            if (scrollPercent > maxScroll) {
-                maxScroll = scrollPercent;
-                
-                // Track scroll milestones
-                if (scrollPercent >= 25 && !scrollTracked) {
-                    trackEvent('scroll', 'engagement', 'scroll_depth', '25%', 25);
-                    scrollTracked = true;
-                } else if (scrollPercent >= 50) {
-                    trackEvent('scroll', 'engagement', 'scroll_depth', '50%', 50);
-                } else if (scrollPercent >= 75) {
-                    trackEvent('scroll', 'engagement', 'scroll_depth', '75%', 75);
-                } else if (scrollPercent >= 90) {
-                    trackEvent('scroll', 'engagement', 'scroll_depth', '90%', 90);
-                }
-            }
-        });
+            sections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+        }
+    }
+    
+    // Track fullscreen menu usage
+    function trackMenuUsage() {
+        const menuToggler = document.querySelector('.navbar-toggler');
+        const fullscreenMenu = document.getElementById('fullscreenMenu');
+        
+        if (menuToggler && fullscreenMenu) {
+            // Track menu open
+            fullscreenMenu.addEventListener('show.bs.collapse', function() {
+                trackEvent('menu', 'engagement', 'fullscreen_menu_open', 'hamburger_click', 1);
+            });
+            
+            // Track menu close
+            fullscreenMenu.addEventListener('hide.bs.collapse', function() {
+                trackEvent('menu', 'engagement', 'fullscreen_menu_close', 'menu_close', 1);
+            });
+        }
     }
     
     // Track time on page
@@ -155,10 +174,12 @@
         initGA();
         trackFormEvents();
         trackNavigation();
-        trackPortfolioViews();
-        trackScrollDepth();
+        trackSectionViews();
+        trackMenuUsage();
         trackTimeOnPage();
         trackContactSuccess();
+        
+        console.log('Google Analytics tracking initialized for static site');
     }
     
     // Initialize when DOM is ready
@@ -168,49 +189,9 @@
         initTracking();
     }
     
-    // SPA Page Tracking
-    function trackSPAPageView(page, title) {
-        if (typeof gtag !== 'undefined') {
-            // Construct virtual page path
-            const virtualPath = `/#${page}`;
-            const pageTitle = title || `${page.charAt(0).toUpperCase() + page.slice(1)} - Lizbeth Martinez`;
-            
-            console.log('Tracking SPA page view:', virtualPath, pageTitle);
-            
-            // Track virtual page view
-            gtag('config', GA_ID, {
-                page_title: pageTitle,
-                page_location: window.location.origin + virtualPath,
-                page_path: virtualPath
-            });
-            
-            // Also track as a custom event
-            gtag('event', 'page_view', {
-                page_title: pageTitle,
-                page_location: window.location.origin + virtualPath,
-                page_path: virtualPath,
-                content_group1: 'SPA_Navigation'
-            });
-        }
-    }
-    
-    // Track SPA navigation events
-    function trackSPANavigation(fromPage, toPage) {
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'spa_navigation', {
-                event_category: 'SPA',
-                event_label: `${fromPage} -> ${toPage}`,
-                custom_parameter_1: 'spa_user',
-                custom_parameter_2: 'navigation'
-            });
-        }
-    }
-
     // Export functions for external use
     window.GATracking = {
         trackEvent: trackEvent,
-        trackSPAPageView: trackSPAPageView,
-        trackSPANavigation: trackSPANavigation,
         trackContactSuccess: function() {
             trackEvent('contact_form', 'conversion', 'form_submit_success', 'contact_form', 1);
         }

@@ -109,3 +109,269 @@ a {
     font-weight: 600;
     font-style: normal;
 }
+
+// Hamburger customizado
+.navbar-toggler {
+    border: none;
+    padding: 8px; // Padding consistente
+    background: transparent;
+    position: relative;
+    z-index: 10000; // Más alto que el fullscreen menu (9999)
+    width: 44px; // Ancho ligeramente mayor para mejor área de click
+    height: 44px; // Altura ligeramente mayor para mejor área de click
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0; // Sin margen adicional
+    
+    &:focus {
+        box-shadow: none;
+        outline: none;
+    }
+    
+    &:hover {
+        background: transparent; // Sin background al hover
+    }
+    
+    .hamburger-line {
+        display: block;
+        width: 40px;
+        height: 5px;
+        background-color: var(--color-Type-Secondary-Label);
+        margin: 3px 0; // Espaciado uniforme entre líneas
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        border-radius: 2px;
+        transform-origin: center; // Punto de origen fijo para rotaciones
+        position: relative; // Para mejor control de posicionamiento
+    }
+    
+    // Animación del hamburger cuando está activo (se convierte en X)
+    &:not(.collapsed) {
+        // Cambiar color de las líneas cuando el menú está abierto
+        .hamburger-line {
+            background-color: white;
+        }
+        
+        // Línea superior: rotar 45° hacia la derecha
+        .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+        
+        // Línea central: desaparecer completamente
+        .hamburger-line:nth-child(2) {
+            opacity: 0;
+            transform: scale(0);
+        }
+        
+        // Línea inferior: rotar -45° hacia la izquierda
+        .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -6px);
+        }
+    }
+}
+
+// Asegurar que el navbar se mantenga visible cuando el menú está abierto
+.navbar {
+    position: relative;
+    z-index: 10001; // Asegurar que todo el navbar esté por encima del menú
+    min-height: 70px; // Altura fija para evitar saltos
+    height: 70px; // Altura específica
+    display: flex;
+    align-items: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background: transparent; // Mismo background siempre
+    
+    // Container del navbar
+    .container,
+    .container-fluid {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 100%;
+        margin: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    // Brand/Logo area
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+    }
+    
+    // Cuando el menú fullscreen está abierto, solo cambiar la posición
+    &.menu-open {
+        top: 0;
+        right: 0;
+        left: 0;
+        position: relative;
+        z-index: 10001;
+        min-height: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        background: transparent;
+        // Todos los demás estilos permanecen iguales para evitar el salto
+    }
+}
+
+// Menú fullscreen
+.fullscreen-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, 
+        var(--Primitives-Colours-Morado-800) 0%, 
+        var(--Primitives-Colours-Morado-900) 100%);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    // Transiciones suaves para entrada y salida
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    
+    // Estado cuando el menú está abierto (show class de Bootstrap)
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+    }
+    
+    // Overlay backdrop
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+    
+    &.show::before {
+        opacity: 1;
+    }
+    
+    .fullscreen-menu-content {
+        text-align: center;
+        color: white;
+        transform: translateY(30px);
+        transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    
+    &.show .fullscreen-menu-content {
+        transform: translateY(0);
+    }
+    
+    .menu-center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+}
+
+// Navigation items en fullscreen
+.fullscreen-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    
+    .fullscreen-nav-item {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    
+    .fullscreen-nav-link {
+        font-size: 2.5rem;
+        font-weight: 300;
+        color: white;
+        text-decoration: none;
+        font-family: "Libre Franklin", sans-serif;
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        display: block;
+        padding: 0.5rem 2rem;
+        
+        &:hover {
+            color: var(--Primitives-Colours-Amarillo-400);
+            transform: scale(1.05);
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+    }
+}
+
+// Animaciones cuando el menú está visible
+.fullscreen-menu.show {
+    .fullscreen-nav-item {
+        opacity: 1;
+        transform: translateY(0);
+        
+        &:nth-child(1) { transition-delay: 0.1s; }
+        &:nth-child(2) { transition-delay: 0.2s; }
+        &:nth-child(3) { transition-delay: 0.3s; }
+    }
+}
+
+// Social buttons en fullscreen
+.fullscreen-social {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    
+    .social-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        font-size: 1.5rem;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        backdrop-filter: blur(10px);
+        
+        &:hover {
+            background: var(--Primitives-Colours-Amarillo-400);
+            color: var(--Primitives-Colours-Morado-900);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+    }
+}
+
+// Animación para social buttons cuando el menú está visible
+.fullscreen-menu.show .fullscreen-social {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.4s;
+}
+
+// Animaciones personalizadas para el menú fullscreen
+// Usamos transiciones en lugar de keyframes para mayor control y suavidad
