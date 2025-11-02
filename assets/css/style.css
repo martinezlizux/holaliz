@@ -13457,6 +13457,39 @@ ul.filters > li.active > a {
     border-radius: 8px;
   }
 }
+.s-playground {
+  background: var(--Primitives-Colours-Morado-500);
+}
+.s-playground .section-title {
+  margin-bottom: 1rem;
+  color: #fff;
+}
+.s-playground .playcard {
+  aspect-ratio: 1/1;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 6px;
+  background: transparent;
+  display: block;
+  position: relative;
+}
+.s-playground .playcard video, .s-playground .playcard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.s-playground .playcard .caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--Primitives-Colours-Morado-800);
+  color: #fff;
+  padding: 8px;
+  text-align: left;
+  font-size: 1rem;
+}
+
 .bg-pink {
   background-color: #FEA7BA;
 }
