@@ -12,10 +12,11 @@
   }
 
   .playcard {
+    /* playground thumbnails should be square */
     aspect-ratio: 1 / 1;
     width: 100%;
     overflow: hidden;
-    border-radius: 6px;
+    border-radius: 12px;
     background: transparent;
     display: block;
     position: relative;
@@ -25,6 +26,8 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      /* inherit the container radius so posters and videos are clipped */
+      border-radius: inherit;
     }
     .caption {
       position: absolute;

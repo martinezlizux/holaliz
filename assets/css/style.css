@@ -13283,15 +13283,26 @@ ul.filters > li.active > a {
   transition: all 0.3s ease-out;
 }
 .s-project-grid .show-card.card-photo {
-  padding: 60px 40px 60px 60px;
+  padding: 0;
 }
 .s-project-grid .show-card.card-photo .box {
   overflow: hidden;
   border-radius: 20px;
+  /* prefer a horizontal (landscape) media presentation */
+  aspect-ratio: 16/9;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 .s-project-grid .show-card.card-photo img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  /* ensure images inherit the box's radius and are clipped */
+  border-radius: inherit;
+  /* also prefer natural landscape sizing where possible */
+  aspect-ratio: 16/9;
 }
 .s-project-grid .show-card.card-info {
   padding: 60px 20px 60px 20px;
@@ -13300,10 +13311,11 @@ ul.filters > li.active > a {
   .s-project-grid .show-card {
     width: 50%;
     height: auto;
-    min-height: 70vh;
+    /* allow aspect-ratio to determine height for media boxes */
+    min-height: 0;
   }
   .s-project-grid .show-card.card-photo {
-    padding: 100px 80px 100px 100px;
+    padding: 0;
   }
   .s-project-grid .show-card.card-info {
     padding: 100px 100px 100px 60px;
@@ -13320,13 +13332,11 @@ ul.filters > li.active > a {
   border-radius: 20px;
   background-color: none;
   width: 100%;
-  height: auto;
-  min-height: 400px;
-}
-@media (min-width: 992px) {
-  .s-project-grid .project-container.p-rewards .box {
-    height: 600px;
-  }
+  /* strictly prefer landscape aspect for project media */
+  aspect-ratio: 16/9;
+  max-height: 600px; /* prevent overly tall containers on large screens */
+  overflow: hidden;
+  display: block;
 }
 .s-project-grid .project-container.p-drivers .highlight {
   background-color: var(--Primitives-Colours-Naranja-500);
@@ -13335,13 +13345,10 @@ ul.filters > li.active > a {
 .s-project-grid .project-container.p-drivers .box {
   border-radius: 20px;
   width: 100%;
-  height: auto;
-  min-height: 400px;
-}
-@media (min-width: 992px) {
-  .s-project-grid .project-container.p-drivers .box {
-    height: 600px;
-  }
+  aspect-ratio: 16/9;
+  max-height: 600px;
+  overflow: hidden;
+  display: block;
 }
 .s-project-grid .project-container.p-research {
   border-top: #f3f3f3 1px solid;
@@ -13353,13 +13360,10 @@ ul.filters > li.active > a {
 .s-project-grid .project-container.p-research .box {
   border-radius: 20px;
   width: 100%;
-  height: auto;
-  min-height: 400px;
-}
-@media (min-width: 992px) {
-  .s-project-grid .project-container.p-research .box {
-    height: 600px;
-  }
+  aspect-ratio: 16/9;
+  max-height: 600px;
+  overflow: hidden;
+  display: block;
 }
 .s-project-grid .project-container.p-system {
   border-top: #f3f3f3 1px solid;
@@ -13371,13 +13375,10 @@ ul.filters > li.active > a {
 .s-project-grid .project-container.p-system .box {
   border-radius: 20px;
   width: 100%;
-  height: auto;
-  min-height: 400px;
-}
-@media (min-width: 992px) {
-  .s-project-grid .project-container.p-system .box {
-    height: 600px;
-  }
+  aspect-ratio: 16/9;
+  max-height: 600px;
+  overflow: hidden;
+  display: block;
 }
 
 .s-gallery-grid {
@@ -13454,7 +13455,7 @@ ul.filters > li.active > a {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 12px;
   }
 }
 .s-playground {
@@ -13465,10 +13466,11 @@ ul.filters > li.active > a {
   color: #fff;
 }
 .s-playground .playcard {
+  /* playground thumbnails should be square */
   aspect-ratio: 1/1;
   width: 100%;
   overflow: hidden;
-  border-radius: 6px;
+  border-radius: 12px;
   background: transparent;
   display: block;
   position: relative;
@@ -13478,6 +13480,8 @@ ul.filters > li.active > a {
   height: 100%;
   object-fit: cover;
   display: block;
+  /* inherit the container radius so posters and videos are clipped */
+  border-radius: inherit;
 }
 .s-playground .playcard .caption {
   position: absolute;

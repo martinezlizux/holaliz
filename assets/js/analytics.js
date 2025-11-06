@@ -17,9 +17,40 @@
                     'custom_parameter_2': 'content_type'
                 }
             });
+            // Explicitly send a page_view event so we have a single controlled initial view
+            try {
+                gtag('event', 'page_view', {
+                    'page_title': document.title,
+                    'page_location': window.location.href,
+                    'send_to': GA_ID
+                });
+            } catch (e) {
+                // if gtag isn't ready for some reason, the retry wrapper will try again
+                console.warn('Failed to send explicit page_view:', e);
+            }
             
             console.log('Google Analytics initialized for static site');
         }
+    }
+
+    // Retry initGA until gtag is available (prevents losing the initial config if gtag is slow)
+    function initGAWithRetry(retries = 10, delay = 500) {
+        if (typeof gtag !== 'undefined') {
+            initGA();
+            return;
+        }
+
+        let attempts = 0;
+        const t = setInterval(() => {
+            attempts++;
+            if (typeof gtag !== 'undefined') {
+                clearInterval(t);
+                initGA();
+            } else if (attempts >= retries) {
+                clearInterval(t);
+                console.warn('GA init skipped: gtag not available after retries');
+            }
+        }, delay);
     }
     
     // Track custom events
@@ -171,7 +202,8 @@
     
     // Initialize all tracking when DOM is ready
     function initTracking() {
-        initGA();
+        // Try to initialize GA but don't block other trackers — retry if gtag isn't loaded yet
+        initGAWithRetry();
         trackFormEvents();
         trackNavigation();
         trackSectionViews();
