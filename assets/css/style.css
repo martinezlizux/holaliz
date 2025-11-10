@@ -13253,6 +13253,10 @@ ul.filters > li.active > a {
 .s-project-grid .project-container:nth-child(4).fade-animation.visible {
   transition-delay: 0.2s;
 }
+.s-project-grid .tag {
+  font-weight: 800;
+  color: var(--color-Surface-Primary-Darker);
+}
 .s-project-grid .work-content {
   max-width: 800px;
   margin: 0 auto;
@@ -13318,15 +13322,20 @@ ul.filters > li.active > a {
     padding: 0;
   }
   .s-project-grid .show-card.card-info {
-    padding: 100px 100px 100px 60px;
+    padding: 100px 50px 100px 60px;
   }
+}
+.s-project-grid .project-container .highlight {
+  font-weight: 600;
+  background: radial-gradient(circle, #3D4CF4, #ff2862);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 2px solid #b07df0;
+  border-radius: 8px;
+  padding: 0px 6px;
 }
 .s-project-grid .project-container.p-rewards {
   border-top: #f3f3f3 1px solid;
-}
-.s-project-grid .project-container.p-rewards .highlight {
-  background-color: #FFFF00;
-  padding: 0 5px;
 }
 .s-project-grid .project-container.p-rewards .box {
   border-radius: 20px;
@@ -13337,10 +13346,6 @@ ul.filters > li.active > a {
   max-height: 600px; /* prevent overly tall containers on large screens */
   overflow: hidden;
   display: block;
-}
-.s-project-grid .project-container.p-drivers .highlight {
-  background-color: var(--Primitives-Colours-Naranja-500);
-  padding: 0 5px;
 }
 .s-project-grid .project-container.p-drivers .box {
   border-radius: 20px;
@@ -13353,10 +13358,6 @@ ul.filters > li.active > a {
 .s-project-grid .project-container.p-research {
   border-top: #f3f3f3 1px solid;
 }
-.s-project-grid .project-container.p-research .highlight {
-  background-color: var(--Primitives-Colours-Azul-600);
-  padding: 0 5px;
-}
 .s-project-grid .project-container.p-research .box {
   border-radius: 20px;
   width: 100%;
@@ -13367,10 +13368,6 @@ ul.filters > li.active > a {
 }
 .s-project-grid .project-container.p-system {
   border-top: #f3f3f3 1px solid;
-}
-.s-project-grid .project-container.p-system .highlight {
-  background-color: var(--Primitives-Colours-Morado-300);
-  padding: 0 5px;
 }
 .s-project-grid .project-container.p-system .box {
   border-radius: 20px;
