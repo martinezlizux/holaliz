@@ -13254,8 +13254,8 @@ ul.filters > li.active > a {
   transition-delay: 0.2s;
 }
 .s-project-grid .tag {
-  font-weight: 800;
-  color: var(--color-Surface-Primary-Darker);
+  font-weight: 600;
+  color: var(--Primitives-Colours-Morado-700);
 }
 .s-project-grid .work-content {
   max-width: 800px;
