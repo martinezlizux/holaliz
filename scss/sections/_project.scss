@@ -151,13 +151,39 @@
 }
 
 .box-Impact{
+    position: relative;
     color: #333;
-    background-color: #fefee4;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,0.06);
     border-radius: 16px;
-    margin-top: 20px;
+    margin-top: 28px;
     margin-bottom: 20px;
-    padding: 24px 30px 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, .1);
+    padding: 28px 30px 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
+    text-align: left;
+    overflow: visible;
+
+    .impact-icon{
+        position: absolute;
+        top: -24px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: var(--Primitives-Colours-Morado-500, #6c5ce7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+        font-size: 1.05rem;
+    }
+
+    p.bold{ 
+        margin-top: 12px;
+        margin-bottom: 8px;
+    }
 }
 
 .box-Challenge{
