@@ -107,48 +107,41 @@
 
    <!--//////////////////// Navbar Section///////////////////// -->
 
-   <nav class="navbar navbar-expand-lg menu  fixed-top bg-white">
-        <div class="container">
-            <a class="navbar-brand p-2 logo-nav">Liz Martinez</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="btn nav-link active" href="../index.html">Work</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../aboutme.html">About</a>
-            </li>
-            
-            <li class="nav-item">
-                <a class="btn nav-link " href="../resume.html" >Resume</a>
-            </li>
-            <li class="nav-item">
-                <a class="btn nav-link"  href="https://www.linkedin.com/in/lizbethmartinezux/ " target="_blank"> <i class="fa-brands fa-linkedin"></i></a>
-            </li>
-            <li class="nav-item">
-                <a class="btn nav-link" href="https://zeeg.me/martinezlizux " target="_blank"><i class="fa-solid fa-calendar"></i></a>
-            </li>
-            <li class="nav-item">
-                <a class="btn nav-link" href="mailto:martinez.liz.ux@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
-            </li>
-            
-            </ul>
-            
-        </div>
-        </div>
+    <nav class="project-nav menu">
+            <div class="project-nav__inner">
+                <a class="project-back" href="../index.html">
+                    <i class="fa-solid fa-chevron-left"></i>
+                    <span>Back</span>
+                </a>
+                <div class="project-nav__wrapper">
+                    <ul class="project-nav-list">
+                        <li class="nav-item">
+                            <a class="btn nav-link " href="#research">Research</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#findings">Findings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn nav-link" href="#mapping">Mapping</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn nav-link" href="#design">Design and Testing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn nav-link" href="#handoff">Handoff</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
     </nav>
+
+
 
     
 
     <div class="s-proyect">
 
-        <!-- PROJECT IMAGE -->
-        <div class="container-fluid bg-banner">
-            <img class="img-fluid" src="../images/projects/BDDrivers/thumb-deep.png" alt="BD Drivers App">
-        </div>
+        
 
         <!-- PROJECT HEADING -->
         <div class="container col-11 col-md-9 col-xl-9 py-5 border-bottom">
@@ -174,6 +167,11 @@
                 </div>
             </div>
 
+        </div>
+
+        <!-- PROJECT IMAGE -->
+        <div class="container-fluid bg-banner">
+            <img class="img-fluid" src="../images/projects/BDDrivers/thumb-deep.png" alt="BD Drivers App">
         </div>
 
         
@@ -204,7 +202,7 @@
             </section>
 
             <!-- Getting Started: Listening Before Designing-->
-            <section class="py-5">
+            <section class="py-5" id="research">
                 <div class="container ">
                     <div class="p-content">
                         <h2 class="bold txt-purple lily-regular title">Listening Before Designing</h2>
@@ -335,7 +333,7 @@
             </section>
 
             <!-- From Insights to Solutions-->
-            <section class="py-5">
+            <section class="py-5" id="findings">
                 <div class="container ">
                 
                     <!-- FINDINGS-->
@@ -383,7 +381,7 @@
             </section>
 
             <!-- Mapping the Chaos-->
-            <section class="py-5">
+            <section class="py-5" id="mapping">
                 <div class="container  ">
                     <div class="p-content">
                         <h2 class="bold txt-purple lily-regular title " >Mapping the Chaos</h2>
@@ -402,7 +400,7 @@
 
         
             <!-- Redesigning the Right Way-->
-            <section class="py-5">
+            <section class="py-5" id="design">
                 <div class="container">
                     <div class="p-content">
                         <h2 class="bold txt-purple lily-regular title" >Redesigning the Right Way</h2>
@@ -445,7 +443,7 @@
             </section>
 
             <!-- Handoff with Confidence-->
-            <section class="py-5">
+            <section class="py-5" id="handoff">
                 <div class="container">
                     <!--  Handoff with Confidence-->
                     <div class="sub-section py-3 mt-4">

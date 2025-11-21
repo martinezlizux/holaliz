@@ -66,47 +66,41 @@
 
    <!--//////////////////// Navbar Section///////////////////// -->
 
-   <nav class="navbar navbar-expand-lg menu  fixed-top bg-white">
-    <div class="container">
-        <a class="navbar-brand p-2 logo-nav">Liz Martinez</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="btn nav-link active" href="../index.html">Work</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../aboutme.html">About</a>
-          </li>
-          
-          <li class="nav-item">
-            <a class="btn nav-link " href="../resume.html" target="_blank">Resume</a>
-          </li>
-          <li class="nav-item">
-            <a class="btn nav-link"  href="https://www.linkedin.com/in/lizbethmartinezux/ " target="_blank"> <i class="fa-brands fa-linkedin"></i></a>
-          </li>
-          <li class="nav-item">
-            <a class="btn nav-link" href="https://zeeg.me/martinezlizux " target="_blank"><i class="fa-solid fa-calendar"></i></a>
-          </li>
-          <li class="nav-item">
-            <a class="btn nav-link" href="mailto:martinez.liz.ux@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
-          </li>
-          
-        </ul>
-        
-      </div>
-    </div>
-</nav>
+    <nav class="project-nav menu">
+        <div class="project-nav__inner">
+            <a class="project-back" href="../index.html">
+                <i class="fa-solid fa-chevron-left"></i>
+                <span>Back</span>
+            </a>
+            <div class="project-nav__wrapper">
+                <ul class="project-nav-list">
+                    <li class="nav-item">
+                        <a class="btn nav-link " href="#research">Research</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#findings">Findings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn nav-link" href="#testing"> Hypothesis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn nav-link" href="#checkout">Iteration in Checkout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn nav-link" href="#impact">Impact</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
 
 
 
     <div class="s-proyect ">
-        <!-- PROJECT IMAGE -->
-        <div class="container-fluid bg-banner">
-            <img class="img-fluid" src="../images/projects/Rewards/thumb-deep.png" alt="Rewards Loyalty Logged-In">
-        </div>
+        
         <!-- PROJECT HEADING -->
         <div class="container col-11 col-md-9 col-xl-9 py-5 border-bottom">
             <div class="p-heading mt-4">
@@ -134,8 +128,12 @@
             
         </div>
 
-        
+        <!-- PROJECT IMAGE -->
+        <div class="container-fluid bg-banner">
+            <img class="img-fluid" src="../images/projects/Rewards/thumb-deep.png" alt="Rewards Loyalty Logged-In">
+        </div>
 
+        
         <!-- SECCIONES -->
         <div class="wrapper container col-11 col-md-9 col-xl-7 py-5">
 
@@ -179,7 +177,7 @@
              <div class="divider my-3"></div>
 
              <!--Digging Into User Behavior-->
-             <section class="py-5">
+             <section class="py-5" id="research">
                 <div class="container">
                     <div class="p-content">
                         <h2 class="bold txt-purple lily-regular title">Digging Into User Behavior</h2>
@@ -206,7 +204,7 @@
              <div class="divider my-3"></div>
 
             <!--  Findings-->
-             <section class="py-5">
+             <section class="py-5" id="findings">
                 <div class="container">
                     <div class="p-content">
                         <h2 class="bold txt-purple lily-regular title">Findings</h2>
@@ -250,7 +248,7 @@
              <div class="divider py-5"></div>
 
              <!--  Hypothesis & Testing: Designing for Clarity and Motivation-->
-             <section class="py-5 ">
+             <section class="py-5 " id="testing">
                 <div class="container">
                     <div class="p-content">
                         <h2 class="bold txt-purple lily-regular title"> Hypothesis & Testing: Designing for Clarity and Motivation</h2>
@@ -333,7 +331,7 @@
              <div class="divider my-3"></div>
 
              <!-- Elevating the Checkout Experience-->
-            <section class="py-5">
+            <section class="py-5" id="checkout">
                 <div class="container">
                     <div class="p-content">
                         <h2 class="bold txt-purple lily-regular title"> Elevating the Checkout Experience</h2>
@@ -392,7 +390,7 @@
             <div class="divider my-5"></div>
 
             <!-- Impact-->
-            <section class="py-5">
+            <section class="py-5" id="impact">
                 <div class="container">
                     <div class="p-content">
                         <h2 class="bold txt-purple lily-regular title">The Impact</h2>
