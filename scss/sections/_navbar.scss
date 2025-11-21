@@ -21,18 +21,32 @@
         text-align: center;
     }
 
-    a{
-        text-transform: capitalize;
-        font-family: 'Alegreya Sans', sans-serif;
-        font-weight: 400;
-        font-size: 1.2rem;
-        color: var(--color-Type-Secondary-Label);
-        border-radius: 27px;
-        padding: 8px 18px;
-
-       
+    .logo-svg{
+        width: 65%;
     }
 
+    .logo-svg .logo-arrow {
+        transform-origin: center;
+        transform-box: fill-box;
+        transition: transform 0.25s ease;
+    }
+
+    .logo-nav:hover .logo-arrow,
+    .logo-svg:hover .logo-arrow {
+        animation: arrow-nudge 0.45s ease;
+    }
+
+    @keyframes arrow-nudge {
+        0% {transform: translate(0, 0);}
+        50% {transform: translate(6px, -10px) scale(1.5);}
+        100% {transform: translate(0, 0);}
+    }
+
+    
+    
+
+    
+     
   
 
     .nav-link.active{
