@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <defs>
+    <linearGradient id="vasstelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff7ee"/>
+      <stop offset="100%" stop-color="#e4f4ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" fill="url(#vasstelGrad)" rx="32" ry="32"/>
+  <rect x="40" y="40" width="880" height="460" rx="24" ry="24" fill="#ffffff" opacity="0.7"/>
+  <path d="M120 350 Q200 250 280 290 T440 300 T600 250 T760 320 T840 260" fill="none" stroke="#e0a15f" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+  <path d="M160 360 L200 300 L240 360" fill="#5a7c5b" opacity="0.5"/>
+  <circle cx="680" cy="210" r="45" fill="#ffd07e" opacity="0.8"/>
+  <text x="50%" y="50%" text-anchor="middle" fill="#5c3d1e" font-family="Open Sans, Arial, sans-serif" font-size="34px" font-weight="600">Placeholder Image</text>
+  <text x="50%" y="58%" text-anchor="middle" fill="#9b7755" font-family="Open Sans, Arial, sans-serif" font-size="20px">Vasstel Point Brewing Preview</text>
+</svg>

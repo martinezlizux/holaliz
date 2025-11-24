@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f3ecff"/>
+      <stop offset="100%" stop-color="#d9f5ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" fill="url(#grad)" rx="32" ry="32"/>
+  <rect x="40" y="40" width="880" height="460" rx="24" ry="24" fill="#ffffff" opacity="0.7"/>
+  <path d="M120 360 L220 250 L300 330 L380 260 L480 360 L560 280 L640 350 L740 260 L840 360" fill="none" stroke="#c3b0ff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+  <circle cx="660" cy="200" r="55" fill="#ffdca8" opacity="0.8"/>
+  <text x="50%" y="50%" text-anchor="middle" fill="#6a4cc3" font-family="Open Sans, Arial, sans-serif" font-size="34px" font-weight="600">Placeholder Image</text>
+  <text x="50%" y="58%" text-anchor="middle" fill="#9b8dcf" font-family="Open Sans, Arial, sans-serif" font-size="20px">Huevo Carranco Concept Preview</text>
+</svg>

@@ -8,13 +8,50 @@
         background-size: 400% 400%;
         animation: gradient-takeAway 15s ease infinite;
         height: auto;
-        padding-top: 40px;
+        // padding-top: 40px;
     }
 
     .img-tool{  width: 12%}
-          
+         
 }
 
+.case-section-media{
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    max-width: 960px;
+
+    img{
+        width: 100%;
+        border-radius: 32px;
+        box-shadow: 0 30px 90px rgba(50, 29, 112, 0.15);
+        transform-origin: center;
+        opacity: 0;
+        transform: translateY(40px) scale(0.96);
+        animation: caseImageReveal 0.9s ease-out forwards;
+        transition: transform 0.45s ease, box-shadow 0.45s ease;
+    }
+
+    &:hover img{
+        transform: translateY(-6px) scale(1.01);
+        box-shadow: 0 40px 120px rgba(50, 29, 112, 0.2);
+    }
+}
+
+@keyframes caseImageReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.96);
+    }
+    70% {
+        opacity: 1;
+        transform: translateY(-4px) scale(1.01);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
 
 
 

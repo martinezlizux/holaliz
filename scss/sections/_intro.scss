@@ -4,17 +4,39 @@
 .s-intro{
     padding: 1rem 0 0 0;
     width: 100%;
-    height: 85vh;
+    min-height: 90vh;
     overflow: visible;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
 .s-intro-content {
-    min-height: 50vh; // 80% del viewport para mostrar parte de la siguiente sección
-    max-height: 50vh; // Límite máximo de altura
-    height: auto;
+    margin-top: 5%;
+    width: 100%;
+    max-width: 1200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex: 1 1 auto;
+    padding: 2rem 1rem;
+    opacity: 0;
+    transform: translateY(35px) scale(0.98);
+    animation: introFadeUp 0.85s ease-out forwards 0.25s;
+}
+
+@keyframes introFadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(35px) scale(0.98);
+    }
+    70% {
+        opacity: 1;
+        transform: translateY(-3px) scale(1.01);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .logo-name{
@@ -46,6 +68,7 @@
     align-items: center;
     padding: 1.5rem;
     margin: 0 auto 1rem;
+    --hero-icon-offset-scale: 1.3;
 }
 
 .hero-photo-wrapper {
@@ -116,19 +139,19 @@
 
 .hero-icon {
     position: absolute;
-    width: 72px;
-    height: 72px;
-    border-radius: 26px;
-    // background: rgba(255, 255, 255, 0.95);
-    // box-shadow: 0 20px 45px rgba(30, 18, 63, 0.2);
+    --hero-icon-art-size: 76px;
+    --hero-icon-wrapper-size: calc(var(--hero-icon-art-size) + 24px);
+    width: var(--hero-icon-wrapper-size);
+    height: var(--hero-icon-wrapper-size);
+    border-radius: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: transform 0.35s ease, box-shadow 0.35s ease;
-    // overflow: hidden;
     isolation: isolate;
     cursor: pointer;
-    --hero-icon-art-size: 48px;
+    // background: rgba(255, 255, 255, 0.95);
+    // box-shadow: 0 20px 45px rgba(30, 18, 63, 0.2);
     background-image: var(--hero-icon-base);
     background-repeat: no-repeat;
     background-position: center;
@@ -153,17 +176,14 @@
     &::after {
         content: attr(data-label);
         position: absolute;
-        top: -14px;
-        right: -1px;
-        padding: 0.2rem 0.6rem;
-        font-size: 0.7rem;
+        top: calc(-0.2 * var(--hero-icon-wrapper-size));
+        right: calc(0 * var(--hero-icon-wrapper-size));
+        padding: 0.25rem 0.65rem;
+        font-size: clamp(0.7rem, 0.8vw, 0.9rem);
         font-weight: 700;
-        // text-transform: uppercase;
         letter-spacing: 0.05em;
-        // background: #fff;
         color: #5c39c6;
         border-radius: 999px;
-        // box-shadow: 0 10px 25px rgba(92, 57, 198, 0.25);
         opacity: 0;
         transform: translateY(-8px);
         transition: opacity 0.2s ease, transform 0.2s ease;
@@ -189,66 +209,92 @@
 }
 
 .hero-icon--figma {
-    top: 140px;
-    left: -120px;
+    top: calc(var(--hero-icon-offset-scale) * (140px + 0.6 * (var(--hero-icon-art-size) - 76px)));
+    left: calc(var(--hero-icon-offset-scale) * (-100px - 0.5 * (var(--hero-icon-art-size) - 76px)));
     --hero-icon-base: url("../../images/hero/figma-base.svg");
     --hero-icon-hover: url("../../images/hero/figma-hover.svg");
 }
 
 .hero-icon--anima {
-    top: 90px;
-    right: 80px;
+    top: calc(var(--hero-icon-offset-scale) * (130px + 0.45 * (var(--hero-icon-art-size) - 76px)));
+    right: calc(var(--hero-icon-offset-scale) * (-80px - 0.35 * (var(--hero-icon-art-size) - 76px)));
     transform: rotate(12deg);
     --hero-icon-base: url("../../images/hero/anima-base.svg");
     --hero-icon-hover: url("../../images/hero/anima-hover.svg");
 }
 
 .hero-icon--draw {
-    bottom: -20px;
-    right: -120px;
+    bottom: calc(var(--hero-icon-offset-scale) * (-10px - 0.35 * (var(--hero-icon-art-size) - 76px)));
+    right: calc(var(--hero-icon-offset-scale) * (-184px - 0.45 * (var(--hero-icon-art-size) - 76px)));
     transform: rotate(20deg);
     --hero-icon-base: url("../../images/hero/draw-base.svg");
     --hero-icon-hover: url("../../images/hero/draw-hover.svg");
 }
 
 .hero-icon--dev {
-    bottom: -80px;
-    left: -35px;
-    transform: rotate(20deg);
+    top: calc(var(--hero-icon-offset-scale) * (40px + 0.35 * (var(--hero-icon-art-size) - 76px)));
+    left: calc(var(--hero-icon-offset-scale) * (-90px - 0.3 * (var(--hero-icon-art-size) - 76px)));
+    transform: rotate(18deg);
     --hero-icon-base: url("../../images/hero/dev-base.svg");
     --hero-icon-hover: url("../../images/hero/dev-hover.svg");
 }
 
 .hero-icon--procreate {
-    top: 90px;
-    right: 80px;
+    top: calc(var(--hero-icon-offset-scale) * (30px + 0.4 * (var(--hero-icon-art-size) - 76px)));
+    right: calc(var(--hero-icon-offset-scale) * (-200px - 0.45 * (var(--hero-icon-art-size) - 76px)));
     transform: rotate(8deg);
     --hero-icon-base: url("../../images/hero/procreate-base.svg");
     --hero-icon-hover: url("../../images/hero/procreate-hover.svg");
 }
 
 .hero-icon--adobe {
-    top: -20px;
-    right: -120px;
+    top: calc(var(--hero-icon-offset-scale) * (25px + 0.25 * (var(--hero-icon-art-size) - 76px)));
+    right: calc(var(--hero-icon-offset-scale) * (-100px - 0.3 * (var(--hero-icon-art-size) - 76px)));
     transform: rotate(-12deg);
     --hero-icon-base: url("../../images/hero/adobe-base.svg");
     --hero-icon-hover: url("../../images/hero/adobe-hover.svg");
 }
 
 .hero-icon--proto {
-    bottom: -80px;
-    right: -35px;
+    top: calc(var(--hero-icon-offset-scale) * (30px + 0.4 * (var(--hero-icon-art-size) - 76px)));
+    left: calc(var(--hero-icon-offset-scale) * (-220px - 0.45 * (var(--hero-icon-art-size) - 135px)));
     transform: rotate(-12deg);
     --hero-icon-base: url("../../images/hero/proto-base.svg");
     --hero-icon-hover: url("../../images/hero/proto-hover.svg");
 }
 
 .hero-icon--research {
-    bottom: -20px;
-    right: -120px;
+    bottom: calc(var(--hero-icon-offset-scale) * (-10px - 0.25 * (var(--hero-icon-art-size) - 20px)));
+    left: calc(var(--hero-icon-offset-scale) * (-200px - 0.35 * (var(--hero-icon-art-size) - 76px)));
     transform: rotate(-10deg);
     --hero-icon-base: url("../../images/hero/research-base.svg");
     --hero-icon-hover: url("../../images/hero/research-hover.svg");
+}
+
+@media (max-width: 1199px) {
+    .hero-visual {
+        --hero-icon-offset-scale: 1.2;
+    }
+}
+
+@media (max-width: 991px) {
+    .hero-icon {
+        --hero-icon-art-size: 68px;
+    }
+
+    .hero-visual {
+        --hero-icon-offset-scale: 1.2;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-icon {
+        --hero-icon-art-size: 58px;
+    }
+
+    .hero-visual {
+        --hero-icon-offset-scale: 1.3;
+    }
 }
 
 .call{
@@ -392,59 +438,16 @@
 
     .hero-visual {
         padding: 1rem;
+        --hero-icon-offset-scale: 1.1;
     }
 
     .hero-icon {
-        width: 60px;
-        height: 60px;
-        --hero-icon-art-size: 38px;
+        --hero-icon-art-size: 44px;
 
         &::after {
-            top: -28px;
-            right: -1px;
             font-size: 0.65rem;
             padding: 0.18rem 0.5rem;
         }
-    }
-
-    .hero-icon--figma {
-        top: -12px;
-        left: -85px;
-    }
-
-    .hero-icon--anima {
-        top: -60px;
-        left: -15px;
-    }
-
-    .hero-icon--draw {
-        bottom: -12px;
-        left: -95px;
-    }
-
-    .hero-icon--dev {
-        bottom: -60px;
-        left: -20px;
-    }
-
-    .hero-icon--procreate {
-        top: -60px;
-        right: -20px;
-    }
-
-    .hero-icon--adobe {
-        top: -12px;
-        right: -90px;
-    }
-
-    .hero-icon--proto {
-        bottom: -60px;
-        right: -20px;
-    }
-
-    .hero-icon--research {
-        bottom: -12px;
-        right: -95px;
     }
 
     .hero-description {
@@ -516,6 +519,7 @@
 
     .hero-visual {
         padding: 0.5rem;
+        --hero-icon-offset-scale: 1.2;
     }
 
     .hero-photo-wrapper {
@@ -529,56 +533,12 @@
     }
 
     .hero-icon {
-        width: 50px;
-        height: 50px;
-        --hero-icon-art-size: 32px;
+        --hero-icon-art-size: 36px;
 
         &::after {
-            top: -22px;
-            right: -1px;
             font-size: 0.6rem;
             padding: 0.15rem 0.4rem;
         }
-    }
-
-    .hero-icon--figma {
-        top: -6px;
-        left: -60px;
-    }
-
-    .hero-icon--anima {
-        top: -30px;
-        left: -8px;
-    }
-
-    .hero-icon--draw {
-        bottom: -6px;
-        left: -70px;
-    }
-
-    .hero-icon--dev {
-        bottom: -32px;
-        left: -10px;
-    }
-
-    .hero-icon--procreate {
-        top: -30px;
-        right: -10px;
-    }
-
-    .hero-icon--adobe {
-        top: -6px;
-        right: -60px;
-    }
-
-    .hero-icon--proto {
-        bottom: -32px;
-        right: -10px;
-    }
-
-    .hero-icon--research {
-        bottom: -6px;
-        right: -70px;
     }
 
     .hero-description {
@@ -690,56 +650,12 @@
     }
 
     .hero-icon {
-        width: 86px;
-        height: 86px;
-        --hero-icon-art-size: 56px;
+        --hero-icon-art-size: 76px;
 
         &::after {
-            top: -14px;
-            right: -1px;
-            font-size: 0.75rem;
-            padding: 0.25rem 0.7rem;
+            font-size: 0.8rem;
+            padding: 0.25rem 0.75rem;
         }
-    }
-
-    .hero-icon--figma {
-        top: 140px;
-        left: -100px;
-    }
-
-    .hero-icon--anima {
-        top: 130px;
-        right: -80px;
-    }
-
-    .hero-icon--draw {
-        bottom: -10px;
-        right: -184px;
-    }
-
-    .hero-icon--dev {
-        top: 40px;
-        left: -90px;
-    }
-
-    .hero-icon--procreate {
-        top: 60px;
-        right: -200px;
-    }
-
-    .hero-icon--adobe {
-        top: 25px;
-        right: -100px;
-    }
-
-    .hero-icon--proto {
-        top: 60px;
-        left: -220px;
-    }
-
-    .hero-icon--research {
-        bottom: -10px;
-        left: -200px;
     }
 
     .hero-description {
