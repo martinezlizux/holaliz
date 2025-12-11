@@ -76,6 +76,11 @@
 
     // Estilos para los contenedores de proyecto con animaciones interesantes
     .project-container {
+        > .d-flex {
+            align-items: stretch;
+        }
+        border-top: #f3f3f3 1px solid;
+        padding-top: 60px;
         margin-bottom: 80px;
         opacity: 1; // Visible por defecto
         transform: translateY(0); // Posición normal por defecto
@@ -120,7 +125,8 @@
         max-width: 800px;
         margin: 0 auto;
         text-align: left;
-  }
+
+    }
 
     .show-card{
 
@@ -156,15 +162,16 @@
         }
 
         &.card-photo{
+            display: flex;
             padding: 0;
+            background-color: #f9f1ff;
+            border-radius: 20px;
             
             .box{
                 overflow: hidden;
                 border-radius: 20px;
-                /* prefer a horizontal (landscape) media presentation */
-                aspect-ratio: 16 / 9;
                 width: 100%;
-                height: auto;
+                height: 100%;
                 display: block;
             }
 
@@ -175,13 +182,11 @@
                 display: block;
                 /* ensure images inherit the box's radius and are clipped */
                 border-radius: inherit;
-                /* also prefer natural landscape sizing where possible */
-                aspect-ratio: 16 / 9;
             }
         }
 
         &.card-info{
-            padding: 60px 20px 60px 20px;
+            padding: 0;
         }
 
         // Estado inicial de las tarjetas - invisible
@@ -202,7 +207,7 @@
             }
     
             &.card-info{
-                padding: 100px 50px 100px 60px;
+                padding: 0;
             }
         }
     }
@@ -212,25 +217,61 @@
     // Estilos específicos para cada proyecto
     .project-container {
 
-        .highlight { 
-                // padding: 0 5px;
+        .about-project {
+            display: flex;
+            gap: 15px;
+            font-size: 16px;
+            font-weight: 300;
+            color: var(--Primitives-Colours-Gris-900);
+            margin-bottom: 15px;
+
+            span {
+                &:not(:last-child)::after {
+                    content: "•";
+                    margin-left: 10px;
+                    color: var(--Primitives-Colours-Gris-400);
+                }
+            }
+        }
+
+        .results {
+            gap: 10px;
+
+            .win {
+                font-size: calc(0.875rem + 0.1vw);
+                color: var(--Primitives-Colours-Gris-800);
+                background-color: var(--Primitives-Colours-Morado-200);
+                
+
+                i {
+                    color: var(--Primitives-Colours-Verde-600);
+                    margin-right: 8px;
+                }
+            }
+        }
+
+        .r-highlight { 
                 font-weight: 600;
                 background: radial-gradient(circle, #3D4CF4, #ff2862);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
-                border: 2px solid #b07df0;
-                border-radius: 8px;
-                padding: 0px 6px;
+                border: 1px solid #d5b8f9;
+                border-radius: 16px;
+                padding: 6px 14px;
+
         }
+
+        .project-tags{
+            margin-top: 10px;
+
+        }
+
+
         
         &.p-rewards{
             border-top: #f3f3f3 1px solid;
             
-            // .highlight { 
-            //     background-color: #FFFF00; 
-            //     padding: 0 5px;
-            // }
-
+        
             .box{
                 border-radius: 20px;
                 background-color: none;
@@ -244,16 +285,7 @@
         }
 
         &.p-drivers{
-            // .highlight { 
-            //     // padding: 0 5px;
-            //     font-weight: 600;
-            //     background: radial-gradient(circle, #3D4CF4, #ff2862);
-            //     -webkit-background-clip: text;
-            //     -webkit-text-fill-color: transparent;
-            //     border: 2px solid #b07df0;
-            //     border-radius: 8px;
-            //     padding: 0px 6px;
-            // }
+          
             
             .box{
                 border-radius: 20px;
@@ -268,11 +300,7 @@
         &.p-research{
             border-top: #f3f3f3 1px solid;
             
-            // .highlight { 
-            //     background-color: var(--Primitives-Colours-Azul-600);
-            //     padding: 0 5px;
-            // }
-
+         
             .box{
                 border-radius: 20px;
                 width: 100%;
@@ -286,10 +314,7 @@
         &.p-system{
             border-top: #f3f3f3 1px solid;
             
-            // .highlight { 
-            //     background-color: var(--Primitives-Colours-Morado-300);
-            //     padding: 0 5px; 
-            // }
+        
 
             .box{
                 border-radius: 20px;
@@ -350,7 +375,7 @@
 }
 
 .show-card.card-info {
-    padding: 60px 100px 100px 100px;
+    padding: 0;
 }
 
 

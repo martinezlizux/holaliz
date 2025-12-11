@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Timio — AI-Assisted Time Tracker Experiment | Lizbeth Martinez</title>
+    <meta name="title" content="Timio — AI-Assisted Time Tracker Experiment | Lizbeth Martinez">
+    <meta name="description" content="Timio is my first hands-on experiment using AI in my design and build workflow: defining a tiny MVP, vibing with free AI tools, and shipping a simple hour-tracking app.">
+    <meta name="keywords" content="Timio, AI workflow, MVP, time tracking, experiment, UX case study">
+    <meta name="author" content="Lizbeth Martinez">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+
+    <link rel="canonical" href="https://holaliz.com/portfolio/timio.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://holaliz.com/portfolio/timio.html">
+    <meta property="og:title" content="Timio — AI-Assisted Time Tracker Experiment">
+    <meta property="og:description" content="A realistic two-day experiment building a tiny hour-tracking MVP with free AI tools across VS Code, GitHub Compiler, and Cursor.">
+    <meta property="og:image" content="https://holaliz.com/images/projects/timio/timio-1280X720.jpg">
+    <meta property="og:site_name" content="Holaliz - Lizbeth Martinez Portfolio">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://holaliz.com/portfolio/timio.html">
+    <meta property="twitter:title" content="Timio — AI-Assisted Time Tracker Experiment">
+    <meta property="twitter:description" content="First real experiment integrating AI into my design workflow to ship a tiny MVP time tracker.">
+    <meta property="twitter:image" content="https://holaliz.com/images/projects/timio/timio-1280X720.jpg">
+
+    <link rel="stylesheet" href="../assets/css/style.css?v=20251123234824">
+    <link rel="stylesheet" href="../assets/css/fontawesome.css?v=20251123234824">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">  
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X271RK6RRK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-X271RK6RRK', { 'send_page_view': false });
+    </script>
+</head>
+
+<body>
+
+   <!--//////////////////// NAVBAR ///////////////////// -->
+    <nav class="project-nav menu">
+        <div class="project-nav__inner">
+            <a class="project-back" tabindex="0" href="../index.html">
+                <i class="fa-solid fa-chevron-left"></i>
+                <span>Back</span>
+            </a>
+            <div class="project-nav__wrapper">
+                <ul class="project-nav-list">
+                    <li class="nav-item">
+                        <a class="btn nav-link active" href="#overview" tabindex="0">Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn nav-link" href="#user-journey" tabindex="0">User &amp; Journey</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn nav-link" href="#solution" tabindex="0">Thinking in the Solution</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn nav-link" href="#vibe" tabindex="0">Vibe Coding</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn nav-link" href="#final" tabindex="0">Final Product</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="s-proyect">
+
+        <!-- PROJECT HEADING -->
+        <div class="container col-11 col-md-9 col-xl-9 py-5 border-bottom">
+            <div class="p-heading mt-4">
+                <h1 class="bold">Timio &mdash; My First Real AI Workflow Experiment</h1>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 mt-4">
+                <div class="col mb-2 align-self-center"><strong>Role:</strong> Product Designer &amp; Builder</div>
+                <div class="col mb-2 align-self-center"><strong>Skills Highlighted:</strong> AI-assisted ideation, MVP framing, UX writing, lightweight UI build</div>
+                <div class="col mb-2 align-self-center"><strong>Deliverables:</strong> MVP scope, user flow, exploratory UI, export/import concept, AI workflow notes</div>
+            </div>
+        </div>
+        <!-- PROJECT IMAGE -->
+        <div class="container-fluid bg-banner">
+            <picture>
+                <img
+                  class="img-fluid"
+                  src="../images/projects/timio/timio-1280X720.jpg"
+                  srcset="../images/projects/timio/timio-660X360.jpg 660w, ../images/projects/timio/timio-960X540.jpg 960w, ../images/projects/timio/timio-1280X720.jpg 1280w, ../images/projects/timio/timio-660X360@2x.jpg 1320w, ../images/projects/timio/timio-960X540@2x.jpg 1920w, ../images/projects/timio/timio-1280X720@2x.jpg 2560w"
+                  sizes="100vw"
+                  alt="Timio interface preview hero image"
+                />
+            </picture>
+        </div>
+
+        <!-- OVERVIEW -->
+        <section id="overview" class="wrapper container col-11 col-md-9 col-xl-7 py-5">
+            <div class="p-content">
+                <h2 class="bold">01. Overview</h2>
+                <p>Timio is a real-time experiment where I designed and built a tiny time-tracking app with AI as an active partner. No clients, no long roadmap&mdash;just curiosity: what happens when I let AI into my everyday workflow?</p>
+                <p>The trigger was simple: someone close to me disliked Excel but needed to log hours and earnings. I kept it realistic&mdash;two days, free AI tools, and a lightweight app that mirrors how I actually work as a mom and freelancer.</p>
+                <div class="mt-4">
+                    <h3 class="bold h5">What is Timio?</h3>
+                    <p>A lightweight time-tracking web app built as a personal MVP experiment to see how AI can support real product design and front-end workflows.</p>
+                    <h3 class="bold h5 mt-3">Purpose</h3>
+                    <p>Explore a hybrid workflow where product design, code, and AI coexist in real time. This is a learning experiment, not a production-ready app.</p>
+                </div>
+                <p class="my-4 text-center">⸻</p>
+            </div>
+        </section>
+
+        <!-- 01 User & Journey -->
+        <section id="user-journey" class="wrapper container col-11 col-md-9 col-xl-7 py-5">
+            <div class="p-content">
+                <h2 class="bold">02. User &amp; Journey</h2>
+                <p>The user spark was someone who dislikes Excel and needs a zero-friction way to track hours and earnings on mobile. I framed Timio as “minimum friction for a non-tech user,” with plain language and one-screen actions.</p>
+                <ol>
+                    <li>User opens the app</li>
+                    <li>Adds a new work entry (client, date, hours, rate, description)</li>
+                    <li>Sees totals per entry</li>
+                    <li>Repeats for more clients</li>
+                    <li>Exports to CSV/Excel or PDF</li>
+                    <li>Optionally uploads a file to import records</li>
+                </ol>
+                <figure class="case-section-media">
+                    <picture>
+                        <img
+                          src="../images/projects/timio/timio-960X540.jpg"
+                          srcset="../images/projects/timio/timio-660X360.jpg 660w, ../images/projects/timio/timio-960X540.jpg 960w, ../images/projects/timio/timio-1280X720.jpg 1280w, ../images/projects/timio/timio-660X360@2x.jpg 1320w, ../images/projects/timio/timio-960X540@2x.jpg 1920w, ../images/projects/timio/timio-1280X720@2x.jpg 2560w"
+                          sizes="(max-width: 576px) 100vw, (max-width: 992px) 75vw, 960px"
+                          alt="Timio UX: clock-inspired hero and mobile-friendly layout"
+                          class="img-fluid"
+                        />
+                    </picture>
+                </figure>
+                <figure class="case-section-media">
+                    <picture>
+                        <img
+                          src="../images/projects/timio/timio-960X540.jpg"
+                          srcset="../images/projects/timio/timio-660X360.jpg 660w, ../images/projects/timio/timio-960X540.jpg 960w, ../images/projects/timio/timio-1280X720.jpg 1280w, ../images/projects/timio/timio-660X360@2x.jpg 1320w, ../images/projects/timio/timio-960X540@2x.jpg 1920w, ../images/projects/timio/timio-1280X720@2x.jpg 2560w"
+                          sizes="(max-width: 576px) 100vw, (max-width: 992px) 75vw, 960px"
+                          alt="Timio flow screens showing entries table, exports, and imports"
+                          class="img-fluid"
+                        />
+                    </picture>
+                </figure>
+                <p class="my-4 text-center">⸻</p>
+            </div>
+        </section>
+
+        <!-- 02 Thinking in the Solution -->
+        <section id="solution" class="wrapper container col-11 col-md-9 col-xl-7 py-5">
+            <div class="p-content">
+                <h2 class="bold">03. Thinking in the Solution</h2>
+                <p>I kept the MVP intentionally small to validate the experience, not to ship a full product. Must-haves:</p>
+                <ul>
+                    <li>Log hours worked</li>
+                    <li>Assign hours to a client</li>
+                    <li>Set hourly rate per client</li>
+                    <li>View totals per entry</li>
+                    <li>Export records to PDF or Excel</li>
+                    <li>Upload an existing file to add entries</li>
+                </ul>
+                <p>Explicitly out-of-scope to avoid scope creep:</p>
+                <ul>
+                    <li>User accounts or login</li>
+                    <li>Persistent multi-account storage or advanced dashboards</li>
+                    <li>Gamification</li>
+                    <li>Cloud integrations (e.g., Google Drive)</li>
+                    <li>Advanced client history</li>
+                </ul>
+                <p>Identity and interface choices:</p>
+                <ul>
+                    <li>Name: Timio &mdash; short, friendly, easy to remember</li>
+                    <li>Visual style: Notion-inspired, calm, human</li>
+                    <li>Blocks: responsive layout, simple inputs, table-based entries with automatic totals, export/import actions</li>
+                </ul>
+                <figure class="case-section-media">
+                    <picture>
+                        <img
+                          src="../images/projects/timio/timio-960X540.jpg"
+                          srcset="../images/projects/timio/timio-660X360.jpg 660w, ../images/projects/timio/timio-960X540.jpg 960w, ../images/projects/timio/timio-1280X720.jpg 1280w, ../images/projects/timio/timio-660X360@2x.jpg 1320w, ../images/projects/timio/timio-960X540@2x.jpg 1920w, ../images/projects/timio/timio-1280X720@2x.jpg 2560w"
+                          sizes="(max-width: 576px) 100vw, (max-width: 992px) 75vw, 960px"
+                          alt="Timio MVP blocks: inputs, table, and export/import actions"
+                          class="img-fluid"
+                        />
+                    </picture>
+                </figure>
+                <p class="my-4 text-center">⸻</p>
+            </div>
+        </section>
+
+        <!-- 03 Vibe Coding -->
+        <section id="vibe" class="wrapper container col-11 col-md-9 col-xl-7 py-5">
+            <div class="p-content">
+                <h2 class="bold">04. Vibe Coding (Prompt to Interface)</h2>
+                <p>I rotated through VS Code + ChatGPT plugin, GitHub Copilot / Compiler, and Cursor to feel AI up close. The goal wasn’t to crown a winner but to sense how each shaped focus, prompts, and iteration speed. I stayed with mostly free AI resources and kept time honest&mdash;two days, no all-nighters.</p>
+                <p>Main prompt I used with ChatGPT:</p>
+                <pre class="code-block"><code>Act as a front-end assistant.
+
+Create a minimal, responsive HTML layout for a web app called "Timio", a time-tracking tool.
+
+Requirements:
+- Use semantic HTML.
+- Add a header with the logo "Timio" and a short subtitle.
+- Add a hero section with a title, short description and space for an illustration.
+- Below that, add a section called "My hours" with:
+  - A button to add a new entry.
+  - A button to upload a file.
+  - A responsive table with columns: Client, Description, Date, Hours, Rate, Total, Actions.
+Use class names that I can later style with Bootstrap and custom CSS.
+Language: Spanish labels in the UI.</code></pre>
+                <figure class="case-section-media">
+                    <picture>
+                        <img
+                          src="../images/projects/timio/timio-960X540.jpg"
+                          srcset="../images/projects/timio/timio-660X360.jpg 660w, ../images/projects/timio/timio-960X540.jpg 960w, ../images/projects/timio/timio-1280X720.jpg 1280w, ../images/projects/timio/timio-660X360@2x.jpg 1320w, ../images/projects/timio/timio-960X540@2x.jpg 1920w, ../images/projects/timio/timio-1280X720@2x.jpg 2560w"
+                          sizes="(max-width: 576px) 100vw, (max-width: 992px) 75vw, 960px"
+                          alt="Timio build in VS Code with AI-assisted workflow"
+                          class="img-fluid"
+                        />
+                    </picture>
+                </figure>
+                <p class="my-4 text-center">⸻</p>
+            </div>
+        </section>
+
+        <!-- 04 Final Product -->
+        <section id="final" class="wrapper container col-11 col-md-9 col-xl-7 py-5">
+            <div class="p-content">
+                <h2 class="bold">05. Final Product</h2>
+                <p>Timio is more than a tiny app. It is:</p>
+                <ul>
+                    <li>My first intentional end-to-end AI-assisted product</li>
+                    <li>A hands-on exercise in true MVP thinking</li>
+                    <li>A way to work with free AI tools in a real freelance context</li>
+                    <li>A reminder that design also happens inside the code editor</li>
+                    <li>A blend of UX, product thinking, front-end, AI, and real-life constraints</li>
+                </ul>
+                <p>If Timio evolved into a full product, the roadmap would include: user accounts and secure storage, smart client/project management, income and goal tracking, gentle gamification, cloud sync, and AI-powered productivity insights.</p>
+                <p>Final reflection: Timio is my first real “vibe coding” project&mdash;where intuition, design, code, and AI coexist in real time. It’s not about perfection. It’s about learning in public and adapting to the future of product design.</p>
+                <figure class="case-section-media">
+                    <picture>
+                        <img
+                          src="../images/projects/timio/timio-960X540.jpg"
+                          srcset="../images/projects/timio/timio-660X360.jpg 660w, ../images/projects/timio/timio-960X540.jpg 960w, ../images/projects/timio/timio-1280X720.jpg 1280w, ../images/projects/timio/timio-660X360@2x.jpg 1320w, ../images/projects/timio/timio-960X540@2x.jpg 1920w, ../images/projects/timio/timio-1280X720@2x.jpg 2560w"
+                          sizes="(max-width: 576px) 100vw, (max-width: 992px) 75vw, 960px"
+                          alt="Timio final UI highlighting exports and time entries"
+                          class="img-fluid"
+                        />
+                    </picture>
+                </figure>
+            </div>
+        </section>
+    </div>
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>

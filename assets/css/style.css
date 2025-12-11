@@ -13627,10 +13627,15 @@ ul.filters > li.active > a {
 }
 
 .s-project-grid .project-container {
+  border-top: #f3f3f3 1px solid;
+  padding-top: 60px;
   margin-bottom: 80px;
   opacity: 1;
   transform: translateY(0);
   transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.s-project-grid .project-container > .d-flex {
+  align-items: stretch;
 }
 .s-project-grid .project-container.fade-animation {
   opacity: 0;
@@ -13689,15 +13694,16 @@ ul.filters > li.active > a {
   transition: all 0.3s ease-out;
 }
 .s-project-grid .show-card.card-photo {
+  display: flex;
   padding: 0;
+  background-color: #f9f1ff;
+  border-radius: 20px;
 }
 .s-project-grid .show-card.card-photo .box {
   overflow: hidden;
   border-radius: 20px;
-  /* prefer a horizontal (landscape) media presentation */
-  aspect-ratio: 16/9;
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
 }
 .s-project-grid .show-card.card-photo img {
@@ -13707,11 +13713,9 @@ ul.filters > li.active > a {
   display: block;
   /* ensure images inherit the box's radius and are clipped */
   border-radius: inherit;
-  /* also prefer natural landscape sizing where possible */
-  aspect-ratio: 16/9;
 }
 .s-project-grid .show-card.card-info {
-  padding: 60px 20px 60px 20px;
+  padding: 0;
 }
 @media (min-width: 992px) {
   .s-project-grid .show-card {
@@ -13724,17 +13728,45 @@ ul.filters > li.active > a {
     padding: 0;
   }
   .s-project-grid .show-card.card-info {
-    padding: 100px 50px 100px 60px;
+    padding: 0;
   }
 }
-.s-project-grid .project-container .highlight {
+.s-project-grid .project-container .about-project {
+  display: flex;
+  gap: 15px;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--Primitives-Colours-Gris-900);
+  margin-bottom: 15px;
+}
+.s-project-grid .project-container .about-project span:not(:last-child)::after {
+  content: "•";
+  margin-left: 10px;
+  color: var(--Primitives-Colours-Gris-400);
+}
+.s-project-grid .project-container .results {
+  gap: 10px;
+}
+.s-project-grid .project-container .results .win {
+  font-size: calc(0.875rem + 0.1vw);
+  color: var(--Primitives-Colours-Gris-800);
+  background-color: var(--Primitives-Colours-Morado-200);
+}
+.s-project-grid .project-container .results .win i {
+  color: var(--Primitives-Colours-Verde-600);
+  margin-right: 8px;
+}
+.s-project-grid .project-container .r-highlight {
   font-weight: 600;
   background: radial-gradient(circle, #3D4CF4, #ff2862);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border: 2px solid #b07df0;
-  border-radius: 8px;
-  padding: 0px 6px;
+  border: 1px solid #d5b8f9;
+  border-radius: 16px;
+  padding: 6px 14px;
+}
+.s-project-grid .project-container .project-tags {
+  margin-top: 10px;
 }
 .s-project-grid .project-container.p-rewards {
   border-top: #f3f3f3 1px solid;
@@ -13816,7 +13848,7 @@ ul.filters > li.active > a {
 }
 
 .show-card.card-info {
-  padding: 60px 100px 100px 100px;
+  padding: 0;
 }
 
 @media (min-width: 768px) {
@@ -13861,7 +13893,8 @@ ul.filters > li.active > a {
   background: var(--Primitives-Colours-Morado-500);
 }
 .s-playground .section-title {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
   color: #fff;
 }
 .s-playground .playcard {
