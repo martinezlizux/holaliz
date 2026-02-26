@@ -174,7 +174,8 @@
           </a>
 
           <!-- Theme Toggle Button -->
-          <button class="btn btn-link theme-toggle ms-auto me-3" id="themeToggle" aria-label="Switch to dark mode">
+          <button class="btn btn-link theme-toggle ms-auto me-3 d-none" id="themeToggle"
+            aria-label="Switch to dark mode">
             <i class="bi bi-moon-stars-fill" id="themeIcon" style="font-size: 1.25rem;"></i>
           </button>
 
@@ -600,32 +601,77 @@
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
               <style>
                 @keyframes lluvia-fall {
-                  0% { background-position: 0px 0px; }
-                  100% { background-position: 200px 1000px; }
+                  0% {
+                    background-position: 0px 0px;
+                  }
+
+                  100% {
+                    background-position: 200px 1000px;
+                  }
                 }
+
                 @keyframes lluvia-fall-2 {
-                  0% { background-position: 0px 0px; }
-                  100% { background-position: 150px 800px; }
+                  0% {
+                    background-position: 0px 0px;
+                  }
+
+                  100% {
+                    background-position: 150px 800px;
+                  }
                 }
+
                 .playground-lluvia-animada {
                   background-color: #333A55;
                 }
+
                 .playground-lluvia-animada::before {
-                  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 5; opacity: 0.8;
+                  content: '';
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  pointer-events: none;
+                  z-index: 5;
+                  opacity: 0.8;
                   background-image: radial-gradient(ellipse 2.5px 5px at 10px 30px, rgba(255, 255, 255, 0.8) 100%, transparent 100%), radial-gradient(ellipse 2.5px 5px at 120px 15px, rgba(255, 255, 255, 0.8) 100%, transparent 100%), radial-gradient(ellipse 2.5px 5px at 240px 45px, rgba(255, 255, 255, 0.5) 100%, transparent 100%), radial-gradient(ellipse 2.5px 5px at 350px 20px, rgba(255, 255, 255, 0.7) 100%, transparent 100%);
-                  background-size: 400px 400px; animation: lluvia-fall 2s linear infinite;
+                  background-size: 400px 400px;
+                  animation: lluvia-fall 2s linear infinite;
                 }
+
                 .playground-lluvia-animada::after {
-                  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 6; opacity: 0.6;
+                  content: '';
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  pointer-events: none;
+                  z-index: 6;
+                  opacity: 0.6;
                   background-image: radial-gradient(ellipse 1.5px 3px at 30px 40px, rgba(255, 255, 255, 0.6) 100%, transparent 100%), radial-gradient(ellipse 1.5px 3px at 160px 50px, rgba(255, 255, 255, 0.5) 100%, transparent 100%), radial-gradient(ellipse 1.5px 3px at 280px 70px, rgba(255, 255, 255, 0.7) 100%, transparent 100%);
-                  background-size: 300px 300px; animation: lluvia-fall-2 3s linear infinite;
+                  background-size: 300px 300px;
+                  animation: lluvia-fall-2 3s linear infinite;
                 }
+
                 @keyframes sway-anim {
-                  0%, 100% { transform: rotate(0deg); }
-                  50% { transform: rotate(-3deg); }
+
+                  0%,
+                  100% {
+                    transform: rotate(0deg);
+                  }
+
+                  50% {
+                    transform: rotate(-3deg);
+                  }
                 }
+
                 .playground-lluvia-personaje {
-                  animation: sway-anim 5s ease-in-out infinite; transform-origin: bottom center; max-width: 100%; max-height: 100%; object-fit: contain;
+                  animation: sway-anim 5s ease-in-out infinite;
+                  transform-origin: bottom center;
+                  max-width: 100%;
+                  max-height: 100%;
+                  object-fit: contain;
                 }
               </style>
               <a href="portfolio/sunny.html" class="playcard">
@@ -652,12 +698,13 @@
                       class="playground-lluvia-personaje" style="width: 85%;">
                   </div>
                 </div>
-                
+
                 <!-- Bottom text -->
                 <div class="playcard-body">
                   <span class="playcard-tag">Vibe Coding</span>
                   <h5 class="playcard-title">Pure CSS Weather</h5>
-                  <p class="playcard-desc">Character illustrations brought to life through multi-layered CSS environments.</p>
+                  <p class="playcard-desc">Character illustrations brought to life through multi-layered CSS
+                    environments.</p>
                 </div>
               </a>
             </div>
@@ -675,31 +722,33 @@
                 </div>
               </a>
             </div>
-            
+
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
               <a href="javascript:void(0)" class="playcard">
                 <div class="playcard-media">
-                    <video class="lazy-video" data-src="images/playground/ghost.mp4"
-                      data-poster="images/playground/ghost-poster.jpg" muted loop playsinline preload="metadata"></video>
+                  <video class="lazy-video" data-src="images/playground/ghost.mp4"
+                    data-poster="images/playground/ghost-poster.jpg" muted loop playsinline preload="metadata"></video>
                 </div>
                 <div class="playcard-body">
                   <span class="playcard-tag">Figma</span>
                   <h5 class="playcard-title">Ghost Interactions</h5>
-                  <p class="playcard-desc">Advanced smart animate exercises with custom easing curves and transitions.</p>
+                  <p class="playcard-desc">Advanced smart animate exercises with custom easing curves and transitions.
+                  </p>
                 </div>
               </a>
             </div>
-            
+
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
               <a href="javascript:void(0)" class="playcard">
                 <div class="playcard-media">
-                    <video class="lazy-video" data-src="images/playground/tea.mp4"
-                      data-poster="images/playground/tea-poster.jpg" muted loop playsinline preload="metadata"></video>
+                  <video class="lazy-video" data-src="images/playground/tea.mp4"
+                    data-poster="images/playground/tea-poster.jpg" muted loop playsinline preload="metadata"></video>
                 </div>
                 <div class="playcard-body">
                   <span class="playcard-tag">Procreate</span>
                   <h5 class="playcard-title">Cozy Tea Time</h5>
-                  <p class="playcard-desc">Looping illustrations with small environmental details in Procreate Dreams.</p>
+                  <p class="playcard-desc">Looping illustrations with small environmental details in Procreate Dreams.
+                  </p>
                 </div>
               </a>
             </div>
