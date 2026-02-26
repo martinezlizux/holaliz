@@ -2,65 +2,163 @@
 @use '../components/mixins' as *;
 
 .s-about {
-    background-color: #fafafa;
-    
-    .about-content {
-        max-width: 800px;
-        margin: 0 auto;
-        text-align: left;
-        
-        .body-text {
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-            color: #333;
-        }
-    }
-    
-    .personal-info {
-        font-size: 0.95rem;
-        
-        .col-md-4 {
-            text-align: center;
-            
-            @media (max-width: 767px) {
-                text-align: left;
-            }
-        }
-    }
-    
-    .gallery {
-        .img-fluid {
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            
-            &:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-            }
-        }
-    }
-    
-    h2 {
-        color: #333;
-        margin-bottom: 2rem;
-    }
-}
+    background-color: var(--Surface-Neutral-subtle);
+    color: var(--Type-Neutral-negative);
+    padding: 60px 20px;
 
-// Responsive adjustments
-@media (max-width: 768px) {
-    .s-about {
-        .about-content {
-            .body-text {
-                font-size: 0.95rem;
-                line-height: 1.5;
+    .about-heading-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        margin-bottom: 64px;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about-title {
+        font-family: "Inter", sans-serif; // Fallback, commonly used
+        font-weight: 700;
+        font-size: 46px;
+        line-height: 1.2; // 90px in design seems huge for 46px font, adjusting for better visuals or using design value if strictly needed. Design says 90px leading? Let's stick closer to standard but keep design intent. 90px is ~2x.
+        letter-spacing: 0.26px;
+        color: var(--Type-section-title);
+        text-align: center;
+        margin-bottom: 0;
+    }
+
+    .about-intro {
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5; // 24px
+        letter-spacing: -0.31px;
+        color: var(--Type-Neutral-dark);
+        text-align: center; // Design might imply left aligned in a flexcol? "flex-col items-start" in top container, but "items-center" in inner? The text node says "whitespace-pre-wrap". Let's center it for the section header look.
+        white-space: pre-wrap;
+    }
+
+    /* Grid for 4 cards */
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        max-width: 1000px;
+        margin: 0 auto 64px auto;
+
+        @media (min-width: 768px) {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .about-card {
+        background-color: var(--Surface-Primary-subtle);
+        border-radius: 14px;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+        height: 100%;
+
+        .card-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img,
+            svg,
+            i {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                font-size: 24px; // for icon fonts
+                color: var(--primary-900); // Fallback color
             }
         }
-        
-        .personal-info {
-            text-align: left;
-            font-size: 0.9rem;
+
+        .card-title {
+            font-family: "Inter", sans-serif;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: -0.44px;
+            color: #101828; // Hardcoded in design
+            margin: 0;
         }
+
+        .card-text {
+            font-family: "Inter", sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: -0.15px;
+            color: var(--Type-Neutral-dark);
+            margin: 0;
+        }
+    }
+
+    /* Tools Section */
+    .tools-container {
+        background-color: #f9fafb;
+        border-radius: 16px;
+        padding: 50px 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .tools-title {
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 30px;
+        letter-spacing: -0.45px;
+        color: #101828;
+        text-align: center;
+        margin: 0;
+    }
+
+    .tools-subtitle {
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.31px;
+        color: #101828;
+        text-align: center;
+        max-width: 600px;
+        margin: 0;
+    }
+
+    .tools-badges {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .tool-badge {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 12px;
+        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1), 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.31px;
+        color: #364153;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
     }
 }

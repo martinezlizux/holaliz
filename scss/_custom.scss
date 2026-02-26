@@ -1,71 +1,71 @@
-
 @use 'components/colors' as *;
 
 
-// my Theme Colors
+// my Theme Colors (Mapped to New Primitives)
 
-$purple: hsl(255, 55%, 62%);
-$pink-dark:    #F4728C ;
-$pink-light:    #FEA7BA ;
+$purple: #5A1FB2; // Primary-500
+$pink-dark: #C70153; // Bugambilia-600 (Example mapping if needed, or keeping legacy)
+$pink-light: #FF99C4; // Bugambilia-200
 
-$blue-dark: #1FACB3;
-$blue-light: #D5EDF7;
+// Mapping old Blue/Teal specific vars to new Primary for consistency if desired, 
+// or keeping them if they are distinct "Illustration" colors. 
+// Assuming brand shift to Purple as Primary, I will map main Layout vars.
 
-$orange-dark: #F67A34;
-$orange-light: #FFAD19;
+$blue-dark: #48198F; // Mapped to Primary-600
+$blue-light: #DCCBF6; // Mapped to Primary-100
 
+// Orange -> Warning/Secondary? 
+$orange-dark: #D97706; // Warning-600
+$orange-light: #FBBF24; // Warning-400
 
-$teal:    #1FACB3 ;
-$teal-dark:    #028887 !default;
-$teal-light:    #BBF1E4 !default ;
+$teal: #1FACB3; // Legacy kept
+$teal-dark: #028887 !default;
+$teal-light: #BBF1E4 !default;
 
-$green:  #1FBE6C ;
-$yellow:  #FFD858;
+$green: #16A34A; // Success-600
+$yellow: #D9E461; // Secondary-500
 
-// White and gray colors
-$white: #fff;
-$gray-100: #f8f9fa;
-$gray-200: #e9ecef ;
-$gray-300: #dee2e6 ;
-$gray-400: #ced4da ;
-$gray-500: #adb5bd ;
-$gray-600: #6c757d ;
-$gray-700: #495057 ;
-$gray-800: #343a40 ;
-$gray-900: #212529 ;
-$black:    #000 ;
-$white:    #fff ;
+// White and gray colors (Matching Neutral Primitives)
+$white: #ffffff;
+$gray-100: #F5F5F5; // Neutral-100
+$gray-200: #E5E5E5; // Neutral-200
+$gray-300: #D4D4D4; // Neutral-300
+$gray-400: #A3A3A3; // Neutral-400
+$gray-500: #737373; // Neutral-500
+$gray-600: #525252; // Neutral-600
+$gray-700: #404040; // Neutral-700
+$gray-800: #262626; // Neutral-800
+$gray-900: #171717; // Neutral-900
+$black: #000000;
 
-// Primary and secondary
-$primary:  hsl(187, 80%, 66%);
-$secondary: #5c39c6;
+// Primary and secondary (New System)
+$primary: #48198F; // Primary-600
+$secondary: #D9E461; // Secondary-500
 
 
 
 // Accordion Overrides
-$accordion-body-padding-y:                1.5rem;
-$accordion-body-padding-x:                1.5rem;
+$accordion-body-padding-y: 1.5rem;
+$accordion-body-padding-x: 1.5rem;
 
-$accordion-icon-color:                    $blue-dark ;
-$accordion-icon-active-color:             $blue-dark;
-$accordion-icon-width:                    1.875rem ;
+$accordion-icon-color: $primary; // Updated to Primary
+$accordion-icon-active-color: $primary;
+$accordion-icon-width: 1.875rem;
 
-$accordion-button-icon:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' fill='#{$accordion-icon-active-color}'><path d='M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z'/></svg>") ;
-$accordion-button-active-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' fill='#{$accordion-icon-color}'><path d='M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z'/></svg>");
+$accordion-button-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' fill='#{48198F}'><path d='M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z'/></svg>");
+$accordion-button-active-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' fill='#{48198F}'><path d='M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z'/></svg>");
 
 // Links Overrides
 
-a {
-    color: $secondary;
-    text-decoration: underline;
-}
+// Font Family Override
+$font-family-sans-serif: "Inter", sans-serif;
 
 
 
 
-body{
-    font-family: "Open Sans", sans-serif;
-    font-size: var(--body--regular);
+body {
+    font-family: "Inter", sans-serif;
+    // font-size: var(--body--regular);
     color: $gray-900;
 
 }
@@ -77,7 +77,17 @@ body{
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
 a {
-    color: $secondary;
+    color: $primary;
     text-decoration: underline;
 }
 
+// Theme Toggle Button
+.theme-toggle {
+    color: var(--Type-Neutral-default);
+    transition: color 0.3s ease;
+
+    &:hover,
+    &:focus {
+        color: var(--Type-Primary-default);
+    }
+}

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Rewards Points System - UX Case Study | Lizbeth Martinez Portfolio</title>
+    <meta name="title" content="Rewards Points System - UX Case Study | Lizbeth Martinez Portfolio">
+    <meta name="description" content="UX case study: Increasing checkout conversion by incentivizing point payments for logged-in users. 3-month project using Sketch, Google Analytics, and Optimizely for A/B testing.">
+    <meta name="keywords" content="Rewards Points, Loyalty System, Checkout Conversion, UX Case Study, A/B Testing, Google Analytics, Optimizely, Portfolio">
+    <meta name="author" content="Lizbeth Martinez">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://holaliz.com/portfolio/rewards-points.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://holaliz.com/portfolio/rewards-points.html">
+    <meta property="og:title" content="Rewards Points System - UX Case Study | Lizbeth Martinez Portfolio">
+    <meta property="og:description" content="UX case study: Increasing checkout conversion by incentivizing point payments for logged-in users. 3-month project using Sketch, Google Analytics, and Optimizely.">
+    <meta property="og:image" content="https://holaliz.com/images/projects/Rewards/thumb-deep.png">
+    <meta property="og:site_name" content="Holaliz - Lizbeth Martinez Portfolio">
+    <meta property="article:author" content="Lizbeth Martinez">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://holaliz.com/portfolio/rewards-points.html">
+    <meta property="twitter:title" content="Rewards Points System - UX Case Study | Lizbeth Martinez Portfolio">
+    <meta property="twitter:description" content="UX case study: Increasing checkout conversion by incentivizing point payments for logged-in users. 3-month project using Sketch, Google Analytics, and Optimizely.">
+    <meta property="twitter:image" content="https://holaliz.com/images/projects/Rewards/thumb-deep.png">
+    <!-- Hotjar Tracking Code for http://www.holaliz.com -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:2970664,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+    <link rel="stylesheet" href="../assets/css/style.css?v=20251123234824?v=20241121?v=20241121">
+    <link rel="stylesheet" href="../assets/css/fontawesome.css?v=20251123234824?v=20241121?v=20241121">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">  
+    
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X271RK6RRK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+    gtag('config', 'G-X271RK6RRK', { 'send_page_view': false });
+</script>
+
+
+
+<body>
+
+   <!--//////////////////// Navbar Section///////////////////// -->
+
+    <nav class="project-nav menu">
+        <div class="project-nav__inner">
+            <a class="project-back" tabindex="0" href="../index.html">
+                <i class="fa-solid fa-chevron-left"></i>
+                <span>Back</span>
+            </a>
+            <div class="project-nav__wrapper">
+                <ul class="project-nav-list">
+                    <li class="nav-item">
+                        <a class="btn nav-link" href="#research" tabindex="0">Research</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#findings" tabindex="0">Findings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn nav-link" href="#testing" tabindex="0"> Hypothesis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn nav-link" href="#checkout" tabindex="0">Iteration in Checkout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn nav-link" href="#impact" tabindex="0">Impact</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+    <div class="s-proyect ">
+        
+        <!-- PROJECT HEADING -->
+    
+        <div class="container d-flex flex-column gap-3  py-5 border-bottom ">
+
+            <div class="p-heading mt-4">
+                <h1 class="bold">Increasing checkout conversion by surfacing point value at decision time.</h1>
+            </div>
+
+            <div class="d-flex flex-row gap-5">
+                <div class="mb-2 align-self-center"><strong>My Role:</strong> UX Designer</div>
+                <div class="mb-2 align-self-center"><strong>Timeline:</strong> 3 Months</div>
+                <div class="mb-2 align-self-center"><strong>What I did:</strong> 
+                    <span class="badge rounded-pill ">Research</span>
+                    <span class="badge rounded-pill ">How might we...</span>
+                    <span class="badge rounded-pill ">Ideation</span>
+                    <span class="badge rounded-pill ">Design</span> 
+                </div> 
+                <div class="mb-2 align-self-center"><strong>Tools:</strong> 
+                    <img class="img-tool" src="../images/tools/sketch.png" alt="Sketch app logo">
+                    <img class="img-tool" src="../images/tools/GA.png" alt="Google Analytics logo">
+                    <img class="img-tool" src="../images/tools/optimizely.png" alt="Optimizely testing platform logo">
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJECT IMAGE -->
+        <div class="container-fluid bg-banner">
+            <img class="img-fluid" src="../images/projects/Rewards/thumb-deep.png" alt="Rewards Loyalty Logged-In">
+        </div>
+
+        
+        <!-- SECCIONES -->
+        <div class="wrapper container col-11 col-md-9 col-xl-7 py-5">
+
+            <!-- INTRO-->
+             <section class="py-5">
+                <div class="container">
+                    <!-- SUMMARY-->
+                    <div class="p-content">
+                        <p>When users keep coming back but ignore their rewards, something is broken.</p>
+                        <p>That’s the insight that launched my journey to redesign the rewards points experience for a large e-commerce platform. While loyal customers were consistently earning points, very few actually redeemed them. Even more alarming? Many weren’t even logging in—missing out on key benefits.</p>
+                        <div id="p-results">
+                            <div class="results d-flex flex-column">
+                                <div><span class="win r-highlight"><i class="fa-solid fa-arrow-up"></i>2x point redemptions</span></div>
+                                <div><span class="win r-highlight"><i class="fa-solid fa-arrow-up"></i>+8% logged-in conversion</span></div>
+                                <div><span class="win r-highlight"><i class="fa-solid fa-arrow-down"></i>Higher checkout conversion for logged-in users</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" d-none">
+                        <span class="bold">Impact</span>
+                        <ul class="my-list">
+                        <li>Reduced unnecessary driver-logistics calls by 35%</li>
+                        <li>Service update times dropped by 97%</li>
+                        <li>Enhanced User Experience</li>
+                        <li>Operational costs were reduced</li>
+                        </ul>
+                    </div>
+
+                    <!-- The Problem-->
+                    <div class="p-content">
+                            <h4 class="bold txt-purple">The Problem</h4>
+                            <p class="bold">Business insights highlight a major challenge: low login rates and minimal redemption of earned points among B2C users, reducing the impact of the rewards strategy. </p>
+                    </div>
+                    
+                     <!-- The Goal-->
+                    <div class="p-content">
+                            <h4 class="bold txt-purple">Goal</h4>
+                            <p>
+                                Increase the <strong  class="txt-purple">percentage of users logged</strong>  into our site and to boost the number of <strong class="txt-purple"> transactions paid with points.</strong>   
+                            </p>
+                    </div>
+                    
+
+                </div>
+
+             </section>
+
+             <div class="divider my-3"></div>
+
+             <!--Digging Into User Behavior-->
+             <section class="py-5" id="research">
+                <div class="container">
+                    <div class="p-content">
+                        <h2 class="bold txt-purple lily-regular title">Digging Into User Behavior</h2>
+                        <p>To uncover why users were not redeeming their points, I began with a focused two-week research sprint aimed at deeply understanding their frustrations and barriers. </p>
+                        <div class="videocard">
+                                <video class="lazy-video video" data-src="../images/projects/Rewards/research.mp4" muted loop playsinline preload="metadata"></video>
+                                <span class="caption"></span>
+                            </div>
+                        <p>
+                            <ul>
+                                <li><span class="bold">User Interviews:</span> I conducted eight in-depth user interviews to explore behaviors, motivations, and the emotional friction behind the current redeem process.</li>
+                                <li> <span class="bold">Online Survey:</span> I launched an online survey to capture broader patterns and validate early signals.</li>
+                                <li><span class="bold">Analytics Review:</span> I reviewed analytics data to identify critical drop-off points across the redemption flow.</li>
+                                <li><span class="bold">Competitive Analysis:</span> I performed a competitive analysis to benchmark best practices in loyalty programs.</li>
+                                <li><span class="bold">User Feedback Analysis:</span> I analyzed user comments and recordings from Hotjar, which revealed real-time pain points and moments of confusion during checkout.</li>
+                            </ul>
+                        </p>
+                        
+                    </div>
+                    
+                </div>
+             </section>
+
+             <div class="divider my-3"></div>
+
+            <!--  Findings-->
+             <section class="py-5" id="findings">
+                <div class="container">
+                    <div class="p-content">
+                        <h2 class="bold txt-purple lily-regular title">Findings</h2>
+                        <p>After synthesizing insights from interviews, surveys, analytics, and behavioral data, several clear patterns emerged that revealed why users were not redeeming their points. These findings highlighted not only usability gaps in the redemption flow, but also deeper issues related to clarity, motivation, and trust. Below are the key insights that shaped the direction of the redesign and informed the opportunities for improvement.</p>
+                        
+                        <div class="box-Impact my-animate">
+                            <div class="impact-label"><i class="impact-icon fa-solid fa-lightbulb"></i>Lack of Personalization</div>
+                            <!-- <p class="bold">Finding 1</p> -->
+                            <p>The interface does not adapt to logged-in users, missing opportunities to create tailored experiences and highlight user-specific benefits.</p>
+                        </div>
+
+                        <div class="box-Impact my-animate">
+                            <div class="impact-label"><i class="impact-icon fa-solid fa-lightbulb"></i>Flow Interruptions</div>
+                            <!-- <p class="bold">Finding 1</p> -->
+                            <p>Users are pulled out of the purchasing flow when prompted to visit their profile or create an account, disrupting the buying experience.</p>
+                        </div>
+
+                        <div class="box-Impact my-animate">
+                            <div class="impact-label"><i class="impact-icon fa-solid fa-lightbulb"></i>Absence of Visual Identity</div>
+                            <!-- <p class="bold">Finding 1</p> -->
+                            <p>There is no clear branding for the rewards program within the interface, which could help reinforce its value to users.</p>
+                        </div>
+
+                        <div class="box-Impact my-animate">
+                            <div class="impact-label"><i class="impact-icon fa-solid fa-lightbulb"></i>Hidden and Unclear Information</div>
+                            <!-- <p class="bold">Finding 1</p> -->
+                            <p>Users face unnecessary friction to access points cash value or understand the advantages of having an account, reducing engagement.</p>
+                        </div>
+
+                        <div class="box-Impact my-animate">
+                            <div class="impact-label"><i class="impact-icon fa-solid fa-lightbulb"></i>Missed Value Communication</div>
+                            <!-- <p class="bold">Finding 1</p> -->
+                            <p>Exclusive rates and rewards are not effectively presented as member benefits, limiting perceived value for both logged-in and non-logged-in users.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+             </section>
+
+             <div class="divider py-5"></div>
+
+             <!--  Hypothesis & Testing: Designing for Clarity and Motivation-->
+             <section class="py-5 " id="testing">
+                <div class="container">
+                    <div class="p-content">
+                        <h2 class="bold txt-purple lily-regular title"> Hypothesis & Testing: Designing for Clarity and Motivation</h2>
+                        <p>With a clear understanding of the core problems, the next step was to translate these insights into actionable hypotheses that could guide experimentation. I developed a structured validation strategy focused on testing assumptions, measuring impact, and iterating quickly to move toward our goals. By formulating targeted hypotheses and running controlled tests, we were able to evaluate which changes truly improved the redemption experience and which required refinement. This approach ensured that every decision was grounded in evidence, helping us incrementally optimize the flow and drive meaningful increases in points usage.</p>
+                        
+                        <!-- header redesign -->
+                        <h4 class="mt-4 bold txt-purple mt-5">1. Header Redesign</h4>
+                        <!-- Experimento 1 -->
+                        <div class="my-5">
+                            <div class="box-experiment py-5">
+                                <div class="impact-label"><i class="impact-icon fa-solid fa-brain"></i> Experiment</div>
+                                <p class="bold">Hypothesis</p>
+                                <p>If we highlight the benefits of being logged in to the site, then users will be more likely to log in or create an account to access those benefits.</p>
+                                <p><span class="bold">Metric to track</span><br>Clicks to "Login"button</p>
+                                <p><span class="bold">Experiment</span> <br>50% users first session | 15 days visible | 24,597 sessions</p>
+                            </div>
+                            <img src="../images/projects/Rewards/test1.png" alt="Payment points mockup 2" loading="lazy" class="img-fluid rounded-3 my-3">
+
+                        
+                            <div class="my-2">
+                                <h4 class="mt-4 bold txt-purple ">A/B Test Results <span class="pill-yellow"><i class=" fa-solid fa-star"></i>Neutral</span></h4>
+                                <p>However, after conducting an A/B test, I found no significant results.</p>
+                            </div>
+                            
+                        </div>
+
+                        <div class="divider py-5"></div>
+
+                        
+
+                        <!-- Experimento 2 -->
+                        <div class="my-5">
+                            <h4 class="mt-4 bold txt-purple ">2. Personalized Header for Logged-In Users</h4>
+                            <p>I decided to take it a step further and design a version of the header specifically for logged-in users. This new header displayed the available points in their accounts, providing immediate value and encouraging engagement. </p>
+                            <div class="box-experiment my-animate py-5 my-5">
+                                <div class="impact-label"><i class="impact-icon fa-solid fa-brain"></i> Experiment 2</div>
+                                <p class="bold">Hypothesis</p>
+                                <p>A  header redesign for logged-in users,  prominently displaying reward points and account information, will increase point redemption through improved visibility and awareness.</p>
+                                <p><span class="bold">Metric to track</span><br>Redeem points transactions and users Login</p>
+                                <p><span class="bold">Experiment</span> <br>All Users logged | 19 days visible |  37,210 sessions</p>
+                                <p><span class="bold">Results</span></p>
+                                <p><span class="pill-yellow"><i class=" fa-solid fa-star"></i>Winner</span></p>
+                                <p><span><i class=" fa-solid fa-arrow-up txt-green"></i> 5% of transactions involve redeeming points.</span></p>
+                                <p><span><i class=" fa-solid fa-arrow-up txt-green"></i> 2% increase in user logins.</span></p>
+
+                            </div>
+                            <img src="../images/projects/Rewards/EXP2-mockup.png" alt="Payment points mockup 2" loading="lazy" class="img-fluid rounded-3 my-3">
+
+                            
+
+                        </div>
+
+                        <div class="divider py-5"></div>
+
+
+                        <!-- Experimento 2.2 -->
+                        <div class="my-5">
+                                <h4 class="mt-4 bold txt-purple ">3. Display Cash Value vs Points</h4>
+                                <p>We conducted a final test in which, instead of displaying the points in the user's account, we showed the equivalent amount in currency. This change resulted in the graphs showing a significantly higher conversion rate. Previously, users were unclear about the monetary value of their points. By presenting this information, we motivated them to use their points for their next reservation and enhanced their experience by being more transparent with them. </p>
+
+                                <div class="box-experiment my-animate">
+                                    <div class="impact-label"><i class="impact-icon fa-solid fa-brain"></i>Experiment 2 Iteration</div>
+                                    <p class="bold">Hypothesis</p>
+                                    <p>Showing the cash value of reward points   boosts customer comprehension and redemption rates.</p>
+                                    <p><span class="bold">Metric to track</span><br>Redeem points transactions and users Login</p>
+                                    <p><span class="bold">Experiment</span> <br>All Users  | 19 days visible |  37,210 sessions</p>
+                                    <p><span class="bold">Results</span></p>
+                                    <p><span class="pill-yellow"><i class=" fa-solid fa-star"></i>Winner</span></p>
+                                    <p><span><i class=" fa-solid fa-arrow-up txt-green"></i>14% transactions with points</span></p>
+                                    
+                                </div>
+                                <img class="img-fluid mt-2 mb-4 rounded-3  shadow " src="../images/projects/Rewards/EXP2-iteration.png" alt="AB Header 1">
+                                
+                        </div>
+                    </div>
+                </div>
+
+             </section>
+
+             <div class="divider my-3"></div>
+
+             <!-- Elevating the Checkout Experience-->
+            <section class="py-5" id="checkout">
+                <div class="container">
+                    <div class="p-content">
+                        <h2 class="bold txt-purple lily-regular title"> Elevating the Checkout Experience</h2>
+                        <p>Since checkout is the user’s final and most critical step, it was essential to present information in a clear, transparent way—especially when it came to how their points were being applied. My focus was ensuring users could immediately understand the value they were getting, avoid confusion, and feel confident completing their purchase. By streamlining this experience, I aimed to boost point redemption rates and overall conversion.</p>
+                            
+                            
+                    </div>
+
+                    <!-- Experimento 4 -->
+                    <div class="py-3">
+                            <h4 class="mt-4 bold txt-purple ">4. Default to Pay with Rewards Points</h4>
+                            <p>As part of my A/B testing strategy, I designed a variation where logged-in users had their points automatically applied at checkout, with the discount clearly displayed in the order summary. The goal was to reduce friction, highlight the value of their points, and test whether a seamless, effortless redemption experience could increase point usage and boost conversion.</p>
+                    
+                            <div class="box-experiment">
+                                    <div class="impact-label"><i class="impact-icon fa-solid fa-brain"></i> Experiment 4</div>
+                                    <p class="bold">Hypothesis</p>
+                                    <p>Setting ‘Pay with points’ as the default for logged-in users will encourage more users to redeem their points, resulting in higher conversion rates for point payments</p>
+                                    <p><span class="bold">Metric to track</span><br>Redeem points transactions</p>
+                                    <p><span class="bold">Experiment</span> <br>50% logged users at checkout step 1  | 16 days visible  </p>
+                                    <p><span class="bold">Results</span></p>
+                                    <p><span class="pill-yellow"><i class=" fa-solid fa-star"></i>Winner</span></p>
+                                    <p><span><i class=" fa-solid fa-arrow-up txt-green"></i>23% of transactions involve redeeming points.</span></p>
+                            </div>
+                            <div class="videocard">
+                                <video class="lazy-video video" data-src="../images/projects/Rewards/EXP4-video.mp4" muted loop playsinline preload="metadata"></video>
+                                <span class="caption"></span>
+                            </div>
+
+                    </div>
+
+                    <div class="divider my-5 py-3"></div>
+
+                    <!-- Experimento 5 -->
+                    <div class="py-5">
+                        <h4 class="mt-4 bold txt-purple ">5. Display Monetary Value of Rewards Points</h4>
+                        <p>After validating in the header experiment that users understood their rewards much better when expressed in currency instead of points, I applied the same approach in the checkout flow. My goal was to bring that same clarity to the final step of the purchase and make point redemption more intuitive and appealing for users.</p>
+                        <div class="box-experiment ">
+                                <div class="impact-label"><i class="impact-icon fa-solid fa-brain"></i> Experiment 5</div>
+                                <p class="bold">Hypothesis</p>
+                                <p>Displaying the monetary value of user points will improve clarity and encourage more users to redeem points during payment, increasing point-based transactions.</p>
+                                <p><span class="bold">Metric to track</span><br>Redeem points transactions</p>
+                                <p><span class="bold">Experiment</span> <br>50% logged users at checkout step 1  | 18 days visible </p>
+                                <p><span class="bold">Results</span></p>
+                                <p><span class="pill-yellow"><i class=" fa-solid fa-star"></i>Winner</span></p>
+                                <p><span><i class=" fa-solid fa-arrow-up txt-green"></i>24% of transactions involve redeeming points.</span></p>
+
+                        </div>
+                        <div class="videocard">
+                                <video class="lazy-video video" data-src="../images/projects/Rewards/EXP5-video.mp4" muted loop playsinline preload="metadata"></video>
+                                <span class="caption"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="divider my-5"></div>
+
+            <!-- Impact-->
+            <section class="py-5" id="impact">
+                <div class="container">
+                    <div class="p-content">
+                        <h2 class="bold txt-purple lily-regular title">The Impact</h2>
+                        <p>The initiatives we implemented had a significant positive impact on user engagement and overall business performance.</p>
+                
+                        <div>
+                            <h4 class="text-center bold mt-4">OKR1 Objective Increase transactions with points to 25%</h4>
+                            <p>We successfully achieved this goal, rising from 12.09% of transactions paid with points in September to an average of 25% in December same year</p>
+                            <img class="img-fluid mt-2 mb-4 rounded-3  shadow " src="../images/projects/Rewards/impact.png" alt="AB Header 1">
+                        </div>
+
+                        <div>
+                            <h4 class="text-center bold mt-4">OKR1 Objective Reaches 8% of users navigating with an active account</h4>
+                            <p>While this goal was ambitious and not fully met, an improvement was observed, reaching 5.87% of logged-in users.</p>
+                            <img class="img-fluid mt-2 mb-4 rounded-3  shadow " src="../images/projects/Rewards/impact2.png" alt="AB Header 1">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps-->
+            <section class="py-5">
+                <div class="container">
+                    <div class="p-content">
+                        <h2 class="bold txt-purple lily-regular title">Next steps</h2>
+                        <p>We continued to monitor user behavior and implemented additional actions in the next release to enhance the experience for our logged-in users and increase the number of users who created accounts in our rewards program.</p>
+                        <ul>
+                            <li><strong>Exclusive Offers:</strong> We introduced exclusive hotel offers specifically for logged-in users to encourage account creation and engagement.</li>
+                            <li><strong>Redesign of the Benefits Module:</strong> We revamped the benefits module on the homepage to clearly communicate the value of our rewards program.</li>
+                            <li><strong>Ongoing Enhancements:</strong> We kept enhancing the user experience during the login process, ensuring it remained seamless and inviting.</li>
+                        </ul>
+        
+                        <p>These steps were part of our commitment to creating a more engaging and rewarding experience for our users.</p>
+                       
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+    </div>
+
+    <!-- TAKE AWAY -->
+    <section class="s-take-away">        
+        <div class=" container-fluid">
+            <div class="container col-11 col-md-9 col-xl-7 py-4" >
+                <div class="p-content">
+                    <h2 class="bold pt-4 pb-2">Key takeaways</h2>
+                    <ul>
+                        <li><strong>Make the value obvious at decision time:</strong> Switching from “points” to a clear currency value reduced mental math and increased confidence—helping more users redeem rewards.</li>
+                        <li><strong>Small, targeted changes can outperform big redesigns:</strong> Focused tweaks to visibility and messaging removed friction without disrupting the checkout flow.</li>
+                        <li><strong>Build momentum with measurable experiments:</strong> Quick A/B test wins kept stakeholders aligned and made it easier to iterate toward the OKRs.</li>
+                    </ul>
+                </div>
+                <!-- FIRMA -->
+             
+
+            </div> 
+            
+            
+        </div>
+    </section>
+
+     <!-- NEXT PROJECT -->
+    <section class="s-proyects pt-4 mt-4 mb-4 d-none">
+        <div class="col-11 col-md-9 col-xl-7 container">
+
+            <h4 class="mb-4"> Next Project</h4>
+            <!-- PROJECT CARD -->
+            <div class="proyect-card box-white py-4 px-2 border-bottom row ">
+                <div class="col-md-4 proyect-image"><img class="img-fluid" src="../images/projects/Storybook/thumb - recent-project.png" alt="Design system project thumbnail"></div>
+                <div class="col-md-8 description">
+                    <h4 class="bold">Streamlined Development: Comprehensive Design System and Component Repository Boosted Consistency and Efficiency in Design.</h4>
+                    <div><span class="badge rounded-pill">2024</span> <span> UX Designer </span></div>
+                    <p class="">Creating an updated component library for designers and developer.</p>
+                    <button onclick="location.href='Design-System.html'" class="btn btn-outline-secondary" >View Project</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!--//////////////////// FOOTER ///////////////////// -->
+    <section class="s-footer ">
+        <!-- <div class="container-fluid bg-footer-img"></div> -->
+        <div class="container col-11 col-md-9 col-xl-8">
+        <div class="row">
+            <div class="col-6">
+            <span class="quote">I think that little by little I'll be able to solve my problems and survive. </span><br>
+            <span class="quote-name"> - Frida Kahlo - </span>
+            </div>
+            <div class="col-2 col-md-3">
+            </div>
+            <div class="col-4 col-md-3">
+            <ul class="list-unstyled">
+                <li><a class="btn btn-footer" href="mailto:martinez.liz.ux@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i> Email </a></li>
+                <li><a class="btn btn-footer" href="https://zeeg.me/martinezlizux " target="_blank"><i class="fa-solid fa-calendar"></i> Zeeg me</a></li>
+                <li><a class="btn btn-footer" href="https://www.linkedin.com/in/lizbethmartinezux/ " target="_blank"><i class="fa-brands fa-linkedin"></i> Linkedin</a></li>
+                <!-- <li><a class="btn btn-footer" href=""><i class="fa-brands fa-instagram"></i> Instagram</a></li> -->
+            </ul>
+    
+            </div>
+        </div>
+        </div>
+    
+    </section>
+  <!--//////////////////// SCRIPTS  ///////////////////// -->
+
+
+  <script src="../assets/js/bootstrap.bundle.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="../isotope.min.js"></script>
+  <script src="../script.js"></script>
+    <script src="../assets/js/experiment5.js" defer></script>
+
+    <!-- Cargar la firma -->
+    <script src="../firma-loader.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            cargarFirma('Liz-Firma');
+        });
+    </script>
+
+</body>
+</html>
+    
+
+    

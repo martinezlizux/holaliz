@@ -1,45 +1,148 @@
 @use '../custom' as *;
+@use '../components/mixins' as *;
 
+.s-footer {
+    background: linear-gradient(to bottom, #ffffff, #faf5ff);
+    padding: 60px 20px 40px 20px;
+    color: var(--Type-Neutral-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 
-.s-footer{
-    
-    background-color: var(--color-Surface-Secondary-Darker);
-    padding: 10% 0%;
-    color: #fff;
-
-}
-
-
-.quote{
-    font-size: 2.25rem;
-    font-family: inherit;
-    font-weight: 600;
-
-}
-
-.quote-name{
-
-    font-size: 1rem;
-    font-family: inherit;
-    font-weight: 400;
-
-}
-
-.bg-footer-img{
-    background-image: url("../../images/Footer-image.png");
-    position: relative;
-    overflow: hidden;
-    background-color: #fbf9f4;
-    -webkit-font-smoothing: subpixel-antialiased;
-    height: 450px;
-}
-
-@media (max-width: 767.98px) {
-    .quote{
-        font-size: 1.5rem;
-        font-family: inherit;
-        font-weight: 600;
-    
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 900px;
     }
-  }
 
+    .footer-logo {
+        width: 157px;
+        height: auto;
+        margin-bottom: 46px;
+
+        svg,
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+    .footer-title {
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 38px;
+        line-height: 48px;
+        letter-spacing: 0.35px;
+        color: #101828;
+        text-align: center;
+        margin-bottom: 24px;
+    }
+
+    .footer-description {
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 27px;
+        letter-spacing: -0.44px;
+        color: var(--Type-Neutral-dark);
+        text-align: center;
+        max-width: 650px;
+        margin-bottom: 46px;
+        white-space: pre-wrap;
+    }
+
+    .footer-actions {
+        display: flex;
+        gap: 24px;
+        justify-content: center;
+        margin-bottom: 57px;
+    }
+
+    .btn-email {
+        background-color: var(--primary-400); // #7733db
+        color: #fff;
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        padding: 18px 23px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: var(--primary-500);
+            color: #fff;
+        }
+
+        i {
+            font-size: 16px;
+        }
+    }
+
+    .btn-linkedin {
+        border: 1px solid var(--primary-500); // #5a1fb2
+        color: var(--primary-600); // #48198f
+        background-color: transparent;
+        font-size: 18px;
+        padding: 18px 23px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: var(--primary-50);
+        }
+    }
+
+    .footer-copyright-wrapper {
+        width: 100%;
+        border-top: 1px solid #e5e7eb;
+        padding-top: 33px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer-copyright {
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.31px;
+        color: #6a7282; // text-gray-500 equivalent
+        text-align: center;
+        margin: 0;
+    }
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .s-footer {
+    background: var(--Surface-Neutral-subtle);
+
+    .footer-title,
+    .footer-description {
+        color: var(--Type-Neutral-negative);
+    }
+
+    .btn-linkedin {
+        color: var(--primary-200);
+        border-color: var(--primary-300);
+
+        &:hover {
+            background-color: var(--primary-800);
+        }
+    }
+
+    .footer-copyright {
+        color: var(--Type-Neutral-subtle);
+    }
+}

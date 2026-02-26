@@ -1,0 +1,187 @@
+// Sunny Project Specific Styles
+
+.sunny-project {
+    .sunny-hero-visual {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .tracking-widest {
+        letter-spacing: 0.1em;
+    }
+
+    // Typography for Hero
+    .hero-title {
+        font-size: 4rem;
+        line-height: 1.1;
+    }
+
+    .hero-title-weather {
+        font-weight: 800;
+        color: #ffffff !important;
+    }
+
+    .hero-title-pops {
+        font-weight: 800;
+        color: #FFB800; // Yellow color matching screenshot
+    }
+
+    .text-primary-accent {
+        color: #FFB800 !important;
+    }
+
+    .btn-primary-accent {
+        background-color: #FFB800;
+        border-color: #FFB800;
+        color: #171b12;
+        font-weight: 700;
+        border-radius: 50px;
+        padding: 12px 32px;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            background-color: darken(#FFB800, 10%);
+            border-color: darken(#FFB800, 10%);
+            color: #171b12;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 184, 0, 0.3);
+        }
+    }
+
+    .btn-outline-dark {
+        font-weight: 600;
+        border-radius: 50px;
+        padding: 12px 32px;
+    }
+
+    // Hero Visual Mockup
+    .sunny-hero-visual {
+        position: relative;
+        z-index: 1;
+
+        .sunny-mockup-shadow-yellow {
+            position: absolute;
+            background: rgba(253, 199, 0, 0.2);
+            filter: blur(64px);
+            left: -15%;
+            opacity: 0.67;
+            border-radius: 50%;
+            width: 500px;
+            height: 500px;
+            top: -20px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .sunny-mockup-shadow-blue {
+            position: absolute;
+            background: rgba(43, 127, 255, 0.2);
+            filter: blur(64px);
+            right: -10%;
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            top: 150px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .sunny-mockup-frame {
+            background: #1e2939;
+            border: 14px solid #1e2939;
+            height: 720px;
+            width: 360px;
+            border-radius: 40px;
+            box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 8px 10px -6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
+            transform: scale(0.9);
+            transform-origin: top center;
+        }
+
+        .sunny-mockup-btn-1 {
+            position: absolute;
+            background: #1e2939;
+            height: 32px;
+            width: 3px;
+            left: -17px;
+            top: 72px;
+            border-radius: 10px 0 0 10px;
+        }
+
+        .sunny-mockup-btn-2 {
+            position: absolute;
+            background: #1e2939;
+            height: 46px;
+            width: 3px;
+            left: -17px;
+            top: 124px;
+            border-radius: 10px 0 0 10px;
+        }
+
+        .sunny-mockup-btn-3 {
+            position: absolute;
+            background: #1e2939;
+            height: 46px;
+            width: 3px;
+            left: -17px;
+            top: 178px;
+            border-radius: 10px 0 0 10px;
+        }
+
+        .sunny-mockup-btn-4 {
+            position: absolute;
+            background: #1e2939;
+            height: 64px;
+            width: 3px;
+            right: -17px;
+            top: 142px;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .sunny-mockup-screen {
+            background-color: #333a55;
+            height: 100%;
+            width: 100%;
+            border-radius: 26px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sunny-mockup-character {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+
+            img {
+                width: 100%;
+                height: 100%;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                object-fit: cover;
+                transform: none;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero-title {
+            font-size: 3rem;
+        }
+    }
+}

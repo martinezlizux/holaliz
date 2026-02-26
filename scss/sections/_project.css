@@ -94,6 +94,39 @@
   width: -webkit-fill-available;
 }
 
+.p-content h2 {
+  color: var(--Primitives-Colours-Morado-800);
+  font-size: clamp(1.5rem, 1.05rem + 0.9vw, 2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 1rem 0;
+  padding: 0;
+}
+
+.p-content .results {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 1rem 0 1.5rem 0;
+}
+
+.p-content .results .win {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  background: radial-gradient(circle, #3D4CF4, #ff2862);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 1px solid #d5b8f9;
+  border-radius: 16px;
+  padding: 6px 14px;
+}
+
+.p-content .results .win i {
+  color: var(--Primitives-Colours-Azul-800);
+}
+
 .p-heading h2 {
   font-size: 1.5rem;
 }

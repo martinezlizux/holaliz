@@ -1,24 +1,31 @@
 @use '../custom' as *;
 @use '../components/mixins' as *;
 
-.s-intro{
+.s-intro {
     padding: 1rem 0 0 0;
+    /* Reduced padding as requested */
     width: 100%;
-    min-height: 90vh;
-    overflow: visible;
+    height: 100vh;
+    /* Strict viewport height as requested */
+    max-height: 100vh;
+    overflow: hidden;
+    /* Prevent scroll */
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    /* Ensure positioning context for absolute children like shapes */
 }
+
 .s-intro-content {
-    margin-top: 5%;
+    margin-top: 0;
+    /* Let flexbox center it */
     width: 100%;
     max-width: 1200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex: 1 1 auto;
-    padding: 2rem 1rem;
     opacity: 0;
     transform: translateY(35px) scale(0.98);
     animation: introFadeUp 0.85s ease-out forwards 0.25s;
@@ -29,27 +36,31 @@
         opacity: 0;
         transform: translateY(35px) scale(0.98);
     }
+
     70% {
         opacity: 1;
         transform: translateY(-3px) scale(1.01);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0) scale(1);
     }
 }
 
-.logo-name{
+.logo-name {
     width: 100px;
     margin-bottom: 20px;
     margin-top: 20px;
 }
 
-.face-img{
-    width: 150px;
-    height: auto;
+/* Updated to match Figma */
+.face-img {
+    width: 156px;
+    height: 156px;
     border-radius: 20px;
     display: block;
+    object-fit: cover;
 }
 
 .hero-intro {
@@ -58,609 +69,406 @@
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
-    padding: 2.5rem 0 3rem;
 }
 
 .hero-visual {
     position: relative;
-    display: inline-flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1.5rem;
+    padding: 0;
     margin: 0 auto 1rem;
-    --hero-icon-offset-scale: 1.3;
+    --hero-icon-offset-scale: 1;
+}
+
+.hero-photo-container {
+    position: relative;
+    width: 156px;
+    height: 156px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-photo-wrapper {
     position: relative;
-    padding: 0.50rem;
-    border-radius: 32px;
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 20px 50px rgba(92, 57, 198, 0.15);
+    padding: 0;
+    border-radius: 20px;
+    background: transparent;
+    z-index: 10;
 }
 
-.hero-chip {
-    position: absolute;
-    bottom: -55px;
-    left: 50%;
-    transform: translateX(-130%);
+/* Badge Style */
+.hero-badge-container {
+    margin-top: -10px;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 20;
+}
+
+.hero-badge {
     display: inline-flex;
     align-items: center;
-    gap: 0.35rem;
-    padding: 0.25rem 0.85rem;
-    border-radius: 8px;
-    background: var(--Primitives-Colours-Morado-500);
-    color: #fff;
-    font-weight: 600;
-    font-size: 0.85rem;
-    letter-spacing: 0.02em;
+    background-color: var(--Surface-Primary-subtle);
+    color: var(--Type-Primary-default);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.15px;
 
-   
-
-    &::after {
-        content: '';
-        position: absolute;
-        right: -30px;
-        top: -2px;
-        transform: translateY(-50%);
-        width: 32px;
-        height: 32px;
-        background-image: url("../../images/hero/arrow.svg");
-        background-repeat: no-repeat;
-        background-size: contain;
+    i {
+        font-size: 14px;
     }
 }
 
-.hero-chip__name {
-    position: relative;
-    z-index: 1;
+/* Typography Updates */
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 60px);
+    /* Matches Figma 60px on desktop */
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--Type-Neutral-dark);
+    font-weight: 700;
 }
 
-.hero-title {
-    font-size: clamp(2rem, 6vw, 3rem);
-    line-height: 1.2;
-    margin-bottom: 0.75rem;
-    background: linear-gradient(90deg, #5c39c6, #f90069);
+.highlight-text {
+    background: linear-gradient(to left, #534ae5, #9842b4, #ed437f);
+    background-clip: text;
     -webkit-background-clip: text;
+    /* standard property for compatibility */
     -webkit-text-fill-color: transparent;
+    display: inline-block;
 }
 
 .hero-description {
-    max-width: 720px;
+    max-width: 672px;
+    /* Matches Figma */
     margin: 0 auto;
-    font-size: 1.1rem;
-    line-height: 1.7rem;
-    color: #000;
+    font-size: 20px;
+    /* Matches Figma */
+    line-height: 27px;
+    color: var(--Type-Neutral-default);
+    font-weight: 500;
 }
 
 .hero-intro .welcome-text p {
     text-align: center;
 }
 
+.hero-intro .welcome-text {
+    color: var(--Type-Neutral-negative);
+}
+
+/* Icons */
 .hero-icon {
     position: absolute;
-    --hero-icon-art-size: 76px;
-    --hero-icon-wrapper-size: calc(var(--hero-icon-art-size) + 24px);
-    width: var(--hero-icon-wrapper-size);
-    height: var(--hero-icon-wrapper-size);
-    border-radius: 32px;
+    --hero-icon-size: 35px;
+    width: var(--hero-icon-size);
+    height: var(--hero-icon-size);
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
     isolation: isolate;
     cursor: pointer;
-    // background: rgba(255, 255, 255, 0.95);
-    // box-shadow: 0 20px 45px rgba(30, 18, 63, 0.2);
     background-image: var(--hero-icon-base);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: var(--hero-icon-art-size);
-
-    &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        width: var(--hero-icon-art-size);
-        height: var(--hero-icon-art-size);
-        margin: auto;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        background-image: var(--hero-icon-hover);
-        opacity: 0;
-        transform: translateY(6px) scale(0.95);
-        transition: opacity 0.3s ease, transform 0.3s ease;
-    }
+    background-size: contain;
+    background-color: transparent;
+    transition: transform 0.3s ease;
+    z-index: 10;
 
     &::after {
         content: attr(data-label);
         position: absolute;
-        top: calc(-0.2 * var(--hero-icon-wrapper-size));
-        right: calc(0 * var(--hero-icon-wrapper-size));
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%) translateY(-5px);
         padding: 0.25rem 0.65rem;
-        font-size: clamp(0.7rem, 0.8vw, 0.9rem);
+        font-size: 0.75rem;
         font-weight: 700;
         letter-spacing: 0.05em;
-        color: #5c39c6;
+        color: var(--Type-Primary-default);
+        background: rgba(255, 255, 255, 0.9);
         border-radius: 999px;
         opacity: 0;
-        transform: translateY(-8px);
         transition: opacity 0.2s ease, transform 0.2s ease;
         pointer-events: none;
         white-space: nowrap;
-        z-index: 2;
+        z-index: 20;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 }
 
 .hero-icon:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 30px 60px rgba(30, 18, 63, 0.25);
-
-    &::before {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+    background-image: var(--hero-icon-hover);
+    transform: var(--base-transform) scale(1.1);
+    z-index: 50;
 
     &::after {
         opacity: 1;
-        transform: translateY(-2px);
+        transform: translateX(-50%) translateY(-10px);
     }
 }
 
+/* Icon Positions relative to Center (top 50%, left 50%) */
+
 .hero-icon--figma {
-    top: calc(var(--hero-icon-offset-scale) * (140px + 0.6 * (var(--hero-icon-art-size) - 76px)));
-    left: calc(var(--hero-icon-offset-scale) * (-100px - 0.5 * (var(--hero-icon-art-size) - 76px)));
+    top: 50%;
+    left: 50%;
+    --base-transform: translate(-50%, -50%) translate(calc(-180px * var(--hero-icon-offset-scale)), calc(38px * var(--hero-icon-offset-scale)));
+    transform: var(--base-transform);
     --hero-icon-base: url("../../images/hero/figma-base.svg");
     --hero-icon-hover: url("../../images/hero/figma-hover.svg");
+
+}
+
+.hero-icon--dev {
+    top: 50%;
+    left: 50%;
+    --base-transform: translate(-50%, -50%) translate(calc(-157px * var(--hero-icon-offset-scale)), calc(-17px * var(--hero-icon-offset-scale))) rotate(0deg);
+    transform: var(--base-transform);
+    --hero-icon-base: url("../../images/hero/dev-base.svg");
+    --hero-icon-hover: url("../../images/hero/dev-hover.svg");
+}
+
+.hero-icon--research {
+    top: 50%;
+    left: 50%;
+    --base-transform: translate(-50%, -50%) translate(calc(-244px * var(--hero-icon-offset-scale)), calc(-13px * var(--hero-icon-offset-scale))) rotate(0deg);
+    transform: var(--base-transform);
+    --hero-icon-base: url("../../images/hero/research-base.svg");
+    --hero-icon-hover: url("../../images/hero/research-hover.svg");
+}
+
+.hero-icon--proto {
+    top: 50%;
+    left: 50%;
+    --base-transform: translate(-50%, -50%) translate(calc(-205px * var(--hero-icon-offset-scale)), calc(-78px * var(--hero-icon-offset-scale))) rotate(0deg);
+    transform: var(--base-transform);
+    --hero-icon-base: url("../../images/hero/proto-base.svg");
+    --hero-icon-hover: url("../../images/hero/proto-hover.svg");
+}
+
+.hero-icon--adobe {
+    top: 50%;
+    left: 50%;
+    --base-transform: translate(-50%, -50%) translate(calc(151px * var(--hero-icon-offset-scale)), calc(-76px * var(--hero-icon-offset-scale))) rotate(0deg);
+    transform: var(--base-transform);
+    --hero-icon-base: url("../../images/hero/adobe-base.svg");
+    --hero-icon-hover: url("../../images/hero/adobe-hover.svg");
+
+}
+
+.hero-icon--procreate {
+    top: 50%;
+    left: 50%;
+    --base-transform: translate(-50%, -50%) translate(calc(194px * var(--hero-icon-offset-scale)), calc(-13px * var(--hero-icon-offset-scale))) rotate(0deg);
+    transform: var(--base-transform);
+    --hero-icon-base: url("../../images/hero/procreate-base.svg");
+    --hero-icon-hover: url("../../images/hero/procreate-hover.svg");
+
 }
 
 .hero-icon--anima {
-    top: calc(var(--hero-icon-offset-scale) * (130px + 0.45 * (var(--hero-icon-art-size) - 76px)));
-    right: calc(var(--hero-icon-offset-scale) * (-80px - 0.35 * (var(--hero-icon-art-size) - 76px)));
-    transform: rotate(12deg);
+    top: 50%;
+    left: 50%;
+    --base-transform: translate(-50%, -50%) translate(calc(105px * var(--hero-icon-offset-scale)), calc(-17px * var(--hero-icon-offset-scale))) rotate(0deg);
+    transform: var(--base-transform);
     --hero-icon-base: url("../../images/hero/anima-base.svg");
     --hero-icon-hover: url("../../images/hero/anima-hover.svg");
 }
 
 .hero-icon--draw {
-    bottom: calc(var(--hero-icon-offset-scale) * (-10px - 0.35 * (var(--hero-icon-art-size) - 76px)));
-    right: calc(var(--hero-icon-offset-scale) * (-184px - 0.45 * (var(--hero-icon-art-size) - 76px)));
-    transform: rotate(20deg);
+    top: 50%;
+    left: 50%;
+    --base-transform: translate(-50%, -50%) translate(calc(134px * var(--hero-icon-offset-scale)), calc(38px * var(--hero-icon-offset-scale))) rotate(0deg);
+    transform: var(--base-transform);
     --hero-icon-base: url("../../images/hero/draw-base.svg");
     --hero-icon-hover: url("../../images/hero/draw-hover.svg");
 }
 
-.hero-icon--dev {
-    top: calc(var(--hero-icon-offset-scale) * (40px + 0.35 * (var(--hero-icon-art-size) - 76px)));
-    left: calc(var(--hero-icon-offset-scale) * (-90px - 0.3 * (var(--hero-icon-art-size) - 76px)));
-    transform: rotate(18deg);
-    --hero-icon-base: url("../../images/hero/dev-base.svg");
-    --hero-icon-hover: url("../../images/hero/dev-hover.svg");
-}
 
-.hero-icon--procreate {
-    top: calc(var(--hero-icon-offset-scale) * (30px + 0.4 * (var(--hero-icon-art-size) - 76px)));
-    right: calc(var(--hero-icon-offset-scale) * (-200px - 0.45 * (var(--hero-icon-art-size) - 76px)));
-    transform: rotate(8deg);
-    --hero-icon-base: url("../../images/hero/procreate-base.svg");
-    --hero-icon-hover: url("../../images/hero/procreate-hover.svg");
-}
 
-.hero-icon--adobe {
-    top: calc(var(--hero-icon-offset-scale) * (25px + 0.25 * (var(--hero-icon-art-size) - 76px)));
-    right: calc(var(--hero-icon-offset-scale) * (-100px - 0.3 * (var(--hero-icon-art-size) - 76px)));
-    transform: rotate(-12deg);
-    --hero-icon-base: url("../../images/hero/adobe-base.svg");
-    --hero-icon-hover: url("../../images/hero/adobe-hover.svg");
-}
 
-.hero-icon--proto {
-    top: calc(var(--hero-icon-offset-scale) * (30px + 0.4 * (var(--hero-icon-art-size) - 76px)));
-    left: calc(var(--hero-icon-offset-scale) * (-220px - 0.45 * (var(--hero-icon-art-size) - 135px)));
-    transform: rotate(-12deg);
-    --hero-icon-base: url("../../images/hero/proto-base.svg");
-    --hero-icon-hover: url("../../images/hero/proto-hover.svg");
-}
-
-.hero-icon--research {
-    bottom: calc(var(--hero-icon-offset-scale) * (-10px - 0.25 * (var(--hero-icon-art-size) - 20px)));
-    left: calc(var(--hero-icon-offset-scale) * (-200px - 0.35 * (var(--hero-icon-art-size) - 76px)));
-    transform: rotate(-10deg);
-    --hero-icon-base: url("../../images/hero/research-base.svg");
-    --hero-icon-hover: url("../../images/hero/research-hover.svg");
-}
-
-@media (max-width: 1199px) {
-    .hero-visual {
-        --hero-icon-offset-scale: 1.2;
-    }
-}
-
-@media (max-width: 991px) {
-    .hero-icon {
-        --hero-icon-art-size: 68px;
-    }
-
-    .hero-visual {
-        --hero-icon-offset-scale: 1.2;
-    }
-}
-
-@media (max-width: 767px) {
-    .hero-icon {
-        --hero-icon-art-size: 58px;
-    }
-
-    .hero-visual {
-        --hero-icon-offset-scale: 1.3;
-    }
-}
-
-.call{
-    font-size: 20px ;
-    color: #fff;
-    background-color: #9e83fa ;
-    border: 1px solid var(--Primitives-Colours-Morado-100);
-    border-radius: 40px;
-    padding: 8px 18px;
-
-    &:hover{
-
-            background-color: #7153d3 ;
-            color: #fff;
-            border-radius: 27px;
-            padding: 8px 18px;
-            border: 1px solid var(--Primitives-Colours-Morado-500);
-            outline-width: 1px;
-            outline-offset: 0;
-            outline-color: rgba(60, 13, 94, 0.75);
-            outline-style: solid;
-            animation: animateOutline2 4s ease infinite;
-
-            // animation border
-
-        @keyframes animateOutline2 {
-            0% {
-              outline-width: 1px;
-              outline-offset: 0;
-              outline-color: rgba(0, 130, 206, 0);
-            }
-
-            10% {
-              outline-color: var(--Primitives-Colours-Morado-500);
-            }
-
-            /* The animation finishes at 50% */
-            50% {
-              outline-width: 5px;
-              outline-offset: 3px;
-              outline-color: rgba(0, 130, 206, 0);
-            }
-
-            100% {
-              outline-width: 5px;
-              outline-offset: 3px;
-              outline-color: rgba(102, 102, 102, 0);
-            }
-          }
-    }
-
-}
-
-.shape1{
+/* Animation & Background (Kept from original) */
+.shape1 {
     width: 400px;
     height: 400px;
     border-radius: 9999px;
     position: relative;
-    background-color: #faf5db;
-    animation: one 10s infinite ;
+    background-color: var(--Surface-Warning-subtle);
+    animation: one 10s infinite;
     filter: blur(90px);
-
+    z-index: -1;
 }
 
 @keyframes one {
-    0%{ left: 0px; top: 0px;}
-    25%{ left: -100px; top: 70px;}
-    50%{ left: 20px; top: 150px;}
-    75%{ left: 50px; top: 100px;}
-    100%{ left: 0px; top: 0px;}
+    0% {
+        left: 0px;
+        top: 0px;
+    }
 
-    
+    25% {
+        left: -100px;
+        top: 70px;
+    }
+
+    50% {
+        left: 20px;
+        top: 150px;
+    }
+
+    75% {
+        left: 50px;
+        top: 100px;
+    }
+
+    100% {
+        left: 0px;
+        top: 0px;
+    }
 }
 
 .gradient-background {
     background: linear-gradient(-45deg, #fcffe1, #e6cafe, #e6f8ff, #effffb);
-	background-size: 400% 400%;
-	animation: gradient-intro 15s ease infinite;
-}
-
-.fade-mask{
-    --fade-amount: 15%;
-    mask-image: linear-gradient(to bottom, black var(--fade-amount), black calc(100% - var(--fade-amount)), transparent );
+    background-size: 400% 400%;
+    animation: gradient-intro 15s ease infinite;
 }
 
 @keyframes gradient-intro {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.fade-mask {
+    --fade-amount: 15%;
+    mask-image: linear-gradient(to bottom, black var(--fade-amount), black calc(100% - var(--fade-amount)), transparent);
 }
 
 
+/* Responsive */
 
-
-.welcome-text p {
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.5rem;
-    letter-spacing: 0;
-    text-align: left;
-    color: #000;
+@media (max-width: 1199px) {
+    .hero-visual {
+        --hero-icon-offset-scale: 0.9;
+    }
 }
 
-// Small devices (mobile, up to 576px)
-@media (max-width: 575px) {
+@media (max-width: 991px) {
+    .hero-title {
+        font-size: 48px;
+    }
+
+    .hero-visual {
+        --hero-icon-offset-scale: 0.8;
+    }
+}
+
+@media (max-width: 767px) {
     .s-intro-content {
-        min-height: 60vh; // 78% del viewport para móviles
-        padding: 1rem 0;
+        min-height: auto;
+        padding: 3rem 0;
     }
 
-    .s-intro {
-        padding: 1rem 0 2rem 0;
-    }
-
-    .logo-name {
-        width: 80px;
-        margin-bottom: 15px;
-        margin-top: 15px;
+    .hero-photo-container {
+        width: 120px;
+        height: 120px;
     }
 
     .face-img {
         width: 120px;
-    }
-
-    .welcome-text p {
-        font-size: 0.9rem;
-        line-height: 1.4rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .hero-intro {
-        padding: 1.75rem 0 2.25rem;
-    }
-
-    .hero-visual {
-        padding: 1rem;
-        --hero-icon-offset-scale: 1.1;
+        height: 120px;
     }
 
     .hero-icon {
-        --hero-icon-art-size: 44px;
+        --hero-icon-size: 30px;
+    }
 
-        &::after {
-            font-size: 0.65rem;
-            padding: 0.18rem 0.5rem;
-        }
+    .hero-title {
+        font-size: 36px;
     }
 
     .hero-description {
-        font-size: 1rem;
-        line-height: 1.5rem;
-        padding: 0 0.5rem;
-    }
-
-    .hero-chip {
-        bottom: -8px;
-        font-size: 0.8rem;
-        padding: 0.2rem 0.8rem;
-    }
-
-    // Estilos específicos para el menú móvil
-    .navbar-collapse {
-        background-color: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        border-radius: 10px;
-        padding: 1rem;
-        margin-top: 0.5rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    
-    .navbar-nav {
-        text-align: center;
-        
-        &:first-child {
-            border-bottom: 1px solid rgba(158, 131, 250, 0.2);
-            padding-bottom: 0.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .nav-link {
-            padding: 0.75rem 1rem;
-            margin: 0.25rem 0;
-            display: block;
-        }
-    }
-}
-
-// Extra small devices (phones, less than 480px)
-@media (max-width: 479px) {
-    .s-intro-content {
-        min-height: 60vh; // 75% del viewport para móviles muy pequeños
-        padding: 0.5rem 0;
-    }
-
-    .face-img {
-        width: 95px;
-    }
-
-    .logo-name {
-        width: 70px;
-        margin-bottom: 10px;
-        margin-top: 10px;
-    }
-
-    .welcome-text p {
-        font-size: 0.85rem;
-        line-height: 1.3rem;
-        margin-bottom: 1rem;
-    }
-
-    .hero-intro {
-        padding: 1.25rem 0 1.75rem;
-        gap: 0.75rem;
+        font-size: 16px;
+        line-height: 1.5;
     }
 
     .hero-visual {
-        padding: 0.5rem;
-        --hero-icon-offset-scale: 1.2;
-    }
-
-    .hero-photo-wrapper {
-        padding: 0.4rem;
-        border-radius: 22px;
-    }
-
-    .hero-chip {
-        bottom: -4px;
-        font-size: 0.72rem;
-    }
-
-    .hero-icon {
-        --hero-icon-art-size: 36px;
-
-        &::after {
-            font-size: 0.6rem;
-            padding: 0.15rem 0.4rem;
-        }
-    }
-
-    .hero-description {
-        font-size: 0.9rem;
-        line-height: 1.4rem;
-    }
-
-    .menu .navbar-nav {
-        margin-top: 0.5rem;
-        gap: 0.25rem;
-        
-        .nav-link {
-            padding: 0.4rem 0.6rem;
-            font-size: 0.85rem;
-        }
+        --hero-icon-offset-scale: 0.6;
+        margin-bottom: 2rem;
     }
 }
 
-// Small to medium devices (576px to 767px)
-@media (min-width: 576px) and (max-width: 767px) {
-    .s-intro-content {
-        min-height: 70vh; // 82% del viewport para tablets pequeñas
-        padding: 1.5rem 0;
-    }
-}
-
-// Estilo específico para el título rotativo
-#rotatingTitle {
-    min-height: 1.5em; // Altura mínima más grande para seguridad
-    height: 1.5em;     // Altura fija para evitar cualquier cambio
-    line-height: 1.5;  // Altura de línea que coincida
-    display: flex;     // Usar flex para mejor control
-    align-items: center; // Centrar verticalmente el texto
-    justify-content: center; // Centrar horizontalmente
-    overflow: hidden;  // Evitar desbordamiento
-    transition: opacity 0.3s ease; // Transición suave para el fade
-}
-
-// Estilos para el menú hamburguesa y navegación
-.navbar-toggler {
-    border: none;
-    padding: 0.25rem 0.5rem;
-    
-    .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-        width: 1.5em;
-        height: 1.5em;
-    }
-    
-    &:focus {
-        box-shadow: none;
-    }
-}
-
-// Mejoras en la navegación
-.navbar-nav {
-    .nav-link {
-        padding: 0.5rem 1rem;
-        margin: 0 0.25rem;
-        border-radius: 20px;
-        transition: all 0.3s ease;
-        
-        &.active {
-            background-color: rgba(158, 131, 250, 0.1);
-            color: #9e83fa;
-        }
-        
-        &:hover {
-            background-color: rgba(158, 131, 250, 0.1);
-            color: #7153d3;
-        }
-    }
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-
-    .s-intro{
-        padding: 1rem 0 4rem 0;
-    }
-
-    .s-intro-content {
-        min-height: 50vh; // 50% del viewport para desktop (más espacio)
-        max-height: 50vh; // 50% del viewport para desktop (más espacio)
-        padding: 2rem 0;
-    }
-
-    .call {
-        font-size: 25px;
-    }
-
-    .welcome-text p {
-        font-size: calc(1rem + 0.1vw);
-        font-style: normal;
-        font-weight: 400;
-        line-height: 1.5rem;
-        letter-spacing: 0;
-        text-align: left;
-        color: #000;
-    }
-
-    .logo-name {
-        width: 150px;
-        margin-bottom: 20px;
-    }
-
+@media (max-width: 480px) {
     .hero-visual {
-        padding: 2rem;
+        --hero-icon-offset-scale: 0.5;
     }
 
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .btn-primary-custom,
+    .btn-outline-custom {
+        padding: 10px 20px;
+        font-size: 14px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        gap: 1rem !important;
+        width: 100%;
+        padding: 0 1rem;
+    }
+}
+
+/* Short screens adjustments to prevent text/buttons cutoff - Adjusted to keep original sizes */
+@media (max-height: 850px) {
+    .s-intro-content {
+        margin-top: 0;
+        /* Ensure content starts higher up if needed, but sizes remain original */
+    }
+}
+
+/* Dark Theme Overrides for Hero Background */
+[data-theme="dark"] {
+    .gradient-background {
+        background: linear-gradient(-45deg, #760dd0, #6c30bc, #1c063d, #882cd4);
+        background-size: 400% 400%;
+        animation: gradient-intro 15s ease infinite;
+    }
+
+    .shape1 {
+        background-color: var(--primary-500);
+        opacity: 0.25;
+        filter: blur(120px);
+    }
+
+    /* Make icons white in dark mode, normal on hover */
     .hero-icon {
-        --hero-icon-art-size: 76px;
-
-        &::after {
-            font-size: 0.8rem;
-            padding: 0.25rem 0.75rem;
-        }
+        filter: brightness(0) invert(1);
+        transition: transform 0.3s ease, filter 0.3s ease;
     }
 
-    .hero-description {
-        font-size: 1.1rem;
-        line-height: 1.8rem;
+    .hero-icon:hover {
+        filter: none;
     }
 
- }
+    /* Logo Dark Mode */
+    .logo-svg path:not(.logo-arrow) {
+        fill: var(--Neutral-0);
+    }
+}

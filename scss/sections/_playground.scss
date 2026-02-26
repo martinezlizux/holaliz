@@ -1,44 +1,83 @@
 @use '../components/colors' as *;
 
 .s-playground {
-   background: var(--Primitives-Colours-Morado-500);
+  background: var(--Primitives-Colours-Morado-500);
+
   .section-title {
     margin-bottom: 2rem;
     margin-top: 2rem;
     color: #fff;
   }
 
-  .gallery-playground {
-
-  }
-
   .playcard {
-    /* playground thumbnails should be square */
-    aspect-ratio: 1 / 1;
     width: 100%;
+    border-radius: 16px;
+    background: var(--project-card-background);
+    border: 1px solid var(--Border-Neutral-subtle);
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
-    border-radius: 12px;
-    background: transparent;
-    display: block;
-    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
 
-    video, img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      /* inherit the container radius so posters and videos are clipped */
-      border-radius: inherit;
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      @media (prefers-color-scheme: dark) {
+          box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+      }
     }
-    .caption {
-      position: absolute;
-      bottom: 0;
+
+    .playcard-media {
       width: 100%;
-      background-color: var(--Primitives-Colours-Morado-800);
-      color: #fff;
-      padding: 8px;
-      text-align: left;
-      font-size: 1rem;
+      aspect-ratio: 1 / 1;
+      position: relative;
+      overflow: hidden;
+
+      video,
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    }
+
+    .playcard-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      
+      .playcard-tag {
+        align-self: flex-start;
+        padding: 0.25rem 0.75rem;
+        background-color: var(--Surface-Neutral-subtle);
+        color: var(--Type-Neutral-subtle);
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        border-radius: 50rem;
+        letter-spacing: 0.5px;
+      }
+      
+      .playcard-title {
+        color: var(--Type-section-title);
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin: 0;
+      }
+      
+      .playcard-desc {
+        color: var(--Type-Neutral-subtle);
+        font-size: 0.875rem;
+        line-height: 1.5;
+        margin: 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
     }
   }
 }

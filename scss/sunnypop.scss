@@ -1,0 +1,251 @@
+// Custom Styles for SunnyPop Landing Page
+// Separate from the main portfolio design system
+
+// Typography variables
+$font-family-sans-serif: "Inter", sans-serif;
+$font-family-base: "Inter", sans-serif;
+
+// Color overrides
+$primary: #FFB800;
+$body-bg: #2B2E4D; // Dark indigo background from design
+$body-color: #A0AAB2;
+$dark: #1E213A;
+
+// Import Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+// Import Custom Sunny Section Styles
+@import "sections/sunny";
+
+// Utilities & Specifics
+html,
+body {
+    background-color: $body-bg;
+    color: $body-color;
+    font-family: 'Inter', sans-serif;
+}
+
+.font-jua {
+    font-family: 'Jua', sans-serif;
+}
+
+.text-primary-accent {
+    color: #FFB800 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #ffffff;
+}
+
+.hero-title {
+    font-family: 'Jua', sans-serif;
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+
+    .hero-title-pops {
+        color: #FFB800;
+    }
+}
+
+#idea-to-vibe {
+    background-color: #2a3044;
+    border-radius: 40px;
+    padding: 4rem 3rem !important;
+
+    h2 {
+        font-size: 3rem;
+    }
+}
+
+.sunny-card {
+    background-color: #4C577F;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    height: 100%;
+
+    .icon-wrapper {
+        width: 48px;
+        height: 48px;
+        background-color: #FFB800;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #2B2E4D;
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    h3 {
+        font-weight: 700;
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+        color: #fff;
+    }
+
+    p {
+        font-size: 1rem;
+        color: #d1d5dc;
+        line-height: 1.6;
+        margin: 0;
+    }
+}
+
+.btn-primary-accent {
+    background-color: #FFB800;
+    border-color: #FFB800;
+    color: #2B2E4D;
+    font-weight: 700;
+    border-radius: 50px;
+    padding: 12px 32px;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background-color: darken(#FFB800, 10%);
+        border-color: darken(#FFB800, 10%);
+        color: #2B2E4D;
+        transform: translateY(-2px);
+    }
+}
+
+.btn-outline-dark {
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 50px;
+    padding: 12px 32px;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+        border-color: rgba(255, 255, 255, 0.3);
+    }
+}
+
+// Top Navbar overriding
+.project-nav {
+    background-color: transparent !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1rem 0;
+
+    .project-nav__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+    }
+
+    .project-back {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        &:hover {
+            color: #FFB800;
+        }
+    }
+
+    .nav-link {
+        color: #B4B9D2 !important;
+        font-weight: 500;
+
+        &:hover,
+        &.active {
+            color: #fff !important;
+        }
+    }
+}
+
+.tracking-widest {
+    letter-spacing: 0.1em;
+}
+
+// Media
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+}
+
+// Process Image Carousel Animation
+.process-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .carousel-img {
+        position: absolute;
+        top: 55%; // Move down slightly to clear the "Whisky" header
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%; // Leave some padding
+        height: 380px; // Fixed height for consistency
+        object-fit: contain; // Ensure full image is visible
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+
+        &:nth-child(2) {
+            animation: crossFade1 10s infinite;
+        }
+
+        &:nth-child(3) {
+            animation: crossFade2 10s infinite;
+        }
+    }
+}
+
+@keyframes crossFade1 {
+
+    0%,
+    45% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50%,
+    95% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.02);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes crossFade2 {
+
+    0%,
+    45% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.02);
+    }
+
+    50%,
+    95% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.02);
+    }
+}

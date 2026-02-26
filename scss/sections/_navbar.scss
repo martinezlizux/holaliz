@@ -6,7 +6,7 @@
 .menu {
     // @include gradient;
     // // background: linear-gradient(to right, rgba($teal-light, 0.95), rgba($teal-dark, 0.95));
-    
+
     // box-shadow: 0px 0px 9px 3px rgba(214,214,214,.25);
     // -webkit-box-shadow: 0px 0px 9px 3px rgba(214,214,214,.25);
     // -moz-box-shadow: 0px 0px 9px 3px rgba(214,214,214,.25);
@@ -14,15 +14,21 @@
     // height: auto;
     // background-color: #fff;
 
-    
 
-    li{
+
+    li {
         padding: 0 1rem;
         text-align: center;
     }
 
-    .logo-svg{
+    .logo-svg {
         width: 65%;
+
+        [data-theme="dark"] & {
+            path:not(.logo-arrow) {
+                fill: white;
+            }
+        }
     }
 
     .logo-svg .logo-arrow {
@@ -37,36 +43,43 @@
     }
 
     @keyframes arrow-nudge {
-        0% {transform: translate(0, 0);}
-        50% {transform: translate(6px, -10px) scale(1.5);}
-        100% {transform: translate(0, 0);}
+        0% {
+            transform: translate(0, 0);
+        }
+
+        50% {
+            transform: translate(6px, -10px) scale(1.5);
+        }
+
+        100% {
+            transform: translate(0, 0);
+        }
     }
 
-    
-    
 
-    
-     
-  
 
-    .nav-link.active{
-        color: var(--color-Type-Secondary-Label);
-        background-color: var(--color-Surface-Secondary-Subtle);
+
+
+
+
+
+    .nav-link.active {
+        color: var(--color-Type-Primary-Label);
+        background-color: var(--color-Surface-Primary-Subtle);
         border-radius: 27px;
         padding: 8px 18px;
-        border: 1px solid var(--Primitives-Colours-Morado-100);
 
     }
 
-    .nav-link{
-
+    .nav-link {
+        color: var(--color-Type-Primary-Label);
         border-radius: 27px;
-        padding: 8px 18px!important;
+        padding: 8px 18px !important;
         border: 1px solid rgba(128, 128, 128, 0);
         background-color: var(--Primitives-Colours-Gris-100);
 
-        &:hover{
-            color: var(--color-Type-Secondary-Label);
+        &:hover {
+            color: var(--color-Type-Primary-Label);
             background-color: var(--Primitives-Colours-Morado-50);
             border-radius: 27px;
             padding: 8px 18px;
@@ -82,31 +95,31 @@
 
         @keyframes animateOutline {
             0% {
-              outline-width: 1px;
-              outline-offset: 0;
-              outline-color: rgba(0, 130, 206, 0);
+                outline-width: 1px;
+                outline-offset: 0;
+                outline-color: rgba(0, 130, 206, 0);
             }
-          
+
             10% {
-              outline-color: var(--Primitives-Colours-Gris-200);
+                outline-color: var(--Primitives-Colours-Gris-200);
             }
-          
+
             /* The animation finishes at 50% */
             50% {
-              outline-width: 5px;
-              outline-offset: 3px;
-              outline-color: rgba(0, 130, 206, 0);
+                outline-width: 5px;
+                outline-offset: 3px;
+                outline-color: rgba(0, 130, 206, 0);
             }
-          
+
             100% {
-              outline-width: 5px;
-              outline-offset: 3px;
-              outline-color: rgba(102, 102, 102, 0);
+                outline-width: 5px;
+                outline-offset: 3px;
+                outline-color: rgba(102, 102, 102, 0);
             }
-          }
+        }
 
 
-        
+
 
     }
 
@@ -118,7 +131,7 @@ a {
     text-decoration: underline;
 }
 
-.logo-nav{
+.logo-nav {
     font-family: "Libre Franklin", sans-serif;
     font-optical-sizing: auto;
     font-weight: 600;
@@ -131,8 +144,10 @@ a {
     z-index: 999;
     // background: transparent;
     // background: linear-gradient(-45deg, #fefff3, #f6edfe, #eef8fb, #fafffe);
-    backdrop-filter: blur(8px); /* Apply blur to the background behind this element */
-  -webkit-backdrop-filter: blur(8px); /* For Safari compatibility */
+    backdrop-filter: blur(8px);
+    /* Apply blur to the background behind this element */
+    -webkit-backdrop-filter: blur(8px);
+    /* For Safari compatibility */
     padding: 0.75rem 0;
 
     .project-nav__inner {
@@ -212,16 +227,16 @@ a {
     justify-content: center;
     align-items: center;
     margin-right: 0; // Sin margen adicional
-    
+
     &:focus {
         box-shadow: none;
         outline: none;
     }
-    
+
     &:hover {
         background: transparent; // Sin background al hover
     }
-    
+
     .hamburger-line {
         display: block;
         width: 40px;
@@ -233,25 +248,26 @@ a {
         transform-origin: center; // Punto de origen fijo para rotaciones
         position: relative; // Para mejor control de posicionamiento
     }
-    
+
     // Animación del hamburger cuando está activo (se convierte en X)
     &:not(.collapsed) {
+
         // Cambiar color de las líneas cuando el menú está abierto
         .hamburger-line {
             background-color: white;
         }
-        
+
         // Línea superior: rotar 45° hacia la derecha
         .hamburger-line:nth-child(1) {
             transform: rotate(45deg) translate(10px, 10px);
         }
-        
+
         // Línea central: desaparecer completamente
         .hamburger-line:nth-child(2) {
             opacity: 0;
             transform: scale(0);
         }
-        
+
         // Línea inferior: rotar -45° hacia la izquierda
         .hamburger-line:nth-child(3) {
             transform: rotate(-45deg) translate(5px, -6px);
@@ -272,7 +288,7 @@ a {
     padding-left: 1rem;
     padding-right: 1rem;
     background: transparent; // Mismo background siempre
-    
+
     // Container del navbar
     .container,
     .container-fluid {
@@ -285,13 +301,13 @@ a {
         padding-left: 0;
         padding-right: 0;
     }
-    
+
     // Brand/Logo area
     .navbar-brand {
         display: flex;
         align-items: center;
     }
-    
+
     // Cuando el menú fullscreen está abierto, solo cambiar la posición
     &.menu-open {
         top: 0;
@@ -319,27 +335,27 @@ a {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(135deg, 
-        var(--Primitives-Colours-Morado-800) 0%, 
-        var(--Primitives-Colours-Morado-900) 100%);
+    background: linear-gradient(135deg,
+            var(--Primitives-Colours-Morado-800) 0%,
+            var(--Primitives-Colours-Morado-900) 100%);
     z-index: 9999;
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     // Transiciones suaves para entrada y salida
     opacity: 0;
     visibility: hidden;
     transform: scale(1.1);
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    
+
     // Estado cuando el menú está abierto (show class de Bootstrap)
     &.show {
         opacity: 1;
         visibility: visible;
         transform: scale(1);
     }
-    
+
     // Overlay backdrop
     &::before {
         content: '';
@@ -353,22 +369,22 @@ a {
         opacity: 0;
         transition: opacity 0.4s ease;
     }
-    
+
     &.show::before {
         opacity: 1;
     }
-    
+
     .fullscreen-menu-content {
         text-align: center;
         color: white;
         transform: translateY(30px);
         transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
-    
+
     &.show .fullscreen-menu-content {
         transform: translateY(0);
     }
-    
+
     .menu-center {
         display: flex;
         flex-direction: column;
@@ -385,13 +401,13 @@ a {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    
+
     .fullscreen-nav-item {
         opacity: 0;
         transform: translateY(30px);
         transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
-    
+
     .fullscreen-nav-link {
         font-size: 2.5rem;
         font-weight: 300;
@@ -401,7 +417,7 @@ a {
         transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         display: block;
         padding: 0.5rem 2rem;
-        
+
         &:hover {
             color: var(--Primitives-Colours-Amarillo-400);
             transform: scale(1.05);
@@ -415,10 +431,18 @@ a {
     .fullscreen-nav-item {
         opacity: 1;
         transform: translateY(0);
-        
-        &:nth-child(1) { transition-delay: 0.1s; }
-        &:nth-child(2) { transition-delay: 0.2s; }
-        &:nth-child(3) { transition-delay: 0.3s; }
+
+        &:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+
+        &:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+
+        &:nth-child(3) {
+            transition-delay: 0.3s;
+        }
     }
 }
 
@@ -430,7 +454,7 @@ a {
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    
+
     .social-btn {
         display: flex;
         align-items: center;
@@ -444,7 +468,7 @@ a {
         text-decoration: none;
         transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         backdrop-filter: blur(10px);
-        
+
         &:hover {
             background: var(--Primitives-Colours-Amarillo-400);
             color: var(--Primitives-Colours-Morado-900);

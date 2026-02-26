@@ -1,7 +1,7 @@
 @use '../components/mixins' as *;
 
 
-.btn{
+.btn {
     font-weight: 600;
     border-radius: 50px;
     --bs-btn-padding-x: 0.75rem;
@@ -14,28 +14,28 @@
     color: #fff;
 
     &:hover {
-      background-color: var(--Primitives-Colours-Morado-500);
-      box-shadow: inset 0 0 0.65em 10px var(--Primitives-Colours-Morado-700);
-      border-color: var(--Primitives-Colours-Morado-700);
-      color: #fff;
+        background-color: var(--Primitives-Colours-Morado-500);
+        box-shadow: inset 0 0 0.65em 10px var(--Primitives-Colours-Morado-700);
+        border-color: var(--Primitives-Colours-Morado-700);
+        color: #fff;
     }
-  }
+}
 
 
 
-.btn-outline-secondary{
+.btn-outline-secondary {
     background-color: var(--Surface__Secondary__Subtle);
     border-color: var(--color-Border-Secondary-Default);
 
 }
 
-.btn-tertiary{
-    color:  var(--Primitives-Colours-Azul-900);
+.btn-tertiary {
+    color: var(--Primitives-Colours-Azul-900);
     background-color: var(--Primitives-Colours-Azul-200);
     border: none;
 
-    &:hover{
-        color:  var(--color-Type-Secondary-Label) ;
+    &:hover {
+        color: var(--color-Type-Secondary-Label);
         background-color: var(--color-Surface-Secondary-Subtle);
         border: none;
 
@@ -44,13 +44,94 @@
 }
 
 
-.btn-footer{
+.btn-footer {
 
     color: #fff;
 
-    &:hover{
+    &:hover {
         background-color: var(--color-Surface-Subtle);
         color: var(--color-Type-Secondary-Label);
     }
 
+}
+
+
+
+.btn-primary-custom {
+    background-color: var(--Surface-button-Primary-default);
+    color: var(--Type-Color);
+    font-weight: 500;
+    padding: 18px 23px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+
+/* Custom Buttons */
+.btn-primary-custom {
+    background-color: var(--Surface-button-Primary-default);
+    color: var(--Type-Color);
+    font-weight: 500;
+    padding: 18px 23px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: var(--Surface-button-Primary-hover);
+        color: var(--Type-Color);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(119, 51, 219, 0.3);
+    }
+
+    &:active {
+        background-color: var(--Surface-button-Primary-active);
+        color: var(--Type-Color);
+
+    }
+
+    &:focus {
+        background-color: var(--Surface-button-Primary-focus);
+        color: var(--Type-Color);
+
+    }
+
+    &:disabled {
+        background-color: var(--Surface-button-Primary-disabled);
+        color: var(--Type-Color);
+
+    }
+}
+
+.btn-outline-custom {
+    background-color: transparent;
+    color: var(--Type-Primary-default);
+    font-weight: 500;
+    padding: 18px 23px;
+    border-radius: 10px;
+    border: 1px solid var(--Border-Primary-default);
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: rgba(90, 31, 178, 0.05);
+        color: var(--Type-Primary-default);
+        transform: translateY(-2px);
+    }
+
+}
+
+.btn-link {
+    color: var(--Type-Primary-default);
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: rgba(90, 31, 178, 0.05);
+        color: var(--Type-Primary-default);
+        transform: translateY(-2px);
+    }
 }
