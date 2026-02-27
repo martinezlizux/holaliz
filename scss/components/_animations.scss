@@ -1,12 +1,12 @@
 // Pulse border
 
-@keyframes pulse-border{
-    0%{
+@keyframes pulse-border {
+    0% {
         transform: scale(1);
         opacity: 1;
     }
 
-    100%{
+    100% {
         transform: scale(1.5);
         opacity: 0;
 
@@ -14,20 +14,67 @@
 
 }
 
-.gemini-animation{
-    
+.gemini-animation {
+
     color: transparent;
-    background: radial-gradient(circle, #3D4CF4,#ff2862);
+    background: radial-gradient(circle, #3D4CF4, #ff2862);
 
     animation: gemini 5s linear infinite;
     background-size: 200% 200%;
     -webkit-background-clip: text;
-    background-clip: text ;
-    
+    background-clip: text;
+
 }
 
 @keyframes gemini {
-    0% { background-position: 0% 0%; }
-    50% { background-position: 100% 100%;  }
-    100% { background-position: 0% 0%; ; }
-  }
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+        ;
+    }
+}
+
+
+// --- Elegant Reveal animations ---
+// Reveal up
+@keyframes revealUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Global class for scroll reveal
+.reveal-on-scroll {
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+
+    &.is-visible {
+        opacity: 1;
+        animation: revealUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+}
+
+// Special staggered animation for inner content if needed
+.reveal-cascade {
+    opacity: 0;
+
+    &.is-visible {
+        opacity: 1;
+        // The script will handle delays or we can do it via nth-child in SCSS
+    }
+}

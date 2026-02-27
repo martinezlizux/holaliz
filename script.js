@@ -5,11 +5,17 @@ function initThemeToggle() {
     const themeIcon = document.getElementById('themeIcon');
     const htmlElement = document.documentElement;
 
+    // Force light theme initially per user request
+    htmlElement.setAttribute('data-theme', 'light');
+    htmlElement.setAttribute('data-bs-theme', 'light');
+    localStorage.setItem('theme', 'light');
+
     if (!toggleButton || !themeIcon) return;
 
-    // Function to set theme
+    // Function to set theme for the toggle (if we re-enable it later)
     function setTheme(theme) {
         htmlElement.setAttribute('data-theme', theme);
+        htmlElement.setAttribute('data-bs-theme', theme);
         localStorage.setItem('theme', theme);
 
         if (theme === 'dark') {
@@ -25,17 +31,11 @@ function initThemeToggle() {
         }
     }
 
-    // Check saved theme or system preference
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    // Set initial icon state based on light theme
+    setTheme('light');
 
-    if (savedTheme) {
-        setTheme(savedTheme);
-    } else if (systemPrefersDark) {
-        setTheme('dark');
-    } else {
-        setTheme('light');
-    }
+    // Force light theme initially per user request
+    setTheme('light');
 
     toggleButton.addEventListener('click', () => {
         const currentTheme = htmlElement.getAttribute('data-theme');
@@ -300,8 +300,36 @@ $(document).ready(function () {
     // Inicializar scroll spy para navegaciones de proyectos
     initProjectScrollSpy();
 
+    // Inicializar animaciones de revelado al scroll
+    initScrollReveal();
+
     console.log('Sistema con animaciones y menú fullscreen inicializado correctamente');
 });
+
+// Function to handle reveal on scroll animations
+function initScrollReveal() {
+    const revealElements = document.querySelectorAll('.reveal-on-scroll');
+
+    if (!revealElements.length) return;
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Add class to trigger CSS animation
+                entry.target.classList.add('is-visible');
+                // Once it has revealed, we can stop observing this specific element
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        root: null,
+        // Start animation a bit before it enters the viewport fully (20% threshold or margin)
+        rootMargin: '0px 0px -100px 0px',
+        threshold: 0.1
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+}
 
 // Function for scroll spy to highlight active section in project navigation
 function initProjectScrollSpy() {

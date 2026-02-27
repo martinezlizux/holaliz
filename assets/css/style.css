@@ -12247,6 +12247,33 @@ a {
     background-position: 0% 0%;
   }
 }
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.reveal-on-scroll {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  animation: revealUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.reveal-cascade {
+  opacity: 0;
+}
+.reveal-cascade.is-visible {
+  opacity: 1;
+}
+
 .btn {
   font-weight: 600;
   border-radius: 50px;
