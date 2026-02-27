@@ -13973,6 +13973,7 @@ ul.filters > li.active > a {
 
 .s-project-grid .project-container {
   background-color: var(--project-card-background);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   border-top: 1px solid var(--Border-Neutral-subtle);
   padding-top: 60px;
   margin-bottom: 80px;
@@ -13981,6 +13982,13 @@ ul.filters > li.active > a {
 }
 .s-project-grid .project-container:hover {
   background-color: var(--project-card-background-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+@media (prefers-color-scheme: dark) {
+  .s-project-grid .project-container:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  }
 }
 .s-project-grid .project-container > .d-flex {
   align-items: stretch;
