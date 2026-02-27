@@ -154,12 +154,57 @@
   --Type-section-title: var(--Neutral-900);
   --project-card-background: var(--Neutral-100);
   --project-card-background-hover: var(--Neutral-200);
+  --Surface-card-white-white: var(--Neutral-0);
+  --Type-Body-Gray: var(--Neutral-500);
+  --Type-Body-Black: var(--Neutral-900);
   --color-Surface-footer: var(--primary-500);
 
   --Surface-button-Primary-default: var(--primary-500);
   --Surface-button-Primary-hover: var(--primary-600);
   --Surface-button-Primary-active: var(--primary-700);
   --Surface-button-Primary-disable: var(--primary-800);
+
+  --Surface-button-Outline-default: transparent;
+  --Surface-button-Outline-hover: rgba(90, 31, 178, 0.05);
+  --Surface-button-Outline-active: rgba(90, 31, 178, 0.1);
+  --Surface-button-Outline-focus: rgba(90, 31, 178, 0.05);
+  --Surface-button-Outline-disable: transparent;
+
+  --Surface-button-Link-default: transparent;
+  --Surface-button-Link-hover: rgba(90, 31, 178, 0.05);
+  --Surface-button-Link-active: rgba(90, 31, 178, 0.1);
+  --Surface-button-Link-focus: rgba(90, 31, 178, 0.05);
+  --Surface-button-Link-disable: transparent;
+
+  --Border-button-Primary-default: transparent;
+  --Border-button-Primary-hover: transparent;
+  --Border-button-Primary-active: transparent;
+  --Border-button-Primary-focus: var(--primary-600);
+  --Border-button-Primary-disable: transparent;
+
+  --Border-button-Outline-default: var(--primary-600);
+  --Border-button-Outline-hover: var(--primary-600);
+  --Border-button-Outline-active: var(--primary-700);
+  --Border-button-Outline-focus: var(--primary-600);
+  --Border-button-Outline-disable: var(--Neutral-400);
+
+  --Type-button-Primary-default: #FFFFFFFF;
+  --Type-button-Primary-hover: #FFFFFFFF;
+  --Type-button-Primary-active: #FFFFFFFF;
+  --Type-button-Primary-focus: #FFFFFFFF;
+  --Type-button-Primary-disable: var(--Neutral-400);
+
+  --Type-button-Outline-default: var(--primary-500);
+  --Type-button-Outline-hover: var(--primary-500);
+  --Type-button-Outline-active: var(--primary-500);
+  --Type-button-Outline-focus: var(--primary-500);
+  --Type-button-Outline-disable: var(--Neutral-400);
+
+  --Type-button-Link-default: var(--primary-500);
+  --Type-button-Link-hover: var(--primary-500);
+  --Type-button-Link-active: var(--primary-500);
+  --Type-button-Link-focus: var(--primary-500);
+  --Type-button-Link-disable: var(--Neutral-400);
 }
 
 /* Colours Tokens - Dark */
@@ -259,12 +304,57 @@
 
   --project-card-background: var(--Neutral-700);
   --project-card-background-hover: var(--Neutral-600);
+  --Surface-card-white-white: var(--Neutral-0);
+  --Type-Body-Gray: var(--Neutral-300);
+  --Type-Body-Black: var(--Neutral-0);
   --color-Surface-footer: var(--primary-500);
 
   --Surface-button-Primary-default: var(--Secondary-600);
   --Surface-button-Primary-hover: var(--Secondary-700);
   --Surface-button-Primary-active: var(--Secondary-800);
   --Surface-button-Primary-disable: var(--Secondary-900);
+
+  --Surface-button-Outline-default: transparent;
+  --Surface-button-Outline-hover: rgba(204, 219, 42, 0.05);
+  --Surface-button-Outline-active: rgba(204, 219, 42, 0.1);
+  --Surface-button-Outline-focus: rgba(204, 219, 42, 0.05);
+  --Surface-button-Outline-disable: transparent;
+
+  --Surface-button-Link-default: transparent;
+  --Surface-button-Link-hover: rgba(204, 219, 42, 0.05);
+  --Surface-button-Link-active: rgba(204, 219, 42, 0.1);
+  --Surface-button-Link-focus: rgba(204, 219, 42, 0.05);
+  --Surface-button-Link-disable: transparent;
+
+  --Border-button-Primary-default: transparent;
+  --Border-button-Primary-hover: transparent;
+  --Border-button-Primary-active: transparent;
+  --Border-button-Primary-focus: var(--Secondary-600);
+  --Border-button-Primary-disable: transparent;
+
+  --Border-button-Outline-default: var(--Secondary-500);
+  --Border-button-Outline-hover: var(--Secondary-500);
+  --Border-button-Outline-active: var(--Secondary-400);
+  --Border-button-Outline-focus: var(--Secondary-500);
+  --Border-button-Outline-disable: var(--Neutral-600);
+
+  --Type-button-Primary-default: #FFFFFFFF;
+  --Type-button-Primary-hover: #FFFFFFFF;
+  --Type-button-Primary-active: #FFFFFFFF;
+  --Type-button-Primary-focus: #FFFFFFFF;
+  --Type-button-Primary-disable: var(--Neutral-600);
+
+  --Type-button-Outline-default: var(--Secondary-500);
+  --Type-button-Outline-hover: var(--Secondary-500);
+  --Type-button-Outline-active: var(--Secondary-400);
+  --Type-button-Outline-focus: var(--Secondary-500);
+  --Type-button-Outline-disable: var(--Neutral-600);
+
+  --Type-button-Link-default: var(--Secondary-500);
+  --Type-button-Link-hover: var(--Secondary-500);
+  --Type-button-Link-active: var(--Secondary-400);
+  --Type-button-Link-focus: var(--Secondary-500);
+  --Type-button-Link-disable: var(--Neutral-600);
 }
 
 

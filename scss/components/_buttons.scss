@@ -59,7 +59,7 @@
 
 .btn-primary-custom {
     background-color: var(--Surface-button-Primary-default);
-    color: var(--Type-Color);
+    color: var(--Type-button-Primary-default);
     font-weight: 500;
     padding: 18px 23px;
     border-radius: 10px;
@@ -71,7 +71,7 @@
 /* Custom Buttons */
 .btn-primary-custom {
     background-color: var(--Surface-button-Primary-default);
-    color: var(--Type-Color);
+    color: var(--Type-button-Primary-default);
     font-weight: 500;
     padding: 18px 23px;
     border-radius: 10px;
@@ -80,49 +80,67 @@
 
     &:hover {
         background-color: var(--Surface-button-Primary-hover);
-        color: var(--Type-Color);
+        color: var(--Type-button-Primary-hover);
         transform: translateY(-2px);
         box-shadow: 0 4px 12px rgba(119, 51, 219, 0.3);
     }
 
     &:active {
         background-color: var(--Surface-button-Primary-active);
-        color: var(--Type-Color);
+        color: var(--Type-button-Primary-active);
 
     }
 
     &:focus {
         background-color: var(--Surface-button-Primary-focus);
-        color: var(--Type-Color);
-
+        color: var(--Type-button-Primary-focus);
+        border-color: var(--Border-button-Primary-focus);
     }
 
     &:disabled {
         background-color: var(--Surface-button-Primary-disabled);
-        color: var(--Type-Color);
-
+        color: var(--Type-button-Primary-disable);
+        border-color: var(--Border-button-Primary-disable);
     }
 }
 
 .btn-outline-custom {
-    background-color: transparent;
-    color: var(--Type-Primary-default);
+    background-color: var(--Surface-button-Outline-default);
+    color: var(--Type-button-Outline-default);
     font-weight: 500;
     padding: 18px 23px;
     border-radius: 10px;
-    border: 1px solid var(--Border-Primary-default);
+    border: 1px solid var(--Border-button-Outline-default);
     transition: all 0.3s ease;
 
     &:hover {
-        background-color: rgba(90, 31, 178, 0.05);
-        color: var(--Type-Primary-default);
+        background-color: var(--Surface-button-Outline-hover);
+        border-color: var(--Border-button-Outline-hover);
+        color: var(--Type-button-Outline-hover);
         transform: translateY(-2px);
     }
 
+    &:active {
+        background-color: var(--Surface-button-Outline-active);
+        border-color: var(--Border-button-Outline-active);
+        color: var(--Type-button-Outline-active);
+    }
+
+    &:focus {
+        background-color: var(--Surface-button-Outline-focus);
+        border-color: var(--Border-button-Outline-focus);
+        color: var(--Type-button-Outline-focus);
+    }
+
+    &:disabled {
+        border-color: var(--Border-button-Outline-disable);
+        color: var(--Type-button-Outline-disable);
+    }
 }
 
 .btn-link {
-    color: var(--Type-Primary-default);
+    background-color: var(--Surface-button-Link-default);
+    color: var(--Type-button-Link-default);
     font-weight: 500;
     padding: 8px 16px;
     border-radius: 10px;
@@ -130,8 +148,22 @@
     transition: all 0.3s ease;
 
     &:hover {
-        background-color: rgba(90, 31, 178, 0.05);
-        color: var(--Type-Primary-default);
+        background-color: var(--Surface-button-Link-hover);
+        color: var(--Type-button-Link-hover);
         transform: translateY(-2px);
+    }
+
+    &:active {
+        background-color: var(--Surface-button-Link-active);
+        color: var(--Type-button-Link-active);
+    }
+
+    &:focus {
+        background-color: var(--Surface-button-Link-focus);
+        color: var(--Type-button-Link-focus);
+    }
+
+    &:disabled {
+        color: var(--Type-button-Link-disable);
     }
 }

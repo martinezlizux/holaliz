@@ -53,11 +53,11 @@
     // Estilos para los contenedores de proyecto
     .project-container {
 
-        background-color: (var(--project-card-background));
+        background-color: var(--Surface-card-white-white);
         transition: transform 0.2s ease, box-shadow 0.2s ease;
 
         &:hover {
-            background-color: var(--project-card-background-hover);
+            // background-color: var(--project-card-background-hover); // optional if there's no surface-card-hover yet
             transform: translateY(-4px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 
@@ -73,7 +73,6 @@
 
         border-top: 1px solid var(--Border-Neutral-subtle);
         padding-top: 60px;
-        margin-bottom: 80px;
 
         &:last-child {
             margin-bottom: 0;
@@ -88,7 +87,7 @@
             gap: 15px;
             font-size: var(--Body-Body-Sm-Body-Regular-Font-Size);
             font-weight: 300;
-            color: var(--Type-Neutral-dark);
+            color: var(--Type-Body-Gray);
             margin-bottom: 15px;
 
             span {
@@ -181,7 +180,8 @@
 
         &.card-info {
             padding: 0;
-            color: var(--Type-Neutral-negative);
+            color: var(--Type-Body-Black);
+            text-align: left;
         }
     }
 

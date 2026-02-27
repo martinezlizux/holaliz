@@ -154,11 +154,49 @@
   --Type-section-title: var(--Neutral-900);
   --project-card-background: var(--Neutral-100);
   --project-card-background-hover: var(--Neutral-200);
+  --Surface-card-white-white: var(--Neutral-0);
+  --Type-Body-Gray: var(--Neutral-500);
+  --Type-Body-Black: var(--Neutral-900);
   --color-Surface-footer: var(--primary-500);
   --Surface-button-Primary-default: var(--primary-500);
   --Surface-button-Primary-hover: var(--primary-600);
   --Surface-button-Primary-active: var(--primary-700);
   --Surface-button-Primary-disable: var(--primary-800);
+  --Surface-button-Outline-default: transparent;
+  --Surface-button-Outline-hover: rgba(90, 31, 178, 0.05);
+  --Surface-button-Outline-active: rgba(90, 31, 178, 0.1);
+  --Surface-button-Outline-focus: rgba(90, 31, 178, 0.05);
+  --Surface-button-Outline-disable: transparent;
+  --Surface-button-Link-default: transparent;
+  --Surface-button-Link-hover: rgba(90, 31, 178, 0.05);
+  --Surface-button-Link-active: rgba(90, 31, 178, 0.1);
+  --Surface-button-Link-focus: rgba(90, 31, 178, 0.05);
+  --Surface-button-Link-disable: transparent;
+  --Border-button-Primary-default: transparent;
+  --Border-button-Primary-hover: transparent;
+  --Border-button-Primary-active: transparent;
+  --Border-button-Primary-focus: var(--primary-600);
+  --Border-button-Primary-disable: transparent;
+  --Border-button-Outline-default: var(--primary-600);
+  --Border-button-Outline-hover: var(--primary-600);
+  --Border-button-Outline-active: var(--primary-700);
+  --Border-button-Outline-focus: var(--primary-600);
+  --Border-button-Outline-disable: var(--Neutral-400);
+  --Type-button-Primary-default: #FFFFFFFF;
+  --Type-button-Primary-hover: #FFFFFFFF;
+  --Type-button-Primary-active: #FFFFFFFF;
+  --Type-button-Primary-focus: #FFFFFFFF;
+  --Type-button-Primary-disable: var(--Neutral-400);
+  --Type-button-Outline-default: var(--primary-500);
+  --Type-button-Outline-hover: var(--primary-500);
+  --Type-button-Outline-active: var(--primary-500);
+  --Type-button-Outline-focus: var(--primary-500);
+  --Type-button-Outline-disable: var(--Neutral-400);
+  --Type-button-Link-default: var(--primary-500);
+  --Type-button-Link-hover: var(--primary-500);
+  --Type-button-Link-active: var(--primary-500);
+  --Type-button-Link-focus: var(--primary-500);
+  --Type-button-Link-disable: var(--Neutral-400);
 }
 
 /* Colours Tokens - Dark */
@@ -242,11 +280,49 @@
   --Type-section-title: var(--primary-400);
   --project-card-background: var(--Neutral-700);
   --project-card-background-hover: var(--Neutral-600);
+  --Surface-card-white-white: var(--Neutral-0);
+  --Type-Body-Gray: var(--Neutral-300);
+  --Type-Body-Black: var(--Neutral-0);
   --color-Surface-footer: var(--primary-500);
   --Surface-button-Primary-default: var(--Secondary-600);
   --Surface-button-Primary-hover: var(--Secondary-700);
   --Surface-button-Primary-active: var(--Secondary-800);
   --Surface-button-Primary-disable: var(--Secondary-900);
+  --Surface-button-Outline-default: transparent;
+  --Surface-button-Outline-hover: rgba(204, 219, 42, 0.05);
+  --Surface-button-Outline-active: rgba(204, 219, 42, 0.1);
+  --Surface-button-Outline-focus: rgba(204, 219, 42, 0.05);
+  --Surface-button-Outline-disable: transparent;
+  --Surface-button-Link-default: transparent;
+  --Surface-button-Link-hover: rgba(204, 219, 42, 0.05);
+  --Surface-button-Link-active: rgba(204, 219, 42, 0.1);
+  --Surface-button-Link-focus: rgba(204, 219, 42, 0.05);
+  --Surface-button-Link-disable: transparent;
+  --Border-button-Primary-default: transparent;
+  --Border-button-Primary-hover: transparent;
+  --Border-button-Primary-active: transparent;
+  --Border-button-Primary-focus: var(--Secondary-600);
+  --Border-button-Primary-disable: transparent;
+  --Border-button-Outline-default: var(--Secondary-500);
+  --Border-button-Outline-hover: var(--Secondary-500);
+  --Border-button-Outline-active: var(--Secondary-400);
+  --Border-button-Outline-focus: var(--Secondary-500);
+  --Border-button-Outline-disable: var(--Neutral-600);
+  --Type-button-Primary-default: #FFFFFFFF;
+  --Type-button-Primary-hover: #FFFFFFFF;
+  --Type-button-Primary-active: #FFFFFFFF;
+  --Type-button-Primary-focus: #FFFFFFFF;
+  --Type-button-Primary-disable: var(--Neutral-600);
+  --Type-button-Outline-default: var(--Secondary-500);
+  --Type-button-Outline-hover: var(--Secondary-500);
+  --Type-button-Outline-active: var(--Secondary-400);
+  --Type-button-Outline-focus: var(--Secondary-500);
+  --Type-button-Outline-disable: var(--Neutral-600);
+  --Type-button-Link-default: var(--Secondary-500);
+  --Type-button-Link-hover: var(--Secondary-500);
+  --Type-button-Link-active: var(--Secondary-400);
+  --Type-button-Link-focus: var(--Secondary-500);
+  --Type-button-Link-disable: var(--Neutral-600);
 }
 
 /* ///////////////////// LEGACY MAPPING ///////////////////// */
@@ -12319,7 +12395,7 @@ a {
 
 .btn-primary-custom {
   background-color: var(--Surface-button-Primary-default);
-  color: var(--Type-Color);
+  color: var(--Type-button-Primary-default);
   font-weight: 500;
   padding: 18px 23px;
   border-radius: 10px;
@@ -12330,7 +12406,7 @@ a {
 /* Custom Buttons */
 .btn-primary-custom {
   background-color: var(--Surface-button-Primary-default);
-  color: var(--Type-Color);
+  color: var(--Type-button-Primary-default);
   font-weight: 500;
   padding: 18px 23px;
   border-radius: 10px;
@@ -12339,40 +12415,58 @@ a {
 }
 .btn-primary-custom:hover {
   background-color: var(--Surface-button-Primary-hover);
-  color: var(--Type-Color);
+  color: var(--Type-button-Primary-hover);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(119, 51, 219, 0.3);
 }
 .btn-primary-custom:active {
   background-color: var(--Surface-button-Primary-active);
-  color: var(--Type-Color);
+  color: var(--Type-button-Primary-active);
 }
 .btn-primary-custom:focus {
   background-color: var(--Surface-button-Primary-focus);
-  color: var(--Type-Color);
+  color: var(--Type-button-Primary-focus);
+  border-color: var(--Border-button-Primary-focus);
 }
 .btn-primary-custom:disabled {
   background-color: var(--Surface-button-Primary-disabled);
-  color: var(--Type-Color);
+  color: var(--Type-button-Primary-disable);
+  border-color: var(--Border-button-Primary-disable);
 }
 
 .btn-outline-custom {
-  background-color: transparent;
-  color: var(--Type-Primary-default);
+  background-color: var(--Surface-button-Outline-default);
+  color: var(--Type-button-Outline-default);
   font-weight: 500;
   padding: 18px 23px;
   border-radius: 10px;
-  border: 1px solid var(--Border-Primary-default);
+  border: 1px solid var(--Border-button-Outline-default);
   transition: all 0.3s ease;
 }
 .btn-outline-custom:hover {
-  background-color: rgba(90, 31, 178, 0.05);
-  color: var(--Type-Primary-default);
+  background-color: var(--Surface-button-Outline-hover);
+  border-color: var(--Border-button-Outline-hover);
+  color: var(--Type-button-Outline-hover);
   transform: translateY(-2px);
+}
+.btn-outline-custom:active {
+  background-color: var(--Surface-button-Outline-active);
+  border-color: var(--Border-button-Outline-active);
+  color: var(--Type-button-Outline-active);
+}
+.btn-outline-custom:focus {
+  background-color: var(--Surface-button-Outline-focus);
+  border-color: var(--Border-button-Outline-focus);
+  color: var(--Type-button-Outline-focus);
+}
+.btn-outline-custom:disabled {
+  border-color: var(--Border-button-Outline-disable);
+  color: var(--Type-button-Outline-disable);
 }
 
 .btn-link {
-  color: var(--Type-Primary-default);
+  background-color: var(--Surface-button-Link-default);
+  color: var(--Type-button-Link-default);
   font-weight: 500;
   padding: 8px 16px;
   border-radius: 10px;
@@ -12380,9 +12474,20 @@ a {
   transition: all 0.3s ease;
 }
 .btn-link:hover {
-  background-color: rgba(90, 31, 178, 0.05);
-  color: var(--Type-Primary-default);
+  background-color: var(--Surface-button-Link-hover);
+  color: var(--Type-button-Link-hover);
   transform: translateY(-2px);
+}
+.btn-link:active {
+  background-color: var(--Surface-button-Link-active);
+  color: var(--Type-button-Link-active);
+}
+.btn-link:focus {
+  background-color: var(--Surface-button-Link-focus);
+  color: var(--Type-button-Link-focus);
+}
+.btn-link:disabled {
+  color: var(--Type-button-Link-disable);
 }
 
 /* Typography Primitives  - Mode 1 */
@@ -12444,21 +12549,21 @@ a {
   --Subtitle-Subtitle-Light-Font-Size: var(--Font-Size-font-11xl-52);
   --Subtitle-Subtitle-Light-Font-Family: var(--Font-Family-Titles);
   --Subtitle-Subtitle-Light-Font-Weight: var(--Font-Weight-Regular);
-  --Heading-Heading-Bold-Font-Size: var(--Font-Size-font-5xl-30);
+  --Heading-Heading-Bold-Font-Size: var(--Font-Size-font-3xl-26);
   --Heading-Heading-Bold-Font-Family: var(--Font-Family-Titles);
-  --Heading-Heading-Bold-Font-Weight: var(--Font-Weight-ExtraBold);
-  --Heading-Heading-Regular-Font-Size: var(--Font-Size-font-5xl-30);
+  --Heading-Heading-Bold-Font-Weight: var(--Font-Weight-Bold);
+  --Heading-Heading-Regular-Font-Size: var(--Font-Size-font-3xl-26);
   --Heading-Heading-Regular-Font-Family: var(--Font-Family-Titles);
   --Heading-Heading-Regular-Font-Weight: var(--Font-Weight-Medium);
   --Body-Body-Lg-Body-Large-Bold-Font-Size: var(--Font-Size-font-xl-20);
-  --Heading-Heading-Light-Font-Size: var(--Font-Size-font-5xl-30);
+  --Heading-Heading-Light-Font-Size: var(--Font-Size-font-3xl-26);
   --Body-Body-Lg-Body-Large-Regular-Font-Size: var(--Font-Size-font-xl-20);
   --Body-Body-Lg-Body-Large-Regular-Font-Family: var(--Font-Family-Titles);
   --Body-Body-Lg-Body-Large-Regular-Font-Weight: var(--Font-Weight-Medium);
   --Body-Body-Lg-Body-Large-Bold-Font-Family: var(--Font-Family-Titles);
   --Heading-Heading-Light-Font-Family: var(--Font-Family-Titles);
   --Body-Body-Lg-Body-Large-Bold-Font-Weight: var(--Font-Weight-Bold);
-  --Heading-Heading-Light-Font-Weight: var(--Font-Weight-Regular);
+  --Heading-Heading-Light-Font-Weight: var(--Font-Weight-Light);
   --Body-Body-Lg-Body-Large-Light-Font-Size: var(--Font-Size-font-xl-20);
   --Body-Body-Lg-Body-Large-Light-Font-Family: var(--Font-Family-Titles);
   --Body-Body-Lg-Body-Large-Light-Font-Weight: var(--Font-Weight-Light);
@@ -13973,16 +14078,14 @@ ul.filters > li.active > a {
 }
 
 .s-project-grid .project-container {
-  background-color: var(--project-card-background);
+  background-color: var(--Surface-card-white-white);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   border-top: 1px solid var(--Border-Neutral-subtle);
   padding-top: 60px;
-  margin-bottom: 80px;
   border-radius: 20px;
   border: 1px solid var(--color-Surface-Secondary-Subtle);
 }
 .s-project-grid .project-container:hover {
-  background-color: var(--project-card-background-hover);
   transform: translateY(-4px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
@@ -14002,7 +14105,7 @@ ul.filters > li.active > a {
   gap: 15px;
   font-size: var(--Body-Body-Sm-Body-Regular-Font-Size);
   font-weight: 300;
-  color: var(--Type-Neutral-dark);
+  color: var(--Type-Body-Gray);
   margin-bottom: 15px;
 }
 .s-project-grid .project-container .about-project span:not(:last-child)::after {
@@ -14078,7 +14181,8 @@ ul.filters > li.active > a {
 }
 .s-project-grid .show-card.card-info {
   padding: 0;
-  color: var(--Type-Neutral-negative);
+  color: var(--Type-Body-Black);
+  text-align: left;
 }
 @media (min-width: 992px) {
   .s-project-grid .project-container {
