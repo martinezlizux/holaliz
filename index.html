@@ -1196,18 +1196,21 @@
             <form id="contactForm" action="https://formspree.io/f/xgvzgrzj" method="POST">
               <div class="mb-3">
                 <label for="name" class="form-label">Name *</label>
-                <input type="text" class="form-control" id="name" name="name" required>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label">Email *</label>
-                <input type="email" class="form-control" id="email" name="email" required>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email"
+                  required>
               </div>
               <div class="mb-3">
                 <label for="message" class="form-label">Message *</label>
-                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                <textarea class="form-control" id="message" name="message" rows="4"
+                  placeholder="Type your message here..." required></textarea>
               </div>
               <div class="d-grid gap-2">
-                <button type="submit" class="btn btn-secondary">Send Message</button>
+                <button type="submit" class="btn btn-primary-custom">Submit <i
+                    class="fa-solid fa-envelope ms-2"></i></button>
               </div>
             </form>
           </div>
@@ -1226,7 +1229,6 @@
         </div>
         <!-- modal footer -->
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>

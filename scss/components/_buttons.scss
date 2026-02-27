@@ -9,14 +9,14 @@
 }
 
 .btn-secondary {
-    background-color: var(--Primitives-Colours-Morado-500);
-    border-color: var(--Primitives-Colours-Morado-500);
+    background-color: var(--Surface-Primary-default);
+    border-color: var(--Surface-Primary-default);
     color: #fff;
 
     &:hover {
-        background-color: var(--Primitives-Colours-Morado-500);
-        box-shadow: inset 0 0 0.65em 10px var(--Primitives-Colours-Morado-700);
-        border-color: var(--Primitives-Colours-Morado-700);
+        background-color: var(--Surface-Primary-default);
+        box-shadow: inset 0 0 0.65em 10px var(--Surface-Primary-dark);
+        border-color: var(--Surface-Primary-dark);
         color: #fff;
     }
 }
