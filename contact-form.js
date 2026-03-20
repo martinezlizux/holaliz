@@ -3,25 +3,59 @@ document.addEventListener('DOMContentLoaded', function () {
     const contactForm = document.getElementById('contactForm');
 
     if (contactForm) {
+        // Clear validation styles on input for real-time feedback
+        const formInputs = contactForm.querySelectorAll('.form-control');
+        formInputs.forEach(input => {
+            input.addEventListener('input', () => {
+                if (input.classList.contains('is-invalid')) {
+                    input.classList.remove('is-invalid');
+                }
+            });
+        });
+
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
+            e.stopPropagation();
+
+            let isValid = true;
 
             // Get form data
             const formData = new FormData(contactForm);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const message = formData.get('message');
+            const name = (formData.get('name') || '').trim();
+            const email = (formData.get('email') || '').trim();
+            const message = (formData.get('message') || '').trim();
 
-            // Basic validation
-            if (!name || !email || !message) {
-                alert('Please fill in all required fields.');
-                return;
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const messageInput = document.getElementById('message');
+
+            // 1. Name validation
+            if (!name) {
+                nameInput.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                nameInput.classList.remove('is-invalid');
             }
 
-            // Email validation
+            // 2. Email validation
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                alert('Please enter a valid email address.');
+            if (!email || !emailRegex.test(email)) {
+                emailInput.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                emailInput.classList.remove('is-invalid');
+            }
+
+            // 3. Message validation
+            if (!message) {
+                messageInput.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                messageInput.classList.remove('is-invalid');
+            }
+
+            // Stop submission if form is invalid
+            if (!isValid) {
                 return;
             }
 

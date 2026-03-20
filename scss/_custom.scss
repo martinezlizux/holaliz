@@ -91,3 +91,11 @@ a {
         color: var(--Type-Primary-default);
     }
 }
+
+// Interacciones en Inputs / Form Control Override
+.form-control {
+    &:focus {
+        border-color: var(--Border-Primary-focus);
+        box-shadow: 0 0 0 0.25rem rgba(90, 31, 178, 0.25); // Usando violeta transparente
+    }
+}

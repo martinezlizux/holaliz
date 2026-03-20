@@ -309,10 +309,10 @@
   --Type-Body-Black: var(--Neutral-0);
   --color-Surface-footer: var(--primary-500);
 
-  --Surface-button-Primary-default: var(--Secondary-600);
-  --Surface-button-Primary-hover: var(--Secondary-700);
-  --Surface-button-Primary-active: var(--Secondary-800);
-  --Surface-button-Primary-disable: var(--Secondary-900);
+  --Surface-button-Primary-default: var(--primary-500);
+  --Surface-button-Primary-hover: var(--primary-600);
+  --Surface-button-Primary-active: var(--primary-700);
+  --Surface-button-Primary-disable: var(--primary-800);
 
   --Surface-button-Outline-default: transparent;
   --Surface-button-Outline-hover: rgba(204, 219, 42, 0.05);
@@ -329,7 +329,7 @@
   --Border-button-Primary-default: transparent;
   --Border-button-Primary-hover: transparent;
   --Border-button-Primary-active: transparent;
-  --Border-button-Primary-focus: var(--Secondary-600);
+  --Border-button-Primary-focus: var(--primary-600);
   --Border-button-Primary-disable: transparent;
 
   --Border-button-Outline-default: var(--Secondary-500);

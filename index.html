@@ -132,8 +132,8 @@
     <div class="container header">
       <nav class="navbar menu">
         <div class="container">
-          <a class="navbar-brand p-2 logo-nav">
-            <svg class="logo-svg" width="263" height="63" viewBox="0 0 263 63" fill="none"
+          <a class="navbar-brand p-2 logo-nav" href="/" aria-label="Home - Liz Martinez">
+            <svg class="logo-svg" aria-hidden="true" width="263" height="63" viewBox="0 0 263 63" fill="none"
               xmlns="http://www.w3.org/2000/svg">
 
               <path
@@ -188,15 +188,13 @@
                 <!-- Main navigation menu -->
                 <ul class="fullscreen-nav">
                   <li class="fullscreen-nav-item">
-                    <a class="fullscreen-nav-link" href="#work" tabindex="0"
-                      onclick="scrollToSection(event, 'work')">Work</a>
+                    <a class="fullscreen-nav-link" href="#work" onclick="scrollToSection(event, 'work')">Work</a>
                   </li>
                   <li class="fullscreen-nav-item">
-                    <a class="fullscreen-nav-link" href="#about" tabindex="0"
-                      onclick="scrollToSection(event, 'about')">About</a>
+                    <a class="fullscreen-nav-link" href="#about" onclick="scrollToSection(event, 'about')">About</a>
                   </li>
                   <li class="fullscreen-nav-item">
-                    <a class="fullscreen-nav-link" href="#experience" tabindex="0"
+                    <a class="fullscreen-nav-link" href="#experience"
                       onclick="scrollToSection(event, 'experience')">Experience</a>
                   </li>
                 </ul>
@@ -204,15 +202,14 @@
                 <!-- Social links -->
                 <div class="fullscreen-social">
                   <a class="social-btn" href="https://www.linkedin.com/in/lizbethmartinezux/"
-                    aria-label="Go to my LinkedIn Profile" target="_blank" tabindex="0">
+                    aria-label="Go to my LinkedIn Profile" target="_blank">
                     <i class="fa-brands fa-linkedin"></i>
                   </a>
-                  <a class="social-btn" href="https://zeeg.me/martinezlizux" aria-label="Go to my Zeeg" target="_blank"
-                    tabindex="0">
+                  <a class="social-btn" href="https://zeeg.me/martinezlizux" aria-label="Go to my Zeeg" target="_blank">
                     <i class="fa-solid fa-calendar"></i>
                   </a>
                   <a class="social-btn" href="#" data-bs-toggle="modal" data-bs-target="#contactModal"
-                    aria-label="Send me an email" tabindex="0">
+                    aria-label="Send me an email">
                     <i class="fa-solid fa-envelope"></i>
                   </a>
                 </div>
@@ -256,10 +253,10 @@
             with users.
           </p>
           <div class="hero-actions d-flex justify-content-center gap-3 mt-4">
-            <a href="#work" class="btn btn-primary-custom">
+            <a href="#work" class="btn btn-primary">
               See my work <i class="fa-solid fa-arrow-right ms-2"></i>
             </a>
-            <button class="btn btn-outline-custom" data-bs-toggle="modal" data-bs-target="#contactModal">
+            <button class="btn btn-outline" data-bs-toggle="modal" data-bs-target="#contactModal">
               Contact me
             </button>
           </div>
@@ -271,886 +268,933 @@
 
 
 
-  <!--//////////////////// WORK SECTION - PROJECT GRID ///////////////////// -->
-  <section id="work" class="s-project-grid py-5 ">
-    <div class=" d-flex flex-column gap-5 container ">
-      <div class=" text-center  mx-auto row justify-content-center py-5 gap-4">
-        <span class="section-title  title-bold text-center">Featured Projects</span>
-        <p class="text-center body-large">Projects where research and strategic design generated measurable results</p>
+  <main>
+    <!--//////////////////// WORK SECTION - PROJECT GRID ///////////////////// -->
+    <section id="work" class="s-project-grid py-5 ">
+      <div class=" d-flex flex-column gap-5 container col-12 col-md-9 ">
+        <div class=" text-center  mx-auto row justify-content-center py-5 gap-4">
+          <h2 class="section-title  title-bold text-center">Featured Projects</h2>
+          <p class="text-center body-large">Projects where research and strategic design generated measurable results
+          </p>
+        </div>
+        <div class="wrapper-shown container d-flex flex-column gap-5">
+          <!-- PROJECT 1: Streamlining Field Service Coordination Through UX-Driven Mobile Design -->
+          <div class="project-container p-drivers reveal-on-scroll">
+            <div class="d-flex flex-column flex-lg-row gap-4">
+              <div class=" show-card card-photo thumb-large">
+                <div class="box is-landscape">
+                  <!-- real project image (responsive srcset) -->
+                  <picture>
+                    <source type="image/webp"
+                      srcset="images/projects/drivers-1280X720.webp 1280w, images/projects/drivers-960X540@2x.webp 1920w, images/projects/drivers-1280X720@2x.webp 2560w"
+                      sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, 640px">
+                    <img src="images/projects/drivers-1280X720.jpg"
+                      srcset="images/projects/drivers-1280X720.jpg 1280w, images/projects/drivers-960X540@2x.jpg 1920w, images/projects/drivers-1280X720@2x.jpg 2560w"
+                      sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, 640px"
+                      alt="Drivers app project screenshot" class="img-fluid" />
+                  </picture>
+                </div>
+              </div>
+              <div class="show-card card-info d-flex flex-column gap-2 card-animation visible">
+                <div class="about-project d-flex">
+                  <span>2021</span>
+                  <span>B2B2C Platform </span>
+                  <span>Transportation & Logistic </span>
+                </div>
+                <h2 class="heading-bold">Streamlining field coordination for drivers</h2>
+                <p class="body">Research-driven redesign that reduced service updates from 24 hours to ~4 minutes and
+                  cut
+                  coordination calls by 35%.</p>
+                <div class="project-tags mb-2 d-flex flex-wrap gap-2 d-none">
+                  <span class="tag">#Mobile</span>
+                  <span class="tag">#Research</span>
+                  <span class="tag">#ServiceDesign</span>
+                  <span class="tag">#Operations</span>
+                </div>
+
+                <div>
+                  <a href="portfolio/Drivers-App.html" class="btn btn-link mt-3" target="_blank">View Case Study<i
+                      class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+          <!-- PROJECT 2: Increasing Checkout Conversion by Incentivizing Point Payments -->
+          <div class="project-container p-rewards reveal-on-scroll">
+            <div class="d-flex flex-column flex-lg-row gap-4">
+              <div class="show-card card-photo thumb-large">
+                <div class="box is-landscape">
+                  <!-- real project image (responsive srcset) -->
+                  <picture>
+                    <source type="image/webp"
+                      srcset="images/projects/rewards-1280X720.webp 1280w, images/projects/rewards-960X540@2x.webp 1920w, images/projects/rewards-1280X720@2x.webp 2560w"
+                      sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, 640px">
+                    <img src="images/projects/rewards-1280X720.jpg"
+                      srcset="images/projects/rewards-1280X720.jpg 1280w, images/projects/rewards-960X540@2x.jpg 1920w, images/projects/rewards-1280X720@2x.jpg 2560w"
+                      sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, 640px"
+                      alt="Rewards app project screenshot" class="img-fluid" />
+                  </picture>
+                </div>
+              </div>
+              <div class="show-card card-info d-flex flex-column gap-2 card-animation visible">
+                <div class="about-project d-flex">
+                  <span>2020</span>
+                  <span>Ecommerce Checkout</span>
+                  <span>Loyalty & Rewards</span>
+                </div>
+                <h2 class="heading-bold">Ecommerce Checkout · Loyalty & Rewards</h2>
+                <p class="">Increased checkout conversion by surfacing reward value at decision time through
+                  research-driven A/B testing.
+                </p>
+
+                <div class="project-tags mb-2 d-none">
+                  <span class="tag">#Conversion</span>
+                  <span class="tag">#Rewards</span>
+                  <span class="tag">#ABTesting</span>
+                </div>
+                <div>
+
+                  <a href="portfolio/rewards-points.html" class="btn btn-link mt-3" target="_blank">View Case Study<i
+                      class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+          <!-- PROJECT 3: Streamlining Design at DDI: Building a Scalable Design System -->
+          <div class="project-container p-system d-none reveal-on-scroll">
+            <div class="d-flex flex-column flex-lg-row gap-4">
+              <div class="show-card card-photo thumb-large">
+                <div class="box is-landscape">
+                  <picture>
+                    <source type="image/webp"
+                      srcset="images/projects/system-.webp 1x, images/projects/system--1.webp 1.5x, images/projects/system-@2x.webp 2x"
+                      sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, 640px">
+                    <img src="images/projects/system-.jpg"
+                      srcset="images/projects/system-.jpg 1x, images/projects/system--1.jpg 1.5x, images/projects/system-@2x.jpg 2x"
+                      sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, 640px"
+                      alt="Design System project screenshot" class="img-fluid " />
+                  </picture>
+                </div>
+              </div>
+              <div class="show-card card-info d-flex flex-column gap-2 card-animation visible">
+                <div class="about-project d-flex">
+                  <span>2024</span>
+                  <span>B2B2C Platform</span>
+                  <span>Leadership Development</span>
+                </div>
+                <h2 class="heading-bold">Streamlining design at scale through a unified system</h2>
+                <p class="">Built a scalable design system that reduced UI inconsistencies by 45% and accelerated
+                  delivery
+                  across teams.</p>
+                <div class="results d-flex flex-column gap-3 d-none">
+                  <div> <span class="win r-highlight"><i class="fa-solid fa-arrow-down"></i>45% reduction in UI
+                      inconsistencies</span> </div>
+                  <div> <span class="win r-highlight"><i class="fa-solid fa-arrow-up"></i>30% faster delivery</span>
+                  </div>
+                  <div> <span class="win r-highlight"><i class="fa-solid fa-arrow-up"></i>Unified tokens &
+                      components</span> </div>
+                </div>
+                <div class="project-tags mb-2 d-none">
+                  <span class="tag">#DesignSystem</span>
+                  <span class="tag">#Components</span>
+                  <span class="tag">#Tokens</span>
+                </div>
+                <div><a href="portfolio/Design-System.html" class="btn btn-secondary mt-3" target="_blank">View Work</a>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+          <!-- PROJECT 4: Huevo Carranco Brand Identity -->
+          <div class="project-container p-carranco d-none reveal-on-scroll">
+            <div class="d-flex flex-column flex-lg-row gap-4">
+              <div class="show-card card-photo thumb-large">
+                <div class="box is-landscape">
+                  <picture>
+                    <source type="image/webp"
+                      srcset="images/projects/carranco-.webp 1x, images/projects/carranco--1.webp 1.5x, images/projects/carranco-@2x.webp 2x">
+                    <img src="images/projects/carranco-.jpg"
+                      srcset="images/projects/carranco-.jpg 1x, images/projects/carranco--1.jpg 1.5x, images/projects/carranco-@2x.jpg 2x"
+                      alt="Huevo Carranco illustrated brand identity preview" class="img-fluid " />
+                  </picture>
+                </div>
+              </div>
+              <div class="show-card card-info d-flex flex-column gap-2 card-animation visible">
+                <div class="about-project d-flex">
+                  <span>2019</span>
+                  <span>Brand Identity & Packaging</span>
+                  <span></span>
+                </div>
+                <h2 class="heading-bold">Building a warm, illustration-led identity for an emerging egg brand</h2>
+                <p class="">I crafted an illustration-led identity for Huevo Carranco, an agroecological egg brand. From
+                  discovery to a scalable visual system, the work blended hand-drawn storytelling, logo exploration, and
+                  packaging concepts to communicate natural origin and craft.</p>
+                <div class="results d-flex flex-column gap-3">
+                  <div> <span class="win r-highlight"><i class="fa-solid fa-palette"></i>Illustration-driven brand
+                      system</span> </div>
+                  <div> <span class="win r-highlight"><i class="fa-solid fa-arrow-up"></i>Packaging concepts validated
+                      with users</span> </div>
+                </div>
+                <div class="project-tags mb-2 d-none">
+                  <span class="tag">#BrandIdentity</span>
+                  <span class="tag">#Illustration</span>
+                  <span class="tag">#Packaging</span>
+                </div>
+                <div>
+                  <a href="portfolio/HuevoCarranco.html" class="btn btn-secondary mt-3" target="_blank">View Work</a>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+          <!-- PROJECT 5: Cerveza Vasstelpoint -->
+          <div class="project-container p-vasstel d-none reveal-on-scroll">
+            <div class="d-flex flex-column flex-lg-row gap-4">
+              <div class="show-card card-photo thumb-large">
+                <div class="box is-landscape">
+                  <picture>
+                    <source type="image/webp"
+                      srcset="images/projects/vasstel-.webp 1x, images/projects/vasstel--1.webp 1.5x, images/projects/vasstel-@2x.webp 2x">
+                    <img src="images/projects/vasstel-.jpg"
+                      srcset="images/projects/vasstel-.jpg 1x, images/projects/vasstel--1.jpg 1.5x, images/projects/vasstel-@2x.jpg 2x"
+                      alt="Cerveza Vasstelpoint craft beer label preview" class="img-fluid " />
+                  </picture>
+                </div>
+              </div>
+              <div class="show-card card-info d-flex flex-column gap-2 card-animation visible">
+                <div class="about-project d-flex">
+                  <span>2018</span>
+                  <span>Brand Story & Illustration</span>
+                  <span>Craft Beer Packaging </span>
+                </div>
+                <h2 class="heading-bold">Vasstelpoint — Creating a modern, illustration-driven label</h2>
+                <p class="">For Vasstelpoint, I designed a craft beer label built around bold illustration and a
+                  personality that resonates with hikers, mountaineers, and adventure-driven beer lovers. The concept
+                  blended the spirit of the Nevado de Toluca with a fun, modern visual style that stood out from the
+                  Mexican craft beer market</p>
+                <div class="results d-flex flex-column gap-3">
+                  <div> <span class="win r-highlight"><i class="fa-solid fa-beer-mug-empty"></i>Emotion-centered
+                      illustrated label system</span> </div>
+                </div>
+                <div class="project-tags mb-2 d-none">
+                  <span class="tag">#Branding</span>
+                  <span class="tag">#LabelDesign</span>
+                  <span class="tag">#Illustration</span>
+                </div>
+                <div>
+                  <a href="portfolio/vasstel-point.html" class="btn btn-secondary mt-3" target="_blank">View Work</a>
+                </div>
+
+              </div>
+
+
+            </div>
+          </div>
+
+          <!-- PROJECT 6: Timio AI Workflow Experiment -->
+          <div class="project-container p-timio d-none reveal-on-scroll">
+            <div class="d-flex flex-column flex-lg-row gap-4">
+              <div class="show-card card-photo thumb-large">
+                <div class="box is-landscape">
+                  <picture>
+                    <source type="image/webp"
+                      srcset="images/projects/timio-.webp 1x, images/projects/timio--1.webp 1.5x, images/projects/timio-@2x.webp 2x">
+                    <img src="images/projects/timio-.jpg"
+                      srcset="images/projects/timio-.jpg 1x, images/projects/timio--1.jpg 1.5x, images/projects/timio-@2x.jpg 2x"
+                      alt="Timio AI-assisted time tracker experiment preview" class="img-fluid " />
+                  </picture>
+                </div>
+              </div>
+              <div class="show-card card-info d-flex flex-column gap-2 card-animation visible">
+                <div class="about-project d-flex">
+                  <span>2024</span>
+                  <span>Side Project</span>
+                  <span>AI Workflow</span>
+                </div>
+                <h2 class="heading-bold">Timio — My First AI-Assisted Time Tracker Experiment</h2>
+                <p class="">Timio is a two-day experiment blending AI tools and lightweight design to build a tiny
+                  hour-tracking MVP. I used free AI resources across VS Code, GitHub Compiler, and Cursor to log hours,
+                  assign clients, set rates, and export records without overbuilding.</p>
+                <div class="results d-flex flex-column g-3">
+                  <div> <span class="win r-highlight"><i class="fa-solid fa-clock"></i>48-hour MVP from idea to
+                      demo</span> </div>
+                  <div> <span class="win r-highlight"><i class="fa-solid fa-gear"></i>Automated hour logging &
+                      exports</span> </div>
+                  <div> <span class="win r-highlight"><i class="fa-solid fa-flask"></i>Showcases AI-first
+                      workflow</span>
+                  </div>
+                </div>
+                <div class="project-tags mb-2 d-none">
+                  <span class="tag">#AIWorkflow</span>
+                  <span class="tag">#MVP</span>
+                  <span class="tag">#TimeTracking</span>
+                </div>
+                <div>
+                  <a href="portfolio/timio.html" class="btn btn-secondary mt-3" target="_blank">View Work</a>
+
+                </div>
+
+              </div>
+
+
+            </div>
+          </div>
+
+          <!-- PROJECT 7: Understanding the Traveler's Mindset -->
+          <div class="project-container p-research d-none">
+            <div class="d-flex flex-column flex-lg-row gap-4">
+              <div class="show-card card-photo thumb-large">
+                <div class="box is-landscape">
+                  <picture>
+                    <source type="image/webp"
+                      srcset="images/projects/research-.webp 1x, images/projects/research--1.webp 1.5x, images/projects/research-@2x.webp 2x"
+                      sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, 640px">
+                    <img src="images/projects/research-.jpg"
+                      srcset="images/projects/research-.jpg 1x, images/projects/research--1.jpg 1.5x, images/projects/research-@2x.jpg 2x"
+                      sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, 640px"
+                      alt="Traveler research project screenshot" class="img-fluid " />
+                  </picture>
+                </div>
+              </div>
+              <div class="show-card card-info d-flex flex-column gap-2 card-animation visible">
+                <div class="about-project d-flex">
+                  <span>2022</span>
+                  <span>Travel OTA</span>
+                  <span>User Research</span>
+                </div>
+                <h2 class="heading-bold">Understanding the Traveler's Mindset: A UX Journey into Online Hotel Bookings
+                </h2>
+                <p class="">Online hotel bookings are full of hidden doubts and decision hurdles. Through in-depth
+                  research, usability studies, and rapid prototyping, I uncovered the behaviors and friction points that
+                  shape how travelers choose, compare, and book. <br> The insights <span class="highlight">led to
+                    clearer
+                    product opportunities</span> , stronger value communication, and conversion-focused recommendations
+                  adopted by the product team. This case shows how understanding real traveler mindsets can directly
+                  influence strategy and booking performance.</p>
+                <div class="results d-flex flex-column g-3">
+                  <div> <span class="win r-highlight"><i class="fa-solid fa-magnifying-glass"></i>50+ participant
+                      insights
+                      synthesized</span> </div>
+                  <div> <span class="win r-highlight"><i class="fa-solid fa-lightbulb"></i>4 key opportunity areas
+                      defined</span> </div>
+                  <div> <span class="win r-highlight"><i class="fa-solid fa-arrow-up"></i>Clearer value messaging for
+                      bookings</span> </div>
+                </div>
+                <div class="project-tags mb-2 d-none">
+                  <span class="tag">#UserResearch</span>
+                  <span class="tag">#OTAs</span>
+                  <span class="tag">#Insights</span>
+                </div>
+                <div>
+                  <a href="portfolio/research-travelers.html" class="btn btn-secondary mt-3" target="_blank">View
+                    Work</a>
+                </div>
+
+              </div>
+
+
+            </div>
+          </div>
+        </div><!-- /.wrapper-shown -->
+      </div><!-- /.container -->
+
+    </section>
+
+
+
+    <!--//////////////////// PLAYGROUND SECTION ///////////////////// -->
+    <section id="playground" class="s-playground py-5">
+      <div class=" d-flex flex-column gap-5 container col-12 col-md-9 ">
+        <h2 class="section-title title-bold mb-4 text-start" style="color: var(--Type-section-title);">Playground</h2>
+
+        <div class="wrapper-shown container mt-4">
+          <div class="gallery-playground py-4">
+            <div class="row row-cols-3 g-4">
+
+              <!-- Vibe Coding Playcard -->
+              <div class="col">
+                <style>
+                  @keyframes lluvia-fall {
+                    0% {
+                      background-position: 0px 0px;
+                    }
+
+                    100% {
+                      background-position: 200px 1000px;
+                    }
+                  }
+
+                  @keyframes lluvia-fall-2 {
+                    0% {
+                      background-position: 0px 0px;
+                    }
+
+                    100% {
+                      background-position: 150px 800px;
+                    }
+                  }
+
+                  .playground-lluvia-animada {
+                    background-color: #333A55;
+                  }
+
+                  .playground-lluvia-animada::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    pointer-events: none;
+                    z-index: 5;
+                    opacity: 0.8;
+                    background-image: radial-gradient(ellipse 2.5px 5px at 10px 30px, rgba(255, 255, 255, 0.8) 100%, transparent 100%), radial-gradient(ellipse 2.5px 5px at 120px 15px, rgba(255, 255, 255, 0.8) 100%, transparent 100%), radial-gradient(ellipse 2.5px 5px at 240px 45px, rgba(255, 255, 255, 0.5) 100%, transparent 100%), radial-gradient(ellipse 2.5px 5px at 350px 20px, rgba(255, 255, 255, 0.7) 100%, transparent 100%);
+                    background-size: 400px 400px;
+                    animation: lluvia-fall 2s linear infinite;
+                  }
+
+                  .playground-lluvia-animada::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    pointer-events: none;
+                    z-index: 6;
+                    opacity: 0.6;
+                    background-image: radial-gradient(ellipse 1.5px 3px at 30px 40px, rgba(255, 255, 255, 0.6) 100%, transparent 100%), radial-gradient(ellipse 1.5px 3px at 160px 50px, rgba(255, 255, 255, 0.5) 100%, transparent 100%), radial-gradient(ellipse 1.5px 3px at 280px 70px, rgba(255, 255, 255, 0.7) 100%, transparent 100%);
+                    background-size: 300px 300px;
+                    animation: lluvia-fall-2 3s linear infinite;
+                  }
+
+                  @keyframes sway-anim {
+
+                    0%,
+                    100% {
+                      transform: rotate(0deg);
+                    }
+
+                    50% {
+                      transform: rotate(-3deg);
+                    }
+                  }
+
+                  .playground-lluvia-personaje {
+                    animation: sway-anim 5s ease-in-out infinite;
+                    transform-origin: bottom center;
+                    max-width: 100%;
+                    max-height: 100%;
+                    object-fit: contain;
+                  }
+                </style>
+                <a href="portfolio/sunny.html" class="playcard reveal-on-scroll">
+                  <div class="playcard-media playground-lluvia-animada">
+
+                    <!-- Placeholder Content Area -->
+                    <div class="flex-grow-1 d-flex justify-content-center align-items-end position-absolute w-100 h-100"
+                      style="z-index: 1;">
+                      <img src="images/projects/sunny/lluvia2.png" alt="Personaje con lluvia"
+                        class="playground-lluvia-personaje" style="width: 85%;">
+                    </div>
+                  </div>
+
+                  <!-- Bottom text -->
+                  <div class="playcard-body">
+                    <span class="playcard-tag">Vibe Coding</span>
+                    <h5 class="playcard-title">Pure CSS Weather</h5>
+                    <p class="playcard-desc">Character illustrations brought to life through multi-layered CSS
+                      environments.</p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col">
+                <a href="#" class="playcard reveal-on-scroll">
+                  <div class="playcard-media">
+                    <video class="lazy-video" data-src="images/playground/Dog.mp4"
+                      data-poster="images/playground/Dog-poster.jpg" muted loop playsinline preload="metadata"></video>
+                  </div>
+                  <div class="playcard-body">
+                    <span class="playcard-tag">Procreate</span>
+                    <h5 class="playcard-title">Skating Dog</h5>
+                    <p class="playcard-desc">Frame by frame animation loop exploring motion and character expression.
+                    </p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col">
+                <a href="#" class="playcard reveal-on-scroll">
+                  <div class="playcard-media">
+                    <video class="lazy-video" data-src="images/playground/ghost.mp4"
+                      data-poster="images/playground/ghost-poster.jpg" muted loop playsinline
+                      preload="metadata"></video>
+                  </div>
+                  <div class="playcard-body">
+                    <span class="playcard-tag">Figma</span>
+                    <h5 class="playcard-title">Ghost Interactions</h5>
+                    <p class="playcard-desc">Advanced smart animate exercises with custom easing curves and transitions.
+                    </p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col">
+                <a href="#" class="playcard reveal-on-scroll">
+                  <div class="playcard-media">
+                    <video class="lazy-video" data-src="images/playground/tea.mp4"
+                      data-poster="images/playground/tea-poster.jpg" muted loop playsinline preload="metadata"></video>
+                  </div>
+                  <div class="playcard-body">
+                    <span class="playcard-tag">Procreate</span>
+                    <h5 class="playcard-title">Cozy Tea Time</h5>
+                    <p class="playcard-desc">Looping illustrations with small environmental details in Procreate Dreams.
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="wrapper-shown container d-flex flex-column gap-5 col-9">
-        <!-- PROJECT 1: Streamlining Field Service Coordination Through UX-Driven Mobile Design -->
-        <div class="project-container p-drivers reveal-on-scroll">
-          <div class="d-flex flex-column flex-lg-row gap-4">
-            <div class=" show-card card-photo thumb-large">
-              <div class="box is-landscape">
-                <!-- real project image (responsive srcset) -->
-                <picture>
-                  <img src="images/projects/drivers-1280X720.jpg"
-                    srcset="images/projects/drivers-1280X720.jpg 1280w, images/projects/drivers-960X540@2x.jpg 1920w, images/projects/drivers-1280X720@2x.jpg 2560w"
-                    sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, 640px"
-                    alt="Drivers app project screenshot" class="img-fluid" />
-                </picture>
-              </div>
+    </section>
+
+    <!--//////////////////// ABOUT ME SECTION ///////////////////// -->
+    <section id="about" class="s-about">
+      <div class="container">
+        <!-- Intro Section -->
+        <div class="about-heading-container">
+          <h2 class="about-title">About Me</h2>
+          <p class="about-intro">I’m a Product & UX Designer with 14+ years of experience in travel and SaaS, focused on
+            building scalable, user-centered digital products. I bring a holistic perspective from hands-on design and
+            leadership roles, and I work closely with cross-functional teams to turn complex problems into clear,
+            impactful solutions.</p>
+        </div>
+
+        <!-- About Grid -->
+        <div class="about-grid">
+          <!-- Card 1: UX Research -->
+          <div class="about-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-magnifying-glass-chart"></i>
             </div>
-            <div class="show-card card-info d-flex flex-column gap-2 card-animation visible">
-              <div class="about-project d-flex">
-                <span>2021</span>
-                <span>B2B2C Platform </span>
-                <span>Transportation & Logistic </span>
-              </div>
-              <h2 class="heading-bold">Streamlining field coordination for drivers</h2>
-              <p class="body">Research-driven redesign that reduced service updates from 24 hours to ~4 minutes and cut
-                coordination calls by 35%.</p>
-              <div class="project-tags mb-2 d-flex flex-wrap gap-2 d-none">
-                <span class="tag">#Mobile</span>
-                <span class="tag">#Research</span>
-                <span class="tag">#ServiceDesign</span>
-                <span class="tag">#Operations</span>
-              </div>
+            <h3 class="card-title">UX Research</h3>
+            <p class="card-text">User interviews, usability testing, journey mapping, and data analysis to inform
+              product
+              decisions.</p>
+          </div>
 
-              <div>
-                <a href="portfolio/Drivers-App.html" class="btn btn-link mt-3" target="_blank">View Case Study<i
-                    class="fa-solid fa-arrow-right"></i></a>
-              </div>
+          <!-- Card 2: Interface & System Design -->
+          <div class="about-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-pen-ruler"></i>
             </div>
+            <h3 class="card-title">Interface & System Design</h3>
+            <p class="card-text">Wireframes, high-fidelity UI, interactive prototypes, and scalable design systems.</p>
+          </div>
 
+          <!-- Card 3: Collaboration & Leadership -->
+          <div class="about-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <h3 class="card-title">Collaboration & Leadership</h3>
+            <p class="card-text">Cross-functional work with engineers, product managers, and stakeholders; experience
+              leading and mentoring design teams.</p>
+          </div>
 
+          <!-- Card 4: Strategic Thinking -->
+          <div class="about-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-lightbulb"></i>
+            </div>
+            <h3 class="card-title">Strategic Thinking</h3>
+            <p class="card-text">Aligning business goals with user needs through experimentation, metrics, and long-term
+              product vision.</p>
           </div>
         </div>
 
-        <!-- PROJECT 2: Increasing Checkout Conversion by Incentivizing Point Payments -->
-        <div class="project-container p-rewards reveal-on-scroll">
-          <div class="d-flex flex-column flex-lg-row gap-4">
-            <div class="show-card card-photo thumb-large">
-              <div class="box is-landscape">
-                <!-- real project image (responsive srcset) -->
-                <picture>
-                  <img src="images/projects/rewards-1280X720.jpg"
-                    srcset="images/projects/rewards-1280X720.jpg 1280w, images/projects/rewards-960X540@2x.jpg 1920w, images/projects/rewards-1280X720@2x.jpg 2560w"
-                    sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, 640px"
-                    alt="Rewards app project screenshot" class="img-fluid" />
-                </picture>
-              </div>
-            </div>
-            <div class="show-card card-info d-flex flex-column gap-2 card-animation visible">
-              <div class="about-project d-flex">
-                <span>2020</span>
-                <span>Ecommerce Checkout</span>
-                <span>Loyalty & Rewards</span>
-              </div>
-              <h2 class="heading-bold">Ecommerce Checkout · Loyalty & Rewards</h2>
-              <p class="">Increased checkout conversion by surfacing reward value at decision time through
-                research-driven A/B testing.
-              </p>
+        <!-- Tools Section -->
+        <div class="tools-container">
+          <h3 class="tools-title">Tools and Technologies</h3>
+          <p class="tools-subtitle">Comfortable working across design, research, and front-end environments, using
+            modern
+            AI-assisted tools to speed up ideation and prototyping.</p>
 
-              <div class="project-tags mb-2 d-none">
-                <span class="tag">#Conversion</span>
-                <span class="tag">#Rewards</span>
-                <span class="tag">#ABTesting</span>
-              </div>
-              <div>
-
-                <a href="portfolio/rewards-points.html" class="btn btn-link mt-3" target="_blank">View Case Study<i
-                    class="fa-solid fa-arrow-right"></i></a>
-              </div>
-            </div>
-
-
+          <div class="tools-badges">
+            <div class="tool-badge">Figma</div>
+            <div class="tool-badge">Adobe XD</div>
+            <div class="tool-badge">Principle</div>
+            <div class="tool-badge">VS Code</div>
+            <div class="tool-badge">Cursor</div>
+            <div class="tool-badge">HTML / CSS</div>
+            <div class="tool-badge">GitHub</div>
+            <div class="tool-badge">AI-assisted workflows</div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- PROJECT 3: Streamlining Design at DDI: Building a Scalable Design System -->
-        <div class="project-container p-system d-none reveal-on-scroll">
-          <div class="d-flex flex-column flex-lg-row gap-4">
-            <div class="show-card card-photo thumb-large">
-              <div class="box is-landscape">
-                <picture>
-                  <img src="images/projects/system-.jpg"
-                    srcset="images/projects/system-.jpg 1x, images/projects/system--1.jpg 1.5x, images/projects/system-@2x.jpg 2x"
-                    sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, 640px"
-                    alt="Design System project screenshot" class="img-fluid " />
-                </picture>
-              </div>
-            </div>
-            <div class="show-card card-info d-flex flex-column gap-2 card-animation visible">
-              <div class="about-project d-flex">
-                <span>2024</span>
-                <span>B2B2C Platform</span>
-                <span>Leadership Development</span>
-              </div>
-              <h2 class="heading-bold">Streamlining design at scale through a unified system</h2>
-              <p class="">Built a scalable design system that reduced UI inconsistencies by 45% and accelerated delivery
-                across teams.</p>
-              <div class="results d-flex flex-column gap-3 d-none">
-                <div> <span class="win r-highlight"><i class="fa-solid fa-arrow-down"></i>45% reduction in UI
-                    inconsistencies</span> </div>
-                <div> <span class="win r-highlight"><i class="fa-solid fa-arrow-up"></i>30% faster delivery</span>
-                </div>
-                <div> <span class="win r-highlight"><i class="fa-solid fa-arrow-up"></i>Unified tokens &
-                    components</span> </div>
-              </div>
-              <div class="project-tags mb-2 d-none">
-                <span class="tag">#DesignSystem</span>
-                <span class="tag">#Components</span>
-                <span class="tag">#Tokens</span>
-              </div>
-              <div><a href="portfolio/Design-System.html" class="btn btn-secondary mt-3" target="_blank">View Work</a>
-              </div>
-            </div>
-
-
-          </div>
+    <!--//////////////////// EXPERIENCE SECTION ///////////////////// -->
+    <section id="experience" class="s-resume py-5">
+      <div class=" d-flex flex-column gap-5 container col-9">
+        <div class=" text-center  mx-auto row justify-content-center py-5 gap-4">
+          <h2 class="section-title  title-bold text-center">Experience</h2>
         </div>
+        <div class="container resume-content">
 
-        <!-- PROJECT 4: Huevo Carranco Brand Identity -->
-        <div class="project-container p-carranco d-none reveal-on-scroll">
-          <div class="d-flex flex-column flex-lg-row gap-4">
-            <div class="show-card card-photo thumb-large">
-              <div class="box is-landscape">
-                <picture>
-                  <img src="images/projects/carranco-.jpg"
-                    srcset="images/projects/carranco-.jpg 1x, images/projects/carranco--1.jpg 1.5x, images/projects/carranco-@2x.jpg 2x"
-                    alt="Huevo Carranco illustrated brand identity preview" class="img-fluid " />
-                </picture>
-              </div>
-            </div>
-            <div class="show-card card-info d-flex flex-column gap-2 card-animation visible">
-              <div class="about-project d-flex">
-                <span>2019</span>
-                <span>Brand Identity & Packaging</span>
-                <span></span>
-              </div>
-              <h2 class="heading-bold">Building a warm, illustration-led identity for an emerging egg brand</h2>
-              <p class="">I crafted an illustration-led identity for Huevo Carranco, an agroecological egg brand. From
-                discovery to a scalable visual system, the work blended hand-drawn storytelling, logo exploration, and
-                packaging concepts to communicate natural origin and craft.</p>
-              <div class="results d-flex flex-column gap-3">
-                <div> <span class="win r-highlight"><i class="fa-solid fa-palette"></i>Illustration-driven brand
-                    system</span> </div>
-                <div> <span class="win r-highlight"><i class="fa-solid fa-arrow-up"></i>Packaging concepts validated
-                    with users</span> </div>
-              </div>
-              <div class="project-tags mb-2 d-none">
-                <span class="tag">#BrandIdentity</span>
-                <span class="tag">#Illustration</span>
-                <span class="tag">#Packaging</span>
-              </div>
-              <div>
-                <a href="portfolio/HuevoCarranco.html" class="btn btn-secondary mt-3" target="_blank">View Work</a>
-              </div>
+          <div class="d-flex flex-column gap-5">
+            <!-- DDI -->
+            <div class="box-neutral experience-card p-4">
+              <!-- Header / Toggle Area -->
+              <div
+                class="experience-header d-flex flex-column flex-md-row justify-content-between align-items-md-center"
+                data-bs-toggle="collapse" data-bs-target="#collapseDDI" aria-expanded="false"
+                aria-controls="collapseDDI">
 
-            </div>
-
-          </div>
-        </div>
-
-        <!-- PROJECT 5: Cerveza Vasstelpoint -->
-        <div class="project-container p-vasstel d-none reveal-on-scroll">
-          <div class="d-flex flex-column flex-lg-row gap-4">
-            <div class="show-card card-photo thumb-large">
-              <div class="box is-landscape">
-                <picture>
-                  <img src="images/projects/vasstel-.jpg"
-                    srcset="images/projects/vasstel-.jpg 1x, images/projects/vasstel--1.jpg 1.5x, images/projects/vasstel-@2x.jpg 2x"
-                    alt="Cerveza Vasstelpoint craft beer label preview" class="img-fluid " />
-                </picture>
-              </div>
-            </div>
-            <div class="show-card card-info d-flex flex-column gap-2 card-animation visible">
-              <div class="about-project d-flex">
-                <span>2018</span>
-                <span>Brand Story & Illustration</span>
-                <span>Craft Beer Packaging </span>
-              </div>
-              <h2 class="heading-bold">Vasstelpoint — Creating a modern, illustration-driven label</h2>
-              <p class="">For Vasstelpoint, I designed a craft beer label built around bold illustration and a
-                personality that resonates with hikers, mountaineers, and adventure-driven beer lovers. The concept
-                blended the spirit of the Nevado de Toluca with a fun, modern visual style that stood out from the
-                Mexican craft beer market</p>
-              <div class="results d-flex flex-column gap-3">
-                <div> <span class="win r-highlight"><i class="fa-solid fa-beer-mug-empty"></i>Emotion-centered
-                    illustrated label system</span> </div>
-              </div>
-              <div class="project-tags mb-2 d-none">
-                <span class="tag">#Branding</span>
-                <span class="tag">#LabelDesign</span>
-                <span class="tag">#Illustration</span>
-              </div>
-              <div>
-                <a href="portfolio/vasstel-point.html" class="btn btn-secondary mt-3" target="_blank">View Work</a>
-              </div>
-
-            </div>
-
-
-          </div>
-        </div>
-
-        <!-- PROJECT 6: Timio AI Workflow Experiment -->
-        <div class="project-container p-timio d-none reveal-on-scroll">
-          <div class="d-flex flex-column flex-lg-row gap-4">
-            <div class="show-card card-photo thumb-large">
-              <div class="box is-landscape">
-                <picture>
-                  <img src="images/projects/timio-.jpg"
-                    srcset="images/projects/timio-.jpg 1x, images/projects/timio--1.jpg 1.5x, images/projects/timio-@2x.jpg 2x"
-                    alt="Timio AI-assisted time tracker experiment preview" class="img-fluid " />
-                </picture>
-              </div>
-            </div>
-            <div class="show-card card-info d-flex flex-column gap-2 card-animation visible">
-              <div class="about-project d-flex">
-                <span>2024</span>
-                <span>Side Project</span>
-                <span>AI Workflow</span>
-              </div>
-              <h2 class="heading-bold">Timio — My First AI-Assisted Time Tracker Experiment</h2>
-              <p class="">Timio is a two-day experiment blending AI tools and lightweight design to build a tiny
-                hour-tracking MVP. I used free AI resources across VS Code, GitHub Compiler, and Cursor to log hours,
-                assign clients, set rates, and export records without overbuilding.</p>
-              <div class="results d-flex flex-column g-3">
-                <div> <span class="win r-highlight"><i class="fa-solid fa-clock"></i>48-hour MVP from idea to
-                    demo</span> </div>
-                <div> <span class="win r-highlight"><i class="fa-solid fa-gear"></i>Automated hour logging &
-                    exports</span> </div>
-                <div> <span class="win r-highlight"><i class="fa-solid fa-flask"></i>Showcases AI-first workflow</span>
-                </div>
-              </div>
-              <div class="project-tags mb-2 d-none">
-                <span class="tag">#AIWorkflow</span>
-                <span class="tag">#MVP</span>
-                <span class="tag">#TimeTracking</span>
-              </div>
-              <div>
-                <a href="portfolio/timio.html" class="btn btn-secondary mt-3" target="_blank">View Work</a>
-
-              </div>
-
-            </div>
-
-
-          </div>
-        </div>
-
-        <!-- PROJECT 7: Understanding the Traveler's Mindset -->
-        <div class="project-container p-research d-none">
-          <div class="d-flex flex-column flex-lg-row gap-4">
-            <div class="show-card card-photo thumb-large">
-              <div class="box is-landscape">
-                <picture>
-                  <img src="images/projects/research-.jpg"
-                    srcset="images/projects/research-.jpg 1x, images/projects/research--1.jpg 1.5x, images/projects/research-@2x.jpg 2x"
-                    sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, 640px"
-                    alt="Traveler research project screenshot" class="img-fluid " />
-                </picture>
-              </div>
-            </div>
-            <div class="show-card card-info d-flex flex-column gap-2 card-animation visible">
-              <div class="about-project d-flex">
-                <span>2022</span>
-                <span>Travel OTA</span>
-                <span>User Research</span>
-              </div>
-              <h2 class="heading-bold">Understanding the Traveler's Mindset: A UX Journey into Online Hotel Bookings
-              </h2>
-              <p class="">Online hotel bookings are full of hidden doubts and decision hurdles. Through in-depth
-                research, usability studies, and rapid prototyping, I uncovered the behaviors and friction points that
-                shape how travelers choose, compare, and book. <br> The insights <span class="highlight">led to clearer
-                  product opportunities</span> , stronger value communication, and conversion-focused recommendations
-                adopted by the product team. This case shows how understanding real traveler mindsets can directly
-                influence strategy and booking performance.</p>
-              <div class="results d-flex flex-column g-3">
-                <div> <span class="win r-highlight"><i class="fa-solid fa-magnifying-glass"></i>50+ participant insights
-                    synthesized</span> </div>
-                <div> <span class="win r-highlight"><i class="fa-solid fa-lightbulb"></i>4 key opportunity areas
-                    defined</span> </div>
-                <div> <span class="win r-highlight"><i class="fa-solid fa-arrow-up"></i>Clearer value messaging for
-                    bookings</span> </div>
-              </div>
-              <div class="project-tags mb-2 d-none">
-                <span class="tag">#UserResearch</span>
-                <span class="tag">#OTAs</span>
-                <span class="tag">#Insights</span>
-              </div>
-              <div>
-                <a href="portfolio/research-travelers.html" class="btn btn-secondary mt-3" target="_blank">View Work</a>
-              </div>
-
-            </div>
-
-
-          </div>
-        </div>
-      </div><!-- /.wrapper-shown -->
-    </div><!-- /.container -->
-
-  </section>
-
-
-
-  <!--//////////////////// PLAYGROUND SECTION ///////////////////// -->
-  <section id="playground" class="s-playground py-5">
-    <div class=" d-flex flex-column gap-5 container col-9 ">
-      <span class="section-title title-bold mb-4 text-start" style="color: var(--Type-section-title);">Playground</span>
-
-      <div class="wrapper-shown container mt-4">
-        <div class="gallery-playground py-4">
-          <div class="row row-cols-3 g-4">
-
-            <!-- Vibe Coding Playcard -->
-            <div class="col">
-              <style>
-                @keyframes lluvia-fall {
-                  0% {
-                    background-position: 0px 0px;
-                  }
-
-                  100% {
-                    background-position: 200px 1000px;
-                  }
-                }
-
-                @keyframes lluvia-fall-2 {
-                  0% {
-                    background-position: 0px 0px;
-                  }
-
-                  100% {
-                    background-position: 150px 800px;
-                  }
-                }
-
-                .playground-lluvia-animada {
-                  background-color: #333A55;
-                }
-
-                .playground-lluvia-animada::before {
-                  content: '';
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  width: 100%;
-                  height: 100%;
-                  pointer-events: none;
-                  z-index: 5;
-                  opacity: 0.8;
-                  background-image: radial-gradient(ellipse 2.5px 5px at 10px 30px, rgba(255, 255, 255, 0.8) 100%, transparent 100%), radial-gradient(ellipse 2.5px 5px at 120px 15px, rgba(255, 255, 255, 0.8) 100%, transparent 100%), radial-gradient(ellipse 2.5px 5px at 240px 45px, rgba(255, 255, 255, 0.5) 100%, transparent 100%), radial-gradient(ellipse 2.5px 5px at 350px 20px, rgba(255, 255, 255, 0.7) 100%, transparent 100%);
-                  background-size: 400px 400px;
-                  animation: lluvia-fall 2s linear infinite;
-                }
-
-                .playground-lluvia-animada::after {
-                  content: '';
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  width: 100%;
-                  height: 100%;
-                  pointer-events: none;
-                  z-index: 6;
-                  opacity: 0.6;
-                  background-image: radial-gradient(ellipse 1.5px 3px at 30px 40px, rgba(255, 255, 255, 0.6) 100%, transparent 100%), radial-gradient(ellipse 1.5px 3px at 160px 50px, rgba(255, 255, 255, 0.5) 100%, transparent 100%), radial-gradient(ellipse 1.5px 3px at 280px 70px, rgba(255, 255, 255, 0.7) 100%, transparent 100%);
-                  background-size: 300px 300px;
-                  animation: lluvia-fall-2 3s linear infinite;
-                }
-
-                @keyframes sway-anim {
-
-                  0%,
-                  100% {
-                    transform: rotate(0deg);
-                  }
-
-                  50% {
-                    transform: rotate(-3deg);
-                  }
-                }
-
-                .playground-lluvia-personaje {
-                  animation: sway-anim 5s ease-in-out infinite;
-                  transform-origin: bottom center;
-                  max-width: 100%;
-                  max-height: 100%;
-                  object-fit: contain;
-                }
-              </style>
-              <a href="portfolio/sunny.html" class="playcard reveal-on-scroll">
-                <div class="playcard-media playground-lluvia-animada">
-
-                  <!-- Placeholder Content Area -->
-                  <div class="flex-grow-1 d-flex justify-content-center align-items-end position-absolute w-100 h-100"
-                    style="z-index: 1;">
-                    <img src="images/projects/sunny/lluvia2.png" alt="Personaje con lluvia"
-                      class="playground-lluvia-personaje" style="width: 85%;">
+                <div class="d-flex align-items-center gap-4">
+                  <div class="experience-logo d-flex align-items-center justify-content-center">
+                    <img src="images/companies/ddi-logo.png" alt="DDI Logo" class="img-fluid">
+                  </div>
+                  <div class="experience-info flex-grow-1">
+                    <h4 class="mb-1">Development Dimension international</h4>
+                    <p class="mb-0">Sr UX Designer</p>
+                    <a href="https://www.ddi.com/" target="_blank">www.ddi.com/</a>
                   </div>
                 </div>
 
-                <!-- Bottom text -->
-                <div class="playcard-body">
-                  <span class="playcard-tag">Vibe Coding</span>
-                  <h5 class="playcard-title">Pure CSS Weather</h5>
-                  <p class="playcard-desc">Character illustrations brought to life through multi-layered CSS
-                    environments.</p>
-                </div>
-              </a>
-            </div>
-
-            <div class="col">
-              <a href="javascript:void(0)" class="playcard reveal-on-scroll">
-                <div class="playcard-media">
-                  <video class="lazy-video" data-src="images/playground/Dog.mp4"
-                    data-poster="images/playground/Dog-poster.jpg" muted loop playsinline preload="metadata"></video>
-                </div>
-                <div class="playcard-body">
-                  <span class="playcard-tag">Procreate</span>
-                  <h5 class="playcard-title">Skating Dog</h5>
-                  <p class="playcard-desc">Frame by frame animation loop exploring motion and character expression.</p>
-                </div>
-              </a>
-            </div>
-
-            <div class="col">
-              <a href="javascript:void(0)" class="playcard reveal-on-scroll">
-                <div class="playcard-media">
-                  <video class="lazy-video" data-src="images/playground/ghost.mp4"
-                    data-poster="images/playground/ghost-poster.jpg" muted loop playsinline preload="metadata"></video>
-                </div>
-                <div class="playcard-body">
-                  <span class="playcard-tag">Figma</span>
-                  <h5 class="playcard-title">Ghost Interactions</h5>
-                  <p class="playcard-desc">Advanced smart animate exercises with custom easing curves and transitions.
-                  </p>
-                </div>
-              </a>
-            </div>
-
-            <div class="col">
-              <a href="javascript:void(0)" class="playcard reveal-on-scroll">
-                <div class="playcard-media">
-                  <video class="lazy-video" data-src="images/playground/tea.mp4"
-                    data-poster="images/playground/tea-poster.jpg" muted loop playsinline preload="metadata"></video>
-                </div>
-                <div class="playcard-body">
-                  <span class="playcard-tag">Procreate</span>
-                  <h5 class="playcard-title">Cozy Tea Time</h5>
-                  <p class="playcard-desc">Looping illustrations with small environmental details in Procreate Dreams.
-                  </p>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!--//////////////////// ABOUT ME SECTION ///////////////////// -->
-  <section id="about" class="s-about">
-    <div class="container">
-      <!-- Intro Section -->
-      <div class="about-heading-container">
-        <h2 class="about-title">About Me</h2>
-        <p class="about-intro">I’m a Product & UX Designer with 14+ years of experience in travel and SaaS, focused on
-          building scalable, user-centered digital products. I bring a holistic perspective from hands-on design and
-          leadership roles, and I work closely with cross-functional teams to turn complex problems into clear,
-          impactful solutions.</p>
-      </div>
-
-      <!-- About Grid -->
-      <div class="about-grid">
-        <!-- Card 1: UX Research -->
-        <div class="about-card">
-          <div class="card-icon">
-            <i class="fa-solid fa-magnifying-glass-chart"></i>
-          </div>
-          <h3 class="card-title">UX Research</h3>
-          <p class="card-text">User interviews, usability testing, journey mapping, and data analysis to inform product
-            decisions.</p>
-        </div>
-
-        <!-- Card 2: Interface & System Design -->
-        <div class="about-card">
-          <div class="card-icon">
-            <i class="fa-solid fa-pen-ruler"></i>
-          </div>
-          <h3 class="card-title">Interface & System Design</h3>
-          <p class="card-text">Wireframes, high-fidelity UI, interactive prototypes, and scalable design systems.</p>
-        </div>
-
-        <!-- Card 3: Collaboration & Leadership -->
-        <div class="about-card">
-          <div class="card-icon">
-            <i class="fa-solid fa-users"></i>
-          </div>
-          <h3 class="card-title">Collaboration & Leadership</h3>
-          <p class="card-text">Cross-functional work with engineers, product managers, and stakeholders; experience
-            leading and mentoring design teams.</p>
-        </div>
-
-        <!-- Card 4: Strategic Thinking -->
-        <div class="about-card">
-          <div class="card-icon">
-            <i class="fa-solid fa-lightbulb"></i>
-          </div>
-          <h3 class="card-title">Strategic Thinking</h3>
-          <p class="card-text">Aligning business goals with user needs through experimentation, metrics, and long-term
-            product vision.</p>
-        </div>
-      </div>
-
-      <!-- Tools Section -->
-      <div class="tools-container">
-        <h3 class="tools-title">Tools and Technologies</h3>
-        <p class="tools-subtitle">Comfortable working across design, research, and front-end environments, using modern
-          AI-assisted tools to speed up ideation and prototyping.</p>
-
-        <div class="tools-badges">
-          <div class="tool-badge">Figma</div>
-          <div class="tool-badge">Adobe XD</div>
-          <div class="tool-badge">Principle</div>
-          <div class="tool-badge">VS Code</div>
-          <div class="tool-badge">Cursor</div>
-          <div class="tool-badge">HTML / CSS</div>
-          <div class="tool-badge">GitHub</div>
-          <div class="tool-badge">AI-assisted workflows</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!--//////////////////// EXPERIENCE SECTION ///////////////////// -->
-  <section id="experience" class="s-resume py-5">
-    <div class=" d-flex flex-column gap-5 container col-9">
-      <div class=" text-center  mx-auto row justify-content-center py-5 gap-4">
-        <span class="section-title  title-bold text-center">Experience</span>
-      </div>
-      <div class="container resume-content">
-
-        <div class="d-flex flex-column gap-5">
-          <!-- DDI -->
-          <div class="box-neutral experience-card p-4">
-            <!-- Header / Toggle Area -->
-            <div class="experience-header d-flex flex-column flex-md-row justify-content-between align-items-md-center"
-              data-bs-toggle="collapse" data-bs-target="#collapseDDI" aria-expanded="false" aria-controls="collapseDDI">
-
-              <div class="d-flex align-items-center gap-4">
-                <div class="experience-logo d-flex align-items-center justify-content-center">
-                  <img src="images/companies/ddi-logo.png" alt="DDI Logo" class="img-fluid">
-                </div>
-                <div class="experience-info flex-grow-1">
-                  <h4 class="mb-1">Development Dimension international</h4>
-                  <p class="mb-0">Sr UX Designer</p>
-                  <a href="https://www.ddi.com/" target="_blank">www.ddi.com/</a>
+                <div
+                  class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-column align-items-md-end justify-content-center gap-2">
+                  <p class="mb-0">Aug 2022 - Present</p>
+                  <span class="badge rounded-pill">Full time</span>
                 </div>
               </div>
 
+              <!-- Collapsible Body -->
+              <div class="collapse" id="collapseDDI">
+                <div class="experience-body">
+                  <ul class="mb-4">
+                    <li>Redesigned the company’s design system and component library in Adobe XD, cutting design time
+                      and
+                      inconsistencies by <strong>80%</strong>.</li>
+                    <li>Built a UI component library in Storybook, accelerating delivery and improving cross-product
+                      consistency by <strong>30%</strong>.</li>
+                    <li>Collaborated with developers and content teams to enhance accessibility and maintainability.
+                    </li>
+                  </ul>
+                  <p class="mb-0"><em>Key Projects:</em> Design System Redesign · UI Component Library · Content User
+                    Module Migration · Video Format Experience</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- PriceTravel -->
+            <div class="box-neutral experience-card p-4">
+              <!-- Header / Toggle Area -->
               <div
-                class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-column align-items-md-end justify-content-center gap-2">
-                <p class="mb-0">Aug 2022 - Present</p>
-                <span class="badge rounded-pill">Full time</span>
-              </div>
-            </div>
+                class="experience-header d-flex flex-column flex-md-row justify-content-between align-items-md-center"
+                data-bs-toggle="collapse" data-bs-target="#collapsePriceTravel" aria-expanded="false"
+                aria-controls="collapsePriceTravel">
 
-            <!-- Collapsible Body -->
-            <div class="collapse" id="collapseDDI">
-              <div class="experience-body">
-                <ul class="mb-4">
-                  <li>Redesigned the company’s design system and component library in Adobe XD, cutting design time and
-                    inconsistencies by <strong>80%</strong>.</li>
-                  <li>Built a UI component library in Storybook, accelerating delivery and improving cross-product
-                    consistency by <strong>30%</strong>.</li>
-                  <li>Collaborated with developers and content teams to enhance accessibility and maintainability.</li>
-                </ul>
-                <p class="mb-0"><em>Key Projects:</em> Design System Redesign · UI Component Library · Content User
-                  Module Migration · Video Format Experience</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- PriceTravel -->
-          <div class="box-neutral experience-card p-4">
-            <!-- Header / Toggle Area -->
-            <div class="experience-header d-flex flex-column flex-md-row justify-content-between align-items-md-center"
-              data-bs-toggle="collapse" data-bs-target="#collapsePriceTravel" aria-expanded="false"
-              aria-controls="collapsePriceTravel">
-
-              <div class="d-flex align-items-center gap-4">
-                <div class="experience-logo d-flex align-items-center justify-content-center">
-                  <img src="images/companies/PriceTravel-logo.png" alt="PriceTravel Logo" class="img-fluid">
+                <div class="d-flex align-items-center gap-4">
+                  <div class="experience-logo d-flex align-items-center justify-content-center">
+                    <img src="images/companies/PriceTravel-logo.png" alt="PriceTravel Logo" class="img-fluid">
+                  </div>
+                  <div class="experience-info flex-grow-1">
+                    <h4 class="mb-1">PriceTravel</h4>
+                    <p class="mb-0">Lead UX Product Designer</p>
+                    <a href="https://www.pricetravel.com/" target="_blank">www.pricetravel.com/</a>
+                  </div>
                 </div>
-                <div class="experience-info flex-grow-1">
-                  <h4 class="mb-1">PriceTravel</h4>
-                  <p class="mb-0">Lead UX Product Designer</p>
-                  <a href="https://www.pricetravel.com/" target="_blank">www.pricetravel.com/</a>
+
+                <div
+                  class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-column align-items-md-end justify-content-center gap-2">
+                  <p class="mb-0">Jul 2021 - Aug 2022</p>
+                  <span class="badge rounded-pill">Hybrid</span>
                 </div>
               </div>
 
+              <!-- Collapsible Body -->
+              <div class="collapse" id="collapsePriceTravel">
+                <div class="experience-body">
+                  <ul class="mb-4">
+                    <li>Implemented <strong>DesignOps workflows</strong>, improving team efficiency and reducing
+                      iteration
+                      cycles by <strong>35%</strong>.</li>
+                    <li>Defined UX strategy for B2C and B2B booking flows, improving conversion rates and user
+                      satisfaction.</li>
+                    <li>Collaborated closely with stakeholders and developers to align business goals with user needs.
+                    </li>
+                  </ul>
+                  <p class="mb-0"><em>Key Projects:</em> Traveline B2B2C Platform Redesign · Online Cancellation Flow ·
+                    Hotel Detail Page · Payment Experience</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- BD Experience -->
+            <div class="box-neutral experience-card p-4">
+              <!-- Header / Toggle Area -->
               <div
-                class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-column align-items-md-end justify-content-center gap-2">
-                <p class="mb-0">Jul 2021 - Aug 2022</p>
-                <span class="badge rounded-pill">Hybrid</span>
-              </div>
-            </div>
+                class="experience-header d-flex flex-column flex-md-row justify-content-between align-items-md-center"
+                data-bs-toggle="collapse" data-bs-target="#collapseBDExperience" aria-expanded="false"
+                aria-controls="collapseBDExperience">
 
-            <!-- Collapsible Body -->
-            <div class="collapse" id="collapsePriceTravel">
-              <div class="experience-body">
-                <ul class="mb-4">
-                  <li>Implemented <strong>DesignOps workflows</strong>, improving team efficiency and reducing iteration
-                    cycles by <strong>35%</strong>.</li>
-                  <li>Defined UX strategy for B2C and B2B booking flows, improving conversion rates and user
-                    satisfaction.</li>
-                  <li>Collaborated closely with stakeholders and developers to align business goals with user needs.
-                  </li>
-                </ul>
-                <p class="mb-0"><em>Key Projects:</em> Traveline B2B2C Platform Redesign · Online Cancellation Flow ·
-                  Hotel Detail Page · Payment Experience</p>
-              </div>
-            </div>
-          </div>
+                <div class="d-flex align-items-center gap-4">
+                  <div class="experience-logo d-flex align-items-center justify-content-center">
+                    <img src="images/companies/BDExperience-logo.png" alt="BD Experience Logo" class="img-fluid">
+                  </div>
+                  <div class="experience-info flex-grow-1">
+                    <h4 class="mb-1">BD Experience</h4>
+                    <p class="mb-0">Sr. Product Designer</p>
 
-          <!-- BD Experience -->
-          <div class="box-neutral experience-card p-4">
-            <!-- Header / Toggle Area -->
-            <div class="experience-header d-flex flex-column flex-md-row justify-content-between align-items-md-center"
-              data-bs-toggle="collapse" data-bs-target="#collapseBDExperience" aria-expanded="false"
-              aria-controls="collapseBDExperience">
-
-              <div class="d-flex align-items-center gap-4">
-                <div class="experience-logo d-flex align-items-center justify-content-center">
-                  <img src="images/companies/BDExperience-logo.png" alt="BD Experience Logo" class="img-fluid">
+                  </div>
                 </div>
-                <div class="experience-info flex-grow-1">
-                  <h4 class="mb-1">BD Experience</h4>
-                  <p class="mb-0">Sr. Product Designer</p>
 
+                <div
+                  class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-column align-items-md-end justify-content-center gap-2">
+                  <p class="mb-0">May 2019 - Jul 2021</p>
+                  <span class="badge rounded-pill">On-site</span>
                 </div>
               </div>
 
+              <!-- Collapsible Body -->
+              <div class="collapse" id="collapseBDExperience">
+                <div class="experience-body">
+                  <ul class="mb-4">
+                    <li>Reduced customer support tickets by <strong>20%</strong> through user research and targeted UI
+                      improvements.</li>
+                    <li>Increased operational efficiency by <strong>35%</strong> using service blueprints to optimize
+                      airport transfer logistics.</li>
+                    <li>Led UX strategy workshops to align teams and secure executive buy-in for digital initiatives.
+                    </li>
+                  </ul>
+                  <p class="mb-0"><em>Key Projects:</em> BD Drivers App Redesign · Service Dashboard · Airport Logistics
+                    Platform</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bestday.com -->
+            <div class="box-neutral experience-card p-4">
+              <!-- Header / Toggle Area -->
               <div
-                class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-column align-items-md-end justify-content-center gap-2">
-                <p class="mb-0">May 2019 - Jul 2021</p>
-                <span class="badge rounded-pill">On-site</span>
-              </div>
-            </div>
+                class="experience-header d-flex flex-column flex-md-row justify-content-between align-items-md-center"
+                data-bs-toggle="collapse" data-bs-target="#collapseBestday" aria-expanded="false"
+                aria-controls="collapseBestday">
 
-            <!-- Collapsible Body -->
-            <div class="collapse" id="collapseBDExperience">
-              <div class="experience-body">
-                <ul class="mb-4">
-                  <li>Reduced customer support tickets by <strong>20%</strong> through user research and targeted UI
-                    improvements.</li>
-                  <li>Increased operational efficiency by <strong>35%</strong> using service blueprints to optimize
-                    airport transfer logistics.</li>
-                  <li>Led UX strategy workshops to align teams and secure executive buy-in for digital initiatives.</li>
-                </ul>
-                <p class="mb-0"><em>Key Projects:</em> BD Drivers App Redesign · Service Dashboard · Airport Logistics
-                  Platform</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Bestday.com -->
-          <div class="box-neutral experience-card p-4">
-            <!-- Header / Toggle Area -->
-            <div class="experience-header d-flex flex-column flex-md-row justify-content-between align-items-md-center"
-              data-bs-toggle="collapse" data-bs-target="#collapseBestday" aria-expanded="false"
-              aria-controls="collapseBestday">
-
-              <div class="d-flex align-items-center gap-4">
-                <div class="experience-logo d-flex align-items-center justify-content-center">
-                  <img src="images/companies/BestDay-logo.png" alt="Bestday.com Logo" class="img-fluid">
+                <div class="d-flex align-items-center gap-4">
+                  <div class="experience-logo d-flex align-items-center justify-content-center">
+                    <img src="images/companies/BestDay-logo.png" alt="Bestday.com Logo" class="img-fluid">
+                  </div>
+                  <div class="experience-info flex-grow-1">
+                    <h4 class="mb-1">Bestday.com</h4>
+                    <p class="mb-0">Lead Product Designer</p>
+                    <a href="https://www.bestday.com.mx/" target="_blank">www.bestday.com.mx/</a>
+                  </div>
                 </div>
-                <div class="experience-info flex-grow-1">
-                  <h4 class="mb-1">Bestday.com</h4>
-                  <p class="mb-0">Lead Product Designer</p>
-                  <a href="https://www.bestday.com.mx/" target="_blank">www.bestday.com.mx/</a>
+
+                <div
+                  class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-column align-items-md-end justify-content-center gap-2">
+                  <p class="mb-0">May 2013 - May 2019</p>
+                  <span class="badge rounded-pill">On-site</span>
                 </div>
               </div>
 
+              <!-- Collapsible Body -->
+              <div class="collapse" id="collapseBestday">
+                <div class="experience-body">
+                  <ul class="mb-4">
+                    <li>Launched Bestday’s first <strong>Usability Lab</strong>, establishing company-wide design
+                      standards and data-driven decision-making.</li>
+                    <li>Improved checkout conversion by <strong>2%</strong> through usability testing and flow
+                      optimization.</li>
+                    <li>Designed and developed new booking flows that created new revenue streams for the business.</li>
+                  </ul>
+                  <p class="mb-0"><em>Key Projects:</em> Bus Booking Redesign · Rewards Flow Optimization · Apartments &
+                    Vacation Rentals Platform</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mobalis -->
+            <div class="box-neutral experience-card p-4">
+              <!-- Header / Toggle Area -->
               <div
-                class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-column align-items-md-end justify-content-center gap-2">
-                <p class="mb-0">May 2013 - May 2019</p>
-                <span class="badge rounded-pill">On-site</span>
-              </div>
-            </div>
+                class="experience-header d-flex flex-column flex-md-row justify-content-between align-items-md-center"
+                data-bs-toggle="collapse" data-bs-target="#collapseMobalis" aria-expanded="false"
+                aria-controls="collapseMobalis">
 
-            <!-- Collapsible Body -->
-            <div class="collapse" id="collapseBestday">
-              <div class="experience-body">
-                <ul class="mb-4">
-                  <li>Launched Bestday’s first <strong>Usability Lab</strong>, establishing company-wide design
-                    standards and data-driven decision-making.</li>
-                  <li>Improved checkout conversion by <strong>2%</strong> through usability testing and flow
-                    optimization.</li>
-                  <li>Designed and developed new booking flows that created new revenue streams for the business.</li>
-                </ul>
-                <p class="mb-0"><em>Key Projects:</em> Bus Booking Redesign · Rewards Flow Optimization · Apartments &
-                  Vacation Rentals Platform</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Mobalis -->
-          <div class="box-neutral experience-card p-4">
-            <!-- Header / Toggle Area -->
-            <div class="experience-header d-flex flex-column flex-md-row justify-content-between align-items-md-center"
-              data-bs-toggle="collapse" data-bs-target="#collapseMobalis" aria-expanded="false"
-              aria-controls="collapseMobalis">
-
-              <div class="d-flex align-items-center gap-4">
-                <div class="experience-logo d-flex align-items-center justify-content-center">
-                  <img src="images/companies/Mobalis-logo.png" alt="Mobalis Logo" class="img-fluid">
+                <div class="d-flex align-items-center gap-4">
+                  <div class="experience-logo d-flex align-items-center justify-content-center">
+                    <img src="images/companies/Mobalis-logo.png" alt="Mobalis Logo" class="img-fluid">
+                  </div>
+                  <div class="experience-info flex-grow-1">
+                    <h4 class="mb-1">Mobalis</h4>
+                    <p class="mb-0">Graphic Designer</p>
+                  </div>
                 </div>
-                <div class="experience-info flex-grow-1">
-                  <h4 class="mb-1">Mobalis</h4>
-                  <p class="mb-0">Graphic Designer</p>
+
+                <div
+                  class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-column align-items-md-end justify-content-center gap-2">
+                  <p class="mb-0">Dec 2011 - March 2012</p>
+                  <span class="badge rounded-pill">Full Time</span>
                 </div>
               </div>
 
+              <!-- Collapsible Body -->
+              <div class="collapse" id="collapseMobalis">
+                <div class="experience-body">
+                  <ul class="mb-4">
+                    <li>As a Graphic Designer at Movales Agency, I worked on digital marketing and BTL campaigns,
+                      creating
+                      visual assets and campaign materials for well-known brands such as Atún Dolores, Grupo Modelo, and
+                      Grupo Pacífico. I collaborated with cross-functional teams to develop engaging visual concepts
+                      that
+                      aligned with brand guidelines and marketing objectives, contributing to the successful execution
+                      of
+                      multi-channel campaigns.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Freelance -->
+            <div class="box-neutral experience-card p-4">
+              <!-- Header / Toggle Area -->
               <div
-                class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-column align-items-md-end justify-content-center gap-2">
-                <p class="mb-0">Dec 2011 - March 2012</p>
-                <span class="badge rounded-pill">Full Time</span>
-              </div>
-            </div>
+                class="experience-header d-flex flex-column flex-md-row justify-content-between align-items-md-center"
+                data-bs-toggle="collapse" data-bs-target="#collapseFreelance" aria-expanded="false"
+                aria-controls="collapseFreelance">
 
-            <!-- Collapsible Body -->
-            <div class="collapse" id="collapseMobalis">
-              <div class="experience-body">
-                <ul class="mb-4">
-                  <li>As a Graphic Designer at Movales Agency, I worked on digital marketing and BTL campaigns, creating
-                    visual assets and campaign materials for well-known brands such as Atún Dolores, Grupo Modelo, and
-                    Grupo Pacífico. I collaborated with cross-functional teams to develop engaging visual concepts that
-                    aligned with brand guidelines and marketing objectives, contributing to the successful execution of
-                    multi-channel campaigns.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Freelance -->
-          <div class="box-neutral experience-card p-4">
-            <!-- Header / Toggle Area -->
-            <div class="experience-header d-flex flex-column flex-md-row justify-content-between align-items-md-center"
-              data-bs-toggle="collapse" data-bs-target="#collapseFreelance" aria-expanded="false"
-              aria-controls="collapseFreelance">
-
-              <div class="d-flex align-items-center gap-4">
-                <div class="experience-logo d-flex align-items-center justify-content-center">
-                  <!-- Puedes actualizar el placeholder después -->
-                  <img src="images/companies/campany-1.png" alt="Freelance" class="img-fluid">
+                <div class="d-flex align-items-center gap-4">
+                  <div class="experience-logo d-flex align-items-center justify-content-center">
+                    <!-- Puedes actualizar el placeholder después -->
+                    <img src="images/companies/campany-1.png" alt="Freelance" class="img-fluid">
+                  </div>
+                  <div class="experience-info flex-grow-1">
+                    <h4 class="mb-1">Freelance</h4>
+                    <p class="mb-0">Freelance</p>
+                  </div>
                 </div>
-                <div class="experience-info flex-grow-1">
-                  <h4 class="mb-1">Freelance</h4>
-                  <p class="mb-0">Freelance</p>
+
+                <div
+                  class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-column align-items-md-end justify-content-center gap-2">
+                  <p class="mb-0">2010</p>
+                  <span class="badge rounded-pill">Freelance</span>
                 </div>
               </div>
 
+              <!-- Collapsible Body -->
+              <div class="collapse" id="collapseFreelance">
+                <div class="experience-body">
+                  <ul class="mb-4">
+                    <li>Description of responsibilities and achievements.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tiburones Rojos de Veracruz -->
+            <div class="box-neutral experience-card p-4">
+              <!-- Header / Toggle Area -->
               <div
-                class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-column align-items-md-end justify-content-center gap-2">
-                <p class="mb-0">2010</p>
-                <span class="badge rounded-pill">Freelance</span>
-              </div>
-            </div>
+                class="experience-header d-flex flex-column flex-md-row justify-content-between align-items-md-center"
+                data-bs-toggle="collapse" data-bs-target="#collapseTiburones" aria-expanded="false"
+                aria-controls="collapseTiburones">
 
-            <!-- Collapsible Body -->
-            <div class="collapse" id="collapseFreelance">
-              <div class="experience-body">
-                <ul class="mb-4">
-                  <li>Description of responsibilities and achievements.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Tiburones Rojos de Veracruz -->
-          <div class="box-neutral experience-card p-4">
-            <!-- Header / Toggle Area -->
-            <div class="experience-header d-flex flex-column flex-md-row justify-content-between align-items-md-center"
-              data-bs-toggle="collapse" data-bs-target="#collapseTiburones" aria-expanded="false"
-              aria-controls="collapseTiburones">
-
-              <div class="d-flex align-items-center gap-4">
-                <div class="experience-logo d-flex align-items-center justify-content-center">
-                  <!-- Please update with correct logo -->
-                  <img src="images/companies/tiburones-logo.png" alt="Tiburones Rojos Logo" class="img-fluid">
+                <div class="d-flex align-items-center gap-4">
+                  <div class="experience-logo d-flex align-items-center justify-content-center">
+                    <!-- Please update with correct logo -->
+                    <img src="images/companies/tiburones-logo.png" alt="Tiburones Rojos Logo" class="img-fluid">
+                  </div>
+                  <div class="experience-info flex-grow-1">
+                    <h4 class="mb-1">Tiburones Rojos de Veracruz</h4>
+                    <p class="mb-0">Marketing and Design</p>
+                  </div>
                 </div>
-                <div class="experience-info flex-grow-1">
-                  <h4 class="mb-1">Tiburones Rojos de Veracruz</h4>
-                  <p class="mb-0">Marketing and Design</p>
+
+                <div
+                  class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-column align-items-md-end justify-content-center gap-2">
+                  <p class="mb-0">2009</p>
+                  <span class="badge rounded-pill">Full Time</span>
                 </div>
               </div>
 
+              <!-- Collapsible Body -->
+              <div class="collapse" id="collapseTiburones">
+                <div class="experience-body">
+                  <ul class="mb-4">
+                    <li>As Marketing and Design Lead for Tiburones Rojos de Coatzacoalcos (Second Division), I led the
+                      creative team and oversaw the development of all campaign materials, including print ads, video
+                      content, promotional assets, and in-stadium advertising. I ensured brand consistency and supported
+                      the team’s marketing initiatives across multiple channels.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Grupo Lince -->
+            <div class="box-neutral experience-card p-4">
+              <!-- Header / Toggle Area -->
               <div
-                class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-column align-items-md-end justify-content-center gap-2">
-                <p class="mb-0">2009</p>
-                <span class="badge rounded-pill">Full Time</span>
-              </div>
-            </div>
+                class="experience-header d-flex flex-column flex-md-row justify-content-between align-items-md-center"
+                data-bs-toggle="collapse" data-bs-target="#collapseGrupoLince" aria-expanded="false"
+                aria-controls="collapseGrupoLince">
 
-            <!-- Collapsible Body -->
-            <div class="collapse" id="collapseTiburones">
-              <div class="experience-body">
-                <ul class="mb-4">
-                  <li>As Marketing and Design Lead for Tiburones Rojos de Coatzacoalcos (Second Division), I led the
-                    creative team and oversaw the development of all campaign materials, including print ads, video
-                    content, promotional assets, and in-stadium advertising. I ensured brand consistency and supported
-                    the team’s marketing initiatives across multiple channels.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Grupo Lince -->
-          <div class="box-neutral experience-card p-4">
-            <!-- Header / Toggle Area -->
-            <div class="experience-header d-flex flex-column flex-md-row justify-content-between align-items-md-center"
-              data-bs-toggle="collapse" data-bs-target="#collapseGrupoLince" aria-expanded="false"
-              aria-controls="collapseGrupoLince">
-
-              <div class="d-flex align-items-center gap-4">
-                <div class="experience-logo d-flex align-items-center justify-content-center">
-                  <img src="images/companies/lince-logo.png" alt="Grupo Lince Logo" class="img-fluid">
+                <div class="d-flex align-items-center gap-4">
+                  <div class="experience-logo d-flex align-items-center justify-content-center">
+                    <img src="images/companies/lince-logo.png" alt="Grupo Lince Logo" class="img-fluid">
+                  </div>
+                  <div class="experience-info flex-grow-1">
+                    <h4 class="mb-1">Grupo Lince</h4>
+                    <p class="mb-0">Video Editor</p>
+                  </div>
                 </div>
-                <div class="experience-info flex-grow-1">
-                  <h4 class="mb-1">Grupo Lince</h4>
-                  <p class="mb-0">Video Editor</p>
+
+                <div
+                  class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-column align-items-md-end justify-content-center gap-2">
+                  <p class="mb-0"> Jan 2007 - Dec 2008</p>
+                  <span class="badge rounded-pill">Full Time</span>
                 </div>
               </div>
 
-              <div
-                class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-column align-items-md-end justify-content-center gap-2">
-                <p class="mb-0"> Jan 2007 - Dec 2008</p>
-                <span class="badge rounded-pill">Full Time</span>
+              <!-- Collapsible Body -->
+              <div class="collapse" id="collapseGrupoLince">
+                <div class="experience-body">
+                  <ul class="mb-4">
+                    <li>At Grupo Lince, I managed video editing and content production for advertising campaigns
+                      displayed
+                      on large-format LED screens. I produced video assets for brands such as Grupo Corona, Home Depot,
+                      Chedraui, and Liverpool, while overseeing the organization, scheduling, and transmission of
+                      advertising content across the network.</li>
+                  </ul>
+                </div>
               </div>
             </div>
 
-            <!-- Collapsible Body -->
-            <div class="collapse" id="collapseGrupoLince">
-              <div class="experience-body">
-                <ul class="mb-4">
-                  <li>At Grupo Lince, I managed video editing and content production for advertising campaigns displayed
-                    on large-format LED screens. I produced video assets for brands such as Grupo Corona, Home Depot,
-                    Chedraui, and Liverpool, while overseeing the organization, scheduling, and transmission of
-                    advertising content across the network.</li>
-                </ul>
-              </div>
-            </div>
+
           </div>
-
 
         </div>
 
       </div>
-
-    </div>
-  </section>
-
+    </section>
+  </main>
 
   <!--//////////////////// FOOTER (FIJO) ///////////////////// -->
-  <section class="s-footer">
+  <footer class="s-footer">
     <div class="footer-container">
       <!-- Logo -->
       <div class="footer-logo">
@@ -1179,7 +1223,7 @@
         <p class="footer-copyright">© 2026 Liz Martinez. All rights reserved.</p>
       </div>
     </div>
-  </section>
+  </footer>
 
   <!--//////////////////// CONTACT FORM MODAL ///////////////////// -->
   <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
@@ -1187,31 +1231,33 @@
       <div class="modal-content">
         <!-- modal header -->
         <div class="modal-header">
-          <h1 class="modal-title fs-4 bolder" id="contactModalLabel">Let's Talk!</h1>
+          <h2 class="modal-title fs-4 bolder" id="contactModalLabel">Let's Talk!</h2>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <!-- modal body -->
         <div class="modal-body p-4">
           <!-- Contact Form -->
           <div id="contactFormContainer">
-            <form id="contactForm" action="https://formspree.io/f/xgvzgrzj" method="POST">
+            <form id="contactForm" action="https://formspree.io/f/xgvzgrzj" method="POST" novalidate>
               <div class="mb-3">
                 <label for="name" class="form-label">Name *</label>
                 <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                <div class="invalid-feedback">Please enter your name.</div>
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label">Email *</label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email"
                   required>
+                <div class="invalid-feedback">Please enter a valid email address.</div>
               </div>
               <div class="mb-3">
                 <label for="message" class="form-label">Message *</label>
                 <textarea class="form-control" id="message" name="message" rows="4"
                   placeholder="Type your message here..." required></textarea>
+                <div class="invalid-feedback">Please write a message.</div>
               </div>
               <div class="d-grid gap-2">
-                <button type="submit" class="btn btn-primary-custom">Submit <i
-                    class="fa-solid fa-envelope ms-2"></i></button>
+                <button type="submit" class="btn btn-primary">Submit <i class="fa-solid fa-envelope ms-2"></i></button>
               </div>
             </form>
           </div>

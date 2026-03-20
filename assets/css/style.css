@@ -284,10 +284,10 @@
   --Type-Body-Gray: var(--Neutral-300);
   --Type-Body-Black: var(--Neutral-0);
   --color-Surface-footer: var(--primary-500);
-  --Surface-button-Primary-default: var(--Secondary-600);
-  --Surface-button-Primary-hover: var(--Secondary-700);
-  --Surface-button-Primary-active: var(--Secondary-800);
-  --Surface-button-Primary-disable: var(--Secondary-900);
+  --Surface-button-Primary-default: var(--primary-500);
+  --Surface-button-Primary-hover: var(--primary-600);
+  --Surface-button-Primary-active: var(--primary-700);
+  --Surface-button-Primary-disable: var(--primary-800);
   --Surface-button-Outline-default: transparent;
   --Surface-button-Outline-hover: rgba(204, 219, 42, 0.05);
   --Surface-button-Outline-active: rgba(204, 219, 42, 0.1);
@@ -301,7 +301,7 @@
   --Border-button-Primary-default: transparent;
   --Border-button-Primary-hover: transparent;
   --Border-button-Primary-active: transparent;
-  --Border-button-Primary-focus: var(--Secondary-600);
+  --Border-button-Primary-focus: var(--primary-600);
   --Border-button-Primary-disable: transparent;
   --Border-button-Outline-default: var(--Secondary-500);
   --Border-button-Outline-hover: var(--Secondary-500);
@@ -12293,6 +12293,11 @@ a {
   color: var(--Type-Primary-default);
 }
 
+.form-control:focus {
+  border-color: var(--Border-Primary-focus);
+  box-shadow: 0 0 0 0.25rem rgba(90, 31, 178, 0.25);
+}
+
 @keyframes pulse-border {
   0% {
     transform: scale(1);
@@ -12350,128 +12355,124 @@ a {
   opacity: 1;
 }
 
+/* Base button resets */
 .btn {
-  font-weight: 600;
-  border-radius: 50px;
-  --bs-btn-padding-x: 0.75rem;
-  --bs-btn-padding-y: 0.75rem;
+  font-family: var(--Font-Family-Body, "Inter", sans-serif);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  /* For icons */
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: 1px solid transparent;
 }
 
-.btn-secondary {
-  background-color: var(--Surface-Primary-default);
-  border-color: var(--Surface-Primary-default);
-  color: #fff;
-}
-.btn-secondary:hover {
-  background-color: var(--Surface-Primary-default);
-  box-shadow: inset 0 0 0.65em 10px var(--Surface-Primary-dark);
-  border-color: var(--Surface-Primary-dark);
-  color: #fff;
-}
-
-.btn-outline-secondary {
-  background-color: var(--Surface__Secondary__Subtle);
-  border-color: var(--color-Border-Secondary-Default);
-}
-
-.btn-tertiary {
-  color: var(--Primitives-Colours-Azul-900);
-  background-color: var(--Primitives-Colours-Azul-200);
-  border: none;
-}
-.btn-tertiary:hover {
-  color: var(--color-Type-Secondary-Label);
-  background-color: var(--color-Surface-Secondary-Subtle);
-  border: none;
-}
-
-.btn-footer {
-  color: #fff;
-}
-.btn-footer:hover {
-  background-color: var(--color-Surface-Subtle);
-  color: var(--color-Type-Secondary-Label);
-}
-
+/* Primary Button (Matches both .btn-primary and legacy .btn-primary-custom) */
+.btn-primary,
 .btn-primary-custom {
   background-color: var(--Surface-button-Primary-default);
   color: var(--Type-button-Primary-default);
-  font-weight: 500;
   padding: 18px 23px;
   border-radius: 10px;
-  border: 1px solid transparent;
-  transition: all 0.3s ease;
 }
-
-/* Custom Buttons */
-.btn-primary-custom {
-  background-color: var(--Surface-button-Primary-default);
-  color: var(--Type-button-Primary-default);
-  font-weight: 500;
-  padding: 18px 23px;
-  border-radius: 10px;
-  border: 1px solid transparent;
-  transition: all 0.3s ease;
-}
+.btn-primary:hover,
 .btn-primary-custom:hover {
   background-color: var(--Surface-button-Primary-hover);
   color: var(--Type-button-Primary-hover);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(119, 51, 219, 0.3);
 }
+.btn-primary:active,
 .btn-primary-custom:active {
   background-color: var(--Surface-button-Primary-active);
   color: var(--Type-button-Primary-active);
 }
+.btn-primary:focus,
 .btn-primary-custom:focus {
   background-color: var(--Surface-button-Primary-focus);
   color: var(--Type-button-Primary-focus);
   border-color: var(--Border-button-Primary-focus);
 }
+.btn-primary:disabled,
 .btn-primary-custom:disabled {
-  background-color: var(--Surface-button-Primary-disabled);
+  background-color: var(--Surface-button-Primary-disable);
   color: var(--Type-button-Primary-disable);
   border-color: var(--Border-button-Primary-disable);
 }
 
+/* Secondary Button (Pill shape according to Figma specs) */
+.btn-secondary {
+  background-color: var(--Surface-button-Primary-default);
+  color: var(--Type-button-Primary-default);
+  padding: 12px 24px;
+  border-radius: 50px;
+}
+.btn-secondary:hover {
+  background-color: var(--Surface-button-Primary-hover);
+  color: var(--Type-button-Primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(119, 51, 219, 0.3);
+}
+.btn-secondary:active {
+  background-color: var(--Surface-button-Primary-active);
+  color: var(--Type-button-Primary-active);
+}
+.btn-secondary:focus {
+  background-color: var(--Surface-button-Primary-focus);
+  color: var(--Type-button-Primary-focus);
+  border-color: var(--Border-button-Primary-focus);
+}
+.btn-secondary:disabled {
+  background-color: var(--Surface-button-Primary-disable);
+  color: var(--Type-button-Primary-disable);
+  border-color: var(--Border-button-Primary-disable);
+}
+
+/* Outline Button */
+.btn-outline,
 .btn-outline-custom {
   background-color: var(--Surface-button-Outline-default);
   color: var(--Type-button-Outline-default);
-  font-weight: 500;
   padding: 18px 23px;
   border-radius: 10px;
   border: 1px solid var(--Border-button-Outline-default);
-  transition: all 0.3s ease;
 }
+.btn-outline:hover,
 .btn-outline-custom:hover {
   background-color: var(--Surface-button-Outline-hover);
   border-color: var(--Border-button-Outline-hover);
   color: var(--Type-button-Outline-hover);
   transform: translateY(-2px);
 }
+.btn-outline:active,
 .btn-outline-custom:active {
   background-color: var(--Surface-button-Outline-active);
   border-color: var(--Border-button-Outline-active);
   color: var(--Type-button-Outline-active);
 }
+.btn-outline:focus,
 .btn-outline-custom:focus {
   background-color: var(--Surface-button-Outline-focus);
   border-color: var(--Border-button-Outline-focus);
   color: var(--Type-button-Outline-focus);
 }
+.btn-outline:disabled,
 .btn-outline-custom:disabled {
   border-color: var(--Border-button-Outline-disable);
   color: var(--Type-button-Outline-disable);
 }
 
+/* Link Button */
 .btn-link {
   background-color: var(--Surface-button-Link-default);
   color: var(--Type-button-Link-default);
-  font-weight: 500;
   padding: 8px 16px;
   border-radius: 10px;
   border: none;
-  transition: all 0.3s ease;
 }
 .btn-link:hover {
   background-color: var(--Surface-button-Link-hover);
@@ -12488,6 +12489,27 @@ a {
 }
 .btn-link:disabled {
   color: var(--Type-button-Link-disable);
+}
+
+/* Footer legacy helpers */
+.btn-tertiary {
+  color: var(--Primitives-Colours-Azul-900);
+  background-color: var(--Primitives-Colours-Azul-200);
+  border-radius: 10px;
+  padding: 8px 16px;
+  border: none;
+}
+.btn-tertiary:hover {
+  color: var(--color-Type-Secondary-Label);
+  background-color: var(--color-Surface-Secondary-Subtle);
+}
+
+.btn-footer {
+  color: #fff;
+}
+.btn-footer:hover {
+  background-color: var(--color-Surface-Subtle);
+  color: var(--color-Type-Secondary-Label);
 }
 
 /* Typography Primitives  - Mode 1 */
@@ -14069,21 +14091,23 @@ ul.filters > li.active > a {
 
 .divider-section {
   text-align: center;
-  font-size: 27px;
-  font-weight: 700;
-  color: var(--color-Surface-Primary-Darker);
+  font-size: var(--Font-Size-font-4xl-28, 28px);
+  font-weight: var(--Font-Weight-Bold, 700);
+  color: var(--Surface-Primary-dark, #5A1FB2);
   font-variant-caps: all-small-caps;
   width: 100%;
-  padding-top: 20px;
+  padding-top: var(--Spacing-Medium, 20px);
 }
 
 .s-project-grid .project-container {
   background-color: var(--Surface-card-white-white);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border-top: 1px solid var(--Border-Neutral-subtle);
-  padding-top: 60px;
-  border-radius: 20px;
-  border: 1px solid var(--color-Surface-Secondary-Subtle);
+  border-radius: var(--bs-border-radius-xl, 20px);
+  border: 1px solid var(--Border-Secondary-subtle);
+  overflow: hidden;
+  border-top: none;
+  padding-top: 0;
+  margin-bottom: 2rem;
 }
 .s-project-grid .project-container:hover {
   transform: translateY(-4px);
@@ -14139,7 +14163,7 @@ ul.filters > li.active > a {
   margin-top: 10px;
 }
 .s-project-grid .project-container .box {
-  border-radius: 20px;
+  border-radius: var(--bs-border-radius-xl, 20px);
   width: 100%;
   aspect-ratio: 16/9;
   max-height: 600px;
@@ -14180,45 +14204,33 @@ ul.filters > li.active > a {
   border-radius: inherit;
 }
 .s-project-grid .show-card.card-info {
-  padding: 0;
+  padding: 32px 24px;
   color: var(--Type-Body-Black);
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .s-project-grid .show-card.card-info h2 {
   text-align: left;
 }
 @media (min-width: 992px) {
-  .s-project-grid .show-card .project-container {
-    border-radius: 20px;
+  .s-project-grid .project-container {
+    border-radius: var(--bs-border-radius-xl, 20px);
     padding: 0px;
     border: 1px solid var(--Border-Neutral-light);
   }
-  .s-project-grid .show-card .show-card {
+  .s-project-grid .show-card {
     width: 50%;
     height: auto;
     min-height: 0;
   }
-  .s-project-grid .show-card .show-card.card-photo {
+  .s-project-grid .show-card.card-photo {
     padding: 0;
   }
-  .s-project-grid .show-card .show-card.card-info {
-    padding: 32px;
+  .s-project-grid .show-card.card-info {
+    padding: 40px 32px 40px 24px;
   }
-}
-.s-project-grid .thumb-large {
-  display: none;
-}
-.s-project-grid .thumb-small {
-  display: block;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  border: 1px solid var(--Border-Neutral-light);
-  border-radius: 10px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-.s-project-grid .show-card.card-info {
-  padding: 0;
 }
 .s-project-grid .s-gallery-grid {
   padding-top: 40px;
@@ -14247,12 +14259,6 @@ ul.filters > li.active > a {
   }
   .s-project-grid .show-card.card-photo {
     display: block !important;
-  }
-  .s-project-grid .thumb-small {
-    display: none;
-  }
-  .s-project-grid .thumb-large {
-    display: block;
   }
   .s-project-grid .card-info {
     padding-top: 40px;

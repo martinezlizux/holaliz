@@ -36,14 +36,13 @@
 }
 
 .divider-section {
-    // border-top: #dddddd 1px solid;
     text-align: center;
-    font-size: 27px;
-    font-weight: 700;
-    color: var(--color-Surface-Primary-Darker);
+    font-size: var(--Font-Size-font-4xl-28, 28px);
+    font-weight: var(--Font-Weight-Bold, 700);
+    color: var(--Surface-Primary-dark, #5A1FB2);
     font-variant-caps: all-small-caps;
     width: 100%;
-    padding-top: 20px;
+    padding-top: var(--Spacing-Medium, 20px);
 }
 
 
@@ -71,16 +70,18 @@
 
         }
 
-        border-top: 1px solid var(--Border-Neutral-subtle);
-        padding-top: 60px;
+        border-radius: var(--bs-border-radius-xl, 20px);
+        border: 1px solid var(--Border-Secondary-subtle);
+        overflow: hidden; // Critical to clip corners of the image perfectly in both mobile and desktop
+
+        // Remove old top borders and weird padding offsets
+        border-top: none;
+        padding-top: 0;
+        margin-bottom: 2rem;
 
         &:last-child {
             margin-bottom: 0;
         }
-
-        // Estilos específicos para cada proyecto (simplificado)
-        border-radius: 20px;
-        border: 1px solid var(--color-Surface-Secondary-Subtle);
 
         .about-project {
             display: flex;
@@ -131,7 +132,7 @@
 
         // Reusable box style for images
         .box {
-            border-radius: 20px;
+            border-radius: var(--bs-border-radius-xl, 20px);
             width: 100%;
             aspect-ratio: 16 / 9;
             max-height: 600px;
@@ -179,9 +180,12 @@
         }
 
         &.card-info {
-            padding: 0;
+            padding: 32px 24px; // Base mobile padding 
             color: var(--Type-Body-Black);
             text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
 
             h2 {
                 text-align: left;
@@ -189,46 +193,29 @@
 
         }
 
-        // En resoluciones grandes
-        @include media-breakpoint-up(lg) {
-            .project-container {
-                border-radius: 20px;
-                padding: 0px;
-                border: 1px solid var(--Border-Neutral-light);
+    }
+
+    // En resoluciones grandes
+    @include media-breakpoint-up(lg) {
+        .project-container {
+            border-radius: var(--bs-border-radius-xl, 20px);
+            padding: 0px;
+            border: 1px solid var(--Border-Neutral-light);
+        }
+
+        .show-card {
+            width: 50%;
+            height: auto;
+            min-height: 0;
+
+            &.card-photo {
+                padding: 0;
             }
 
-            .show-card {
-                width: 50%;
-                height: auto;
-                min-height: 0;
-
-                &.card-photo {
-                    padding: 0;
-                }
-
-                &.card-info {
-                    padding: 32px;
-                }
+            &.card-info {
+                padding: 40px 32px 40px 24px; // Exact Figma Desktop paddings
             }
         }
-    }
-
-    .thumb-large {
-        display: none;
-    }
-
-    .thumb-small {
-        display: block;
-        margin-bottom: 20px;
-        margin-top: 20px;
-        border: 1px solid var(--Border-Neutral-light);
-        border-radius: 10px;
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
-
-    .show-card.card-info {
-        padding: 0;
     }
 
     .s-gallery-grid {
@@ -267,14 +254,6 @@
             display: block !important;
         }
 
-        .thumb-small {
-            display: none;
-        }
-
-        .thumb-large {
-            display: block;
-        }
-
         .card-info {
             padding-top: 40px;
         }
@@ -302,4 +281,5 @@
                 }
             }
         }
-    }}
+    }
+}

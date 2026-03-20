@@ -1,82 +1,29 @@
 @use '../components/mixins' as *;
 
 
+/* Base button resets */
 .btn {
-    font-weight: 600;
-    border-radius: 50px;
-    --bs-btn-padding-x: 0.75rem;
-    --bs-btn-padding-y: 0.75rem;
+    font-family: var(--Font-Family-Body, 'Inter', sans-serif);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    /* For icons */
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: 1px solid transparent;
 }
 
-.btn-secondary {
-    background-color: var(--Surface-Primary-default);
-    border-color: var(--Surface-Primary-default);
-    color: #fff;
-
-    &:hover {
-        background-color: var(--Surface-Primary-default);
-        box-shadow: inset 0 0 0.65em 10px var(--Surface-Primary-dark);
-        border-color: var(--Surface-Primary-dark);
-        color: #fff;
-    }
-}
-
-
-
-.btn-outline-secondary {
-    background-color: var(--Surface__Secondary__Subtle);
-    border-color: var(--color-Border-Secondary-Default);
-
-}
-
-.btn-tertiary {
-    color: var(--Primitives-Colours-Azul-900);
-    background-color: var(--Primitives-Colours-Azul-200);
-    border: none;
-
-    &:hover {
-        color: var(--color-Type-Secondary-Label);
-        background-color: var(--color-Surface-Secondary-Subtle);
-        border: none;
-
-    }
-
-}
-
-
-.btn-footer {
-
-    color: #fff;
-
-    &:hover {
-        background-color: var(--color-Surface-Subtle);
-        color: var(--color-Type-Secondary-Label);
-    }
-
-}
-
-
-
+/* Primary Button (Matches both .btn-primary and legacy .btn-primary-custom) */
+.btn-primary,
 .btn-primary-custom {
     background-color: var(--Surface-button-Primary-default);
     color: var(--Type-button-Primary-default);
-    font-weight: 500;
     padding: 18px 23px;
     border-radius: 10px;
-    border: 1px solid transparent;
-    transition: all 0.3s ease;
-}
-
-
-/* Custom Buttons */
-.btn-primary-custom {
-    background-color: var(--Surface-button-Primary-default);
-    color: var(--Type-button-Primary-default);
-    font-weight: 500;
-    padding: 18px 23px;
-    border-radius: 10px;
-    border: 1px solid transparent;
-    transition: all 0.3s ease;
 
     &:hover {
         background-color: var(--Surface-button-Primary-hover);
@@ -88,7 +35,6 @@
     &:active {
         background-color: var(--Surface-button-Primary-active);
         color: var(--Type-button-Primary-active);
-
     }
 
     &:focus {
@@ -98,20 +44,52 @@
     }
 
     &:disabled {
-        background-color: var(--Surface-button-Primary-disabled);
+        background-color: var(--Surface-button-Primary-disable);
         color: var(--Type-button-Primary-disable);
         border-color: var(--Border-button-Primary-disable);
     }
 }
 
+/* Secondary Button (Pill shape according to Figma specs) */
+.btn-secondary {
+    background-color: var(--Surface-button-Primary-default);
+    color: var(--Type-button-Primary-default);
+    padding: 12px 24px;
+    border-radius: 50px;
+
+    &:hover {
+        background-color: var(--Surface-button-Primary-hover);
+        color: var(--Type-button-Primary-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(119, 51, 219, 0.3);
+    }
+
+    &:active {
+        background-color: var(--Surface-button-Primary-active);
+        color: var(--Type-button-Primary-active);
+    }
+
+    &:focus {
+        background-color: var(--Surface-button-Primary-focus);
+        color: var(--Type-button-Primary-focus);
+        border-color: var(--Border-button-Primary-focus);
+    }
+
+    &:disabled {
+        background-color: var(--Surface-button-Primary-disable);
+        color: var(--Type-button-Primary-disable);
+        border-color: var(--Border-button-Primary-disable);
+    }
+}
+
+/* Outline Button */
+.btn-outline,
 .btn-outline-custom {
     background-color: var(--Surface-button-Outline-default);
     color: var(--Type-button-Outline-default);
-    font-weight: 500;
     padding: 18px 23px;
     border-radius: 10px;
     border: 1px solid var(--Border-button-Outline-default);
-    transition: all 0.3s ease;
 
     &:hover {
         background-color: var(--Surface-button-Outline-hover);
@@ -138,14 +116,13 @@
     }
 }
 
+/* Link Button */
 .btn-link {
     background-color: var(--Surface-button-Link-default);
     color: var(--Type-button-Link-default);
-    font-weight: 500;
     padding: 8px 16px;
     border-radius: 10px;
     border: none;
-    transition: all 0.3s ease;
 
     &:hover {
         background-color: var(--Surface-button-Link-hover);
@@ -165,5 +142,28 @@
 
     &:disabled {
         color: var(--Type-button-Link-disable);
+    }
+}
+
+/* Footer legacy helpers */
+.btn-tertiary {
+    color: var(--Primitives-Colours-Azul-900);
+    background-color: var(--Primitives-Colours-Azul-200);
+    border-radius: 10px;
+    padding: 8px 16px;
+    border: none;
+
+    &:hover {
+        color: var(--color-Type-Secondary-Label);
+        background-color: var(--color-Surface-Secondary-Subtle);
+    }
+}
+
+.btn-footer {
+    color: #fff;
+
+    &:hover {
+        background-color: var(--color-Surface-Subtle);
+        color: var(--color-Type-Secondary-Label);
     }
 }
