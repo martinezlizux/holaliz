@@ -1,0 +1,190 @@
+.section-projects-transition {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #6210C4; /* Initial background matching hero, gsap will smoothly tween it */
+}
+
+.projects-huge-title {
+  font-family: 'Bueno', sans-serif;
+  font-weight: 800;
+  font-size: 181px;
+  line-height: 0.8;
+  color: #B997ED; /* rgb(185, 151, 237) approx matching Figma */
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.section-projects-horizontal {
+  min-height: 100vh;
+  background-color: #FAFAFA;
+  display: flex;
+  align-items: center;
+  overflow: hidden; /* Crucial for horizontal scroll */
+  padding: 50px 0;
+}
+
+.horizontal-scroll-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 40px;
+  padding: 0 50px;
+  /* Width will be much larger than 100vw, GSAP will move it */
+}
+
+.new-project-card {
+  width: 370px;
+  height: 565px;
+  background-color: #FFFFFF;
+  border: 3px solid #262626;
+  border-radius: 16px;
+  box-shadow: 6px 6px 0px 0px #9967E5; 
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .card-link-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    padding: 24px;
+  }
+  
+  .card-img {
+    width: 100%;
+    height: 250px;
+    background-color: #E2D1F9;
+    border-radius: 8px;
+    border: 2px solid #262626;
+    margin-bottom: 20px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  .card-meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #9967E5;
+  }
+  
+  .card-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    color: #262626;
+    margin-bottom: 12px;
+  }
+  
+  .card-desc {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #4A4A4A;
+    line-height: 1.5;
+    flex-grow: 1;
+  }
+}
+
+.horizontal-intro {
+  width: 90vw;
+  max-width: 600px; /* Reduced to better match the bounding box ~561px */
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-right: 100px;
+  
+  .intro-title {
+    font-family: 'Bueno', sans-serif;
+    font-weight: 800;
+    font-size: 171px;
+    line-height: 0.83;
+    color: #9966E2;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  .intro-desc {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.15;
+    letter-spacing: -0.45px;
+    color: #9966E2;
+    margin: 0;
+  }
+}
+
+.horizontal-outro {
+  background-color: #E2D1F9;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+
+  .outro-text {
+    font-family: 'Bueno', sans-serif;
+    font-weight: 800;
+    font-size: 48px;
+    color: #6210C4;
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .section-projects-horizontal {
+    align-items: flex-start;
+    padding-bottom: 30px;
+  }
+  .horizontal-scroll-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Firefox */
+    padding-bottom: 30px;
+    
+    &::-webkit-scrollbar {
+      display: none; /* Chrome/Safari */
+    }
+  }
+  .new-project-card, .horizontal-intro, .horizontal-outro {
+    scroll-snap-align: center;
+  }
+  
+  .projects-huge-title { font-size: 120px; }
+  .new-project-card { width: 320px; height: 500px; }
+  .horizontal-intro {
+    padding-right: 40px;
+    .intro-title { font-size: 120px; }
+    .intro-desc { font-size: 20px; }
+  }
+}
+@media (max-width: 767px) {
+  .projects-huge-title { font-size: 80px; }
+  .new-project-card { width: 280px; height: 450px; }
+  .horizontal-intro {
+    padding-right: 20px;
+    .intro-title { font-size: 80px; }
+    .intro-desc { font-size: 16px; }
+  }
+}

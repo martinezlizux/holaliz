@@ -7,6 +7,9 @@
 @use 'components/utilities';
 
 // Import sections
+@use 'sections/hero-new';
+@use 'sections/projects-new';
+@use 'sections/about-new';
 @use 'sections/navbar';
 @use 'sections/intro';
 @use 'sections/about';

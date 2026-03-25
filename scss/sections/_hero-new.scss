@@ -1,0 +1,180 @@
+@font-face {
+  font-family: 'Bueno';
+  src: url('../../fonts/Bueno-VF.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+.hero-section {
+  background-color: #6210C4;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+.hero-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px 100px;
+  min-height: 100vh;
+}
+
+/* Nav */
+.hero-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-logo {
+  border: 1.5px solid white;
+  border-radius: 4px;
+  padding: 8px 12px;
+  display: inline-flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: -0.5px;
+  transition: opacity 0.3s;
+
+  &:hover {
+    color: white;
+    opacity: 0.8;
+  }
+
+  .logo-arrow {
+    margin: 0 4px;
+    font-size: 16px;
+    transform: translateY(1px);
+  }
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.btn-lets-talk {
+  background-color: #D4D4D4;
+  color: black;
+  border: none;
+  border-radius: 99px;
+  padding: 12px 24px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s, background-color 0.2s;
+
+  &:hover {
+    background-color: white;
+    transform: scale(1.05);
+  }
+  
+  i {
+    font-size: 12px;
+  }
+}
+
+/* Hero Center */
+.hero-center {
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+}
+
+.hero-huge-title {
+  font-family: 'Bueno', sans-serif;
+  font-weight: 800; /* Extra Bold */
+  font-size: 181px;
+  line-height: 0.85; /* tighter line height as in Figma: 142px on 181px font */
+  margin: 0;
+  text-transform: uppercase;
+  color: #C0A3E8; /* Wait, what color is the text? Let's check screenshot! */
+  /* Looks like a lighter purple. Let's use #C3A5ED or rgba(255,255,255,0.7) */
+  color: #C19EED; /* based on visual from screenshot */
+}
+
+.hero-subtitle {
+  font-family: 'Bueno', sans-serif;
+  font-weight: 400; /* Regular */
+  font-size: 32px;
+  line-height: 1.2;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: #E2D1F9; /* lighter font color */
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-lime {
+  background-color: #D9E461;
+  color: black;
+  border: none;
+  border-radius: 99px;
+  padding: 18px 32px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform 0.2s, background-color 0.2s;
+
+  &:hover {
+    background-color: #c9d64a;
+    transform: scale(1.05);
+  }
+
+  i {
+    font-size: 14px;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .hero-container {
+    padding: 20px 40px;
+  }
+  .hero-huge-title {
+    font-size: 120px;
+  }
+  .hero-subtitle {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-huge-title {
+    font-size: 80px;
+  }
+  .hero-subtitle {
+    font-size: 20px;
+  }
+  .nav-links {
+    display: none; /* Hide on mobile for now, can implement a mobile menu later */
+  }
+}

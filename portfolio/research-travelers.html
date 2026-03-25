@@ -42,11 +42,15 @@
             a.appendChild(r);
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
-    <link rel="stylesheet" href="../assets/css/style.css?v=20251123234824">
-    <link rel="stylesheet" href="../assets/css/fontawesome.css?v=20251123234824">
+    <link rel="stylesheet" href="../assets/css/style.css?v=20260325221314?v=20241121">
+    <link rel="stylesheet" href="../assets/css/fontawesome.css?v=20260325221314?v=20241121">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lily+Script+One&display=swap" rel="stylesheet">
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X271RK6RRK"></script>
@@ -55,16 +59,14 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-        gtag('config', 'G-X271RK6RRK', { 'send_page_view': false });
+      gtag('config', 'G-X271RK6RRK', { 'send_page_view': false });
     </script>
 </head>
 
-
 <body>
 
-   <!--//////////////////// Navbar Section///////////////////// -->
-
-           <nav class="project-nav menu">
+    <!--//////////////////// Navbar Section///////////////////// -->
+    <nav class="project-nav menu">
         <div class="project-nav__inner">
             <a class="project-back" tabindex="0" href="../index.html">
                 <i class="fa-solid fa-chevron-left"></i>
@@ -73,238 +75,246 @@
             <div class="project-nav__wrapper">
                 <ul class="project-nav-list">
                     <li class="nav-item">
-                        <a class="btn nav-link active" href="../index.html" tabindex="0">Overview</a>
+                        <a class="nav-link" href="#overview" tabindex="0">Overview</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../aboutme.html" tabindex="0">Research</a>
+                        <a class="nav-link" href="#research" tabindex="0">Research Process</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn nav-link" href="../resume.html" tabindex="0">Development</a>
+                        <a class="nav-link" href="#findings" tabindex="0">Key Findings</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn nav-link" href="../resume.html" tabindex="0">Testing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn nav-link" href="../resume.html" tabindex="0">Final Product</a>
+                        <a class="nav-link" href="#learnings" tabindex="0">Key Learnings</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <div class="s-proyect">
 
-
-<div class="s-proyect ">
-
-    <!-- PROJECT IMAGE -->
-    <div class="container-fluid bg-banner">
-        <img class="img-fluid" src="../images/projects/Travelers-research/thumb-deep.png" alt="Desing System Storybook Visual Studio">
-    </div>
-
-    <!-- PROJECT HEADING -->
-    <div class="container col-11 col-md-9 col-xl-9 py-5 border-bottom">
-        <div class="p-heading mt-4">
-            <h1 class="bold">Understanding the Traveler’s Mindset: A UX Journey into Online Hotel Bookings</h1>
-            <!-- <h3 class="light">User research focused on the online hotel booking process.</h3> -->
-        </div>
-        <div class="row row-cols-1 row-cols-md-3 mt-4">
-            <div class="col mb-2"><strong>My Role:</strong> UX Designer</div>
-            <div class="col mb-2"><strong>Timeline:</strong> 1 month</div>
-            <div class="col mb-2"><strong>Tools:</strong> 
-                <img class="img-tool" src="../images/tools/miro.png" alt="Miro collaboration tool logo">
-                <img class="img-tool" src="../images/tools/lookback.png" alt="Lookback interview capture logo">
-                <img class="img-tool" src="../images/tools/ethnio.png" alt="Ethnio recruiting tool logo">
-            </div>       
-        </div>
-        <div class="row ">
-            <div class="col"><strong>Keywords</strong> 
-                <span class="badge rounded-pill ">Research</span>
-                <span class="badge rounded-pill ">How might we...</span>
-                <span class="badge rounded-pill ">Ideation</span>
+        <!-- PROJECT HERO -->
+        <section class="project-hero"
+            style="background-image: url('../images/projects/Travelers-research/thumb-deep.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-chips">
+                        <span class="chip">Research</span>
+                        <span class="chip">Ideation</span>
+                    </div>
+                    <h1>Traveler Research</h1>
+                    <p>Understanding the Traveler’s Mindset: A UX Journey into Online Hotel Bookings</p>
+                </div>
+                <!-- Hero Image -->
+                <div class="hero-image">
+                    <img src="../images/projects/Travelers-research/thumb-deep.png" alt="Traveler Research Overview">
+                </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-    
+        <!-- SECTIONS -->
+        <div class=" wrapper">
 
-     <!-- SECCIONES -->
-    <div class="wrapper container col-11 col-md-9 col-xl-7 py-5">
+            <!-- PROJECT DETAILS -->
+            <section class="project-details">
+                <div class="details-container container col-11 col-md-9 col-xl-8">
+                    <div class="detail-item">
+                        <span class="detail-label">Role</span>
+                        <span class="detail-value">UX Designer / Researcher</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Timeline</span>
+                        <span class="detail-value">1 Month</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Focus</span>
+                        <span class="detail-value">User Research</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Tools</span>
+                        <span class="detail-value">Miro, Lookback, Ethnio</span>
+                    </div>
+                </div>
+            </section>
 
-        <!-- ABOUT -->
-         <section class="py-5">
-            <div class="content">
-                <div class="p-content">
-                    <h2 class="bold">About</h2>
-                    <p>I worked as a UX Designer at a leading OTA in Latin America to better understand how people search for and book hotels online. The goal was to uncover user pain points and surface opportunities that analytics alone could not reveal.</p>
-                    <div id="p-results">
-                        <div class="results d-flex flex-column">
-                            <div><span class="win r-highlight"><i class="fa-solid fa-magnifying-glass"></i>50+ participant insights synthesized</span></div>
-                            <div><span class="win r-highlight"><i class="fa-solid fa-lightbulb"></i>4 key opportunity areas defined</span></div>
-                            <div><span class="win r-highlight"><i class="fa-solid fa-arrow-up"></i>Clearer value messaging for bookings</span></div>
+            <!-- OVERVIEW -->
+            <section id="overview" class="project-overview  py-5">
+                <div class="container col-11 col-md-9 col-xl-8 ">
+                    <h2 class="title bold">Overview</h2>
+                    <p class="body-large-regular">I worked as a UX Designer at a leading OTA in Latin America to better understand how people search for and book hotels online. The goal was to uncover user pain points and surface opportunities that analytics alone could not reveal.</p>
+
+                    <p class="body-large-regular">Our product analytics showed what users did, but not why. We needed a clear, evidence-based picture of the booking journey so the product team could make informed decisions about new features.</p>
+
+                    <div class="box-objectives mt-5">
+                        <h3>Project Outcomes</h3>
+                        <ul>
+                            <li>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>50+ participant insights synthesized</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>4 key opportunity areas defined</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Clearer value messaging for bookings</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Over 10 initiatives increased micro-conversions in flows</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <div class="divider my-3"></div>
+
+            <!-- RESEARCH PROCESS -->
+            <section id="research" class="py-5">
+                <div class="container col-11 col-md-9 col-xl-8">
+                    <div class="p-content">
+                        <h2 class="bold title">Research Process</h2>
+                        <p>By getting closer to our clients, we better understood the key factors that influence their decisions when planning a trip and booking online. To design a better product, it's essential to understand how users search and make decisions.</p>
+
+                        <h3 class="mt-5 bold">Research Roadmap</h3>
+                        <p>I began by creating a roadmap to outline the timeline for the entire research process, from recruiting participants to delivering a report with the insights gathered.</p>
+                        <img class="img-fluid my-4 rounded shadow" src="../images/projects/Travelers-research/plan-research.png" alt="Research roadmap">
+
+                        <h3 class="mt-5 bold">Set the Tools</h3>
+                        <p>We used Ethnio to screen participants, and conducted interviews through Lookback.</p>
+                        <img class="img-fluid my-4 rounded shadow" src="../images/projects/Travelers-research/ethnio.png" alt="Lookback / Ethnio screenshot">
+
+                        <h3 class="mt-5 bold">Interviews</h3>
+                        <p>The sample was 18 users, aged 21–39 (7 women and 11 men). Sessions were recorded and reviewed for thematic analysis.</p>
+                        <img class="img-fluid my-4 rounded shadow" src="../images/projects/Travelers-research/interviews.png" alt="Interview sample screenshot">
+
+                        <h3 class="mt-5 bold">Analyze & Code Data</h3>
+                        <p>We created a virtual board in Miro to collect and synthesize findings; this made it easy to share insights with stakeholders and collaborate on themes. We extracted users' comments as post-its, grouped them into themes, and translated those into concise findings. At this stage we focused on insights, not solutions.</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img class="img-fluid my-4 rounded shadow" src="../images/projects/Travelers-research/board1.png" alt="Miro board">
+                            </div>
+                            <div class="col-md-6">
+                                <img class="img-fluid my-4 rounded shadow" src="../images/projects/Travelers-research/board2.png" alt="Miro board">
+                            </div>
+                        </div>
+
+                        <h3 class="mt-5 bold">Ideation</h3>
+                        <p>A "How Might We" session helped transform findings into actionable ideas and early concepts for testing.</p>
+                        <img class="img-fluid my-4 rounded shadow" src="../images/projects/Travelers-research/hmw.png" alt="Findings and ideation">
+                    </div>
+                </div>
+            </section>
+
+            <div class="divider my-3"></div>
+
+            <!-- FINDINGS -->
+            <section id="findings" class="py-5">
+                <div class="container col-11 col-md-9 col-xl-8">
+                    <div class="p-content">
+                        <h2 class="bold title">Key Findings & Actions</h2>
+                        <p>After synthesizing insights from the research and behavioral data, several clear patterns emerged about the traveler mindset during the booking process.</p>
+
+                        <div class="box-Impact my-animate">
+                            <div class="impact-label"><i class="impact-icon fa-solid fa-lightbulb"></i>Reviews Drive Decisions</div>
+                            <p>Reviews strongly influence booking decisions. Users consult travel blogs, social networks and review pages to assess accommodation quality. This reinforced marketing efforts around influencer recommendations.</p>
+                        </div>
+
+                        <div class="box-Impact my-animate">
+                            <div class="impact-label"><i class="impact-icon fa-solid fa-lightbulb"></i>Location is Critical</div>
+                            <p>Location is a critical factor for users considering transport and access. This led us to test search-by-map and measure its usability in subsequent rounds.</p>
+                        </div>
+
+                        <div class="box-Impact my-animate">
+                            <div class="impact-label"><i class="impact-icon fa-solid fa-lightbulb"></i>Actionable Reporting</div>
+                            <p>A detailed report was shared with the product team and PMs. Qualitative insights and GA data helped prioritize initiatives and track previously unmeasured user behaviors.</p>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <div class="box-finding my-animate">
-                    <span class="caption">Challenge</span>
-                    <p class="bold">Challenge</p>
-                    <p>Our product analytics showed what users did, but not why. We needed a clear, evidence-based picture of the booking journey so the product team could make informed decisions about new features.</p>
-                </div>
+            <div class="divider my-5"></div>
 
-                <div class="box-finding my-animate">
-                    <span class="caption">Impact</span>
-                    <p class="bold">Impact</p>
-                        <p>The research generated over 10 initiatives that increased micro-conversions in hotel flows and helped us identify missing events to track in Google Analytics.</p>
-                </div>
-            </div>
-         </section>
-
-         <!-- RESEARCH -->
-         <section class="py-5">
-            <div class="container">
-                <div class="p-content">
-                    <h2 class="bold txt-purple lily-regular title">Research</h2>
-                    <p>By getting closer to our clients, we better understood the key factors that influence their decisions when planning a trip and booking online. To design a better product, it's essential to understand how users search and make decisions.</p>
-
-                    <h3 class="mt-4">Research Roadmap</h3>
-                    <p>I began by creating a roadmap to outline the timeline for the entire research process, from recruiting participants to delivering a report with the insights gathered.</p>
-                    <img class="box-photo w-100 my-4" src="../images/projects/Travelers-research/plan-research.png" alt="Research roadmap">
-
-                    <h3 class="mt-4">Set the Tools</h3>
-                    <p>We used Ethnio to screen participants, and conducted interviews through Lookback.</p>
-                    <img class="box-photo w-100 my-4" src="../images/projects/Travelers-research/ethnio.png" alt="Lookback / Ethnio screenshot">
-
-                    <h3 class="mt-4">Interviews</h3>
-                    <p>The sample was 18 users, aged 21–39 (7 women and 11 men). Sessions were recorded and reviewed for thematic analysis.</p>
-                    <img class="box-photo w-100 my-4" src="../images/projects/Travelers-research/interviews.png" alt="Interview sample screenshot">
-
-                    <h3 class="mt-4">Analyze data</h3>
-                    <p>We created a virtual board in Miro to collect and synthesize findings; this made it easy to share insights with stakeholders and collaborate on themes.</p>
-                    <img class="box-photo w-100 my-4" src="../images/projects/Travelers-research/board1.png" alt="Miro board">
-
-                    <h3 class="mt-4">Codification of the data</h3>
-                    <p>We extracted users' comments as post-its in Miro, grouped them into themes, and translated those into concise findings. At this stage we focused on insights, not solutions.</p>
-                    <img class="box-photo w-100 my-4" src="../images/projects/Travelers-research/board2.png" alt="Miro board">
-
-                    <h3 class="mt-4">Report of findings</h3>
-                    <p>A detailed report was shared with the product team and PMs; we enriched qualitative insights with Google Analytics data to prioritize opportunities.</p>
-
-                    <h3 class="mt-4">Ideation</h3>
-                    <p>A "How Might We" session helped transform findings into actionable ideas and early concepts for testing.</p>
-                    <img class="box-photo w-100 my-4" src="../images/projects/Travelers-research/hmw.png" alt="Findings and ideation">
-
-                    <h3 class="mt-4">Examples of findings</h3>
-                    <div class="box-Impact my-animate">
-                        <div class="impact-label"><i class="impact-icon fa-solid fa-lightbulb"></i> Finding</div>
-                        <p class="bold">Reviews</p>
-                        <p>Reviews strongly influence booking decisions. Users consult travel blogs, social networks and review pages to assess accommodation quality. This reinforced marketing efforts around influencer recommendations.</p>
+            <!-- KEY LEARNINGS -->
+            <section id="learnings" class="project-learnings py-5">
+                <div class="learnings-container container col-11 col-md-9 col-xl-8">
+                    <div class="learnings-header text-center mb-5">
+                        <h2 class="bold txt-purple lily-regular title">Key Learnings</h2>
+                        <p class="txt-gray">The research process taught me several valuable lessons about conducting remote interviews and synthesis.</p>
                     </div>
-
-                    <div class="box-Impact my-animate">
-                        <div class="impact-label"><i class="impact-icon fa-solid fa-lightbulb"></i> Finding</div>
-                        <p class="bold">Location</p>
-                        <p>Location is a critical factor for users considering transport and access. This led us to test search-by-map and measure its usability in subsequent rounds.</p>
+                    <div class="learnings-grid">
+                        <div class="learning-card">
+                            <h3 class="txt-purple-dark">Have a Backup Plan</h3>
+                            <p>Not all users attend sessions. Scheduling two users simultaneously ensures a researcher can always conduct a session if someone doesn't show up.</p>
+                        </div>
+                        <div class="learning-card">
+                            <h3 class="txt-purple-dark">Ensure Proper Setup</h3>
+                            <p>Make sure users receive clear instructions for installing any required programs beforehand to avoid technical delays.</p>
+                        </div>
+                        <div class="learning-card">
+                            <h3 class="txt-purple-dark">Prioritize Transcription</h3>
+                            <p>Transcribing interviews takes significantly more time than anticipated but is crucial for avoiding unreliable interpretation of data.</p>
+                        </div>
+                        <div class="learning-card">
+                            <h3 class="txt-purple-dark">Share Findings Proactively</h3>
+                            <p>Making research findings accessible ensures the entire team understands and empathizes with user pain points and the challenges they face.</p>
+                        </div>
                     </div>
-
-                    <h3 class="mt-4">Take it to action</h3>
-                    <p>By combining qualitative insights with quantitative analytics, we were able to identify untracked actions in GA, prioritize sprint tasks, and validate improvements such as the search-by-map flow.</p>
                 </div>
-            </div>
-         </section>
+            </section>
 
+        </div>
     </div>
 
-</div>
 
-<!-- TAKE AWAY -->
-<section class="s-take-away">        
-        <div class=" container-fluid">
-          <div class="container col-11 col-md-9 col-xl-8 py-4" >
-              <div class="p-content">
-                <h4 class="bold">Take Away </h4>
-                <p>The research process taught me several valuable lessons about conducting remote interviews:</p>
-                <ul>
-                    <li><strong>Have a Backup Plan:</strong> Not all users attend their scheduled sessions, even if they confirm a day in advance. Ethnio feature to schedule two users simultaneously was helpful, as it allowed one of the researchers to conduct the session if both users showed up.</li>
-                    <li><strong>Ensure Proper Setup:</strong>Make sure users receive clear instructions for installing any required programs for the session.
-                    </li>
-                    <li><strong>Prioritize Transcription:</strong>Transcribing interviews took longer than anticipated, but it's a crucial and time-consuming task. Accurate transcripts are essential to avoid unreliable data.
-                    </li>
-                    <li><strong>Share Findings with the Team:</strong> Ensure the entire team has access to the research process and findings. It's important for everyone to understand and empathize with the users' issues.
-                    </li>
-                </ul>
-              </div>
-              <!-- FIRMA -->
-              
-          </div>
-          
-             
-        </div>
+    <!--//////////////////// FOOTER (FIJO) ///////////////////// -->
+    <section class="s-footer">
+        <div class="footer-container">
+            <!-- Logo -->
+            <div class="footer-logo">
+                <img src="../images/logo.svg" alt="Liz Martinez Logo">
+            </div>
 
-</section>
+            <!-- Title -->
+            <h2 class="footer-title">Let's work together</h2>
 
+            <!-- Description -->
+            <p class="footer-description">I am available for freelance projects, collaborations, or full-time positions. Let's talk about your project!</p>
 
-<!-- NEXT PROJECT -->
-    <section class="s-proyects pt-4 mt-4 mb-4 d-none">
-        <div class="col-11 col-md-9 col-xl-8 container">
+            <!-- Actions -->
+            <div class="footer-actions">
+                <a href="mailto:liz@holaliz.com" class="btn-email">
+                    <i class="fa-solid fa-envelope"></i> liz@holaliz.com
+                </a>
+                <a href="https://www.linkedin.com/in/lizbethmartinezux/" target="_blank" class="btn-linkedin">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+            </div>
 
-            <h4 class="mb-4"> Next Project</h4>
-            <!-- PROJECT CARD -->
-            <div class="proyect-card box-white py-4 px-2 border-bottom row ">
-                <div class="col-md-4 proyect-image"><img class="img-fluid" src="../images/projects/Storybook/thumb - recent-project.png" alt="Storybook design system thumbnail"></div>
-                <div class="col-md-8 description">
-                    <h4 class="bold">Streamlined Development: Comprehensive Design System and Component Repository Boosted Consistency and Efficiency in Design.</h4>
-                    <div><span class="badge rounded-pill">2024</span> <span> UX Designer </span></div>
-                    <p class="">Creating an updated component library for designers and developer.</p>
-                    <button onclick="location.href='Design-System.html'" class="btn btn-outline-secondary" >View Proyect</button>
-                </div>
+            <!-- Copyright -->
+            <div class="footer-copyright-wrapper">
+                <p class="footer-copyright">© 2026 Liz Martinez. All rights reserved.</p>
             </div>
         </div>
-</section>
-
-    
-
-    <!--//////////////////// FOOTER ///////////////////// -->
-    <section class="s-footer ">
-        <!-- <div class="container-fluid bg-footer-img"></div> -->
-        <div class="container col-11 col-md-9 col-xl-8">
-        <div class="row">
-            <div class="col-6">
-            <span class="quote">I think that little by little I'll be able to solve my problems and survive. </span><br>
-            <span class="quote-name"> - Frida Kahlo - </span>
-            </div>
-            <div class="col-2 col-md-3">
-            </div>
-            <div class="col-4 col-md-3">
-            <ul class="list-unstyled">
-                <li><a class="btn btn-footer" href="mailto:martinez.liz.ux@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i> Email </a></li>
-                <li><a class="btn btn-footer" href="https://zeeg.me/martinezlizux " target="_blank"><i class="fa-solid fa-calendar"></i> Zeeg me</a></li>
-                <li><a class="btn btn-footer" href="https://www.linkedin.com/in/lizbethmartinezux/ " target="_blank"><i class="fa-brands fa-linkedin"></i> Linkedin</a></li>
-                <!-- <li><a class="btn btn-footer" href=""><i class="fa-brands fa-instagram"></i> Instagram</a></li> -->
-            </ul>
-    
-            </div>
-        </div>
-        </div>
-    
     </section>
-  <!--//////////////////// SCRIPTS  ///////////////////// -->
 
+    <!--//////////////////// SCRIPTS  ///////////////////// -->
+    <script src="../assets/js/bootstrap.bundle.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="../isotope.min.js"></script>
+    <script src="../script.js"></script>
 
-  <script src="../assets/js/bootstrap.bundle.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src="../isotope.min.js"></script>
-  <script src="../script.js"></script>
-
-  <!-- Cargar la firma -->
-  <script src="../firma-loader.js"></script>
-  <script>
-      document.addEventListener('DOMContentLoaded', function() {
-          cargarFirma('Liz-Firma');
-      });
-
+    <!-- Cargar la firma -->
+    <script src="../firma-loader.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            cargarFirma('Liz-Firma');
+        });
+    </script>
 
 </body>
-</html>
-    
 
-    
+</html>

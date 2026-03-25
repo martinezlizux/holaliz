@@ -1,0 +1,185 @@
+@use '../custom' as *;
+
+// ==============================
+// ABOUT ME — New Design
+// ==============================
+
+.about-new {
+  background-color: #ffffff;
+  width: 100%;
+  padding: 80px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 60px 24px;
+  }
+}
+
+// ---- Huge Heading ----
+.about-new__heading {
+  font-family: 'Bueno', sans-serif;
+  font-weight: 800;
+  font-size: clamp(80px, 14vw, 181px);
+  line-height: 0.78;
+  text-align: center;
+  color: #9966E2;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(40px);
+  will-change: transform, opacity;
+}
+
+// ---- Tagline ----
+.about-new__tagline {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: clamp(16px, 2vw, 22px);
+  line-height: 1.5;
+  text-align: center;
+  color: #1a1a1a;
+  max-width: 680px;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  will-change: transform, opacity;
+}
+
+// ---- Stack Zone: All cards land here from above ----
+.about-new__stack {
+  position: relative;
+  width: 480px;       // wide enough to show all spread cards (170px left + 220px right)
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;  // cards spread outside — let them show
+
+  @media (max-width: 600px) {
+    width: 340px;
+    height: 200px;
+  }
+}
+
+// ---- Every draggable card (tool icons + photo) ----
+.about-new__card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); // centered before GSAP takes over
+  width: 120px;
+  height: 120px;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  overflow: hidden;
+  user-select: none;
+  touch-action: none;
+  will-change: transform;
+
+  // GSAP sets x/y/rotation — DO NOT use CSS transform here for position
+
+  img {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+    pointer-events: none; // prevent img from stealing drag events
+    user-select: none;
+  }
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  // ---- Photo card is taller / portrait ----
+  &--photo {
+    width: 150px;
+    height: 190px;
+    border-radius: 24px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+  }
+}
+
+// ---- Stats Row ----
+.about-new__stats {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  width: 100%;
+  max-width: 800px;
+  opacity: 0;
+  transform: translateY(20px);
+  will-change: transform, opacity;
+
+  @media (max-width: 600px) {
+    gap: 24px;
+  }
+}
+
+.about-new__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.about-new__stat-number {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: 1;
+  color: #1a1a1a;
+  letter-spacing: -2px;
+}
+
+.about-new__stat-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: clamp(11px, 1.2vw, 14px);
+  color: #555;
+  text-align: center;
+  max-width: 120px;
+}
+
+// ---- Tool Badges ----
+.about-new__badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: 1000px;
+  opacity: 0;
+  transform: translateY(20px);
+  will-change: transform, opacity;
+}
+
+.about-new__badge {
+  background-color: #ffffff;
+  border: 1.5px solid #e5e5e5;
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: #333;
+  white-space: nowrap;
+  transition: border-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    border-color: #9966E2;
+    color: #9966E2;
+  }
+}

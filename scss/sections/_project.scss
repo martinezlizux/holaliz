@@ -922,7 +922,9 @@ section {
 
 
 .project-hero {
-    background-color: var(--Surface-Neutral-light); // Handles Light/Dark mode
+    background: linear-gradient(-45deg, #26094a, #6210C4, #37136d, #9967E5);
+    background-size: 400% 400%;
+    animation: gradient-takeAway 15s ease infinite;
     padding: 50px 0px;
     position: relative;
     width: 100vw;

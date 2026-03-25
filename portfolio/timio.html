@@ -27,11 +27,17 @@
     <meta property="twitter:description" content="First real experiment integrating AI into my design workflow to ship a tiny MVP time tracker.">
     <meta property="twitter:image" content="https://holaliz.com/images/projects/timio/timio-1280X720.jpg">
 
-    <link rel="stylesheet" href="../assets/css/style.css?v=20251123234824">
-    <link rel="stylesheet" href="../assets/css/fontawesome.css?v=20251123234824">
+    <link rel="stylesheet" href="../assets/css/style.css?v=20260325221314">
+    <link rel="stylesheet" href="../assets/css/fontawesome.css?v=20260325221314">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --Font-Family-Body: 'Inter', sans-serif;
+            --Font-Family-Titles: 'Inter', sans-serif;
+        }
+    </style>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X271RK6RRK"></script>
@@ -77,29 +83,48 @@
 
     <div class="s-proyect">
 
-        <!-- PROJECT HEADING -->
-        <div class="container col-11 col-md-9 col-xl-9 py-5 border-bottom">
-            <div class="p-heading mt-4">
-                <h1 class="bold">Timio &mdash; My First Real AI Workflow Experiment</h1>
+        <!-- PROJECT HERO -->
+        <section class="project-hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-chips">
+                        <span class="chip">AI Experiment</span>
+                        <span class="chip">Product Design</span>
+                    </div>
+                    <h1>Timio</h1>
+                    <p>My First Real AI Workflow Experiment</p>
+                </div>
+                <!-- Hero Image -->
+                <div class="hero-image">
+                    <picture>
+                        <img class="img-fluid" src="../images/projects/timio/timio-1280X720.jpg" 
+                             srcset="../images/projects/timio/timio-660X360.jpg 660w, ../images/projects/timio/timio-960X540.jpg 960w, ../images/projects/timio/timio-1280X720.jpg 1280w, ../images/projects/timio/timio-660X360@2x.jpg 1320w, ../images/projects/timio/timio-960X540@2x.jpg 1920w, ../images/projects/timio/timio-1280X720@2x.jpg 2560w" 
+                             sizes="100vw" alt="Timio interface preview hero image" />
+                    </picture>
+                </div>
             </div>
-            <div class="row row-cols-1 row-cols-md-3 mt-4">
-                <div class="col mb-2 align-self-center"><strong>Role:</strong> Product Designer &amp; Builder</div>
-                <div class="col mb-2 align-self-center"><strong>Skills Highlighted:</strong> AI-assisted ideation, MVP framing, UX writing, lightweight UI build</div>
-                <div class="col mb-2 align-self-center"><strong>Deliverables:</strong> MVP scope, user flow, exploratory UI, export/import concept, AI workflow notes</div>
-            </div>
-        </div>
-        <!-- PROJECT IMAGE -->
-        <div class="container-fluid bg-banner">
-            <picture>
-                <img
-                  class="img-fluid"
-                  src="../images/projects/timio/timio-1280X720.jpg"
-                  srcset="../images/projects/timio/timio-660X360.jpg 660w, ../images/projects/timio/timio-960X540.jpg 960w, ../images/projects/timio/timio-1280X720.jpg 1280w, ../images/projects/timio/timio-660X360@2x.jpg 1320w, ../images/projects/timio/timio-960X540@2x.jpg 1920w, ../images/projects/timio/timio-1280X720@2x.jpg 2560w"
-                  sizes="100vw"
-                  alt="Timio interface preview hero image"
-                />
-            </picture>
-        </div>
+        </section>
+
+        <!-- SECTIONS -->
+        <div class="wrapper">
+
+            <!-- PROJECT DETAILS -->
+            <section class="project-details">
+                <div class="details-container container col-11 col-md-9 col-xl-8">
+                    <div class="detail-item">
+                        <span class="detail-label">Role</span>
+                        <span class="detail-value">Product Designer &amp; Builder</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Skills</span>
+                        <span class="detail-value">AI-assisted ideation, MVP framing</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Deliverables</span>
+                        <span class="detail-value">MVP scope, UX flow</span>
+                    </div>
+                </div>
+            </section>
 
         <!-- OVERVIEW -->
         <section id="overview" class="wrapper container col-11 col-md-9 col-xl-7 py-5">
@@ -267,9 +292,41 @@ Language: Spanish labels in the UI.</code></pre>
                 </figure>
             </div>
         </section>
+        </div>
     </div>
 
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!--//////////////////// FOOTER ///////////////////// -->
+    <section class="s-footer">
+        <div class="container col-11 col-md-9 col-xl-8">
+            <div class="row">
+                <div class="col-6">
+                    <span class="quote">I think that little by little I'll be able to solve my problems and survive. </span><br>
+                    <span class="quote-name"> - Frida Kahlo - </span>
+                </div>
+                <div class="col-2 col-md-3"></div>
+                <div class="col-4 col-md-3">
+                    <ul class="list-unstyled">
+                        <li><a class="btn btn-footer" href="mailto:martinez.liz.ux@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i> Email </a></li>
+                        <li><a class="btn btn-footer" href="https://zeeg.me/martinezlizux" target="_blank"><i class="fa-solid fa-calendar"></i> Zeeg me</a></li>
+                        <li><a class="btn btn-footer" href="https://www.linkedin.com/in/lizbethmartinezux/" target="_blank"><i class="fa-brands fa-linkedin"></i> Linkedin</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--//////////////////// SCRIPTS ///////////////////// -->
+    <script src="../assets/js/bootstrap.bundle.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="../isotope.min.js"></script>
     <script src="../script.js"></script>
+    <script src="../contact-form.js"></script>
+    <script src="../assets/js/analytics.js"></script>
+    <script src="../firma-loader.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            cargarFirma('Liz-Firma');
+        });
+    </script>
 </body>
 </html>
