@@ -1,4 +1,12 @@
 
+// ── Register GSAP plugins globally ──────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+    if (typeof gsap !== 'undefined') {
+        const plugins = [ScrollTrigger, Draggable].filter(Boolean);
+        if (plugins.length) gsap.registerPlugin(...plugins);
+    }
+});
+
 // Theme Toggle Logic
 function initThemeToggle() {
     const toggleButton = document.getElementById('themeToggle');
@@ -296,6 +304,18 @@ $(document).ready(function () {
 
     // Inicializar theme toggle
     initThemeToggle();
+    
+    // Inicializar Hero Animations
+    initHeroAnimations();
+    
+    // Inicializar Projects Scroll Animations
+    initProjectsScrollAnimations();
+
+    // Inicializar About Me Animations
+    initAboutAnimations();
+
+    // Inicializar Experience Animations
+    initExperienceAnimations();
 
     // Inicializar scroll spy para navegaciones de proyectos
     initProjectScrollSpy();
@@ -401,3 +421,316 @@ function initProjectScrollSpy() {
         });
     });
 }
+
+// Hero GSAP Animations
+function initHeroAnimations() {
+    // Make sure GSAP is loaded
+    if (typeof gsap === 'undefined') return;
+
+    const tl = gsap.timeline({ defaults: { ease: "power3.out", duration: 1 } });
+    
+    // Initial state: hide elements
+    gsap.set(".hero-logo", { y: -20, opacity: 0 });
+    gsap.set(".nav-links a", { y: -20, opacity: 0 });
+    gsap.set(".btn-lets-talk", { y: -20, opacity: 0 });
+    gsap.set(".hero-huge-title", { y: 60, opacity: 0, scale: 0.95 });
+    gsap.set(".hero-subtitle", { y: 30, opacity: 0 });
+    gsap.set(".btn-lime", { y: 30, opacity: 0, scale: 0.9 });
+
+    // Play Sequence
+    tl.to(".hero-logo", { y: 0, opacity: 1, duration: 0.8 })
+      .to(".nav-links a, .btn-lets-talk", { 
+          y: 0, 
+          opacity: 1, 
+          duration: 0.6,
+          stagger: 0.1 
+      }, "-=0.6")
+      .to(".hero-huge-title", {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 1.2,
+          ease: "expo.out"
+      }, "-=0.2")
+      .to(".hero-subtitle", {
+          y: 0,
+          opacity: 1,
+          duration: 0.8
+      }, "-=0.8")
+      .to(".btn-lime", {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 0.8,
+          ease: "back.out(1.5)"
+      }, "-=0.6");
+}
+
+// Projects Transition & Horizontal Scroll Animations
+function initProjectsScrollAnimations() {
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    // 1. Background Color Transition
+    // Animate background color of transition section smoothly
+    const transitionSection = document.getElementById("projects-transition");
+    if (transitionSection) {
+        gsap.to(transitionSection, {
+            scrollTrigger: {
+                trigger: transitionSection,
+                start: "top center",
+                end: "center center",
+                scrub: 1
+            },
+            backgroundColor: "#F2EEFC", // final color
+            ease: "none"
+        });
+    }
+
+    // 2. Horizontal Scroll Section
+    const horizontalSection = document.getElementById("projects-horizontal");
+    const wrapper = document.getElementById("horizontalScrollWrapper");
+    
+    if (horizontalSection && wrapper) {
+        function getScrollAmount() {
+            let wrapperWidth = wrapper.scrollWidth;
+            // Subtract innerWidth so the last card aligns with the right edge
+            // We can also subtract padding to keep margins
+            return -(wrapperWidth - window.innerWidth + 100); 
+        }
+
+        ScrollTrigger.matchMedia({
+            // Desktop only
+            "(min-width: 992px)": function() {
+                const tween = gsap.to(wrapper, {
+                    x: getScrollAmount,
+                    ease: "none"
+                });
+
+                ScrollTrigger.create({
+                    trigger: horizontalSection,
+                    start: "top top",
+                    end: () => `+=${getScrollAmount() * -1}`,
+                    pin: true,
+                    animation: tween,
+                    scrub: 1,
+                    invalidateOnRefresh: true,
+                    markers: false
+                });
+            }
+        });
+    }
+}
+
+
+// ============================================================
+// ABOUT ME — GSAP Drop + Bounce + Fan + Draggable
+// ============================================================
+function initAboutAnimations() {
+    const heading    = document.getElementById('about-heading');
+    const tagline    = document.getElementById('about-tagline');
+    const stats      = document.getElementById('about-stats');
+    const badgesEl   = document.getElementById('about-badges');
+    const cards      = document.querySelectorAll('.about-new__card');
+
+    if (!heading || !cards.length) return;
+
+    // -------------------------------------------------------
+    // 1. TEXT — heading + tagline entrance on scroll
+    // -------------------------------------------------------
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: '#about',
+            start: 'top 75%',
+            once: true
+        }
+    })
+    .to(heading, { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out' })
+    .to(tagline, { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }, '-=0.4');
+
+    // -------------------------------------------------------
+    // 2. CARDS — fall from above, stagger, soft land, fan spread, Draggable
+    // -------------------------------------------------------
+    // Final resting positions: spread in a fan so all cards are visible
+    // Order in DOM: dev, adobe, procreate, figma, photo
+    const restingPositions = [
+        { x: -170, y:  20, rotation: -14 },   // dev  — far left
+        { x:  -80, y:   8, rotation:  -6 },   // adobe — left
+        { x:   10, y:  -4, rotation:   5 },   // procreate — slight right
+        { x:  100, y:  12, rotation:  12 },   // figma — right
+        { x:  -35, y: -10, rotation:  -3 }    // photo — center, on top
+    ];
+
+    // Start all cards high above, invisible, straight up
+    cards.forEach((card, i) => {
+        const pos = restingPositions[i] || { x: 0, y: 0, rotation: 0 };
+        gsap.set(card, {
+            opacity: 0,
+            x: pos.x,            // start at final x (falls straight down)
+            y: -640,             // way above the viewport
+            rotation: pos.rotation - 8,  // slight extra tilt mid-air
+            transformOrigin: '50% 50%',
+            zIndex: i + 1
+        });
+    });
+
+    // Trigger the drop when section scrolls into view
+    ScrollTrigger.create({
+        trigger: '#about-stack',
+        start: 'top 80%',
+        once: true,
+        onEnter: () => {
+            cards.forEach((card, i) => {
+                const pos = restingPositions[i] || { x: 0, y: 0, rotation: 0 };
+
+                gsap.to(card, {
+                    opacity: 1,
+                    x: pos.x,
+                    y: pos.y,
+                    rotation: pos.rotation,
+                    duration: 1.0,                      // longer = smoother feel
+                    ease: 'power3.out',                 // elegant deceleration
+                    delay: i * 0.14,
+                    onComplete: () => {
+                        if (i === cards.length - 1) enableDraggable();
+                    }
+                });
+            });
+        }
+    });
+
+    // -------------------------------------------------------
+    // 3. STATS + BADGES — scroll fade-in
+    // -------------------------------------------------------
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: '#about-stats',
+            start: 'top 85%',
+            once: true
+        }
+    })
+    .to(stats, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' });
+
+    const badgeItems = badgesEl ? badgesEl.querySelectorAll('.about-new__badge') : [];
+    if (badgeItems.length) {
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: '#about-badges',
+                start: 'top 90%',
+                once: true
+            }
+        })
+        .to(badgesEl, { opacity: 1, duration: 0.1 })
+        .to(badgeItems, {
+            opacity: 1,
+            y: 0,
+            duration: 0.4,
+            stagger: 0.06,
+            ease: 'power2.out'
+        }, '-=0.1');
+    }
+
+    // -------------------------------------------------------
+    // 4. DRAGGABLE — called after last card lands
+    // -------------------------------------------------------
+    function enableDraggable() {
+        if (typeof Draggable === 'undefined') return;
+
+        Draggable.create('.about-new__card', {
+            type: 'x,y',
+            edgeResistance: 0.65,
+            bounds: '.about-new',   // constrain inside the section
+            inertia: false,
+            onPress: function () {
+                // Bring the grabbed card to the front
+                gsap.set(this.target, { zIndex: 999 });
+            },
+            onRelease: function () {
+                gsap.set(this.target, { zIndex: '' }); // remove forced z-index
+            }
+        });
+    }
+}
+
+// ─── Experience Cards — GSAP Entrance & Interaction ──────────────────────────
+function initExperienceAnimations() {
+    const cards = document.querySelectorAll('.experience-card');
+    if (!cards.length) return;
+
+    // ── 1. ENTRANCE — fade + slide up with stagger ──
+    gsap.set(cards, {
+        opacity: 0,
+        y: 36,
+        boxShadow: '0px 0px 0px #9966E2',
+    });
+
+    ScrollTrigger.create({
+        trigger: '#experience',
+        start: 'top 72%',
+        once: true,
+        onEnter: () => {
+            gsap.to(cards, {
+                opacity: 1,
+                y: 0,
+                boxShadow: '4px 4px 0px #9966E2',
+                duration: 0.5,
+                ease: 'power2.out',
+                stagger: 0.11,
+            });
+        },
+    });
+
+    // ── 2. HOVER — shadow grows, card lifts ──
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            if (parseFloat(gsap.getProperty(card, 'opacity')) < 0.5) return;
+            gsap.to(card, {
+                boxShadow: '6px 6px 0px #9966E2',
+                y: '-=2',
+                duration: 0.2,
+                ease: 'power2.out',
+                overwrite: 'auto',
+            });
+        });
+
+        card.addEventListener('mouseleave', () => {
+            const isExpanded = card.querySelector('.collapse.show');
+            gsap.to(card, {
+                boxShadow: isExpanded ? '6px 6px 0px #9966E2' : '4px 4px 0px #9966E2',
+                y: 0,
+                duration: 0.25,
+                ease: 'power2.out',
+                overwrite: 'auto',
+            });
+        });
+
+        // ── 3. EXPAND — shadow grows on open, shrinks on close ──
+        const collapseEl = card.querySelector('.collapse');
+        if (!collapseEl) return;
+
+        collapseEl.addEventListener('show.bs.collapse', () => {
+            gsap.timeline()
+                .to(card, {
+                    boxShadow: '8px 8px 0px #9966E2',
+                    borderColor: '#9966E2',
+                    duration: 0.25,
+                    ease: 'power3.out',
+                })
+                .to(card, {
+                    boxShadow: '6px 6px 0px #9966E2',
+                    duration: 0.2,
+                    ease: 'power2.inOut',
+                });
+        });
+
+        collapseEl.addEventListener('hide.bs.collapse', () => {
+            gsap.to(card, {
+                boxShadow: '4px 4px 0px #9966E2',
+                borderColor: '#0b0b0b',
+                duration: 0.25,
+                ease: 'power2.out',
+            });
+        });
+    });
+}
+
