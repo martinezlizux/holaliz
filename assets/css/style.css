@@ -16770,6 +16770,9 @@ section .voice-card .quote {
   cursor: pointer;
   user-select: none;
 }
+.s-resume .experience-card .experience-header > .flex-grow-1 {
+  min-width: 0;
+}
 .s-resume .experience-card .experience-header::after {
   content: "↓";
   font-size: 1.1rem;
@@ -16802,6 +16805,9 @@ section .voice-card .quote {
   max-width: 84px;
   object-fit: contain;
 }
+.s-resume .experience-card .experience-info {
+  min-width: 0;
+}
 .s-resume .experience-card .experience-info h4 {
   font-weight: 700;
   font-size: 1.05rem;
@@ -16823,6 +16829,9 @@ section .voice-card .quote {
 }
 .s-resume .experience-card .experience-info a:hover {
   text-decoration: underline;
+}
+.s-resume .experience-card .experience-meta {
+  flex-shrink: 0;
 }
 .s-resume .experience-card .experience-meta p {
   font-weight: 500;

@@ -189,6 +189,11 @@
       cursor: pointer;
       user-select: none;
 
+      // Fix for long text overlapping in flex container 
+      > .flex-grow-1 {
+        min-width: 0;
+      }
+
       // Chevron icon for collapse state
       &::after {
         content: '↓';
@@ -228,6 +233,8 @@
     }
 
     .experience-info {
+      min-width: 0;
+
       h4 {
         font-weight: 700;
         font-size: 1.05rem;
@@ -254,6 +261,8 @@
     }
 
     .experience-meta {
+      flex-shrink: 0;
+
       p {
         font-weight: 500;
         font-size: 0.88rem;
