@@ -13137,19 +13137,6 @@ body {
     align-items: flex-start;
     padding-bottom: 30px;
   }
-  .horizontal-scroll-wrapper {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none; /* Firefox */
-    padding-bottom: 30px;
-  }
-  .horizontal-scroll-wrapper::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
-  }
-  .new-project-card, .horizontal-intro, .horizontal-outro {
-    scroll-snap-align: center;
-  }
   .projects-huge-title {
     font-size: 120px;
   }
@@ -13168,21 +13155,40 @@ body {
   }
 }
 @media (max-width: 767px) {
+  .section-projects-horizontal {
+    display: block;
+    padding: 60px 0;
+    min-height: auto;
+  }
+  .horizontal-scroll-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 0 20px;
+    width: 100%;
+  }
   .projects-huge-title {
     font-size: 80px;
   }
   .new-project-card {
-    width: 280px;
-    height: 450px;
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    min-height: 480px;
   }
   .horizontal-intro {
-    padding-right: 20px;
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 20px;
+    align-items: center;
+    text-align: center;
   }
   .horizontal-intro .intro-title {
     font-size: 80px;
   }
   .horizontal-intro .intro-desc {
-    font-size: 16px;
+    font-size: 18px;
+    text-align: center;
   }
 }
 .about-new {
@@ -13244,6 +13250,36 @@ body {
   }
 }
 
+.about-new__drag-hint {
+  position: absolute;
+  top: -20px;
+  right: -30px;
+  background-color: #f7f3fd;
+  border: 1px solid #e1d2f7;
+  color: #9966E2;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 0px #e1d2f7;
+  z-index: 20;
+  pointer-events: none;
+  opacity: 0;
+  animation: floatDragHint 3s ease-in-out infinite;
+}
+.about-new__drag-hint i {
+  font-size: 12px;
+}
+
+@keyframes floatDragHint {
+  0%, 100% {
+    transform: translateY(0) rotate(4deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(4deg);
+  }
+}
 .about-new__card {
   position: absolute;
   top: 50%;

@@ -64,6 +64,35 @@
   }
 }
 
+// ---- Drag Hint ----
+.about-new__drag-hint {
+  position: absolute;
+  top: -20px;
+  right: -30px; // Place it just outside the stack
+  background-color: #f7f3fd;
+  border: 1px solid #e1d2f7;
+  color: #9966E2;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 0px #e1d2f7;
+  z-index: 20;
+  pointer-events: none;
+  opacity: 0; // Starts invisible, will fade in
+  animation: floatDragHint 3s ease-in-out infinite;
+
+  i {
+    font-size: 12px;
+  }
+}
+
+@keyframes floatDragHint {
+  0%, 100% { transform: translateY(0) rotate(4deg); }
+  50% { transform: translateY(-6px) rotate(4deg); }
+}
+
 // ---- Every draggable card (tool icons + photo) ----
 .about-new__card {
   position: absolute;

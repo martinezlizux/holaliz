@@ -227,38 +227,83 @@
         <article class="new-project-card">
           <style>
             @keyframes lluvia-fall {
-              0% { background-position: 0px 0px; }
-              100% { background-position: 200px 1000px; }
+              0% {
+                background-position: 0px 0px;
+              }
+
+              100% {
+                background-position: 200px 1000px;
+              }
             }
+
             @keyframes lluvia-fall-2 {
-              0% { background-position: 0px 0px; }
-              100% { background-position: 150px 800px; }
+              0% {
+                background-position: 0px 0px;
+              }
+
+              100% {
+                background-position: 150px 800px;
+              }
             }
+
             .playground-lluvia-animada {
               background-color: #333A55;
             }
+
             .playground-lluvia-animada::before {
-              content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 5; opacity: 0.8;
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              pointer-events: none;
+              z-index: 5;
+              opacity: 0.8;
               background-image: radial-gradient(ellipse 2.5px 5px at 10px 30px, rgba(255, 255, 255, 0.8) 100%, transparent 100%), radial-gradient(ellipse 2.5px 5px at 120px 15px, rgba(255, 255, 255, 0.8) 100%, transparent 100%), radial-gradient(ellipse 2.5px 5px at 240px 45px, rgba(255, 255, 255, 0.5) 100%, transparent 100%), radial-gradient(ellipse 2.5px 5px at 350px 20px, rgba(255, 255, 255, 0.7) 100%, transparent 100%);
-              background-size: 400px 400px; animation: lluvia-fall 2s linear infinite;
+              background-size: 400px 400px;
+              animation: lluvia-fall 2s linear infinite;
             }
+
             .playground-lluvia-animada::after {
-              content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 6; opacity: 0.6;
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              pointer-events: none;
+              z-index: 6;
+              opacity: 0.6;
               background-image: radial-gradient(ellipse 1.5px 3px at 30px 40px, rgba(255, 255, 255, 0.6) 100%, transparent 100%), radial-gradient(ellipse 1.5px 3px at 160px 50px, rgba(255, 255, 255, 0.5) 100%, transparent 100%), radial-gradient(ellipse 1.5px 3px at 280px 70px, rgba(255, 255, 255, 0.7) 100%, transparent 100%);
-              background-size: 300px 300px; animation: lluvia-fall-2 3s linear infinite;
+              background-size: 300px 300px;
+              animation: lluvia-fall-2 3s linear infinite;
             }
+
             @keyframes sway-anim {
-              0%, 100% { transform: rotate(0deg); }
-              50% { transform: rotate(-3deg); }
+
+              0%,
+              100% {
+                transform: rotate(0deg);
+              }
+
+              50% {
+                transform: rotate(-3deg);
+              }
             }
+
             .playground-lluvia-personaje {
-              animation: sway-anim 5s ease-in-out infinite; transform-origin: bottom center; max-width: 100%; max-height: 100%; object-fit: contain;
+              animation: sway-anim 5s ease-in-out infinite;
+              transform-origin: bottom center;
+              max-width: 100%;
+              max-height: 100%;
+              object-fit: contain;
             }
           </style>
-          <a href="portfolio/sunny.html" class="card-link-wrapper" target="_blank"
-            aria-label="View Project: Sunny App">
+          <a href="portfolio/sunny.html" class="card-link-wrapper" target="_blank" aria-label="View Project: Sunny App">
             <div class="card-img playground-lluvia-animada position-relative">
-              <div class="w-100 h-100 d-flex justify-content-center align-items-end position-absolute" style="z-index: 1; bottom: -5px;">
+              <div class="w-100 h-100 d-flex justify-content-center align-items-end position-absolute"
+                style="z-index: 1; bottom: -5px;">
                 <img src="images/projects/sunny/lluvia2.png" alt="Personaje con lluvia"
                   class="playground-lluvia-personaje h-100">
               </div>
@@ -399,6 +444,10 @@
 
       <!-- Draggable Stack Zone: Tool Icons + Photo falling from above -->
       <div class="about-new__stack" id="about-stack">
+        <!-- Subtle drag hint -->
+        <div class="about-new__drag-hint d-none d-md-flex align-items-center gap-2" id="drag-hint">
+          <i class="bi bi-arrows-move"></i> Drag around
+        </div>
         <!-- Each card is an absolute item that will fall + stack + be draggable -->
         <div class="about-new__card" id="tool-dev" data-rotation="-14">
           <img src="images/tools/DevIcon.svg" alt="Vibe Code / Dev">
@@ -456,7 +505,7 @@
 
         <div class="wrapper-shown container mt-4">
           <div class="gallery-playground py-4">
-            <div class="row row-cols-3 g-4">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
 
               <!-- Vibe Coding Playcard -->
 
@@ -516,7 +565,7 @@
 
     <!--//////////////////// EXPERIENCE SECTION ///////////////////// -->
     <section id="experience" class="s-resume py-5">
-      <div class=" d-flex flex-column gap-5 container col-9">
+      <div class=" d-flex flex-column gap-5 container col-12 col-md-9">
         <div class=" text-center  mx-auto row justify-content-center py-5 gap-4">
           <h2 class="section-title  title-bold text-center">Experience</h2>
         </div>
@@ -531,7 +580,7 @@
                 data-bs-toggle="collapse" data-bs-target="#collapseDDI" aria-expanded="false"
                 aria-controls="collapseDDI">
 
-                <div class="d-flex align-items-center gap-4">
+                <div class="d-flex align-items-center gap-4 flex-grow-1">
                   <div class="experience-logo d-flex align-items-center justify-content-center">
                     <img src="images/companies/ddi-logo.png" alt="DDI Logo" class="img-fluid">
                   </div>
@@ -543,7 +592,7 @@
                 </div>
 
                 <div
-                  class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-column align-items-md-end justify-content-center gap-2">
+                  class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-row flex-md-column align-items-center align-items-md-end justify-content-start justify-content-md-center gap-2">
                   <p class="mb-0">Aug 2022 - Present</p>
                   <span class="badge rounded-pill">Full time</span>
                 </div>
@@ -575,7 +624,7 @@
                 data-bs-toggle="collapse" data-bs-target="#collapsePriceTravel" aria-expanded="false"
                 aria-controls="collapsePriceTravel">
 
-                <div class="d-flex align-items-center gap-4">
+                <div class="d-flex align-items-center gap-4 flex-grow-1">
                   <div class="experience-logo d-flex align-items-center justify-content-center">
                     <img src="images/companies/PriceTravel-logo.png" alt="PriceTravel Logo" class="img-fluid">
                   </div>
@@ -587,7 +636,7 @@
                 </div>
 
                 <div
-                  class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-column align-items-md-end justify-content-center gap-2">
+                  class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-row flex-md-column align-items-center align-items-md-end justify-content-start justify-content-md-center gap-2">
                   <p class="mb-0">Jul 2021 - Aug 2022</p>
                   <span class="badge rounded-pill">Hybrid</span>
                 </div>
@@ -619,7 +668,7 @@
                 data-bs-toggle="collapse" data-bs-target="#collapseBDExperience" aria-expanded="false"
                 aria-controls="collapseBDExperience">
 
-                <div class="d-flex align-items-center gap-4">
+                <div class="d-flex align-items-center gap-4 flex-grow-1">
                   <div class="experience-logo d-flex align-items-center justify-content-center">
                     <img src="images/companies/BDExperience-logo.png" alt="BD Experience Logo" class="img-fluid">
                   </div>
@@ -631,7 +680,7 @@
                 </div>
 
                 <div
-                  class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-column align-items-md-end justify-content-center gap-2">
+                  class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-row flex-md-column align-items-center align-items-md-end justify-content-start justify-content-md-center gap-2">
                   <p class="mb-0">May 2019 - Jul 2021</p>
                   <span class="badge rounded-pill">On-site</span>
                 </div>
@@ -662,7 +711,7 @@
                 data-bs-toggle="collapse" data-bs-target="#collapseBestday" aria-expanded="false"
                 aria-controls="collapseBestday">
 
-                <div class="d-flex align-items-center gap-4">
+                <div class="d-flex align-items-center gap-4 flex-grow-1">
                   <div class="experience-logo d-flex align-items-center justify-content-center">
                     <img src="images/companies/BestDay-logo.png" alt="Bestday.com Logo" class="img-fluid">
                   </div>
@@ -674,7 +723,7 @@
                 </div>
 
                 <div
-                  class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-column align-items-md-end justify-content-center gap-2">
+                  class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-row flex-md-column align-items-center align-items-md-end justify-content-start justify-content-md-center gap-2">
                   <p class="mb-0">May 2013 - May 2019</p>
                   <span class="badge rounded-pill">On-site</span>
                 </div>
@@ -704,7 +753,7 @@
                 data-bs-toggle="collapse" data-bs-target="#collapseMobalis" aria-expanded="false"
                 aria-controls="collapseMobalis">
 
-                <div class="d-flex align-items-center gap-4">
+                <div class="d-flex align-items-center gap-4 flex-grow-1">
                   <div class="experience-logo d-flex align-items-center justify-content-center">
                     <img src="images/companies/Mobalis-logo.png" alt="Mobalis Logo" class="img-fluid">
                   </div>
@@ -715,7 +764,7 @@
                 </div>
 
                 <div
-                  class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-column align-items-md-end justify-content-center gap-2">
+                  class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-row flex-md-column align-items-center align-items-md-end justify-content-start justify-content-md-center gap-2">
                   <p class="mb-0">Dec 2011 - March 2012</p>
                   <span class="badge rounded-pill">Full Time</span>
                 </div>
@@ -746,7 +795,7 @@
                 data-bs-toggle="collapse" data-bs-target="#collapseFreelance" aria-expanded="false"
                 aria-controls="collapseFreelance">
 
-                <div class="d-flex align-items-center gap-4">
+                <div class="d-flex align-items-center gap-4 flex-grow-1">
                   <div class="experience-logo d-flex align-items-center justify-content-center">
                     <!-- Puedes actualizar el placeholder después -->
                     <img src="images/companies/campany-1.png" alt="Freelance" class="img-fluid">
@@ -758,7 +807,7 @@
                 </div>
 
                 <div
-                  class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-column align-items-md-end justify-content-center gap-2">
+                  class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-row flex-md-column align-items-center align-items-md-end justify-content-start justify-content-md-center gap-2">
                   <p class="mb-0">2010</p>
                   <span class="badge rounded-pill">Freelance</span>
                 </div>
@@ -782,7 +831,7 @@
                 data-bs-toggle="collapse" data-bs-target="#collapseTiburones" aria-expanded="false"
                 aria-controls="collapseTiburones">
 
-                <div class="d-flex align-items-center gap-4">
+                <div class="d-flex align-items-center gap-4 flex-grow-1">
                   <div class="experience-logo d-flex align-items-center justify-content-center">
                     <!-- Please update with correct logo -->
                     <img src="images/companies/tiburones-logo.png" alt="Tiburones Rojos Logo" class="img-fluid">
@@ -794,7 +843,7 @@
                 </div>
 
                 <div
-                  class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-column align-items-md-end justify-content-center gap-2">
+                  class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-row flex-md-column align-items-center align-items-md-end justify-content-start justify-content-md-center gap-2">
                   <p class="mb-0">2009</p>
                   <span class="badge rounded-pill">Full Time</span>
                 </div>
@@ -821,7 +870,7 @@
                 data-bs-toggle="collapse" data-bs-target="#collapseGrupoLince" aria-expanded="false"
                 aria-controls="collapseGrupoLince">
 
-                <div class="d-flex align-items-center gap-4">
+                <div class="d-flex align-items-center gap-4 flex-grow-1">
                   <div class="experience-logo d-flex align-items-center justify-content-center">
                     <img src="images/companies/lince-logo.png" alt="Grupo Lince Logo" class="img-fluid">
                   </div>
@@ -832,7 +881,7 @@
                 </div>
 
                 <div
-                  class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-column align-items-md-end justify-content-center gap-2">
+                  class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-row flex-md-column align-items-center align-items-md-end justify-content-start justify-content-md-center gap-2">
                   <p class="mb-0">Jan 2007 - Dec 2008</p>
                   <span class="badge rounded-pill">Full Time</span>
                 </div>

@@ -500,8 +500,8 @@ function initProjectsScrollAnimations() {
         }
 
         ScrollTrigger.matchMedia({
-            // Desktop only
-            "(min-width: 992px)": function() {
+            // Desktop & Tablet (Horizontal scroll)
+            "(min-width: 768px)": function() {
                 const tween = gsap.to(wrapper, {
                     x: getScrollAmount,
                     ease: "none"
@@ -516,6 +516,25 @@ function initProjectsScrollAnimations() {
                     scrub: 1,
                     invalidateOnRefresh: true,
                     markers: false
+                });
+            },
+            
+            // Mobile Phone (Vertical stack animations)
+            "(max-width: 767px)": function() {
+                const mobileCards = gsap.utils.toArray('.new-project-card, .horizontal-intro');
+                
+                mobileCards.forEach(card => {
+                    gsap.from(card, {
+                        scrollTrigger: {
+                            trigger: card,
+                            start: "top 85%",
+                            toggleActions: "play none none none"
+                        },
+                        y: 40,
+                        opacity: 0,
+                        duration: 0.7,
+                        ease: "power2.out"
+                    });
                 });
             }
         });
@@ -551,15 +570,24 @@ function initAboutAnimations() {
     // -------------------------------------------------------
     // 2. CARDS — fall from above, stagger, soft land, fan spread, Draggable
     // -------------------------------------------------------
-    // Final resting positions: spread in a fan so all cards are visible
-    // Order in DOM: dev, adobe, procreate, figma, photo
-    const restingPositions = [
-        { x: -170, y:  20, rotation: -14 },   // dev  — far left
-        { x:  -80, y:   8, rotation:  -6 },   // adobe — left
-        { x:   10, y:  -4, rotation:   5 },   // procreate — slight right
-        { x:  100, y:  12, rotation:  12 },   // figma — right
-        { x:  -35, y: -10, rotation:  -3 }    // photo — center, on top
+    // Base positions ensuring they are fully spread out horizontally
+    const isMobile = window.innerWidth < 768;
+    const spreadMultiplier = isMobile ? 0.6 : 1;
+    
+    const basePositions = [
+        { x: -220, y:  30 },   // dev      — far left
+        { x: -100, y: -40 },   // adobe    — left
+        { x:  100, y:  20 },   // procreate— right
+        { x:  220, y: -30 },   // figma    — far right
+        { x:    0, y:  10 }    // photo    — center, on top
     ];
+
+    // Apply random offsets & scatter for organic feel
+    const restingPositions = basePositions.map(pos => ({
+        x: (pos.x * spreadMultiplier) + (Math.random() * (isMobile ? 30 : 60) - (isMobile ? 15 : 30)),
+        y: pos.y + (Math.random() * 60 - 30),
+        rotation: (Math.random() * 50 - 25)
+    }));
 
     // Start all cards high above, invisible, straight up
     cards.forEach((card, i) => {
@@ -596,6 +624,17 @@ function initAboutAnimations() {
                     }
                 });
             });
+
+            // Fade in the drag hint after the cards drop
+            const dragHint = document.getElementById('drag-hint');
+            if (dragHint) {
+                gsap.to(dragHint, {
+                    opacity: 1,
+                    duration: 1.0,
+                    delay: cards.length * 0.14 + 0.5,
+                    ease: 'power2.out'
+                });
+            }
         }
     });
 
