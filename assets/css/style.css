@@ -13004,7 +13004,7 @@ body {
   font-size: 181px;
   line-height: 0.8;
   color: #B997ED; /* rgb(185, 151, 237) approx matching Figma */
-  text-transform: uppercase;
+  text-transform: none;
   margin: 0;
 }
 
