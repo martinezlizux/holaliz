@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Carby — AI-Powered Carb Counting | Lizbeth Martinez</title>
+    <meta name="title" content="Carby — AI-Powered Carb Counting | Lizbeth Martinez">
+    <meta name="description" content="Radical nutritional management simplification for diabetes and athletes using AI.">
+    <meta name="keywords" content="Carb Counting, AI, PWA, Nutrition App, UX Research, Health Tech">
+    <meta name="author" content="Lizbeth Martinez">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://holaliz.com/portfolio/carby.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://holaliz.com/portfolio/carby.html">
+    <meta property="og:title" content="Carby — AI-Powered Carb Counting">
+    <meta property="og:description" content="A frictionless PWA designed to simplify nutritional tracking using voice, photos, and natural language.">
+    <meta property="og:image" content="https://holaliz.com/images/projects/carby.png">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/fontawesome.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X271RK6RRK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-X271RK6RRK', { 'send_page_view': false });
+    </script>
+
+    <style>
+        :root {
+            --carby-primary: #5A1FB2;
+            --carby-accent: #D9E461;
+            --carby-bg: #F8F9FA;
+            --carby-text: #171717;
+        }
+
+        body {
+            background-color: var(--carby-bg);
+            color: var(--carby-text);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .project-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            background: rgba(248, 249, 250, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .project-nav__inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .project-back {
+            text-decoration: none;
+            color: var(--carby-text);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.2s ease;
+        }
+
+        .project-back:hover {
+            transform: translateX(-5px);
+            color: var(--carby-primary);
+        }
+
+        .hero-section {
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.25rem;
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--carby-primary);
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .hero-title {
+            font-weight: 800;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--carby-text);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 3vw, 1.35rem);
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+        }
+
+        .hero-image-wrapper {
+            margin-top: 4rem;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 20px 80px rgba(0,0,0,0.1);
+            background: white;
+            padding: 2rem;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+        }
+
+        .case-section {
+            padding: 80px 0;
+        }
+
+        .section-label {
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--carby-primary);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .section-title {
+            font-weight: 800;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--carby-text);
+        }
+
+        .content-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            margin-bottom: 2rem;
+            height: 100%;
+        }
+
+        .tech-tag {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: #f0f0f0;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0.25rem;
+            color: #444;
+        }
+
+        .process-step {
+            margin-bottom: 3rem;
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .process-step::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #eee;
+        }
+
+        .process-step::after {
+            content: '';
+            position: absolute;
+            left: -4px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--carby-primary);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--carby-primary);
+            display: block;
+        }
+
+        .stat-label {
+            font-weight: 600;
+            color: #666;
+        }
+
+        .footer-cta {
+            background: var(--carby-primary);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            border-radius: 64px 64px 0 0;
+            margin-top: 5rem;
+        }
+
+        .btn-carby {
+            background: var(--carby-accent);
+            color: var(--carby-text);
+            font-weight: 700;
+            padding: 1rem 2.5rem;
+            border-radius: 100px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-carby:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            background: #cedb2a;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 100px 0 40px;
+            }
+            .content-card {
+                padding: 1.5rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--//////////////////// NAVBAR ///////////////////// -->
+    <nav class="project-nav">
+        <div class="project-nav__inner">
+            <a class="project-back" href="../index.html">
+                <i class="fa-solid fa-chevron-left"></i>
+                <span>Back to Work</span>
+            </a>
+        </div>
+    </nav>
+
+    <!--//////////////////// HERO ///////////////////// -->
+    <header class="hero-section container">
+        <div class="hero-badge">
+            <i class="fa-solid fa-sparkles"></i>
+            <span>AI-Driven Health Experience</span>
+        </div>
+        <h1 class="hero-title">Carby: Intelligent Carb<br>Counting with AI</h1>
+        <p class="hero-subtitle">
+            A frictionless PWA designed to radically simplify nutritional management for people with diabetes and athletes using real-time AI analysis.
+        </p>
+
+        <div class="hero-image-wrapper">
+            <img src="../images/projects/carby.png" alt="Carby App Mockup" class="hero-image">
+        </div>
+    </header>
+
+    <!--//////////////////// CHALLENGE ///////////////////// -->
+    <section class="case-section bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <span class="section-label">The Challenge</span>
+                    <h2 class="section-title">Counting carbs shouldn't be a full-time job.</h2>
+                    <p class="lead text-muted">
+                        Traditional apps require searching through endless databases and weighing every single ingredient. For someone with diabetes, this tedium is a constant friction point that leads to error or abandonment.
+                    </p>
+                    <p class="text-muted">
+                        The goal was to create a <strong>"frictionless"</strong> experience where users could log their meals in seconds using voice, photos, or natural language.
+                    </p>
+                </div>
+                <div class="col-lg-5 offset-lg-1">
+                    <div class="content-card" style="background: #f8f9fa; border-left: 10px solid var(--carby-accent);">
+                        <h4 class="fw-bold mb-3">Key Focus Areas</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-3 d-flex gap-2">
+                                <i class="fa-solid fa-check-circle text-success mt-1"></i>
+                                <span>Zero-friction data entry via Voice & Image</span>
+                            </li>
+                            <li class="mb-3 d-flex gap-2">
+                                <i class="fa-solid fa-check-circle text-success mt-1"></i>
+                                <span>AI-powered nutritional estimation</span>
+                            </li>
+                            <li class="mb-3 d-flex gap-2">
+                                <i class="fa-solid fa-check-circle text-success mt-1"></i>
+                                <span>PWA accessibility for quick access</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--//////////////////// TECH STACK ///////////////////// -->
+    <section class="case-section" style="background: #f1f3f5;">
+        <div class="container text-center">
+            <span class="section-label">Technology Stack</span>
+            <h2 class="section-title">Built for Performance & Scale</h2>
+            
+            <div class="row mt-5">
+                <div class="col-md-4 mb-4">
+                    <div class="content-card">
+                        <i class="fa-solid fa-layer-group fa-2x mb-3 text-primary"></i>
+                        <h4 class="fw-bold">Frontend</h4>
+                        <p class="small text-muted">High-performance SPA with ultra-fast loading.</p>
+                        <div class="mt-3">
+                            <span class="tech-tag">React 19</span>
+                            <span class="tech-tag">Vite</span>
+                            <span class="tech-tag">CSS Modules</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="content-card">
+                        <i class="fa-solid fa-brain fa-2x mb-3 text-primary"></i>
+                        <h4 class="fw-bold">AI & Processing</h4>
+                        <p class="small text-muted">Intelligent analysis and multi-modal entry.</p>
+                        <div class="mt-3">
+                            <span class="tech-tag">OpenAI API</span>
+                            <span class="tech-tag">Whisper (Voice)</span>
+                            <span class="tech-tag">Vision (Images)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="content-card">
+                        <i class="fa-solid fa-cloud-bolt fa-2x mb-3 text-primary"></i>
+                        <h4 class="fw-bold">Backend & Sync</h4>
+                        <p class="small text-muted">Real-time persistence and offline support.</p>
+                        <div class="mt-3">
+                            <span class="tech-tag">Supabase</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">PWA (Service Workers)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--//////////////////// PROCESS ///////////////////// -->
+    <section class="case-section bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <span class="section-label">The Process</span>
+                    <h2 class="section-title">From Concept to Deployment</h2>
+                    
+                    <div class="process-step">
+                        <h4 class="fw-bold">1. Discovery & User Pain Points</h4>
+                        <p class="text-muted">Interviews with diabetic patients revealed that the "pre-meal mental load" — calculating carbs before eating — was the biggest stressor. The design responded by moving the calculation burden to the AI.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <h4 class="fw-bold">2. Information Architecture</h4>
+                        <p class="text-muted">We stripped away the "database search" model. Instead, the UI features a "Conversational Console" where users can speak or type: "A bowl of oatmeal with bananas and two strips of bacon."</p>
+                    </div>
+
+                    <div class="process-step">
+                        <h4 class="fw-bold">3. Multi-modal Interface Design</h4>
+                        <p class="text-muted">Using Vision AI, the app analyzes plate photos to estimate portions. This serves as a secondary verification tool, corroborating voice input with visual data.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <h4 class="fw-bold">4. Implementation & Vibe Coding</h4>
+                        <p class="text-muted">Developed using a "Designer-Led AI" workflow, where structural components were scaffolded with AI while preserving strict UX guardrails and branding.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-value">60%</span>
+                    <span class="stat-label">Reduction in logging time</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">0s</span>
+                    <span class="stat-label">Manual database search</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">PWA</span>
+                    <span class="stat-label">App Store free access</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--//////////////////// FOOTER CTA ///////////////////// -->
+    <section class="footer-cta">
+        <div class="container">
+            <h2 class="display-5 fw-bold mb-4">Want to see more?</h2>
+            <p class="lead mb-5 opacity-75">Check out my other projects or head back to the main site.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="../index.html" class="btn btn-carby">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
+                </a>
+                <a href="sunny.html" class="btn btn-outline-light rounded-pill px-5 py-3 fw-bold">
+                    Next Project: SunnyPop <i class="fa-solid fa-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
