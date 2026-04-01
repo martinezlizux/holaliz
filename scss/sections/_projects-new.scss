@@ -171,6 +171,8 @@
     display: block; // Change from flex to block
     padding: 60px 0;
     min-height: auto;
+    overflow-y: visible;
+    overflow-x: hidden;
   }
   .horizontal-scroll-wrapper {
     flex-direction: column;

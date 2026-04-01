@@ -524,16 +524,20 @@ function initProjectsScrollAnimations() {
                 const mobileCards = gsap.utils.toArray('.new-project-card, .horizontal-intro');
                 
                 mobileCards.forEach(card => {
-                    gsap.from(card, {
+                    gsap.fromTo(card, {
+                        y: 40,
+                        opacity: 0
+                    }, {
                         scrollTrigger: {
                             trigger: card,
-                            start: "top 85%",
+                            start: "top 95%",
                             toggleActions: "play none none none"
                         },
-                        y: 40,
-                        opacity: 0,
+                        y: 0,
+                        opacity: 1,
                         duration: 0.7,
-                        ease: "power2.out"
+                        ease: "power2.out",
+                        clearProps: "transform"
                     });
                 });
             }

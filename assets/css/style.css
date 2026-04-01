@@ -12832,6 +12832,7 @@ body {
   position: relative;
   overflow: hidden;
   color: white;
+  padding: 50px 0;
 }
 
 .hero-container {
@@ -13159,6 +13160,8 @@ body {
     display: block;
     padding: 60px 0;
     min-height: auto;
+    overflow-y: visible;
+    overflow-x: hidden;
   }
   .horizontal-scroll-wrapper {
     flex-direction: column;
