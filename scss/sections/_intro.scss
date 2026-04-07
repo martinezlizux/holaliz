@@ -219,8 +219,8 @@
     left: 50%;
     --base-transform: translate(-50%, -50%) translate(calc(-180px * var(--hero-icon-offset-scale)), calc(38px * var(--hero-icon-offset-scale)));
     transform: var(--base-transform);
-    --hero-icon-base: url("../../images/hero/figma-base.svg");
-    --hero-icon-hover: url("../../images/hero/figma-hover.svg");
+    --hero-icon-base: url("../../assets/images/hero/figma-base.svg");
+    --hero-icon-hover: url("../../assets/images/hero/figma-hover.svg");
 
 }
 
@@ -229,8 +229,8 @@
     left: 50%;
     --base-transform: translate(-50%, -50%) translate(calc(-157px * var(--hero-icon-offset-scale)), calc(-17px * var(--hero-icon-offset-scale))) rotate(0deg);
     transform: var(--base-transform);
-    --hero-icon-base: url("../../images/hero/dev-base.svg");
-    --hero-icon-hover: url("../../images/hero/dev-hover.svg");
+    --hero-icon-base: url("../../assets/images/hero/dev-base.svg");
+    --hero-icon-hover: url("../../assets/images/hero/dev-hover.svg");
 }
 
 .hero-icon--research {
@@ -238,8 +238,8 @@
     left: 50%;
     --base-transform: translate(-50%, -50%) translate(calc(-244px * var(--hero-icon-offset-scale)), calc(-13px * var(--hero-icon-offset-scale))) rotate(0deg);
     transform: var(--base-transform);
-    --hero-icon-base: url("../../images/hero/research-base.svg");
-    --hero-icon-hover: url("../../images/hero/research-hover.svg");
+    --hero-icon-base: url("../../assets/images/hero/research-base.svg");
+    --hero-icon-hover: url("../../assets/images/hero/research-hover.svg");
 }
 
 .hero-icon--proto {
@@ -247,8 +247,8 @@
     left: 50%;
     --base-transform: translate(-50%, -50%) translate(calc(-205px * var(--hero-icon-offset-scale)), calc(-78px * var(--hero-icon-offset-scale))) rotate(0deg);
     transform: var(--base-transform);
-    --hero-icon-base: url("../../images/hero/proto-base.svg");
-    --hero-icon-hover: url("../../images/hero/proto-hover.svg");
+    --hero-icon-base: url("../../assets/images/hero/proto-base.svg");
+    --hero-icon-hover: url("../../assets/images/hero/proto-hover.svg");
 }
 
 .hero-icon--adobe {
@@ -256,8 +256,8 @@
     left: 50%;
     --base-transform: translate(-50%, -50%) translate(calc(151px * var(--hero-icon-offset-scale)), calc(-76px * var(--hero-icon-offset-scale))) rotate(0deg);
     transform: var(--base-transform);
-    --hero-icon-base: url("../../images/hero/adobe-base.svg");
-    --hero-icon-hover: url("../../images/hero/adobe-hover.svg");
+    --hero-icon-base: url("../../assets/images/hero/adobe-base.svg");
+    --hero-icon-hover: url("../../assets/images/hero/adobe-hover.svg");
 
 }
 
@@ -266,8 +266,8 @@
     left: 50%;
     --base-transform: translate(-50%, -50%) translate(calc(194px * var(--hero-icon-offset-scale)), calc(-13px * var(--hero-icon-offset-scale))) rotate(0deg);
     transform: var(--base-transform);
-    --hero-icon-base: url("../../images/hero/procreate-base.svg");
-    --hero-icon-hover: url("../../images/hero/procreate-hover.svg");
+    --hero-icon-base: url("../../assets/images/hero/procreate-base.svg");
+    --hero-icon-hover: url("../../assets/images/hero/procreate-hover.svg");
 
 }
 
@@ -276,8 +276,8 @@
     left: 50%;
     --base-transform: translate(-50%, -50%) translate(calc(105px * var(--hero-icon-offset-scale)), calc(-17px * var(--hero-icon-offset-scale))) rotate(0deg);
     transform: var(--base-transform);
-    --hero-icon-base: url("../../images/hero/anima-base.svg");
-    --hero-icon-hover: url("../../images/hero/anima-hover.svg");
+    --hero-icon-base: url("../../assets/images/hero/anima-base.svg");
+    --hero-icon-hover: url("../../assets/images/hero/anima-hover.svg");
 }
 
 .hero-icon--draw {
@@ -285,8 +285,8 @@
     left: 50%;
     --base-transform: translate(-50%, -50%) translate(calc(134px * var(--hero-icon-offset-scale)), calc(38px * var(--hero-icon-offset-scale))) rotate(0deg);
     transform: var(--base-transform);
-    --hero-icon-base: url("../../images/hero/draw-base.svg");
-    --hero-icon-hover: url("../../images/hero/draw-hover.svg");
+    --hero-icon-base: url("../../assets/images/hero/draw-base.svg");
+    --hero-icon-hover: url("../../assets/images/hero/draw-hover.svg");
 }
 
 

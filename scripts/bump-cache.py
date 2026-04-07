@@ -15,12 +15,14 @@ def main() -> None:
     html_files = list(root.rglob("*.html"))
 
     patterns = [
-        (r"(assets/css/style\.css\?v=)\d+", r"\g<1>" + stamp),
-        (r"(\.\./assets/css/style\.css\?v=)\d+", r"\g<1>" + stamp),
-        (r"(\./assets/css/style\.css\?v=)\d+", r"\g<1>" + stamp),
-        (r"(assets/css/fontawesome\.css\?v=)\d+", r"\g<1>" + stamp),
-        (r"(\.\./assets/css/fontawesome\.css\?v=)\d+", r"\g<1>" + stamp),
-        (r"(\./assets/css/fontawesome\.css\?v=)\d+", r"\g<1>" + stamp),
+        # CSS
+        (r"((?:assets|../assets)/css/style\.css)(?:\?v=\d+)?", r"\1?v=" + stamp),
+        (r"((?:assets|../assets)/css/fontawesome\.css)(?:\?v=\d+)?", r"\1?v=" + stamp),
+        # JS
+        (r"((?:assets|../assets)/js/script\.js)(?:\?v=\d+)?", r"\1?v=" + stamp),
+        (r"((?:assets|../assets)/js/isotope\.min\.js)(?:\?v=\d+)?", r"\1?v=" + stamp),
+        (r"((?:assets|../assets)/js/contact-form\.js)(?:\?v=\d+)?", r"\1?v=" + stamp),
+        (r"((?:assets|../assets)/js/analytics\.js)(?:\?v=\d+)?", r"\1?v=" + stamp),
     ]
 
     for file in html_files:

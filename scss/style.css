@@ -12521,7 +12521,7 @@ ul.filters > li.active > a {
 }
 
 .bg-footer-img {
-  background-image: url("../../images/Footer-image.png");
+  background-image: url("../../assets/images/Footer-image.png");
   position: relative;
   overflow: hidden;
   background-color: #fbf9f4;
