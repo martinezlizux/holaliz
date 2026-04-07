@@ -471,27 +471,17 @@ function initProjectsScrollAnimations() {
     if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
     gsap.registerPlugin(ScrollTrigger);
 
-    // 1. Background Color Transition + Pinning "Hi I'm Liz"
-    // Animate background color of transition section smoothly
+    // 1. Background Color Transition ONLY (No extra pinning to keep flow natural)
     const transitionSection = document.getElementById("projects-transition");
     if (transitionSection) {
-        // Pin for a bit so the title stays visible
-        ScrollTrigger.create({
-            trigger: transitionSection,
-            start: "top top",
-            end: "+=600", // Pinned for 600px of scroll
-            pin: true,
-            scrub: 1
-        });
-
         gsap.to(transitionSection, {
             scrollTrigger: {
                 trigger: transitionSection,
                 start: "top center",
                 end: "bottom center",
-                scrub: 1
+                scrub: 0.5
             },
-            backgroundColor: "#F2EEFC", // final color
+            backgroundColor: "#F2EEFC", 
             ease: "none"
         });
     }
@@ -503,39 +493,34 @@ function initProjectsScrollAnimations() {
     if (horizontalSection && wrapper) {
         function getScrollAmount() {
             let wrapperWidth = wrapper.scrollWidth;
-            // Subtract innerWidth so the last card aligns with the right edge
             return -(wrapperWidth - window.innerWidth + 100); 
         }
 
         ScrollTrigger.matchMedia({
-            // Desktop & Tablet (Horizontal scroll with initial and final pauses for readability)
             "(min-width: 768px)": function() {
                 const tl = gsap.timeline({
                     scrollTrigger: {
                         trigger: horizontalSection,
                         start: "top top",
-                        // Total scroll distance: Horizontal travel distance + extra reading buffer
-                        end: () => `+=${(getScrollAmount() * -1) + 2000}`, 
+                        // Extended duration for slower scroll through all content
+                        end: () => `+=${(getScrollAmount() * -1) + 2500}`, 
                         pin: true,
-                        scrub: 1.5, // Slightly softer scrub
-                        invalidateOnRefresh: true,
-                        markers: false
+                        scrub: 1, // Standard scrub for responsiveness
+                        invalidateOnRefresh: true
                     }
                 });
 
-                // 1. Initial "pause" (stay pinned without moving wrapper)
-                // This lets the user see the "Work" title and description before it slides away
-                // Increased relative duration to 0.4 for longer pause
-                tl.to({}, { duration: 0.4 }); 
+                // Initial pause for reading intro ("Work")
+                tl.to({}, { duration: 0.5 }); 
 
-                // 2. The horizontal scroll movement
+                // Horizontal movement
                 tl.to(wrapper, {
                     x: getScrollAmount,
                     ease: "none",
                     duration: 1.0 
                 });
 
-                // 3. Final "pause"
+                // Final pause
                 tl.to({}, { duration: 0.2 });
             },
             

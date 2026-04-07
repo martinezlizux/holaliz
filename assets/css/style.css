@@ -13407,7 +13407,7 @@ body {
   }
 }
 .section-projects-transition {
-  min-height: 150vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13425,7 +13425,7 @@ body {
 }
 
 .section-projects-horizontal {
-  min-height: 150vh;
+  min-height: 100vh;
   background-color: #FAFAFA;
   display: flex;
   align-items: center;
@@ -13443,7 +13443,8 @@ body {
 
 .new-project-card {
   width: 370px;
-  height: 565px;
+  min-height: 500px;
+  height: 520px;
   background-color: #FFFFFF;
   border: 3px solid #262626;
   border-radius: 16px;
@@ -13467,7 +13468,7 @@ body {
 }
 .new-project-card .card-img {
   width: 100%;
-  height: 250px;
+  height: 220px;
   background-color: #E2D1F9;
   border-radius: 8px;
   border: 2px solid #262626;
@@ -13516,8 +13517,8 @@ body {
 .horizontal-intro .intro-title {
   font-family: "Bueno", sans-serif;
   font-weight: 800;
-  font-size: 171px;
-  line-height: 0.83;
+  font-size: 140px;
+  line-height: 0.85;
   color: #9966E2;
   margin: 0;
   margin-bottom: 10px;
@@ -13555,17 +13556,17 @@ body {
     padding-bottom: 30px;
   }
   .projects-huge-title {
-    font-size: 120px;
+    font-size: 100px;
   }
   .new-project-card {
     width: 320px;
-    height: 500px;
+    height: 480px;
   }
   .horizontal-intro {
     padding-right: 40px;
   }
   .horizontal-intro .intro-title {
-    font-size: 120px;
+    font-size: 100px;
   }
   .horizontal-intro .intro-desc {
     font-size: 20px;
