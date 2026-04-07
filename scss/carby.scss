@@ -1,0 +1,297 @@
+// Custom Styles for Carby Landing Page
+// Structure follows sunnypop.scss pattern
+
+// Typography variables
+$font-family-sans-serif: "Inter", sans-serif;
+$font-family-base: "Inter", sans-serif;
+
+// Carby Specific Colors
+$carby-primary: #5A1FB2; // Main Purple
+$carby-accent: #D9E461;  // Lime/Yellow
+$carby-bg: #1E1B2E;      // Deep Dark Purple
+$carby-card-bg: #2D264E; // Slightly lighter for cards
+$body-color: #B4B9D2;
+$primary: $carby-primary;
+
+// Import Bootstrap (paths might need adjustments based on repo structure)
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+// Customs
+html, body {
+    background-color: $carby-bg;
+    color: $body-color;
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.carby-project {
+    // Shared text styles
+    .text-accent {
+        color: $carby-accent !important;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #ffffff;
+    }
+
+    // Hero Section
+    #overview {
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        padding-top: 100px;
+    }
+
+    .hero-title {
+        font-weight: 900;
+        font-size: clamp(3rem, 8vw, 5rem);
+        letter-spacing: -2px;
+        line-height: 1.05;
+        margin-bottom: 1.5rem;
+    }
+
+    // Navigation
+    .project-nav {
+        background-color: rgba(30, 27, 46, 0.8) !important;
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        z-index: 1000;
+        
+        .project-back {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s;
+            
+            &:hover {
+                color: $carby-accent;
+                transform: translateX(-3px);
+            }
+        }
+    }
+
+    // Cards
+    .carby-card {
+        background: $carby-card-bg;
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 2.5rem;
+        height: 100%;
+        transition: all 0.3s ease;
+        
+        &:hover {
+            transform: translateY(-8px);
+            border-color: rgba(217, 228, 97, 0.2);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .icon-wrapper {
+            width: 56px;
+            height: 56px;
+            background: $carby-accent;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $carby-primary;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            font-size: 1rem;
+            color: $body-color;
+            line-height: 1.6;
+        }
+    }
+
+    // Buttons
+    .btn-carby-primary {
+        background: $carby-accent;
+        color: $carby-primary !important;
+        border-radius: 50px;
+        padding: 14px 36px;
+        font-weight: 800;
+        border: none;
+        transition: all 0.2s;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+        
+        &:hover {
+            background: darken($carby-accent, 8%);
+            transform: scale(1.02);
+        }
+    }
+
+    .btn-carby-outline {
+        background: rgba(255, 255, 255, 0.05);
+        color: #fff !important;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50px;
+        padding: 14px 36px;
+        font-weight: 600;
+        transition: all 0.2s;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+        
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+    }
+
+    // Sections
+    section {
+        padding: 6rem 0;
+    }
+
+    #idea-to-vibe {
+        background-color: rgba(15, 13, 26, 0.4);
+        border-radius: 48px;
+        margin: 2rem 0;
+    }
+
+    // Code and Tech
+    .code-editor-mockup {
+        background-color: #0F0D1A;
+        border-radius: 12px;
+        border: 1px solid rgba(90, 31, 178, 0.3);
+        padding: 1.5rem;
+        font-family: 'Menlo', monospace;
+        font-size: 0.85rem;
+        color: #d1d5dc;
+        max-height: 400px;
+        overflow-y: auto;
+
+        code {
+            color: inherit;
+        }
+    }
+
+    // Mockup Visual
+    .carby-mockup-wrapper {
+        position: relative;
+        perspective: 1000px;
+        
+        .main-mockup {
+            width: 100%;
+            max-width: 450px;
+            filter: drop-shadow(0 30px 60px rgba(0,0,0,0.5));
+            // transform: rotateY(-10deg) rotateX(5deg);
+        }
+    }
+
+    // Process Section (White background like sunny)
+    .process-container {
+        background: #fff;
+        color: #171717;
+        border-radius: 64px 64px 0 0;
+        margin-top: 4rem;
+        padding: 6rem 0;
+
+        h2, h3, h4 {
+            color: #111;
+        }
+        
+        p {
+            color: #555;
+        }
+
+        .process-visual-placeholder {
+            background: #F8F9FA;
+            border: 2px dashed #E9ECEF;
+            border-radius: 24px;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            
+            img {
+                max-width: 90%;
+                max-height: 90%;
+                object-fit: contain;
+            }
+        }
+        
+        .pill-number {
+            width: 40px;
+            height: 40px;
+            background: $carby-primary;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+    }
+
+    // Stats
+    .stat-item {
+        margin-bottom: 2rem;
+        background: rgba(255, 255, 255, 0.03);
+        padding: 1.5rem;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        text-align: center;
+        
+        .stat-value {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #fff 0%, $carby-accent 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        .stat-label {
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+    }
+}
+
+// Background glows for premium feel
+body::before {
+    content: '';
+    position: fixed;
+    top: -10%;
+    right: -5%;
+    width: 40vw;
+    height: 40vw;
+    background: radial-gradient(circle, rgba(90, 31, 178, 0.15) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    bottom: -10%;
+    left: -5%;
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, rgba(217, 228, 97, 0.1) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+}

@@ -1,27 +1,31 @@
+// Global theme and Bootstrap
+@import 'custom';
+
 // Import components
-@use 'components/mixins';
-@use 'components/animations';
-@use 'components/buttons';
-@use 'components/typography';
-@use 'components/colors';
-@use 'components/utilities';
+@import 'components/mixins';
+@import 'components/animations';
+@import 'components/buttons';
+@import 'components/typography';
+@import 'components/colors';
+@import 'components/utilities';
 
 // Import sections
-@use 'sections/hero-new';
-@use 'sections/projects-new';
-@use 'sections/about-new';
-@use 'sections/navbar';
-@use 'sections/intro';
-@use 'sections/about';
-@use 'sections/gallery';
-@use 'sections/contact';
-@use 'sections/footer';
-@use 'sections/portfolio';
-@use 'sections/playground';
-@use 'sections/usercase';
-@use 'sections/project';
-@use 'sections/aboutme';
-@use 'sections/media';
-@use 'sections/tools';
-@use 'sections/resume';
-@use 'sections/firma';
+@import 'sections/hero-new';
+@import 'sections/projects-new';
+@import 'sections/about-new';
+@import 'sections/navbar';
+@import 'sections/intro';
+@import 'sections/about';
+@import 'sections/gallery';
+@import 'sections/contact';
+@import 'sections/footer';
+@import 'sections/portfolio';
+@import 'sections/playground';
+@import 'sections/usercase';
+@import 'sections/project';
+@import 'sections/aboutme';
+@import 'sections/media';
+@import 'sections/tools';
+@import 'sections/resume';
+@import 'sections/firma';
+@import 'sections/sunny';
