@@ -471,15 +471,24 @@ function initProjectsScrollAnimations() {
     if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
     gsap.registerPlugin(ScrollTrigger);
 
-    // 1. Background Color Transition
+    // 1. Background Color Transition + Pinning "Hi I'm Liz"
     // Animate background color of transition section smoothly
     const transitionSection = document.getElementById("projects-transition");
     if (transitionSection) {
+        // Pin for a bit so the title stays visible
+        ScrollTrigger.create({
+            trigger: transitionSection,
+            start: "top top",
+            end: "+=600", // Pinned for 600px of scroll
+            pin: true,
+            scrub: 1
+        });
+
         gsap.to(transitionSection, {
             scrollTrigger: {
                 trigger: transitionSection,
                 start: "top center",
-                end: "center center",
+                end: "bottom center",
                 scrub: 1
             },
             backgroundColor: "#F2EEFC", // final color
@@ -495,28 +504,39 @@ function initProjectsScrollAnimations() {
         function getScrollAmount() {
             let wrapperWidth = wrapper.scrollWidth;
             // Subtract innerWidth so the last card aligns with the right edge
-            // We can also subtract padding to keep margins
             return -(wrapperWidth - window.innerWidth + 100); 
         }
 
         ScrollTrigger.matchMedia({
-            // Desktop & Tablet (Horizontal scroll)
+            // Desktop & Tablet (Horizontal scroll with initial and final pauses for readability)
             "(min-width: 768px)": function() {
-                const tween = gsap.to(wrapper, {
-                    x: getScrollAmount,
-                    ease: "none"
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: horizontalSection,
+                        start: "top top",
+                        // Total scroll distance: Horizontal travel distance + extra reading buffer
+                        end: () => `+=${(getScrollAmount() * -1) + 2000}`, 
+                        pin: true,
+                        scrub: 1.5, // Slightly softer scrub
+                        invalidateOnRefresh: true,
+                        markers: false
+                    }
                 });
 
-                ScrollTrigger.create({
-                    trigger: horizontalSection,
-                    start: "top top",
-                    end: () => `+=${getScrollAmount() * -1}`,
-                    pin: true,
-                    animation: tween,
-                    scrub: 1,
-                    invalidateOnRefresh: true,
-                    markers: false
+                // 1. Initial "pause" (stay pinned without moving wrapper)
+                // This lets the user see the "Work" title and description before it slides away
+                // Increased relative duration to 0.4 for longer pause
+                tl.to({}, { duration: 0.4 }); 
+
+                // 2. The horizontal scroll movement
+                tl.to(wrapper, {
+                    x: getScrollAmount,
+                    ease: "none",
+                    duration: 1.0 
                 });
+
+                // 3. Final "pause"
+                tl.to({}, { duration: 0.2 });
             },
             
             // Mobile Phone (Vertical stack animations)
