@@ -304,10 +304,10 @@ $(document).ready(function () {
 
     // Inicializar theme toggle
     initThemeToggle();
-    
+
     // Inicializar Hero Animations
     initHeroAnimations();
-    
+
     // Inicializar Projects Scroll Animations
     initProjectsScrollAnimations();
 
@@ -427,8 +427,9 @@ function initHeroAnimations() {
     // Make sure GSAP is loaded
     if (typeof gsap === 'undefined') return;
 
-    const tl = gsap.timeline({ defaults: { ease: "power3.out", duration: 1 } });
-    
+    // Prevent scrolling initially
+    document.body.style.overflow = "hidden";
+
     // Initial state: hide elements
     gsap.set(".hero-logo", { y: -20, opacity: 0 });
     gsap.set(".nav-links a", { y: -20, opacity: 0 });
@@ -436,34 +437,150 @@ function initHeroAnimations() {
     gsap.set(".hero-huge-title", { y: 60, opacity: 0, scale: 0.95 });
     gsap.set(".hero-subtitle", { y: 30, opacity: 0 });
     gsap.set(".btn-lime", { y: 30, opacity: 0, scale: 0.9 });
+    gsap.set(".hero-top-shape", { opacity: 0, y: -20, scale: 0 });
 
-    // Play Sequence
+    const loaderTl = gsap.timeline({
+        timeScale: 1.4, // Speeds up the entire loader sequence by 40%
+        onComplete: () => {
+            // Re-enable scrolling after loader
+            document.body.style.overflow = "";
+            const loaderEl = document.getElementById("initial-loader");
+            if (loaderEl) loaderEl.style.display = "none";
+        }
+    });
+
+    // Initial Setup for SVG Border and Letters
+    gsap.set("#logo-border", { drawSVG: "0%" });
+    gsap.set(".logo-letter", { opacity: 0, y: 10 });
+    gsap.set(".loader-logo-container", { opacity: 1 }); // We need the container visible for drawSVG to show!
+
+    // 1. Shapes spread and spin slightly
+    loaderTl.from(".loader-shape", {
+        x: (i) => (i - 2) * 120, // Spread wider
+        rotation: (i) => (Math.random() - 0.5) * 360,
+        opacity: 0,
+        scale: 0.2, // Start very small
+        duration: 1.5,
+        ease: "elastic.out(1, 0.5)", // Bouncy entrance
+        stagger: 0.1
+    })
+
+        // Label for abstract shapes dispersing
+        .addLabel("morphStart", "-=0.2")
+
+        // 3. Draw the border with DrawSVG progressively BEFORE the other shapes fly away
+        .to("#logo-border", {
+            drawSVG: "100%",
+            duration: 1.2,
+            ease: "power2.inOut"
+        }, "morphStart-=0.3")
+
+        // 2. The green shape morphs into the logo arrow, others fly away
+        .to(".loader-shape:not(.green-morph-shape)", {
+            x: (i) => (Math.random() - 0.5) * 600,
+            y: (i) => (Math.random() - 0.5) * 600,
+            scale: 0,
+            rotation: 360,
+            opacity: 0,
+            duration: 0.8,
+            ease: "power3.in"
+        }, "morphStart")
+
+        // MORPH SVG directly into the logo arrow
+        .to("#fig1", {
+            duration: 1,
+            morphSVG: "#figlogo",
+            ease: "power3.inOut"
+        }, "morphStart")
+
+        // Center the container so the path nicely aligns
+        .to(".green-morph-shape", {
+            x: 0,
+            y: 0,
+            scale: 1,
+            rotation: 0,
+            duration: 1,
+            ease: "power3.inOut"
+        }, "morphStart")
+
+        // Fade out the morph container at the very end of morph, swapping to the real logo setup
+        .to(".green-morph-shape", { opacity: 0, duration: 0.1 }, "morphStart+=0.9")
+        .to("#figlogo", { opacity: 1, duration: 0.1 }, "morphStart+=0.9")
+
+        // 4. Letters fade in and slight pop up one by one, right as the green shape arrives
+        .to(".logo-letter", {
+            opacity: 1,
+            y: 0,
+            duration: 0.4,
+            stagger: 0.05,
+            ease: "back.out(1.7)"
+        }, "morphStart+=0.4")
+
+        // Add label for melting effect
+        .addLabel("meltStart", "+=0.6") // slight pause for people to read the logo
+
+        // Change background to purple to merge the letters/border seamlessly
+        .to("#initial-loader", {
+            backgroundColor: "#5A1FB2",
+            duration: 0.6,
+            ease: "power2.inOut"
+        }, "meltStart")
+
+        // Slide out the entire loader, leaving hero to animate
+        .to("#initial-loader", {
+            yPercent: -100,
+            opacity: 0,
+            duration: 0.8,
+            ease: "expo.inOut"
+        }, "meltStart+=0.6");
+
+    // Play Sequence for Hero (starts as loader ends)
+    const tl = gsap.timeline({ defaults: { ease: "power3.out", duration: 1 } });
+
+    // Attach hero timeline to loader timeline
+    loaderTl.add(tl, "-=0.5");
+
     tl.to(".hero-logo", { y: 0, opacity: 1, duration: 0.8 })
-      .to(".nav-links a, .btn-lets-talk", { 
-          y: 0, 
-          opacity: 1, 
-          duration: 0.6,
-          stagger: 0.1 
-      }, "-=0.6")
-      .to(".hero-huge-title", {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          duration: 1.2,
-          ease: "expo.out"
-      }, "-=0.2")
-      .to(".hero-subtitle", {
-          y: 0,
-          opacity: 1,
-          duration: 0.8
-      }, "-=0.8")
-      .to(".btn-lime", {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          duration: 0.8,
-          ease: "back.out(1.5)"
-      }, "-=0.6");
+        .to(".nav-links a, .btn-lets-talk", {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            stagger: 0.1
+        }, "-=0.6")
+        // Exaggerated pop back for the hero top shapes
+        .fromTo(".hero-top-shape", {
+            opacity: 0,
+            y: -100,
+            scale: 0.2,
+            rotation: -180
+        }, {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            rotation: 0,
+            duration: 1.2,
+            ease: "elastic.out(1, 0.5)",
+            stagger: 0.1
+        }, "-=0.4")
+        .to(".hero-huge-title", {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 1.2,
+            ease: "expo.out"
+        }, "-=0.8")
+        .to(".hero-subtitle", {
+            y: 0,
+            opacity: 1,
+            duration: 0.8
+        }, "-=0.8")
+        .to(".btn-lime", {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 0.8,
+            ease: "back.out(1.5)"
+        }, "-=0.6");
 }
 
 // Projects Transition & Horizontal Scroll Animations
@@ -481,7 +598,7 @@ function initProjectsScrollAnimations() {
                 end: "bottom center",
                 scrub: 0.5
             },
-            backgroundColor: "#F2EEFC", 
+            backgroundColor: "#F2EEFC",
             ease: "none"
         });
     }
@@ -489,21 +606,21 @@ function initProjectsScrollAnimations() {
     // 2. Horizontal Scroll Section
     const horizontalSection = document.getElementById("projects-horizontal");
     const wrapper = document.getElementById("horizontalScrollWrapper");
-    
+
     if (horizontalSection && wrapper) {
         function getScrollAmount() {
             let wrapperWidth = wrapper.scrollWidth;
-            return -(wrapperWidth - window.innerWidth + 100); 
+            return -(wrapperWidth - window.innerWidth + 100);
         }
 
         ScrollTrigger.matchMedia({
-            "(min-width: 768px)": function() {
+            "(min-width: 768px)": function () {
                 const tl = gsap.timeline({
                     scrollTrigger: {
                         trigger: horizontalSection,
                         start: "top top",
                         // Extended duration for slower scroll through all content
-                        end: () => `+=${(getScrollAmount() * -1) + 2500}`, 
+                        end: () => `+=${(getScrollAmount() * -1) + 2500}`,
                         pin: true,
                         scrub: 1, // Standard scrub for responsiveness
                         invalidateOnRefresh: true
@@ -511,23 +628,23 @@ function initProjectsScrollAnimations() {
                 });
 
                 // Initial pause for reading intro ("Work")
-                tl.to({}, { duration: 0.5 }); 
+                tl.to({}, { duration: 0.5 });
 
                 // Horizontal movement
                 tl.to(wrapper, {
                     x: getScrollAmount,
                     ease: "none",
-                    duration: 1.0 
+                    duration: 1.0
                 });
 
                 // Final pause
                 tl.to({}, { duration: 0.2 });
             },
-            
+
             // Mobile Phone (Vertical stack animations)
-            "(max-width: 767px)": function() {
+            "(max-width: 767px)": function () {
                 const mobileCards = gsap.utils.toArray('.new-project-card, .horizontal-intro');
-                
+
                 mobileCards.forEach(card => {
                     gsap.fromTo(card, {
                         y: 40,
@@ -555,11 +672,11 @@ function initProjectsScrollAnimations() {
 // ABOUT ME — GSAP Drop + Bounce + Fan + Draggable
 // ============================================================
 function initAboutAnimations() {
-    const heading    = document.getElementById('about-heading');
-    const tagline    = document.getElementById('about-tagline');
-    const stats      = document.getElementById('about-stats');
-    const badgesEl   = document.getElementById('about-badges');
-    const cards      = document.querySelectorAll('.about-new__card');
+    const heading = document.getElementById('about-heading');
+    const tagline = document.getElementById('about-tagline');
+    const stats = document.getElementById('about-stats');
+    const badgesEl = document.getElementById('about-badges');
+    const cards = document.querySelectorAll('.about-new__card');
 
     if (!heading || !cards.length) return;
 
@@ -573,8 +690,8 @@ function initAboutAnimations() {
             once: true
         }
     })
-    .to(heading, { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out' })
-    .to(tagline, { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }, '-=0.4');
+        .to(heading, { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out' })
+        .to(tagline, { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }, '-=0.4');
 
     // -------------------------------------------------------
     // 2. CARDS — fall from above, stagger, soft land, fan spread, Draggable
@@ -582,13 +699,13 @@ function initAboutAnimations() {
     // Base positions ensuring they are fully spread out horizontally
     const isMobile = window.innerWidth < 768;
     const spreadMultiplier = isMobile ? 0.6 : 1;
-    
+
     const basePositions = [
-        { x: -220, y:  30 },   // dev      — far left
+        { x: -220, y: 30 },   // dev      — far left
         { x: -100, y: -40 },   // adobe    — left
-        { x:  100, y:  20 },   // procreate— right
-        { x:  220, y: -30 },   // figma    — far right
-        { x:    0, y:  10 }    // photo    — center, on top
+        { x: 100, y: 20 },   // procreate— right
+        { x: 220, y: -30 },   // figma    — far right
+        { x: 0, y: 10 }    // photo    — center, on top
     ];
 
     // Apply random offsets & scatter for organic feel
@@ -657,7 +774,7 @@ function initAboutAnimations() {
             once: true
         }
     })
-    .to(stats, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' });
+        .to(stats, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' });
 
     const badgeItems = badgesEl ? badgesEl.querySelectorAll('.about-new__badge') : [];
     if (badgeItems.length) {
@@ -668,14 +785,14 @@ function initAboutAnimations() {
                 once: true
             }
         })
-        .to(badgesEl, { opacity: 1, duration: 0.1 })
-        .to(badgeItems, {
-            opacity: 1,
-            y: 0,
-            duration: 0.4,
-            stagger: 0.06,
-            ease: 'power2.out'
-        }, '-=0.1');
+            .to(badgesEl, { opacity: 1, duration: 0.1 })
+            .to(badgeItems, {
+                opacity: 1,
+                y: 0,
+                duration: 0.4,
+                stagger: 0.06,
+                ease: 'power2.out'
+            }, '-=0.1');
     }
 
     // -------------------------------------------------------
@@ -781,4 +898,4 @@ function initExperienceAnimations() {
         });
     });
 }
-
+
