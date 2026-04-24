@@ -899,3 +899,53 @@ function initExperienceAnimations() {
     });
 }
 
+// ====== GOOGLE ANALYTICS CUSTOM EVENT TRACKING ======
+document.addEventListener("DOMContentLoaded", () => {
+    // Helper functionality to check if gtag is available
+    const trackEvent = (eventName, params) => {
+        if (typeof gtag !== 'undefined') {
+            gtag('event', eventName, params);
+        } else if (window.gtag) {
+            window.gtag('event', eventName, params);
+        }
+    };
+
+    // 1. Track Project Clicks
+    const projectLinks = document.querySelectorAll('.card-link-wrapper');
+    projectLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const projectTitle = link.querySelector('.card-title')?.innerText.trim() || link.getAttribute('href');
+            trackEvent('project_click', {
+                'event_category': 'Engagement',
+                'event_label': projectTitle,
+                'project_name': projectTitle
+            });
+        });
+    });
+
+    // 2. Track 'Contact Me' / 'Let's Talk' Clicks
+    const contactBtns = document.querySelectorAll('[data-bs-target="#contactModal"], a[href^="mailto:"]');
+    contactBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            trackEvent('contact_click', {
+                'event_category': 'Engagement',
+                'event_label': 'Contact Button Clicked'
+            });
+        });
+    });
+
+    // 3. Track Scrolling to the Bottom
+    let bottomScrolled = false;
+    window.addEventListener('scroll', () => {
+        if (!bottomScrolled && (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 300) {
+            bottomScrolled = true;
+            trackEvent('scroll_bottom', {
+                'event_category': 'Engagement',
+                'event_label': 'User reached the bottom of the page'
+            });
+        }
+    });
+
+    // Note: Time spent on page is automatically tracked via GA4's default 'user_engagement' event.
+});
+
