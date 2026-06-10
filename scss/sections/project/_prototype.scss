@@ -1,0 +1,62 @@
+.project-prototype {
+    background-color: var(--Neutral-900);
+    padding: 60px 0;
+    margin-top: 0;
+    width: 100%;
+
+    // Stretch to full width if inside a container that constrains it
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    width: 100vw;
+
+    .prototype-container {
+        display: flex;
+        gap: 40px; // Increased gap for better spacing
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+
+        .phone-mockup {
+            position: relative;
+            width: 260px; // Based on Figma width
+            height: 530px; // Based on Figma height
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: auto;
+                pointer-events: none;
+            }
+
+            .phone-shadow {
+                z-index: 1;
+                opacity: 0.7;
+                transform: scale(1.05); // Slight adjustment if needed
+            }
+
+            .phone-screen {
+                z-index: 2;
+                width: 92%; // Adjust to fit inside bezel
+                left: 4%; // Center horizontally
+                top: 1.5%; // Adjust vertical alignment
+                border-radius: 30px; // Match bezel radius
+            }
+
+            .phone-bezel {
+                z-index: 3;
+                top: 8px; // Fine-tune alignment from Figma
+            }
+
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: translateY(-10px);
+            }
+        }
+    }
+}

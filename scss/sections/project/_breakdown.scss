@@ -1,0 +1,106 @@
+.project-breakdown {
+    background-color: var(--Neutral-50); // Matches Figma #F9FAFB or close variable
+    padding: 80px 0;
+    margin-top: 0;
+    width: 100%;
+
+    // Stretch to full width if inside a container that constrains it
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    padding-left: calc(50vw - 50%);
+    padding-right: calc(50vw - 50%);
+    width: 100vw;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 24px;
+    }
+
+    >p {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 48px auto;
+        font-size: var(--Font-Size-font-xl-20);
+    }
+
+    .breakdown-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .breakdown-column {
+        background-color: #fff;
+        border-radius: 16px;
+        padding: 32px;
+        height: 100%;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); // Subtle shadow
+
+        h3 {
+            font-size: var(--Font-Size-font-3xl-26);
+            font-weight: var(--Font-Weight-Medium);
+            margin-bottom: 24px;
+            margin-top: 0;
+            color: var(--Type-Neutral-dark);
+        }
+    }
+
+    /* Challenges List Styling */
+    .challenges-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: var(--Font-Size-font-md-16);
+            color: var(--Type-Neutral-dark);
+
+            .arrow-icon {
+                color: var(--primary-500); // Purple
+                font-weight: bold;
+                font-size: 1.2rem;
+                line-height: 1;
+                margin-top: 2px;
+            }
+        }
+    }
+
+    /* User Voice Cards */
+    .voice-card {
+        background-color: var(--primary-10); // Light purple bg
+        border: 2px solid var(--Neutral-1000); // Black border
+        border-radius: 12px;
+        padding: 24px;
+        margin-bottom: 16px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .role {
+            display: block;
+            font-weight: var(--Font-Weight-SemiBold);
+            color: var(--Neutral-1000);
+            margin-bottom: 8px;
+            font-size: var(--Font-Size-font-md-16);
+        }
+
+        .quote {
+            font-size: var(--Font-Size-font-md-16);
+            color: var(--Type-Neutral-dark);
+            margin-bottom: 0;
+            font-weight: var(--Font-Weight-Medium);
+            font-style: italic;
+        }
+    }
+}

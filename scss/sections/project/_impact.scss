@@ -1,0 +1,191 @@
+.project-impact {
+    background-color: var(--Surface-Neutral-default);
+    padding: 80px 0;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    display: flex;
+    justify-content: center;
+
+    .impact-container {
+        max-width: 1200px;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .impact-header {
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto 64px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+
+        h2 {
+            font-size: 38px;
+            color: var(--Type-Neutral-dark);
+            margin: 0;
+        }
+
+        p {
+            font-size: 26px;
+            color: var(--Type-Neutral-default);
+            line-height: 1.2;
+            margin: 0;
+            text-align: center;
+        }
+    }
+
+    .impact-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto auto;
+        gap: 24px;
+        width: 100%;
+
+        .impact-card {
+            background-color: var(--Neutral-600); // #525252
+            color: var(--Neutral-0); // White text
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            min-height: 200px;
+
+            h3 {
+                font-family: 'Inter', sans-serif;
+                font-weight: 700;
+                font-size: 38px;
+                margin: 0;
+                color: var(--Neutral-0);
+            }
+
+            h4 {
+                font-weight: 500;
+                font-size: 26px;
+                margin: 0;
+                line-height: 1.2;
+                color: var(--Neutral-0);
+            }
+
+            p {
+                font-weight: 500;
+                font-size: 14px;
+                margin: 0;
+                opacity: 0.9;
+                color: var(--Neutral-0);
+            }
+        }
+
+        .card-1 {
+            grid-column: span 1;
+        }
+
+        .card-2 {
+            grid-column: span 1;
+        }
+
+        .card-3 {
+            grid-column: span 2;
+        }
+
+        .card-4 {
+            grid-column: span 2;
+            grid-row: 2;
+            grid-column-start: 1;
+        }
+
+        // Responsive
+        @media (max-width: 992px) {
+            grid-template-columns: repeat(2, 1fr);
+
+            .card-3,
+            .card-4 {
+                grid-column: span 2;
+                grid-row: auto;
+            }
+        }
+
+        @media (max-width: 576px) {
+            grid-template-columns: 1fr;
+
+            .card-1,
+            .card-2,
+            .card-3,
+            .card-4 {
+                grid-column: span 1;
+            }
+        }
+    }
+}
+
+.project-learnings {
+    background-color: var(--Neutral-300); // #F9FAFB, visually consistent
+    padding: 80px 0;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    display: flex;
+    justify-content: center;
+
+    .learnings-container {
+        max-width: 1200px;
+        width: 100%;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+    }
+
+    .learnings-header {
+        h2 {
+            font-size: 36px;
+            color: var(--Type-Neutral-dark);
+            margin: 0;
+        }
+    }
+
+    .learnings-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+
+        .learning-card {
+            background-color: var(--Neutral-0); // White
+            border-radius: 16px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -1px rgba(0, 0, 0, 0.06); // Subtle shadow
+
+            h3 {
+                font-family: 'Inter', sans-serif;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 1.35;
+                margin: 0;
+                color: var(--Type-Primary-dark); // #37136d
+            }
+
+            p {
+                font-family: 'Inter', sans-serif;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 1.5;
+                margin: 0;
+                color: var(--Type-Neutral-dark); // #171717
+            }
+        }
+
+        // Responsive
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+    }
+}

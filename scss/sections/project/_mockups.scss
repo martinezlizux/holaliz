@@ -1,0 +1,48 @@
+.project-mockups {
+    background-color: var(--Neutral-300); // #F9FAFB, matching previous section
+    padding: 60px 0;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    padding-left: calc(50vw - 50%);
+    padding-right: calc(50vw - 50%);
+
+    .mockups-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        padding: 0 20px;
+    }
+
+    .mockups-row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+        justify-items: center;
+        align-items: start;
+
+        @media (max-width: 992px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 576px) {
+            grid-template-columns: 1fr;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            transition: transform 0.3s ease;
+            width: 100%; // Ensure images fill their grid cell
+
+            &:hover {
+                transform: translateY(-5px);
+            }
+        }
+
+    }
+}
