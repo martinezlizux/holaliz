@@ -1,4 +1,5 @@
 @use '../custom' as *;
+
 .s-proyect .bg-banner {
   background-color: var(--color-Surface-Default);
   height: 50px;
@@ -46,6 +47,7 @@
     opacity: 0;
     scale: 25%;
   }
+
   to {
     opacity: 1;
     scale: 100%;
@@ -139,9 +141,11 @@
   .p-heading h2 {
     font-size: var(--h2--bold);
   }
+
   .p-heading h3 {
     font-size: var(--h3--light);
   }
+
   .s-proyect .img-tool {
     width: 50px;
   }

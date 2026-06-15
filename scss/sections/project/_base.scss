@@ -4,8 +4,8 @@
 .s-proyect {
     font-family: var(--Font-Family-Body);
     color: var(--Type-Neutral-default);
-    line-height: 1.6;
-    font-size: var(--Font-Size-font-md-16);
+    line-height: var(--Line-Height-Loose); // 1.6
+    font-size: var(--Font-Size-font-lg-18); // Increased base to 18px
 
     /* Override legacy fonts */
     .lily-regular,
@@ -14,47 +14,51 @@
         font-family: var(--Font-Family-Titles) !important;
     }
 
-    /* Typography Mappings based on new design system */
+    /* Typography Mappings based on new Doodles-inspired design */
     h1,
     .p-heading h1 {
         font-family: var(--Font-Family-Titles);
-        font-size: var(--Font-Size-font-11xl-52); // 52px
+        font-size: var(--Font-Size-font-12xl-72); // 72px
         font-weight: var(--Font-Weight-Bold);
         color: var(--Type-Neutral-dark);
-        line-height: 1.2;
-        margin-bottom: 24px;
+        line-height: var(--Line-Height-Tight); // 1.1
+        letter-spacing: var(--Letter-Spacing-Tight); // -0.03em
+        margin-bottom: 32px;
 
         @media (max-width: 768px) {
-            font-size: var(--Font-Size-font-7xl-38); // 38px mobile
+            font-size: var(--Font-Size-font-8xl-44); // 44px mobile
         }
     }
 
     h2,
     .title {
         font-family: var(--Font-Family-Titles);
-        font-size: var(--Font-Size-font-9xl-42); // 42px
+        font-size: var(--Font-Size-font-10xl-56); // 56px
         font-weight: var(--Font-Weight-Bold);
         color: var(--Type-Neutral-dark);
-        margin-top: 48px;
+        margin-top: 64px;
         margin-bottom: 24px;
-        line-height: 1.3;
+        line-height: var(--Line-Height-Tight); // 1.1
+        letter-spacing: var(--Letter-Spacing-Tight); // -0.03em
 
         &.txt-purple {
             color: var(--primary-700);
         }
 
         @media (max-width: 768px) {
-            font-size: var(--Font-Size-font-5xl-30); // 30px mobile
+            font-size: var(--Font-Size-font-6xl-36); // 36px mobile
         }
     }
 
     h3 {
         font-family: var(--Font-Family-Titles);
-        font-size: var(--Font-Size-font-5xl-30); // 30px
+        font-size: var(--Font-Size-font-7xl-40); // 40px
         font-weight: var(--Font-Weight-SemiBold);
         color: var(--Type-Neutral-dark);
-        margin-top: 32px;
+        margin-top: 40px;
         margin-bottom: 16px;
+        line-height: var(--Line-Height-Medium); // 1.25
+        letter-spacing: var(--Letter-Spacing-Tight);
 
         &.txt-purple {
             color: var(--primary-600);
@@ -63,23 +67,29 @@
 
     p {
         color: var(--Type-Neutral-default);
-        margin-bottom: 24px;
+        margin-bottom: 28px; // Increased spacing for Doodle vibe
         font-weight: var(--Font-Weight-Regular);
+        font-size: var(--Font-Size-font-lg-18);
+        line-height: var(--Line-Height-Loose);
 
         &.bold {
             font-weight: var(--Font-Weight-Bold);
             color: var(--Type-Neutral-dark);
         }
+
+        &.body-large-regular {
+            font-size: var(--Font-Size-font-xl-20);
+        }
     }
 
     ul {
-        font-size: var(--Font-Size-font-md-16); // 16px
+        font-size: var(--Font-Size-font-lg-18); // 18px
         color: var(--Type-Neutral-default);
-        margin-bottom: 24px;
+        margin-bottom: 32px;
         padding-left: 1.5rem;
 
         li {
-            margin-bottom: 12px;
+            margin-bottom: 16px;
         }
     }
 
@@ -145,14 +155,40 @@
         border-radius: 16px;
         padding: 2.5rem;
         height: 100%;
-        margin: 0 4.5rem;
+        margin: 0 4rem;
         /* Margins to keep controls outside */
         transform: translateZ(0);
-        /* Better rendering */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @media (max-width: 991px) {
+            margin: 0 1rem;
+            padding: 1.5rem;
+        }
+
+        img, .videocard {
+            max-height: 350px;
+            width: auto;
+            object-fit: contain;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+
+            @media (max-width: 768px) {
+                max-height: 250px;
+            }
+        }
     }
 
     .carousel-inner-equal {
-        height: 600px;
+        height: auto;
+        min-height: 550px;
+        overflow: hidden;
+
+        @media (max-width: 768px) {
+            min-height: 750px; // More space for stacked content on mobile
+        }
     }
 
     .box-Impact,

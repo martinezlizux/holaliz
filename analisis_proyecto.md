@@ -29,9 +29,10 @@ Se ha desglosado el archivo `scss/sections/_project.scss` para evitar archivos g
 - **Estado:** Listo para usar agentes especializados en la terminal.
 
 ## 4. Tareas Pendientes (Checklist de Validación)
-- [ ] Ejecutar `npm run compile:sass` para verificar que no hay errores de compilación tras la modularización.
-- [ ] Revisar consola del navegador en `index.html` y `portfolio/*.html` para asegurar que los módulos JS cargan sin errores de ruta.
-- [ ] Realizar `git add` y `git commit` de los cambios estructurales.
+- [x] Ejecutar `npm run compile:sass` para verificar que no hay errores de compilación tras la modularización.
+- [x] Revisar consola del navegador en `index.html` y `portfolio/*.html` para asegurar que los módulos JS cargan sin errores de ruta.
+- [x] Sincronizar versiones de caché de assets mediante `npm run cache:bump`.
+- [x] Realizar `git add` y `git commit` de los cambios estructurales y de contenido.
 
 ---
 *Documento generado automáticamente por Gemini CLI para mantener la continuidad del desarrollo.*
