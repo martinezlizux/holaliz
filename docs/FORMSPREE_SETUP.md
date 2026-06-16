@@ -46,7 +46,7 @@ https://formspree.io/f/xgvzgrzj
 2. **Modal se abre** con el formulario de contacto
 3. **Usuario llena** los campos requeridos
 4. **Al enviar**, Formspree procesa el formulario
-5. **Email se envía** directamente a `martinez.liz.ux@gmail.com`
+5. **Email se envía** directamente a `liz@holaliz.com`
 6. **Confirmación** se muestra al usuario
 7. **Modal se cierra** y formulario se resetea
 
@@ -65,7 +65,7 @@ https://formspree.io/f/xgvzgrzj
 2. **Hacer clic en el ícono de email** en la navbar
 3. **Llenar los campos** - Nombre, email y mensaje
 4. **Hacer clic en "Send Message"**
-5. **Verificar envío** - Deberías recibir el email en `martinez.liz.ux@gmail.com`
+5. **Verificar envío** - Deberías recibir el email en `liz@holaliz.com`
 6. **Revisar dashboard** de Formspree para confirmar recepción
 
 ## Estado Final

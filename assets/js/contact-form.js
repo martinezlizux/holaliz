@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    alert('Sorry, there was an error sending your message. Please try again or email me directly at martinez.liz.ux@gmail.com');
+                    alert('Sorry, there was an error sending your message. Please try again or email me directly at liz@holaliz.com');
                 })
                 .finally(() => {
                     // Reset button state
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function sendEmailFallback(name, email, message) {
         const subject = encodeURIComponent('Contact from Portfolio Website');
         const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-        const mailtoLink = `mailto:martinez.liz.ux@gmail.com?subject=${subject}&body=${body}`;
+        const mailtoLink = `mailto:liz@holaliz.com?subject=${subject}&body=${body}`;
         window.location.href = mailtoLink;
     }
 });
