@@ -3,8 +3,10 @@
 
 /* Typography Primitives  - Mode 1 */
 :root {
-    --Font-Family-Body: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    --Font-Family-Titles: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --Font-Family-Body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --Font-Family-Titles: "Bueno", "Inter", sans-serif; // Bueno for titles to get that Doodles vibe
+    
+    /* Font Sizes - Inspired by Doodles.app Scalability */
     --Font-Size-font-xs-12: 12px;
     --Font-Size-font-sm-14: 14px;
     --Font-Size-font-md-16: 16px;
@@ -12,259 +14,139 @@
     --Font-Size-font-xl-20: 20px;
     --Font-Size-font-2xl-24: 24px;
     --Font-Size-font-3xl-26: 26px;
-    --Font-Size-font-4xl-28: 28px;
-    --Font-Size-font-5xl-30: 32px; // Adjusted for Doodles vibe
-    --Font-Size-font-6xl-36: 36px;
-    --Font-Size-font-7xl-38: 40px; // Adjusted for Doodles vibe
-    --Font-Size-font-8xl-40: 44px; // Adjusted for Doodles vibe
-    --Font-Size-font-9xl-42: 48px; // Adjusted for Doodles vibe
-    --Font-Size-font-10xl-46: 56px; // Adjusted for Doodles vibe
-    --Font-Size-font-11xl-52: 64px; // Adjusted for Doodles vibe
-    --Font-Size-font-12xl-62: 72px; // Adjusted for Doodles vibe
-    --Font-Size-font-13xl-72: 80px; // Adjusted for Doodles vibe
+    --Font-Size-font-4xl-32: 32px;
+    --Font-Size-font-5xl-40: 40px;
+    --Font-Size-font-6xl-48: 48px;
+    --Font-Size-font-7xl-56: 56px;
+    --Font-Size-font-8xl-64: 64px;
+    --Font-Size-font-9xl-72: 72px;
+    --Font-Size-font-10xl-80: 80px;
+    --Font-Size-font-11xl-96: 96px;
+    --Font-Size-font-12xl-120: 120px;
+    --Font-Size-font-13xl-180: 180px;
     
     --Font-Weight-Light: 300;
     --Font-Weight-Regular: 400;
     --Font-Weight-Medium: 500;
     --Font-Weight-SemiBold: 600;
-    --Font-Weight-Bold: 700;
+    --Font-Weight-Bold: 800;
     --Font-Weight-ExtraBold: 800;
     --Font-Weight-Black: 900;
 
-    /* Line Heights */
-    --Line-Height-Tight: 1.1;
-    --Line-Height-Medium: 1.25;
-    --Line-Height-Loose: 1.6;
+    /* Line Heights - Doodles style: Tight for big titles, Loose for body */
+    --Line-Height-Huge: 0.85;   // For massive Hero text
+    --Line-Height-Tight: 1.0;  // For Headings
+    --Line-Height-Compact: 1.2; // For Subtitles
+    --Line-Height-Normal: 1.45; // Standard
+    --Line-Height-Loose: 1.6;   // For Body readability
+    --Line-Height-Extra-Loose: 1.8;
 
     /* Letter Spacing */
-    --Letter-Spacing-Tight: -0.03em;
+    --Letter-Spacing-Tight: -0.04em;
     --Letter-Spacing-Normal: 0;
+    --Letter-Spacing-Wide: 0.02em;
 }
 
 /* Typography Tokens - Mode 1 */
 :root {
-    --Hero-Font-Size: var(--Font-Size-font-13xl-80);
+    --Hero-Font-Size: var(--Font-Size-font-13xl-180);
     --Hero-Font-Family: var(--Font-Family-Titles);
-    --Hero-Font-Weight: var(--Font-Weight-Bold);
+    --Hero-Font-Weight: var(--Font-Weight-ExtraBold);
+    --Hero-Line-Height: var(--Line-Height-Huge);
+    --Hero-Letter-Spacing: var(--Letter-Spacing-Tight);
     
-    --Lead-Lead-Bold-Font-Size: var(--Font-Size-font-11xl-64);
-    --Lead-Lead-Bold-Font-Family: var(--Font-Family-Titles);
-    --Lead-Lead-Bold-Font-Weight: var(--Font-Weight-Bold);
+    --Lead-Font-Size: var(--Font-Size-font-10xl-80);
+    --Lead-Font-Family: var(--Font-Family-Titles);
+    --Lead-Font-Weight: var(--Font-Weight-Bold);
+    --Lead-Line-Height: var(--Line-Height-Tight);
     
-    --Lead-Lead-Regular-Font-Size: var(--Font-Size-font-11xl-64);
-    --Lead-Lead-Regular-Font-Family: var(--Font-Family-Titles);
-    --Lead-Lead-Regular-Font-Weight: var(--Font-Weight-Medium);
+    --Title-Font-Size: var(--Font-Size-font-8xl-64);
+    --Title-Font-Family: var(--Font-Family-Titles);
+    --Title-Font-Weight: var(--Font-Weight-Bold);
+    --Title-Line-Height: var(--Line-Height-Tight);
     
-    --Title-Title-Bold-Font-Size: var(--Font-Size-font-9xl-48);
-    --Title-Title-Bold-Font-Family: var(--Font-Family-Titles);
-    --Title-Title-Bold-Font-Weight: var(--Font-Weight-Bold);
+    --Subtitle-Font-Size: var(--Font-Size-font-5xl-40);
+    --Subtitle-Font-Family: var(--Font-Family-Titles);
+    --Subtitle-Font-Weight: var(--Font-Weight-Medium);
+    --Subtitle-Line-Height: var(--Line-Height-Compact);
     
-    --Title-Title-Regular-Font-Size: var(--Font-Size-font-9xl-48);
-    --Title-Title-Regular-Font-Family: var(--Font-Family-Titles);
-    --Title-Title-Regular-Font-Weight: var(--Font-Weight-Medium);
+    --Heading-Font-Size: var(--Font-Size-font-4xl-32);
+    --Heading-Font-Family: var(--Font-Family-Titles);
+    --Heading-Font-Weight: var(--Font-Weight-Bold);
+    --Heading-Line-Height: var(--Line-Height-Compact);
     
-    --Title-Title-Light-Font-Size: var(--Font-Size-font-9xl-48);
-    --Title-Title-Light-Font-Family: var(--Font-Family-Titles);
-    --Title-Title-Light-Font-Weight: var(--Font-Weight-Light);
+    --Body-Large-Font-Size: var(--Font-Size-font-2xl-24);
+    --Body-Large-Line-Height: var(--Line-Height-Loose);
     
-    --Subtitle-Subtitle-Bold-Font-Size: var(--Font-Size-font-7xl-40);
-    --Subtitle-Subtitle-Bold-Font-Family: var(--Font-Family-Titles);
-    --Subtitle-Subtitle-Bold-Font-Weight: var(--Font-Weight-Bold);
+    --Body-Regular-Font-Size: var(--Font-Size-font-xl-20);
+    --Body-Regular-Line-Height: var(--Line-Height-Loose);
     
-    --Subtitle-Subtitle-Regular-Font-Size: var(--Font-Size-font-11xl-64);
-    --Subtitle-Subtitle-Regular-Font-Family: var(--Font-Family-Titles);
-    --Subtitle-Subtitle-Regular-Font-Weight: var(--Font-Weight-SemiBold);
-    
-    --Subtitle-Subtitle-Light-Font-Size: var(--Font-Size-font-11xl-64);
-    --Subtitle-Subtitle-Light-Font-Family: var(--Font-Family-Titles);
-    --Subtitle-Subtitle-Light-Font-Weight: var(--Font-Weight-Regular);
-    
-    --Heading-Heading-Bold-Font-Size: var(--Font-Size-font-3xl-26);
-    --Heading-Heading-Bold-Font-Family: var(--Font-Family-Titles);
-    --Heading-Heading-Bold-Font-Weight: var(--Font-Weight-Bold);
-    
-    --Heading-Heading-Regular-Font-Size: var(--Font-Size-font-3xl-26);
-    --Heading-Heading-Regular-Font-Family: var(--Font-Family-Titles);
-    --Heading-Heading-Regular-Font-Weight: var(--Font-Weight-Medium);
-    
-    --Body-Body-Lg-Body-Large-Bold-Font-Size: var(--Font-Size-font-xl-20);
-    --Heading-Heading-Light-Font-Size: var(--Font-Size-font-3xl-26);
-    --Body-Body-Lg-Body-Large-Regular-Font-Size: var(--Font-Size-font-xl-20);
-    --Body-Body-Lg-Body-Large-Regular-Font-Family: var(--Font-Family-Titles);
-    --Body-Body-Lg-Body-Large-Regular-Font-Weight: var(--Font-Weight-Medium);
-    --Body-Body-Lg-Body-Large-Bold-Font-Family: var(--Font-Family-Titles);
-    --Heading-Heading-Light-Font-Family: var(--Font-Family-Titles);
-    --Body-Body-Lg-Body-Large-Bold-Font-Weight: var(--Font-Weight-Bold);
-    --Heading-Heading-Light-Font-Weight: var(--Font-Weight-Light);
-    --Body-Body-Lg-Body-Large-Light-Font-Size: var(--Font-Size-font-xl-20);
-    --Body-Body-Lg-Body-Large-Light-Font-Family: var(--Font-Family-Titles);
-    --Body-Body-Lg-Body-Large-Light-Font-Weight: var(--Font-Weight-Light);
-    
-    --Body-Body-Body-Bold-Font-Size: var(--Font-Size-font-lg-18); // Increased to 18px
-    --Body-Body-Body-Regular-Font-Size: var(--Font-Size-font-lg-18); // Increased to 18px
-    --Body-Body-Body-Regular-Font-Family: var(--Font-Family-Titles);
-    --Body-Body-Body-Regular-Font-Weight: var(--Font-Weight-Medium);
-    --Body-Body-Body-Bold-Font-Family: var(--Font-Family-Titles);
-    --Body-Body-Body-Bold-Font-Weight: var(--Font-Weight-Bold);
-    --Body-Body-Body-Light-Font-Size: var(--Font-Size-font-lg-18); // Increased to 18px
-    --Body-Body-Body-Light-Font-Family: var(--Font-Family-Titles);
-    --Body-Body-Body-Light-Font-Weight: var(--Font-Weight-Light);
-    
-    --Body-Body-Sm-Body-Bold-Font-Size: var(--Font-Size-font-sm-14);
-    --Body-Body-Sm-Body-Regular-Font-Size: var(--Font-Size-font-sm-14);
-    --Body-Body-Sm-Body-Regular-Font-Family: var(--Font-Family-Titles);
-    --Body-Body-Sm-Body-Regular-Font-Weight: var(--Font-Weight-Medium);
-    --Body-Body-Sm-Body-Bold-Font-Family: var(--Font-Family-Titles);
-    --Body-Body-Sm-Body-Bold-Font-Weight: var(--Font-Weight-Bold);
-    --Body-Body-Sm-Body-Light-Font-Size: var(--Font-Size-font-sm-14);
-    --Body-Body-Sm-Body-Light-Font-Family: var(--Font-Family-Titles);
-    --Body-Body-Sm-Body-Light-Font-Weight: var(--Font-Weight-Light);
-
-    --font-size-0: 16px;
-    --font-size-1: 72px;
-    --font-size-2: 60px;
-    --font-size-3: 46px;
-    --font-size-4: 38px;
-    --font-size-5: 26px;
-    --font-size-6: 20px;
-    --font-size-7: 14px;
-    --font-size-8: 12px;
-    --font-weight-semi-bold: 600;
-    --font-weight-bold: 700;
-    --font-weight-medium: 500;
-    --font-weight-regular: 400;
-    --font-weight-light: 300;
+    --Body-Small-Font-Size: var(--Font-Size-font-md-16);
+    --Body-Small-Line-Height: var(--Line-Height-Normal);
 }
 
-
-
-
-
-
-
+/* Base Classes */
 .hero {
     font-size: var(--Hero-Font-Size);
     font-family: var(--Hero-Font-Family);
     font-weight: var(--Hero-Font-Weight);
+    line-height: var(--Hero-Line-Height);
+    letter-spacing: var(--Hero-Letter-Spacing);
+    text-transform: uppercase;
 }
 
 .lead {
-    font-size: var(--Lead-Lead-Regular-Font-Size);
-    font-family: var(--Lead-Lead-Regular-Font-Family);
-    font-weight: var(--Lead-Lead-Regular-Font-Weight);
-}
-
-.lead-bold {
-    font-size: var(--Lead-Lead-Bold-Font-Size);
-    font-family: var(--Lead-Lead-Bold-Font-Family);
-    font-weight: var(--Lead-Lead-Bold-Font-Weight);
+    font-size: var(--Lead-Font-Size);
+    font-family: var(--Lead-Font-Family);
+    font-weight: var(--Lead-Font-Weight);
+    line-height: var(--Lead-Line-Height);
+    letter-spacing: var(--Letter-Spacing-Tight);
 }
 
 .title {
-    font-size: var(--Title-Title-Regular-Font-Size);
-    font-family: var(--Title-Title-Regular-Font-Family);
-    font-weight: var(--Title-Title-Regular-Font-Weight);
-}
-
-.title-bold {
-    font-size: var(--Title-Title-Bold-Font-Size);
-    font-family: var(--Title-Title-Bold-Font-Family);
-    font-weight: var(--Title-Title-Bold-Font-Weight);
-}
-
-.title-light {
-    font-size: var(--Title-Title-Light-Font-Size);
-    font-family: var(--Title-Title-Light-Font-Family);
-    font-weight: var(--Title-Title-Light-Font-Weight);
+    font-size: var(--Title-Font-Size);
+    font-family: var(--Title-Font-Family);
+    font-weight: var(--Title-Font-Weight);
+    line-height: var(--Title-Line-Height);
 }
 
 .subtitle {
-    font-size: var(--Subtitle-Subtitle-Regular-Font-Size);
-    font-family: var(--Subtitle-Subtitle-Regular-Font-Family);
-    font-weight: var(--Subtitle-Subtitle-Regular-Font-Weight);
-}
-
-.subtitle-bold {
-    font-size: var(--Subtitle-Subtitle-Bold-Font-Size);
-    font-family: var(--Subtitle-Subtitle-Bold-Font-Family);
-    font-weight: var(--Subtitle-Subtitle-Bold-Font-Weight);
-}
-
-.subtitle-light {
-    font-size: var(--Subtitle-Subtitle-Light-Font-Size);
-    font-family: var(--Subtitle-Subtitle-Light-Font-Family);
-    font-weight: var(--Subtitle-Subtitle-Light-Font-Weight);
+    font-size: var(--Subtitle-Font-Size);
+    font-family: var(--Subtitle-Font-Family);
+    font-weight: var(--Subtitle-Font-Weight);
+    line-height: var(--Subtitle-Line-Height);
 }
 
 .heading {
-    font-size: var(--Heading-Heading-Regular-Font-Size);
-    font-family: var(--Heading-Heading-Regular-Font-Family);
-    font-weight: var(--Heading-Heading-Regular-Font-Weight);
-}
-
-.heading-bold {
-    font-size: var(--Heading-Heading-Bold-Font-Size);
-    font-family: var(--Heading-Heading-Bold-Font-Family);
-    font-weight: var(--Heading-Heading-Bold-Font-Weight);
-}
-
-.heading-light {
-    font-size: var(--Heading-Heading-Light-Font-Size);
-    font-family: var(--Heading-Heading-Light-Font-Family);
-    font-weight: var(--Heading-Heading-Light-Font-Weight);
+    font-size: var(--Heading-Font-Size);
+    font-family: var(--Heading-Font-Family);
+    font-weight: var(--Heading-Font-Weight);
+    line-height: var(--Heading-Line-Height);
 }
 
 .body-large {
-    font-size: var(--Body-Body-Lg-Body-Large-Regular-Font-Size);
-    font-family: var(--Body-Body-Lg-Body-Large-Regular-Font-Family);
-    font-weight: var(--Body-Body-Lg-Body-Large-Regular-Font-Weight);
-}
-
-.body-large-bold {
-    font-size: var(--Body-Body-Lg-Body-Large-Bold-Font-Size);
-    font-family: var(--Body-Body-Lg-Body-Large-Bold-Font-Family);
-    font-weight: var(--Body-Body-Lg-Body-Large-Bold-Font-Weight);
-}
-
-
-.body-large-light {
-    font-size: var(--Body-Body-Lg-Body-Large-Light-Font-Size);
-    font-family: var(--Body-Body-Lg-Body-Large-Light-Font-Family);
-    font-weight: var(--Body-Body-Lg-Body-Large-Light-Font-Weight);
+    font-size: var(--Body-Large-Font-Size);
+    line-height: var(--Body-Large-Line-Height);
+    font-family: var(--Font-Family-Body);
 }
 
 .body {
-    font-size: var(--Body-Body-Body-Regular-Font-Size);
-    font-family: var(--Body-Body-Body-Regular-Font-Family);
-    font-weight: var(--Body-Body-Body-Regular-Font-Weight);
-}
-
-.body-bold {
-    font-size: var(--Body-Body-Body-Bold-Font-Size);
-    font-family: var(--Body-Body-Body-Bold-Font-Family);
-    font-weight: var(--Body-Body-Body-Bold-Font-Weight);
-}
-
-.body-light {
-    font-size: var(--Body-Body-Body-Light-Font-Size);
-    font-family: var(--Body-Body-Body-Light-Font-Family);
-    font-weight: var(--Body-Body-Body-Light-Font-Weight);
+    font-size: var(--Body-Regular-Font-Size);
+    line-height: var(--Body-Regular-Line-Height);
+    font-family: var(--Font-Family-Body);
 }
 
 .body-small {
-    font-size: var(--Body-Body-Sm-Body-Regular-Font-Size);
-    font-family: var(--Body-Body-Sm-Body-Regular-Font-Family);
-    font-weight: var(--Body-Body-Sm-Body-Regular-Font-Weight);
+    font-size: var(--Body-Small-Font-Size);
+    line-height: var(--Body-Small-Line-Height);
+    font-family: var(--Font-Family-Body);
 }
 
-.body-small-bold {
-    font-size: var(--Body-Body-Sm-Body-Bold-Font-Size);
-    font-family: var(--Body-Body-Sm-Body-Bold-Font-Family);
-    font-weight: var(--Body-Body-Sm-Body-Bold-Font-Weight);
-}
-
-.body-small-light {
-    font-size: var(--Body-Body-Sm-Body-Light-Font-Size);
-    font-family: var(--Body-Body-Sm-Body-Light-Font-Family);
-    font-weight: var(--Body-Body-Sm-Body-Light-Font-Weight);
-}
+/* Utility weights */
+.fw-light { font-weight: var(--Font-Weight-Light); }
+.fw-regular { font-weight: var(--Font-Weight-Regular); }
+.fw-medium { font-weight: var(--Font-Weight-Medium); }
+.fw-semibold { font-weight: var(--Font-Weight-SemiBold); }
+.fw-bold { font-weight: var(--Font-Weight-Bold); }
+.fw-extrabold { font-weight: var(--Font-Weight-ExtraBold); }
+.fw-black { font-weight: var(--Font-Weight-Black); }

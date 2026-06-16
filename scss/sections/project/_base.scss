@@ -18,7 +18,7 @@
     h1,
     .p-heading h1 {
         font-family: var(--Font-Family-Titles);
-        font-size: var(--Font-Size-font-12xl-72); // 72px
+        font-size: var(--Font-Size-font-9xl-72); // 72px
         font-weight: var(--Font-Weight-Bold);
         color: var(--Type-Neutral-dark);
         line-height: var(--Line-Height-Tight); // 1.1
@@ -26,39 +26,41 @@
         margin-bottom: 32px;
 
         @media (max-width: 768px) {
-            font-size: var(--Font-Size-font-8xl-44); // 44px mobile
+            font-size: var(--Font-Size-font-6xl-48); // 48px mobile
         }
     }
 
     h2,
+    .h2,
     .title {
         font-family: var(--Font-Family-Titles);
-        font-size: var(--Font-Size-font-10xl-56); // 56px
+        font-size: var(--Font-Size-font-7xl-56); // 56px
         font-weight: var(--Font-Weight-Bold);
         color: var(--Type-Neutral-dark);
         margin-top: 64px;
         margin-bottom: 24px;
         line-height: var(--Line-Height-Tight); // 1.1
-        letter-spacing: var(--Letter-Spacing-Tight); // -0.03em
+        letter-spacing: var(--Letter-Spacing-Normal);
 
         &.txt-purple {
             color: var(--primary-700);
         }
 
         @media (max-width: 768px) {
-            font-size: var(--Font-Size-font-6xl-36); // 36px mobile
+            font-size: var(--Font-Size-font-5xl-40); // 40px mobile
         }
     }
 
-    h3 {
+    h3,
+    .h3 {
         font-family: var(--Font-Family-Titles);
-        font-size: var(--Font-Size-font-7xl-40); // 40px
+        font-size: var(--Font-Size-font-5xl-40); // 40px
         font-weight: var(--Font-Weight-SemiBold);
         color: var(--Type-Neutral-dark);
         margin-top: 40px;
         margin-bottom: 16px;
         line-height: var(--Line-Height-Medium); // 1.25
-        letter-spacing: var(--Letter-Spacing-Tight);
+        letter-spacing: var(--Letter-Spacing-Wide);
 
         &.txt-purple {
             color: var(--primary-600);
