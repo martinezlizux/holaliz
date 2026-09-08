@@ -13,7 +13,7 @@
   <title>Lizbeth Martinez - UX & Product Designer | Portfolio & Case Studies</title>
   <meta name="title" content="Lizbeth Martinez - UX & Product Designer | Portfolio & Case Studies">
   <meta name="description"
-    content="Experienced UX & Product Designer with 11+ years creating intuitive digital experiences. Specialized in design systems, user research, and mobile apps. View portfolio and case studies.">
+    content="Experienced UX & Product Designer with 19 years creating intuitive digital experiences. Specialized in design systems, user research, and mobile apps. View portfolio and case studies.">
   <meta name="keywords"
     content="UX Designer, Product Designer, Design Systems, User Research, Mobile Apps, Figma, Storybook, Portfolio, Case Studies, Mexico">
   <meta name="author" content="Lizbeth Martinez">
@@ -29,7 +29,7 @@
   <meta property="og:url" content="https://www.holaliz.com/">
   <meta property="og:title" content="Lizbeth Martinez - UX & Product Designer | Portfolio & Case Studies">
   <meta property="og:description"
-    content="Experienced UX & Product Designer with 11+ years creating intuitive digital experiences. Specialized in design systems, user research, and mobile apps.">
+    content="Experienced UX & Product Designer with 19 years creating intuitive digital experiences. Specialized in design systems, user research, and mobile apps.">
   <meta property="og:image" content="https://www.holaliz.com/assets/images/face-img.png">
   <meta property="og:site_name" content="Holaliz - Lizbeth Martinez Portfolio">
   <meta property="og:locale" content="en_US">
@@ -39,7 +39,7 @@
   <meta property="twitter:url" content="https://www.holaliz.com/">
   <meta property="twitter:title" content="Lizbeth Martinez - UX & Product Designer | Portfolio & Case Studies">
   <meta property="twitter:description"
-    content="Experienced UX & Product Designer with 11+ years creating intuitive digital experiences. Specialized in design systems, user research, and mobile apps.">
+    content="Experienced UX & Product Designer with 19 years creating intuitive digital experiences. Specialized in design systems, user research, and mobile apps.">
   <meta property="twitter:image" content="https://www.holaliz.com/assets/images/face-img.png">
 
   <!-- Additional SEO Meta Tags -->
@@ -237,13 +237,85 @@
 
 
   <main>
-    <!--//////////////////// PROJECTS TRANSITION & HORIZONTAL ///////////////////// -->
-    <div id="projects-container">
-      <section id="projects-transition" class="section-projects-transition">
+    <!--//////////////////// ABOUT ME SECTION — New Design ///////////////////// -->
+    <div id="about-container">
+      <section id="about-transition" class="section-projects-transition">
         <h2 class="projects-huge-title text-center">
           Hi! <br class="d-md-none"> I'm Liz
         </h2>
       </section>
+
+    <!--//////////////////// ABOUT ME SECTION — New Design ///////////////////// -->
+    <section id="about" class="about-new">
+
+      <!-- Big Heading -->
+      <h2 class="about-new__heading" id="about-heading">About me</h2>
+
+      <!-- Tagline -->
+      <p class="about-new__tagline" id="about-tagline">
+        UX Designer focused on turning complex problems into simple,<br>
+        human-centered digital products.
+      </p>
+
+      <!-- Draggable Stack Zone: Tool Icons + Photo falling from above -->
+      <div class="about-new__stack" id="about-stack">
+        <!-- Subtle drag hint -->
+        <div class="about-new__drag-hint d-none d-md-flex align-items-center gap-2" id="drag-hint">
+          <i class="bi bi-arrows-move"></i> Drag around
+        </div>
+        <!-- Each card is an absolute item that will fall + stack + be draggable -->
+        <div class="about-new__card" id="tool-dev" data-rotation="-14">
+          <img src="assets/images/tools/DevIcon.svg" alt="Vibe Code / Dev">
+        </div>
+        <div class="about-new__card" id="tool-adobe" data-rotation="-6">
+          <img src="assets/images/tools/AdobeIcon.svg" alt="Adobe XD">
+        </div>
+        <div class="about-new__card" id="tool-procreate" data-rotation="5">
+          <img src="assets/images/tools/ProcreateIcon.svg" alt="Procreate">
+        </div>
+        <div class="about-new__card" id="tool-figma" data-rotation="12">
+          <img src="assets/images/tools/figmaIcon.svg" alt="Figma">
+        </div>
+        <!-- Center photo (also draggable) -->
+        <div class="about-new__card about-new__card--photo" id="tool-photo" data-rotation="-3">
+          <img src="assets/images/face-img.png" alt="Liz Martinez">
+        </div>
+      </div>
+
+      <!-- Impact Stats -->
+      <div class="about-new__stats" id="about-stats">
+        <div class="about-new__stat">
+          <span class="about-new__stat-number">19</span>
+          <span class="about-new__stat-label">Years of experience</span>
+        </div>
+        <div class="about-new__stat">
+          <span class="about-new__stat-number">80%</span>
+          <span class="about-new__stat-label">Design Time Reduction</span>
+        </div>
+        <div class="about-new__stat">
+          <span class="about-new__stat-number">35%</span>
+          <span class="about-new__stat-label">Efficiency Gains</span>
+        </div>
+      </div>
+
+      <!-- Tool Badges -->
+      <div class="about-new__badges" id="about-badges">
+        <span class="about-new__badge">Figma</span>
+        <span class="about-new__badge">Adobe XD</span>
+        <span class="about-new__badge">Principle</span>
+        <span class="about-new__badge">VS Code</span>
+        <span class="about-new__badge">Cursor</span>
+        <span class="about-new__badge">HTML / CSS</span>
+        <span class="about-new__badge">GitHub</span>
+        <span class="about-new__badge">AI-assisted workflows</span>
+        <span class="about-new__badge">Procreate</span>
+      </div>
+
+    </section>
+    </div>
+    <!--//////////////////// PROJECTS TRANSITION & HORIZONTAL ///////////////////// -->
+    <div id="projects-container">
+      
 
       <section id="projects-horizontal" class="section-projects-horizontal">
         <!-- El wrapper que se va a animar horizontalmente -->
@@ -367,73 +439,6 @@
       </section>
     </div>
 
-    <!--//////////////////// ABOUT ME SECTION — New Design ///////////////////// -->
-    <section id="about" class="about-new">
-
-      <!-- Big Heading -->
-      <h2 class="about-new__heading" id="about-heading">About me</h2>
-
-      <!-- Tagline -->
-      <p class="about-new__tagline" id="about-tagline">
-        UX Designer focused on turning complex problems into simple,<br>
-        human-centered digital products.
-      </p>
-
-      <!-- Draggable Stack Zone: Tool Icons + Photo falling from above -->
-      <div class="about-new__stack" id="about-stack">
-        <!-- Subtle drag hint -->
-        <div class="about-new__drag-hint d-none d-md-flex align-items-center gap-2" id="drag-hint">
-          <i class="bi bi-arrows-move"></i> Drag around
-        </div>
-        <!-- Each card is an absolute item that will fall + stack + be draggable -->
-        <div class="about-new__card" id="tool-dev" data-rotation="-14">
-          <img src="assets/images/tools/DevIcon.svg" alt="Vibe Code / Dev">
-        </div>
-        <div class="about-new__card" id="tool-adobe" data-rotation="-6">
-          <img src="assets/images/tools/AdobeIcon.svg" alt="Adobe XD">
-        </div>
-        <div class="about-new__card" id="tool-procreate" data-rotation="5">
-          <img src="assets/images/tools/ProcreateIcon.svg" alt="Procreate">
-        </div>
-        <div class="about-new__card" id="tool-figma" data-rotation="12">
-          <img src="assets/images/tools/figmaIcon.svg" alt="Figma">
-        </div>
-        <!-- Center photo (also draggable) -->
-        <div class="about-new__card about-new__card--photo" id="tool-photo" data-rotation="-3">
-          <img src="assets/images/face-img.png" alt="Liz Martinez">
-        </div>
-      </div>
-
-      <!-- Impact Stats -->
-      <div class="about-new__stats" id="about-stats">
-        <div class="about-new__stat">
-          <span class="about-new__stat-number">10+</span>
-          <span class="about-new__stat-label">Years of experience</span>
-        </div>
-        <div class="about-new__stat">
-          <span class="about-new__stat-number">80%</span>
-          <span class="about-new__stat-label">Design Time Reduction</span>
-        </div>
-        <div class="about-new__stat">
-          <span class="about-new__stat-number">35%</span>
-          <span class="about-new__stat-label">Efficiency Gains</span>
-        </div>
-      </div>
-
-      <!-- Tool Badges -->
-      <div class="about-new__badges" id="about-badges">
-        <span class="about-new__badge">Figma</span>
-        <span class="about-new__badge">Adobe XD</span>
-        <span class="about-new__badge">Principle</span>
-        <span class="about-new__badge">VS Code</span>
-        <span class="about-new__badge">Cursor</span>
-        <span class="about-new__badge">HTML / CSS</span>
-        <span class="about-new__badge">GitHub</span>
-        <span class="about-new__badge">AI-assisted workflows</span>
-        <span class="about-new__badge">Procreate</span>
-      </div>
-
-    </section>
 
     <!--//////////////////// PLAYGROUND SECTION ///////////////////// -->
     <section id="playground" class="s-playground py-5">
@@ -511,6 +516,44 @@
         <div class="container resume-content">
 
           <div class="d-flex flex-column gap-5">
+            <!-- Personal Projects -->
+            <div class="box-neutral experience-card p-4">
+              <!-- Header / Toggle Area -->
+              <div
+                class="experience-header d-flex flex-column flex-md-row justify-content-between align-items-md-center"
+                data-bs-toggle="collapse" data-bs-target="#collapsePersonalProjects" aria-expanded="false"
+                aria-controls="collapsePersonalProjects">
+
+                <div class="d-flex align-items-center gap-4 flex-grow-1">
+                  <div class="experience-logo d-flex align-items-center justify-content-center">
+                    <img src="assets/images/logo.svg" alt="holaliz Logo" class="img-fluid" style="max-width: 80px; height: auto;">
+                  </div>
+                  <div class="experience-info flex-grow-1">
+                    <h4 class="mb-1">Independent Product Designer & Consultant</h4>
+                    <p class="mb-0">holaliz</p>
+                  </div>
+                </div>
+
+                <div
+                  class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-row flex-md-column align-items-center align-items-md-end justify-content-start justify-content-md-center gap-2">
+                  <p class="mb-0">Aug 2025 - Present</p>
+                  <span class="badge rounded-pill">Full time</span>
+                </div>
+              </div>
+
+              <!-- Collapsible Body -->
+              <div class="collapse" id="collapsePersonalProjects">
+                <div class="experience-body">
+                  <ul class="mb-4">
+                    <li>Designed and prototyped interactive, responsive web applications using React, HTML/CSS, and AI-driven workflows.</li>
+                    <li>Provided end-to-end UX/UI consulting, information architecture, and design token implementation for emerging tools.</li>
+                    <li>Conducted continuous research and experimentation with generative AI tools and APIs (Gemini, Replicate) to optimize interactive design workflows.</li>
+                  </ul>
+                  <p class="mb-0"><em>Skills:</em> Generative AI · UX/UI Consulting · Front-end Integration · Design Tokens · Information Architecture</p>
+                </div>
+              </div>
+            </div>
+
             <!-- DDI -->
             <div class="box-neutral experience-card p-4">
               <!-- Header / Toggle Area -->
@@ -532,7 +575,7 @@
 
                 <div
                   class="experience-meta text-md-end mt-3 mt-md-0 d-flex flex-row flex-md-column align-items-center align-items-md-end justify-content-start justify-content-md-center gap-2">
-                  <p class="mb-0">Aug 2022 - Present</p>
+                  <p class="mb-0">Aug 2022 - Aug 2025</p>
                   <span class="badge rounded-pill">Full time</span>
                 </div>
               </div>
