@@ -137,7 +137,7 @@ export function initHeroAnimations() {
 export function initProjectsScrollAnimations() {
     if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
     
-    const transitionSection = document.getElementById("projects-transition");
+    const transitionSection = document.getElementById("about-transition");
     if (transitionSection) {
         gsap.to(transitionSection, {
             scrollTrigger: {
@@ -146,7 +146,7 @@ export function initProjectsScrollAnimations() {
                 end: "bottom center",
                 scrub: 0.5
             },
-            backgroundColor: "#F2EEFC",
+            backgroundColor: "#ffffff",
             ease: "none"
         });
     }
